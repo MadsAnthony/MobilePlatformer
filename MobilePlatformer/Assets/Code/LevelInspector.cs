@@ -9,7 +9,6 @@ public class LevelInspector : Editor {
 	private Vector2 selectedIndex;
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
-	private Vector2 gridSize = new Vector2 (20,30);
 	private float cellSize = 20;
 	int cellType = 0;
 
@@ -65,8 +64,8 @@ public class LevelInspector : Editor {
 	}
 
 	void DrawGrid() {
-		for (int x = 0; x<gridSize.x;x++) {
-			for (int y = 0; y<gridSize.y;y++) {
+		for (int x = 0; x<Level.GRIDSIZE.x;x++) {
+			for (int y = 0; y<Level.GRIDSIZE.y;y++) {
 				var rect = new Rect (gridStartPos.x+x*cellSize, gridStartPos.y+y*cellSize, cellSize, cellSize);
 
 				GUI.color = Color.white;
