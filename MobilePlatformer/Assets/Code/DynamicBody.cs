@@ -17,7 +17,35 @@ public class DynamicBody : MonoBehaviour {
 		
 	}
 
-	protected void Move(Vector3 dir, Action callback = null) {
+	protected void Move(Vector3 dir, Action callbackInterrupted = null, Action callbackFinished = null) {
+		Vector3 inputDir = dir * Time.deltaTime;
+		Vector3 newDir = inputDir;
+		RaycastHit hit;
+
+		// TODO - Move this to another place - should not be done here.
+		var hits = rb.SweepTestAll (inputDir, inputDir.magnitude);
+		foreach(var ahit in hits) {
+			if (ahit.collider.name.Contains ("Block")) {
+				ahit.collider.gameObject.GetComponentInChildren<SpriteRenderer> ().color = Color.green;
+			}
+		}
+
+
+		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
+			if (hit.collider.name.Contains ("Block")) {
+				newDir = inputDir.normalized * (hit.distance - gap);
+				if (callbackInterrupted != null) {
+					callbackInterrupted ();
+				}
+			}
+		}
+		this.transform.position += newDir;
+		if (callbackFinished != null) {
+			callbackFinished ();
+		}
+	}
+
+	protected void Check(Vector3 dir, Action callbackInterrupted = null, Action callbackFinished = null) {
 		Vector3 inputDir = dir * Time.deltaTime;
 		Vector3 newDir = inputDir;
 		RaycastHit hit;
@@ -25,11 +53,14 @@ public class DynamicBody : MonoBehaviour {
 		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
 			if (hit.collider.name.Contains ("Block")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
-				if (callback != null) {
-					callback ();
+
+				if (callbackInterrupted != null) {
+					callbackInterrupted ();
 				}
 			}
 		}
-		this.transform.position += newDir;
+		if (callbackFinished != null) {
+			callbackFinished ();
+		}
 	}
 }
