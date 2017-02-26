@@ -11,6 +11,10 @@ public class LevelInit : MonoBehaviour {
 	public GameObject heroPrefab;
 	// Use this for initialization
 	void Start () {
+		if (Director.Instance.levelIndex >= 0) {
+			level = Director.Instance.levelDatabase.levels[Director.Instance.levelIndex];
+		}
+
 		InitializeLevel();
 	}
 

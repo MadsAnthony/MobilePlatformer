@@ -25,7 +25,7 @@ public class LevelInspector : Editor {
 
 		if (GUILayout.Button ("Play")) {
 			EditorApplication.isPlaying = false;
-			EditorSceneManager.OpenScene ("Assets/Scenes/LevelTest.unity");
+			EditorSceneManager.OpenScene ("Assets/Scenes/LevelScene.unity");
 			var LevelInit = GameObject.Find ("LevelInit").GetComponent<LevelInit> ();
 			LevelInit.level = myTarget;
 			EditorApplication.isPlaying = true;
