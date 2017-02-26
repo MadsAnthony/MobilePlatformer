@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(LevelAsset))]
 public class LevelInspector : Editor {
@@ -20,9 +21,17 @@ public class LevelInspector : Editor {
 		myTarget.someInt = EditorGUILayout.IntField ("Experience", myTarget.someInt);
 		EditorGUILayout.LabelField ("Level", myTarget.levelName);
 
+		if (GUILayout.Button ("Play")) {
+			EditorApplication.isPlaying = false;
+			EditorSceneManager.OpenScene ("Assets/Scenes/LevelTest.unity");
+			var LevelInit = GameObject.Find ("LevelInit").GetComponent<LevelInit> ();
+			LevelInit.level = myTarget;
+			EditorApplication.isPlaying = true;
+		}
 		if (GUILayout.Button ("Clear")) {
 			myTarget.gridObjects.Clear();
 		}
+			
 		string[] cellOptions = new string[]
 		{
 			"Hero", "Block"
