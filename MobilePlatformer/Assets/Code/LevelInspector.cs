@@ -11,7 +11,7 @@ public class LevelInspector : Editor {
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
 	private float cellSize = 20;
-	int cellType = 0;
+	int cellType = 1;
 
 	public override void OnInspectorGUI()
 	{
