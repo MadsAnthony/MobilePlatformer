@@ -38,7 +38,7 @@ public class Hero : DynamicBody {
 			movingDir = 1;
 		}
 
-		Move(dir*speed*movingDir,() => { if (isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
+		Move(dir*speed*movingDir,() => { if (true || isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
@@ -47,12 +47,12 @@ public class Hero : DynamicBody {
 	}
 
 	Vector3 mouseClickPos;
-	float threshold = 0.2f;
+	float threshold = 0.4f;
 	void TouchInput() {
 		if (Input.GetMouseButtonDown(0)) {
 			mouseClickPos = Input.mousePosition;
 		}
-		if (Input.GetMouseButtonUp(0)) {
+		if (Input.GetMouseButton(0)) {
 			Vector3 mouseDir = (mouseClickPos - Input.mousePosition).normalized;
 			var horizontalDotProduct = Vector3.Dot (mouseDir, dir);
 			var verticalDotProduct = Vector3.Dot (mouseDir, new Vector3(dir.y, -dir.x,dir.z));
