@@ -26,8 +26,10 @@ public class Hero : DynamicBody {
 	// Update is called once per frame
 	void Update () {
 		gravity -= 1f;
+
+		TouchInput ();
 		if (Input.GetKeyDown (KeyCode.UpArrow) && isOnGround) {
-			gravity = 20f;
+			Jump ();
 		}
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			movingDir = -1;
@@ -36,7 +38,7 @@ public class Hero : DynamicBody {
 			movingDir = 1;
 		}
 
-		Move(dir*speed*movingDir,() => { if (isOnGround) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,() => { if (isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
@@ -44,10 +46,33 @@ public class Hero : DynamicBody {
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),() => {gravity = 0; isOnGround = true;},() => {Check(dir*speed*-movingDir,() => { if (gravity<0f) {ChangeGravity(movingDir);}});});
 	}
 
-	void CheckSideForGround() {
-		
+	Vector3 mouseClickPos;
+	float threshold = 0.2f;
+	void TouchInput() {
+		if (Input.GetMouseButtonDown(0)) {
+			mouseClickPos = Input.mousePosition;
+		}
+		if (Input.GetMouseButtonUp(0)) {
+			Vector3 mouseDir = (mouseClickPos - Input.mousePosition).normalized;
+			var horizontalDotProduct = Vector3.Dot (mouseDir, dir);
+			var verticalDotProduct = Vector3.Dot (mouseDir, new Vector3(dir.y, -dir.x,dir.z));
+
+			if (Mathf.Abs (horizontalDotProduct) > threshold) {
+				movingDir = -1*(int)Mathf.Sign(horizontalDotProduct);
+			}
+
+			if (verticalDotProduct < -threshold  && isOnGround) {
+				Jump ();
+			}
+			if (verticalDotProduct > threshold && isOnGround) {
+				movingDir = 0;
+			}
+		}
 	}
 
+	void Jump() {
+		gravity = 16f;
+	}
 	void ChangeGravity(int delta) {
 		dirsIndex += delta;
 		if (dirsIndex < 0) {
