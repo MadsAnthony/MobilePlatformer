@@ -8,6 +8,7 @@ public class Director {
 	public LevelDatabase levelDatabase;
 	public int levelIndex = -1;
 	private Director() {
+		Application.targetFrameRate = 60;
 		levelDatabase = Resources.Load ("LevelDatabase") as LevelDatabase;
 	}
 
