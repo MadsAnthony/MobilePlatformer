@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1236969077}
   - component: {fileID: 1236969076}
   - component: {fileID: 1236969075}
+  - component: {fileID: 1236969080}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -345,6 +346,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1236969080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236969074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8336b083aca1747908a13e6e1cde7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489571208
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08743de50e8ad674a9958776c8c754fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 70ca0248391440d48ad119d10f69ec8f, type: 2}
+  level: {fileID: 11400000, guid: dcde3b3bd978616468bbcebb290040c2, type: 2}
   blockPrefab: {fileID: 1811242072951080, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd,
+    type: 2}
+  spikePrefab: {fileID: 1811242072951080, guid: d70ec4d66d72d184eb946d441ad165a6,
     type: 2}
   heroPrefab: {fileID: 1811242072951080, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
 --- !u!4 &1490478947
