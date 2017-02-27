@@ -23,4 +23,8 @@ public class Director {
 			return instance;
 		}
 	}
+
+	public static void CameraShake() {
+		GameObject.Find ("Main Camera").GetComponent<CameraManager>().CameraShake();
+	}
 }

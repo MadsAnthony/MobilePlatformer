@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class LevelAsset : ScriptableObject {
 	public List<Vector2> gridObjects = new List<Vector2>();
 
+	public List<Vector2> spikeObjects = new List<Vector2>();
+
 	public Vector2 heroPos;
 	public string levelName;
 

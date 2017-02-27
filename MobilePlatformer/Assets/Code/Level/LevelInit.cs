@@ -8,6 +8,7 @@ public class LevelInit : MonoBehaviour {
 
 	private Vector3 levelStartPos = new Vector3(-9.5f,16,0);
 	public GameObject blockPrefab;
+	public GameObject spikePrefab;
 	public GameObject heroPrefab;
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,12 @@ public class LevelInit : MonoBehaviour {
 			i ++;
 			tmpBlock.name = "Block"+i;
 			tmpBlock.transform.position = new Vector3(cell.x,-cell.y,0)+levelStartPos;
+		}
+		foreach (var cell in level.spikeObjects) {
+			var tmpSpike = Instantiate(spikePrefab);
+			i ++;
+			tmpSpike.name = "Spike"+i;
+			tmpSpike.transform.position = new Vector3(cell.x,-cell.y,0)+levelStartPos;
 		}
 
 		var hero = Instantiate(heroPrefab);

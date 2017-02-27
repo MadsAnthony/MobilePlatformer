@@ -36,7 +36,7 @@ public class LevelInspector : Editor {
 			
 		string[] cellOptions = new string[]
 		{
-			"Hero", "Block"
+			"Hero", "Block", "Spike"
 		};
 		cellType = EditorGUILayout.Popup("Label", cellType, cellOptions); 
 
@@ -54,9 +54,15 @@ public class LevelInspector : Editor {
 						myTarget.gridObjects.Add (selectedIndex);
 					}
 				}
+				if (cellType == 2) {
+					if (!myTarget.gridObjects.Contains (selectedIndex)) {
+						myTarget.spikeObjects.Add (selectedIndex);
+					}
+				}
 			}
 			if (Event.current.button == 1) {
 				myTarget.gridObjects.Remove(selectedIndex);
+				myTarget.spikeObjects.Remove(selectedIndex);
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
@@ -83,6 +89,12 @@ public class LevelInspector : Editor {
 				foreach(Vector2 gridObject in ((LevelAsset)target).gridObjects) {
 					if (x == gridObject.x && y == gridObject.y) {
 						GUI.color = Color.black;
+						break;
+					}
+				}
+				foreach(Vector2 spikeObject in ((LevelAsset)target).spikeObjects) {
+					if (x == spikeObject.x && y == spikeObject.y) {
+						GUI.color = Color.red;
 						break;
 					}
 				}

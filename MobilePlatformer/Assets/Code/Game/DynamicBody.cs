@@ -38,6 +38,9 @@ public class DynamicBody : MonoBehaviour {
 					callbackInterrupted ();
 				}
 			}
+			if (hit.collider.name.Contains ("Spike")) {
+				newDir = inputDir.normalized * (hit.distance - gap);
+			}
 		}
 		this.transform.position += newDir;
 		if (callbackFinished != null) {
