@@ -23,14 +23,24 @@ public class Hero : DynamicBody {
 		dir = dirs[dirsIndex];
 	}
 
+	float noGravityT = 1;
 	// Update is called once per frame
 	void Update () {
-		gravity -= 1f;
+		noGravityT = Mathf.Clamp (noGravityT, 0, 1);
+
+		gravity -= 1f*noGravityT;
 
 		TouchInput ();
 		if (Input.GetKeyDown (KeyCode.UpArrow) && isOnGround) {
 			Jump ();
 		}
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			noGravityT += 0.025f;
+		}
+		if (Input.GetKeyUp (KeyCode.UpArrow)) {
+			noGravityT = 1;
+		}
+
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			movingDir = -1;
 		}
@@ -46,7 +56,7 @@ public class Hero : DynamicBody {
 
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
 			() => {
-					if (gravity<-(maxGravity*0.5f)) {
+					if (gravity<=-(maxGravity)) {
 						Director.CameraShake();
 					}
 					gravity = 0; 
@@ -63,7 +73,7 @@ public class Hero : DynamicBody {
 	}
 
 	Vector3 mouseClickPos;
-	float threshold = 0.4f;
+	float threshold = 0.6f;
 	bool touchConsumed = true;
 	void TouchInput() {
 		if (Input.GetMouseButtonDown(0) && touchConsumed) {
@@ -71,6 +81,7 @@ public class Hero : DynamicBody {
 			mouseClickPos = Input.mousePosition;
 		}
 		if (Input.GetMouseButtonUp (0)) {
+			noGravityT = 1;
 			touchConsumed = true;
 		}
 		if (Input.GetMouseButton(0)) {
@@ -87,23 +98,32 @@ public class Hero : DynamicBody {
 			}
 
 			if (verticalDotProduct < -threshold  && isOnGround && !touchConsumed) {
-				Jump (Mathf.Clamp(-verticalDotProductForce,12,20));
-				touchConsumed = true;
+				Jump ();
+			}
+			if (verticalDotProduct < -threshold && !touchConsumed) {
+				noGravityT += 0.025f;
+
+				if (noGravityT >= 1) {
+					noGravityT = 1;
+					touchConsumed = true;
+				}
 			}
 			if (verticalDotProduct > threshold && isOnGround && !touchConsumed) {
 				movingDir = 0;
 				touchConsumed = true;
 			}
 			if (verticalDotProduct > threshold && !isOnGround && !touchConsumed) {
-				gravity = -Mathf.Abs(verticalDotProductForce);
+				gravity = -maxGravity;
 				touchConsumed = true;
 			}
 		}
 	}
 
-	void Jump(float jumpForce = 16) {
+	void Jump(float jumpForce = 12) {
 		gravity = jumpForce;
+		noGravityT = 0;
 	}
+
 	void ChangeGravity(int delta) {
 		dirsIndex += delta;
 		if (dirsIndex < 0) {
