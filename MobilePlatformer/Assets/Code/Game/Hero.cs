@@ -31,22 +31,7 @@ public class Hero : DynamicBody {
 		gravity -= 1f*noGravityT;
 
 		TouchInput ();
-		if (Input.GetKeyDown (KeyCode.UpArrow) && isOnGround) {
-			Jump ();
-		}
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			noGravityT += 0.025f;
-		}
-		if (Input.GetKeyUp (KeyCode.UpArrow)) {
-			noGravityT = 1;
-		}
-
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			movingDir = -1;
-		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			movingDir = 1;
-		}
+		KeyboardInput ();
 
 		Move(dir*speed*movingDir,() => { if (true || isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
 
@@ -70,6 +55,28 @@ public class Hero : DynamicBody {
 									}
 								});
 				});
+	}
+
+	void KeyboardInput() {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && isOnGround) {
+			Jump ();
+		}
+		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+			gravity = -maxGravity;
+		}
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			noGravityT += 0.025f;
+		}
+		if (Input.GetKeyUp (KeyCode.UpArrow)) {
+			noGravityT = 1;
+		}
+
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			movingDir = -1;
+		}
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			movingDir = 1;
+		}
 	}
 
 	Vector3 mouseClickPos;

@@ -7,6 +7,7 @@ public class LevelInit : MonoBehaviour {
 	public LevelAsset level;
 
 	private Vector3 levelStartPos = new Vector3(-9.5f,16,0);
+	public GameObject normalBlockPrefab;
 	public GameObject blockPrefab;
 	public GameObject spikePrefab;
 	public GameObject heroPrefab;
@@ -21,17 +22,24 @@ public class LevelInit : MonoBehaviour {
 
 	void InitializeLevel() {
 		int i = 0;
-		foreach (var cell in level.gridObjects) {
-			var tmpBlock = Instantiate(blockPrefab);
+
+		foreach (var block in level.blocks) {
+			GameObject tmpBlock = null;
+			if (block.type == BlockType.Normal) {
+				tmpBlock = Instantiate(normalBlockPrefab);
+				tmpBlock.name = "Block"+i;
+			}
+			if (block.type == BlockType.Color) {
+				tmpBlock = Instantiate(blockPrefab);
+				tmpBlock.name = "ColorBlock"+i;
+			}
+			if (block.type == BlockType.Spike) {
+				tmpBlock = Instantiate(spikePrefab);
+				tmpBlock.name = "Spike"+i;
+			}
 			i ++;
-			tmpBlock.name = "Block"+i;
-			tmpBlock.transform.position = new Vector3(cell.x,-cell.y,0)+levelStartPos;
-		}
-		foreach (var cell in level.spikeObjects) {
-			var tmpSpike = Instantiate(spikePrefab);
-			i ++;
-			tmpSpike.name = "Spike"+i;
-			tmpSpike.transform.position = new Vector3(cell.x,-cell.y,0)+levelStartPos;
+
+			tmpBlock.transform.position = new Vector3(block.pos.x,-block.pos.y,0)+levelStartPos;
 		}
 
 		var hero = Instantiate(heroPrefab);

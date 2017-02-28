@@ -446,7 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08743de50e8ad674a9958776c8c754fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: dcde3b3bd978616468bbcebb290040c2, type: 2}
+  level: {fileID: 11400000, guid: 8a7a96e8414e50e4da35c8201f4f6574, type: 2}
+  normalBlockPrefab: {fileID: 1811242072951080, guid: 22567ae4064397746b508fbd71d79a8e,
+    type: 2}
   blockPrefab: {fileID: 1811242072951080, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd,
     type: 2}
   spikePrefab: {fileID: 1811242072951080, guid: d70ec4d66d72d184eb946d441ad165a6,

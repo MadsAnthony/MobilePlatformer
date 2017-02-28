@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,7 +15,8 @@ public class LevelInspector : Editor {
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
 	private float cellSize = 20;
-	int cellType = 1;
+	int cellType;
+	BlockType blockType;
 
 	public override void OnInspectorGUI()
 	{
@@ -31,16 +34,21 @@ public class LevelInspector : Editor {
 			EditorApplication.isPlaying = true;
 		}
 		if (GUILayout.Button ("Clear")) {
-			myTarget.gridObjects.Clear();
+			myTarget.blocks.Clear();
 		}
-			
+
 		string[] cellOptions = new string[]
 		{
-			"Hero", "Block", "Spike"
+			"Hero", "Blocks"
 		};
-		cellType = EditorGUILayout.Popup("Label", cellType, cellOptions); 
 
-		//Event.current.mousePosition;
+		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions); 
+
+		if (cellType == 1) {
+			string[] blockOptions = Enum.GetNames (typeof(BlockType));
+			blockType = (BlockType)EditorGUILayout.Popup ("Block Type", (int)blockType, blockOptions); 
+		}
+
 		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
 			GetClosestCell (Event.current.mousePosition);
 		}
@@ -50,19 +58,14 @@ public class LevelInspector : Editor {
 					myTarget.heroPos = selectedIndex;
 				}
 				if (cellType == 1) {
-					if (!myTarget.gridObjects.Contains (selectedIndex)) {
-						myTarget.gridObjects.Add (selectedIndex);
-					}
-				}
-				if (cellType == 2) {
-					if (!myTarget.gridObjects.Contains (selectedIndex)) {
-						myTarget.spikeObjects.Add (selectedIndex);
-					}
+					BlockObject existingBlock = GetBlockWithPos (selectedIndex);
+					if (existingBlock != null) myTarget.blocks.Remove (existingBlock);
+					myTarget.blocks.Add (new BlockObject (blockType, selectedIndex));
 				}
 			}
 			if (Event.current.button == 1) {
-				myTarget.gridObjects.Remove(selectedIndex);
-				myTarget.spikeObjects.Remove(selectedIndex);
+				BlockObject existingBlock = GetBlockWithPos (selectedIndex);
+				if (existingBlock != null) myTarget.blocks.Remove(existingBlock);
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
@@ -72,6 +75,15 @@ public class LevelInspector : Editor {
 		if (GUI.changed) {
 			EditorUtility.SetDirty (myTarget);
 		}
+	}
+
+	BlockObject GetBlockWithPos(Vector2 pos) {
+		foreach(BlockObject block in ((LevelAsset)target).blocks) {
+			if (pos == block.pos) {
+				return block;
+			}
+		}
+		return null;
 	}
 
 	Vector2 GetClosestCell(Vector2 mousePos) {
@@ -84,20 +96,25 @@ public class LevelInspector : Editor {
 		for (int x = 0; x<Level.GRIDSIZE.x;x++) {
 			for (int y = 0; y<Level.GRIDSIZE.y;y++) {
 				var rect = new Rect (gridStartPos.x+x*cellSize, gridStartPos.y+y*cellSize, cellSize, cellSize);
-
 				GUI.color = Color.white;
-				foreach(Vector2 gridObject in ((LevelAsset)target).gridObjects) {
-					if (x == gridObject.x && y == gridObject.y) {
-						GUI.color = Color.black;
-						break;
+
+				foreach(BlockObject block in ((LevelAsset)target).blocks) {
+					if (x == block.pos.x && y == block.pos.y) {
+						if (block.type == BlockType.Normal) {
+							GUI.color = Color.black;
+							break;
+						}
+						if (block.type == BlockType.Color) {
+							GUI.color = Color.grey;
+							break;
+						}
+						if (block.type == BlockType.Spike) {
+							GUI.color = Color.red;
+							break;
+						}
 					}
 				}
-				foreach(Vector2 spikeObject in ((LevelAsset)target).spikeObjects) {
-					if (x == spikeObject.x && y == spikeObject.y) {
-						GUI.color = Color.red;
-						break;
-					}
-				}
+
 				if (x ==  ((LevelAsset)target).heroPos.x && y == ((LevelAsset)target).heroPos.y) {
 					GUI.color = Color.green;
 				}

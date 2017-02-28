@@ -25,7 +25,7 @@ public class DynamicBody : MonoBehaviour {
 		// TODO - Move this to another place - should not be done here.
 		var hits = rb.SweepTestAll (inputDir, inputDir.magnitude);
 		foreach(var ahit in hits) {
-			if (ahit.collider.name.Contains ("Block")) {
+			if (ahit.collider.name.Contains ("Color")) {
 				ahit.collider.gameObject.GetComponentInChildren<SpriteRenderer> ().color = Color.green;
 			}
 		}
