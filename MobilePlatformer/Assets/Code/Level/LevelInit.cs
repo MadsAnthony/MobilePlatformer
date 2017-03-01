@@ -11,10 +11,13 @@ public class LevelInit : MonoBehaviour {
 	public GameObject blockPrefab;
 	public GameObject spikePrefab;
 	public GameObject heroPrefab;
+
+	private GameLogic gameLogic;
 	// Use this for initialization
 	void Start () {
+		gameLogic = GetComponent<GameLogic>();
 		if (Director.Instance.levelIndex >= 0) {
-			level = Director.Instance.levelDatabase.levels[Director.Instance.levelIndex];
+			level = Director.LevelDatabase.levels[Director.Instance.levelIndex];
 		}
 
 		InitializeLevel();
@@ -32,6 +35,7 @@ public class LevelInit : MonoBehaviour {
 			if (block.type == BlockType.Color) {
 				tmpBlock = Instantiate(blockPrefab);
 				tmpBlock.name = "ColorBlock"+i;
+				gameLogic.coloredBlocksGoal++;
 			}
 			if (block.type == BlockType.Spike) {
 				tmpBlock = Instantiate(spikePrefab);
@@ -44,6 +48,8 @@ public class LevelInit : MonoBehaviour {
 
 		var hero = Instantiate(heroPrefab);
 		hero.transform.position = new Vector3(level.heroPos.x,-level.heroPos.y+0.05f,0)+levelStartPos;
+
+		gameLogic.hero = hero.GetComponent<Hero> ();
 	}
 
 	// Update is called once per frame

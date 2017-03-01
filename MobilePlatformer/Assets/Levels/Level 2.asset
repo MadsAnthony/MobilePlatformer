@@ -344,6 +344,6 @@ MonoBehaviour:
     pos: {x: 2, y: 10}
   - type: 0
     pos: {x: 2, y: 9}
-  heroPos: {x: 4, y: 24}
+  heroPos: {x: 3, y: 13}
   levelName: 
   someInt: 0

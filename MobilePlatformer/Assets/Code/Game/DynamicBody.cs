@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DynamicBody : MonoBehaviour {
 
@@ -26,7 +27,10 @@ public class DynamicBody : MonoBehaviour {
 		var hits = rb.SweepTestAll (inputDir, inputDir.magnitude);
 		foreach(var ahit in hits) {
 			if (ahit.collider.name.Contains ("Color")) {
-				ahit.collider.gameObject.GetComponentInChildren<SpriteRenderer> ().color = Color.green;
+				if (ahit.collider.gameObject.GetComponentInChildren<SpriteRenderer> ().color != Color.green) {
+					ahit.collider.gameObject.GetComponentInChildren<SpriteRenderer> ().color = Color.green;
+					Director.GameEventManager.Emit (GameEventType.BlockColored);
+				}
 			}
 		}
 
@@ -40,6 +44,7 @@ public class DynamicBody : MonoBehaviour {
 			}
 			if (hit.collider.name.Contains ("Spike")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
+				SceneManager.LoadScene ("LevelScene");
 			}
 		}
 		this.transform.position += newDir;

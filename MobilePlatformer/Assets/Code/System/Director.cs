@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Director {
+public class Director : MonoBehaviour  {
 	private static Director instance;
 
-	public LevelDatabase levelDatabase;
+	[SerializeField] private LevelDatabase levelDatabase;
 	public int levelIndex = -1;
-	private Director() {
-		Application.targetFrameRate = 60;
-		levelDatabase = Resources.Load ("LevelDatabase") as LevelDatabase;
-	}
+
+	private GameEventManager gameEventManager;
+
+	public static GameEventManager GameEventManager {get {return Instance.gameEventManager;}}
+	public static LevelDatabase    LevelDatabase 	{get {return Instance.levelDatabase;}}
 
 	public static Director Instance
 	{
@@ -18,12 +19,22 @@ public class Director {
 		{
 			if (instance == null)
 			{
-				instance = new Director();
+				var asset = (Director)Resources.Load ("Director", typeof(Director));
+				instance = (Director)GameObject.Instantiate (asset);
+				instance.Load();
 			}
 			return instance;
 		}
 	}
+		
+	void Load() {
+		gameEventManager = new GameEventManager();
+	}
 
+	void Start () {
+		DontDestroyOnLoad (transform.gameObject);
+		Application.targetFrameRate = 60;
+	}
 	public static void CameraShake() {
 		GameObject.Find ("Main Camera").GetComponent<CameraManager>().CameraShake();
 	}

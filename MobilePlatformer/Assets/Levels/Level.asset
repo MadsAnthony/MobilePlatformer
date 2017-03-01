@@ -128,6 +128,6 @@ MonoBehaviour:
     pos: {x: 14, y: 20}
   - type: 0
     pos: {x: 13, y: 20}
-  heroPos: {x: 8, y: 19}
+  heroPos: {x: 5, y: 19}
   levelName: 
   someInt: 30

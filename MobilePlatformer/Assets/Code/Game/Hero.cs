@@ -30,8 +30,10 @@ public class Hero : DynamicBody {
 
 		gravity -= 1f*noGravityT;
 
-		TouchInput ();
-		KeyboardInput ();
+		if (!stopMoving) {
+			TouchInput ();
+			KeyboardInput ();
+		}
 
 		Move(dir*speed*movingDir,() => { if (true || isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
 
@@ -129,6 +131,12 @@ public class Hero : DynamicBody {
 	void Jump(float jumpForce = 12) {
 		gravity = jumpForce;
 		noGravityT = 0;
+	}
+
+	bool stopMoving = false;
+	public void StopMoving() {
+		stopMoving = true;
+		movingDir = 0;
 	}
 
 	void ChangeGravity(int delta) {
