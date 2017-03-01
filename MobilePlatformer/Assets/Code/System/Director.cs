@@ -7,6 +7,7 @@ public class Director : MonoBehaviour  {
 
 	[SerializeField] private LevelDatabase levelDatabase;
 	public int levelIndex = -1;
+	public int levelRetries = 0;
 
 	private GameEventManager gameEventManager;
 

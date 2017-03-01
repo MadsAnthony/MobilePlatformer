@@ -10,6 +10,6 @@ public class UIManager : MonoBehaviour {
 
 	public void GotoLevelScene(int i) {
 		Director.Instance.levelIndex = i;
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene ("LevelScene");
 	}
 }

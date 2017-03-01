@@ -10,7 +10,9 @@ public class GameView : MonoBehaviour {
 	public Image overlay;
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (FadeFromBlack ());
+		if (Director.Instance.levelRetries == 0) {
+			StartCoroutine (FadeFromBlack ());
+		}
 		Director.GameEventManager.OnGameEvent += HandleGameEvent;
 	}
 
@@ -25,6 +27,7 @@ public class GameView : MonoBehaviour {
 			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
 				StartCoroutine (LoadNextScene("IntroScene"));
 			} else {
+				Director.Instance.levelRetries = 0;
 				StartCoroutine (LoadNextScene("LevelScene"));
 			}
 			break;

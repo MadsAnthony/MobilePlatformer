@@ -55,7 +55,7 @@ public class LevelInit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.R)) {
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene ("LevelScene");
 		}
 	}
 }
