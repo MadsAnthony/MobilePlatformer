@@ -4,19 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameView : MonoBehaviour {
+public class GameView : UIView {
 	public GameLogic gameLogic;
 	public Text goalText;
-	public Image overlay;
-	// Use this for initialization
-	void Start () {
-		if (Director.Instance.levelRetries == 0) {
-			StartCoroutine (FadeFromBlack ());
-		}
+
+	protected override void OnStart () {
 		Director.GameEventManager.OnGameEvent += HandleGameEvent;
 	}
 
-	void OnDestroy() {
+	protected override void OnRemoving() {
 		Director.GameEventManager.OnGameEvent -= HandleGameEvent;
 	}
 
@@ -25,45 +21,12 @@ public class GameView : MonoBehaviour {
 		case GameEventType.LevelCompleted:
 			Director.Instance.levelIndex += 1;
 			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
-				StartCoroutine (LoadNextScene("IntroScene"));
+				SceneManager.LoadScene ("IntroScene");
 			} else {
-				Director.Instance.levelRetries = 0;
-				StartCoroutine (LoadNextScene("LevelScene"));
+				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f);
 			}
 			break;
 		}
-	}
-
-	IEnumerator FadeToBlack() {
-		overlay.transform.position = new Vector3 (0,0,0);
-		float alpha = 0;
-		while (true) {
-			alpha += 2f * Time.deltaTime;
-			overlay.color = new Color(overlay.color.r,overlay.color.g,overlay.color.b,alpha);
-			if (alpha >= 1) {
-				break;
-			}
-			yield return null;
-		}
-	}
-	IEnumerator FadeFromBlack() {
-		overlay.transform.position = new Vector3 (0,0,0);
-		float alpha = 1;
-		while (true) {
-			alpha -= 2f * Time.deltaTime;
-			overlay.color = new Color(overlay.color.r,overlay.color.g,overlay.color.b,alpha);
-			if (alpha <= 0) {
-				break;
-			}
-			yield return null;
-		}
-		overlay.transform.position = new Vector3 (1000,0,0);
-	}
-
-	IEnumerator LoadNextScene(string sceneName) {
-		yield return FadeToBlack ();
-		yield return new WaitForSeconds(0.1f);
-		SceneManager.LoadScene (sceneName);
 	}
 
 	// Update is called once per frame

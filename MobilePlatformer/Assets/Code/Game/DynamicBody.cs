@@ -44,7 +44,6 @@ public class DynamicBody : MonoBehaviour {
 			}
 			if (hit.collider.name.Contains ("Spike")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
-				Director.Instance.levelRetries ++;
 				SceneManager.LoadScene ("LevelScene");
 			}
 		}

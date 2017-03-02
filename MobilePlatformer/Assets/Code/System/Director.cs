@@ -7,16 +7,19 @@ public class Director : MonoBehaviour  {
 
 	[SerializeField] private LevelDatabase levelDatabase;
 	public int levelIndex = -1;
-	public int levelRetries = 0;
 
-	private GameEventManager gameEventManager;
+	private GameEventManager		gameEventManager;
+	private UIManager 		 		uiManager;
+	private TransitionManager		transitionManager;
 
-	public static GameEventManager GameEventManager {get {return Instance.gameEventManager;}}
-	public static LevelDatabase    LevelDatabase 	{get {return Instance.levelDatabase;}}
+	public static GameEventManager 		GameEventManager 	{get {return Instance.gameEventManager;}}
+	public static LevelDatabase    		LevelDatabase 		{get {return Instance.levelDatabase;}}
+	public static UIManager    	   		UIManager			{get {return Instance.uiManager;}}
+	public static TransitionManager		TransitionManager 	{get {return Instance.transitionManager;}}
 
 	public static Director Instance
 	{
-		get 
+		get
 		{
 			if (instance == null)
 			{
@@ -29,13 +32,21 @@ public class Director : MonoBehaviour  {
 	}
 		
 	void Load() {
-		gameEventManager = new GameEventManager();
+		gameEventManager  = new GameEventManager();
+		uiManager 		  = new UIManager();
+		transitionManager = SetupTransitionManager();
 	}
 
 	void Start () {
 		DontDestroyOnLoad (transform.gameObject);
 		Application.targetFrameRate = 60;
 	}
+
+	TransitionManager SetupTransitionManager() {
+		var asset = (TransitionManager)Resources.Load ("TransitionManager", typeof(TransitionManager));
+		return (TransitionManager)GameObject.Instantiate (asset);
+	}
+
 	public static void CameraShake() {
 		GameObject.Find ("Main Camera").GetComponent<CameraManager>().CameraShake();
 	}

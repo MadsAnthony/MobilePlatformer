@@ -3,13 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour {
-	public void GotoMenuScene() {
-		SceneManager.LoadScene ("IntroScene");
-	}
+public class UIManager {
 
-	public void GotoLevelScene(int i) {
-		Director.Instance.levelIndex = i;
-		SceneManager.LoadScene ("LevelScene");
-	}
+	public UIView ActiveView;
 }
