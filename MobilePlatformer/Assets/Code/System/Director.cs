@@ -6,16 +6,20 @@ public class Director : MonoBehaviour  {
 	private static Director instance;
 
 	[SerializeField] private LevelDatabase levelDatabase;
+	[SerializeField] private SoundDatabase soundDatabase;
+
 	public int levelIndex = -1;
 
 	private GameEventManager		gameEventManager;
 	private UIManager 		 		uiManager;
 	private TransitionManager		transitionManager;
+	private SoundManager			sounds;
 
 	public static GameEventManager 		GameEventManager 	{get {return Instance.gameEventManager;}}
 	public static LevelDatabase    		LevelDatabase 		{get {return Instance.levelDatabase;}}
 	public static UIManager    	   		UIManager			{get {return Instance.uiManager;}}
 	public static TransitionManager		TransitionManager 	{get {return Instance.transitionManager;}}
+	public static SoundManager			Sounds 				{get {return Instance.sounds;}}
 
 	public static Director Instance
 	{
