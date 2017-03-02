@@ -44,6 +44,7 @@ public class Hero : DynamicBody {
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
 			() => {
 					if (gravity<=-(maxGravity)) {
+						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
 					}
 					gravity = 0; 
@@ -129,6 +130,7 @@ public class Hero : DynamicBody {
 	}
 
 	void Jump(float jumpForce = 12) {
+		Director.Sounds.jump.Play ();
 		gravity = jumpForce;
 		noGravityT = 0;
 	}

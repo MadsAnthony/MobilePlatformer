@@ -4,5 +4,15 @@ using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "SoundDatabase", menuName = "Sound/New SoundDatabase", order = 1)]
 public class SoundDatabase : ScriptableObject {
-	public AudioClip sound1;
+	[GUIHeader("Gameplay")]
+	public SoundDefinition jump;
+	public SoundDefinition breakSound;
+	public SoundDefinition splat;
+}
+	
+public class GUIHeader : System.Attribute {
+	public GUIHeader(string s) {
+		title = s;
+	}
+	public string title;
 }
