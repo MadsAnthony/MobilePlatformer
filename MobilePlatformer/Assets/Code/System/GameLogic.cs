@@ -21,9 +21,6 @@ public class GameLogic : MonoBehaviour {
 	void HandleGameEvent(GameEvent e) {
 		switch (e.type) {
 		case GameEventType.BlockColored:
-			if (currentColoredBlocks % 2 == 0) {
-				Director.Sounds.splat.Play ();
-			}
 			currentColoredBlocks++;
 			if (currentColoredBlocks >= coloredBlocksGoal) {
 				Director.GameEventManager.Emit (GameEventType.LevelCompleted);
