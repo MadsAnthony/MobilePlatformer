@@ -34,13 +34,15 @@ public class DynamicBody : MonoBehaviour {
 			}
 		}
 
-
 		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
 			if (hit.collider.name.Contains ("Block")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
 				if (callbackInterrupted != null) {
 					callbackInterrupted ();
 				}
+			}
+			if (hit.collider.name.Contains ("NonSticky")) {
+				newDir = inputDir.normalized * (hit.distance - gap);
 			}
 			if (hit.collider.name.Contains ("Spike")) {
 				newDir = inputDir.normalized * (hit.distance - gap);

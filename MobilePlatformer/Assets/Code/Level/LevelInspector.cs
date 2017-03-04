@@ -16,7 +16,7 @@ public class LevelInspector : Editor {
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
 	private float cellSize = 20;
-	int cellType;
+	int cellType = 1;
 	BlockType blockType;
 	public Direction direction;
 
@@ -107,7 +107,7 @@ public class LevelInspector : Editor {
 				foreach(BlockObject block in ((LevelAsset)target).blocks) {
 					if (x == block.pos.x && y == block.pos.y) {
 						if (block.type == BlockType.Normal) {
-							GUI.color = Color.black;
+							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 							break;
 						}
 						if (block.type == BlockType.Color) {
@@ -117,6 +117,10 @@ public class LevelInspector : Editor {
 						if (block.type == BlockType.Spike) {
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
+							break;
+						}
+						if (block.type == BlockType.NonSticky) {
+							GUI.color = Color.black;
 							break;
 						}
 					}

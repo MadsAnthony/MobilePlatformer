@@ -13,7 +13,7 @@ public class LevelAsset : ScriptableObject {
 	public int someInt;
 }
 
-public enum BlockType {Normal,Color,Spike};
+public enum BlockType {Normal, Color, Spike, NonSticky};
 public enum Direction {Up, Right, Down, Left};
 
 [Serializable]
