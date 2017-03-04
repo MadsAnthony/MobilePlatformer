@@ -9,104 +9,119 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
-  m_Name: Level 6
+  m_Name: Level 7
   m_EditorClassIdentifier: 
   blocks:
   - type: 0
-    pos: {x: 5, y: 17}
+    pos: {x: 7, y: -3}
     dir: 0
-  - type: 0
-    pos: {x: 6, y: 17}
+  - type: 3
+    pos: {x: 2, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 7, y: 17}
+  - type: 3
+    pos: {x: 3, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 8, y: 17}
+  - type: 3
+    pos: {x: 4, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 9, y: 17}
+  - type: 3
+    pos: {x: 5, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 10, y: 17}
+  - type: 3
+    pos: {x: 6, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 11, y: 17}
+  - type: 3
+    pos: {x: 10, y: 20}
     dir: 0
-  - type: 0
-    pos: {x: 12, y: 17}
+  - type: 3
+    pos: {x: 2, y: 19}
     dir: 0
-  - type: 0
-    pos: {x: 8, y: 15}
+  - type: 3
+    pos: {x: 2, y: 18}
     dir: 0
-  - type: 0
-    pos: {x: 9, y: 15}
+  - type: 3
+    pos: {x: 2, y: 17}
     dir: 0
-  - type: 0
-    pos: {x: 10, y: 15}
+  - type: 3
+    pos: {x: 2, y: 16}
     dir: 0
-  - type: 0
-    pos: {x: 11, y: 15}
+  - type: 3
+    pos: {x: 2, y: 15}
     dir: 0
-  - type: 0
-    pos: {x: 12, y: 15}
+  - type: 3
+    pos: {x: 17, y: 8}
     dir: 0
-  - type: 0
-    pos: {x: 13, y: 15}
+  - type: 3
+    pos: {x: 17, y: 9}
     dir: 0
-  - type: 0
-    pos: {x: 13, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 14, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 16, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 14, y: 15}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 15}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 14}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 13}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 12}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 11}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 10}
-    dir: 0
-  - type: 0
-    pos: {x: 16, y: 10}
-    dir: 0
-  - type: 0
+  - type: 3
     pos: {x: 17, y: 10}
     dir: 0
-  - type: 0
+  - type: 3
     pos: {x: 17, y: 11}
     dir: 0
-  - type: 0
+  - type: 3
     pos: {x: 17, y: 12}
     dir: 0
-  - type: 0
+  - type: 3
     pos: {x: 17, y: 13}
     dir: 0
-  - type: 0
-    pos: {x: 17, y: 14}
+  - type: 3
+    pos: {x: 17, y: 7}
+    dir: 0
+  - type: 3
+    pos: {x: 5, y: -3}
+    dir: 0
+  - type: 3
+    pos: {x: 10, y: 19}
+    dir: 0
+  - type: 3
+    pos: {x: 10, y: 18}
+    dir: 0
+  - type: 3
+    pos: {x: 10, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 10, y: 14}
+    dir: 0
+  - type: 3
+    pos: {x: 11, y: 14}
+    dir: 0
+  - type: 3
+    pos: {x: 12, y: 14}
+    dir: 0
+  - type: 3
+    pos: {x: 13, y: 14}
+    dir: 0
+  - type: 3
+    pos: {x: 14, y: 14}
     dir: 0
   - type: 0
-    pos: {x: 17, y: 15}
+    pos: {x: 11, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 12, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 13, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 14, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 15, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 16, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 17, y: 20}
+    dir: 0
+  - type: 0
+    pos: {x: 17, y: 19}
+    dir: 0
+  - type: 0
+    pos: {x: 17, y: 18}
     dir: 0
   - type: 0
     pos: {x: 17, y: 17}
@@ -115,35 +130,110 @@ MonoBehaviour:
     pos: {x: 17, y: 16}
     dir: 0
   - type: 0
-    pos: {x: 7, y: 15}
+    pos: {x: 17, y: 15}
     dir: 0
   - type: 0
-    pos: {x: 6, y: 15}
+    pos: {x: 17, y: 14}
     dir: 0
   - type: 0
-    pos: {x: 6, y: 14}
+    pos: {x: 9, y: 20}
     dir: 0
   - type: 0
-    pos: {x: 6, y: 13}
+    pos: {x: 8, y: 20}
     dir: 0
   - type: 0
-    pos: {x: 5, y: 13}
+    pos: {x: 7, y: 20}
     dir: 0
   - type: 0
-    pos: {x: 4, y: 13}
+    pos: {x: 16, y: 7}
     dir: 0
   - type: 0
-    pos: {x: 4, y: 14}
+    pos: {x: 15, y: 7}
     dir: 0
   - type: 0
-    pos: {x: 4, y: 15}
+    pos: {x: 14, y: 7}
     dir: 0
   - type: 0
-    pos: {x: 4, y: 16}
+    pos: {x: 13, y: 7}
     dir: 0
   - type: 0
-    pos: {x: 4, y: 17}
+    pos: {x: 12, y: 7}
     dir: 0
-  heroPos: {x: 6, y: 16}
+  - type: 0
+    pos: {x: 11, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 10, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 9, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 8, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 7, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 6, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 5, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 10}
+    dir: 0
+  - type: 3
+    pos: {x: 6, y: 8}
+    dir: 0
+  - type: 3
+    pos: {x: 6, y: 9}
+    dir: 0
+  - type: 3
+    pos: {x: 6, y: 10}
+    dir: 0
+  - type: 3
+    pos: {x: 6, y: 11}
+    dir: 0
+  - type: 3
+    pos: {x: 7, y: -2}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 14}
+    dir: 0
+  - type: 0
+    pos: {x: 4, y: -2}
+    dir: 0
+  - type: 1
+    pos: {x: 2, y: 12}
+    dir: 0
+  - type: 1
+    pos: {x: 2, y: 13}
+    dir: 0
+  - type: 1
+    pos: {x: 2, y: 11}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 9}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 8}
+    dir: 0
+  - type: 0
+    pos: {x: 3, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 4, y: 7}
+    dir: 0
+  - type: 0
+    pos: {x: 5, y: -2}
+    dir: 0
+  - type: 3
+    pos: {x: 13, y: 8}
+    dir: 0
+  heroPos: {x: 3, y: 19}
   levelName: 
   someInt: 0
