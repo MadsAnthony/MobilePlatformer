@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hero : DynamicBody {
 	float gravity;
-	float speed = 8;
+	float speed = 7;
 	float maxGravity = 50;
 	Vector3 dir;
 
@@ -83,7 +83,7 @@ public class Hero : DynamicBody {
 	}
 
 	Vector3 mouseClickPos;
-	float threshold = 0.6f;
+	float threshold = Mathf.Cos(Mathf.PI*0.25f);
 	bool touchConsumed = true;
 	void TouchInput() {
 		if (Input.GetMouseButtonDown(0) && touchConsumed) {
@@ -103,7 +103,6 @@ public class Hero : DynamicBody {
 			if (Mathf.Abs (horizontalDotProduct) > threshold && !touchConsumed) {
 				int newMovingDir = -1 * (int)Mathf.Sign (horizontalDotProduct);
 				touchConsumed = newMovingDir != movingDir;
-
 				movingDir = newMovingDir;
 			}
 
@@ -117,10 +116,6 @@ public class Hero : DynamicBody {
 					noGravityT = 1;
 					touchConsumed = true;
 				}
-			}
-			if (verticalDotProduct > threshold && isOnGround && !touchConsumed) {
-				movingDir = 0;
-				touchConsumed = true;
 			}
 			if (verticalDotProduct > threshold && !isOnGround && !touchConsumed) {
 				gravity = -maxGravity;

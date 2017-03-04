@@ -11,16 +11,19 @@ using UnityEditor.SceneManagement;
 public class LevelInspector : Editor {
 
 	private Texture2D cellTexture;
+	private Texture2D spikeTexture;
 	private Vector2 selectedIndex;
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
 	private float cellSize = 20;
 	int cellType;
 	BlockType blockType;
+	public Direction direction;
 
 	public override void OnInspectorGUI()
 	{
-		cellTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
+		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
+		spikeTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/spike.png", typeof(Texture2D)) as Texture2D;
 
 		LevelAsset myTarget = (LevelAsset)target;
 		myTarget.someInt = EditorGUILayout.IntField ("Experience", myTarget.someInt);
@@ -42,12 +45,14 @@ public class LevelInspector : Editor {
 			"Hero", "Blocks"
 		};
 
-		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions); 
+		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions);
 
 		if (cellType == 1) {
 			string[] blockOptions = Enum.GetNames (typeof(BlockType));
-			blockType = (BlockType)EditorGUILayout.Popup ("Block Type", (int)blockType, blockOptions); 
+			blockType = (BlockType)EditorGUILayout.Popup ("Block Type", (int)blockType, blockOptions);
 		}
+
+		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
 
 		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
 			GetClosestCell (Event.current.mousePosition);
@@ -60,7 +65,7 @@ public class LevelInspector : Editor {
 				if (cellType == 1) {
 					BlockObject existingBlock = GetBlockWithPos (selectedIndex);
 					if (existingBlock != null) myTarget.blocks.Remove (existingBlock);
-					myTarget.blocks.Add (new BlockObject (blockType, selectedIndex));
+					myTarget.blocks.Add (new BlockObject (blockType, selectedIndex, direction));
 				}
 			}
 			if (Event.current.button == 1) {
@@ -98,6 +103,7 @@ public class LevelInspector : Editor {
 				var rect = new Rect (gridStartPos.x+x*cellSize, gridStartPos.y+y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
 
+				Texture2D tmpTexture = cellTexture;
 				foreach(BlockObject block in ((LevelAsset)target).blocks) {
 					if (x == block.pos.x && y == block.pos.y) {
 						if (block.type == BlockType.Normal) {
@@ -110,6 +116,7 @@ public class LevelInspector : Editor {
 						}
 						if (block.type == BlockType.Spike) {
 							GUI.color = Color.red;
+							tmpTexture = spikeTexture;
 							break;
 						}
 					}
@@ -118,7 +125,7 @@ public class LevelInspector : Editor {
 				if (x ==  ((LevelAsset)target).heroPos.x && y == ((LevelAsset)target).heroPos.y) {
 					GUI.color = Color.green;
 				}
-				GUI.DrawTexture(rect,cellTexture,ScaleMode.ScaleToFit);
+				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 			}
 		}
 	}

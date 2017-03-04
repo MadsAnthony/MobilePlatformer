@@ -43,6 +43,7 @@ public class LevelInit : MonoBehaviour {
 			}
 			i ++;
 
+			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)block.dir)*-90);
 			tmpBlock.transform.position = new Vector3(block.pos.x,-block.pos.y,0)+levelStartPos;
 		}
 

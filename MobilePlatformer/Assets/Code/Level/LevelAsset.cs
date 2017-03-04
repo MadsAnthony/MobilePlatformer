@@ -14,14 +14,17 @@ public class LevelAsset : ScriptableObject {
 }
 
 public enum BlockType {Normal,Color,Spike};
+public enum Direction {Up, Right, Down, Left};
 
 [Serializable]
 public class BlockObject {
 	public BlockType type;
 	public Vector2 pos;
+	public Direction dir;
 
-	public BlockObject(BlockType type, Vector2 pos) {
+	public BlockObject(BlockType type, Vector2 pos, Direction dir) {
 		this.type = type;
 		this.pos  = pos;
+		this.dir  = dir;
 	}
 }
