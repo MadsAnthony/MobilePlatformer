@@ -100,6 +100,7 @@ public class LevelInspector : Editor {
 	void DrawGrid() {
 		for (int x = 0; x<Level.GRIDSIZE.x;x++) {
 			for (int y = 0; y<Level.GRIDSIZE.y;y++) {
+				var prevMatrix = GUI.matrix;
 				var rect = new Rect (gridStartPos.x+x*cellSize, gridStartPos.y+y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
 
@@ -115,6 +116,7 @@ public class LevelInspector : Editor {
 							break;
 						}
 						if (block.type == BlockType.Spike) {
+							GUIUtility.RotateAroundPivot((int)block.dir*90, rect.center);
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
 							break;
@@ -130,6 +132,7 @@ public class LevelInspector : Editor {
 					GUI.color = Color.green;
 				}
 				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
+				GUI.matrix = prevMatrix;
 			}
 		}
 	}
