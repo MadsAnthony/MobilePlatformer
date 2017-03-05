@@ -18,7 +18,7 @@ public class DynamicBody : MonoBehaviour {
 		
 	}
 
-	protected void Move(Vector3 dir, Action callbackInterrupted = null, Action callbackFinished = null) {
+	protected void Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null) {
 		Vector3 inputDir = dir * Time.deltaTime;
 		Vector3 newDir = inputDir;
 		RaycastHit hit;
@@ -38,11 +38,14 @@ public class DynamicBody : MonoBehaviour {
 			if (hit.collider.name.Contains ("Block")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
 				if (callbackInterrupted != null) {
-					callbackInterrupted ();
+					callbackInterrupted (hit.collider.name);
 				}
 			}
 			if (hit.collider.name.Contains ("NonSticky")) {
 				newDir = inputDir.normalized * (hit.distance - gap);
+				if (callbackInterrupted != null) {
+					callbackInterrupted (hit.collider.name);
+				}
 			}
 			if (hit.collider.name.Contains ("Spike")) {
 				newDir = inputDir.normalized * (hit.distance - gap);

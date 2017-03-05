@@ -35,17 +35,20 @@ public class Hero : DynamicBody {
 			KeyboardInput ();
 		}
 
-		Move(dir*speed*movingDir,() => { if (true || isOnGround) {ChangeGravity(1*-movingDir);} else {movingDir = 0;}});
+		Move(dir*speed*movingDir,(string s) => { if (s.Contains("Block")) {ChangeGravity(1*-movingDir);}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
 		isOnGround = false;
 
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
-			() => {
+			(string s) => {
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
+					}
+					if (s.Contains("NonSticky")) {
+						
 					}
 					gravity = 0; 
 					isOnGround = true;
