@@ -26,6 +26,10 @@ public class PieceDatabaseInspector : Editor {
 			piece.prefab = (GameObject)EditorGUILayout.ObjectField (piece.prefab,(typeof(GameObject)));
 			EditorGUILayout.EndHorizontal ();
 		}
+
+		if (GUI.changed) {
+			EditorUtility.SetDirty (myTarget);
+		}
 	}
 
 	PieceData GetPieceWithType(PieceType type) {
