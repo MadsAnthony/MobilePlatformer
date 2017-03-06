@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4857002760713216}
   - component: {fileID: 65057672325496662}
   m_Layer: 0
-  m_Name: NonSticky
+  m_Name: BlockNonSticky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

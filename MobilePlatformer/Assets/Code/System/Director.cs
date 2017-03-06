@@ -7,6 +7,7 @@ public class Director : MonoBehaviour  {
 
 	[SerializeField] private LevelDatabase levelDatabase;
 	[SerializeField] private SoundDatabase soundDatabase;
+	[SerializeField] private PieceDatabase pieceDatabase;
 
 	public int levelIndex = -1;
 
@@ -16,6 +17,7 @@ public class Director : MonoBehaviour  {
 
 	public static GameEventManager 		GameEventManager 	{get {return Instance.gameEventManager;}}
 	public static LevelDatabase    		LevelDatabase 		{get {return Instance.levelDatabase;}}
+	public static PieceDatabase    		PieceDatabase 		{get {return Instance.pieceDatabase;}}
 	public static UIManager    	   		UIManager			{get {return Instance.uiManager;}}
 	public static TransitionManager		TransitionManager 	{get {return Instance.transitionManager;}}
 	public static SoundDatabase			Sounds 				{get {return Instance.soundDatabase;}}
