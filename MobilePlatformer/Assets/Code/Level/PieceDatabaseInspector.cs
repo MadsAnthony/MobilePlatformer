@@ -24,7 +24,10 @@ public class PieceDatabaseInspector : Editor {
 			EditorGUILayout.BeginHorizontal ();
 			EditorGUILayout.LabelField (piece.type.ToString());
 			piece.prefab = (Piece)EditorGUILayout.ObjectField (piece.prefab,(typeof(Piece)));
-			if (piece.prefab != null) piece.prefab.IsPassable = EditorGUILayout.Toggle (piece.prefab.IsPassable);
+			if (piece.prefab != null) {
+				piece.prefab.Type = piece.type;
+				piece.prefab.IsPassable = EditorGUILayout.Toggle (piece.prefab.IsPassable);
+			}
 			EditorGUILayout.EndHorizontal ();
 		}
 
