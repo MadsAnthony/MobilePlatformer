@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DynamicBody : MonoBehaviour {
+public abstract class DynamicBody : Piece {
 
 	private float gap = 0.01f;
 	private Rigidbody rb;

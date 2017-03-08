@@ -147,4 +147,7 @@ public class Hero : DynamicBody {
 		dir = dirs [dirsIndex%dirs.Length];
 		gravity = 0;
 	}
+
+	public override void Hit (Piece hitPiece) {
+	}
 }

@@ -23,7 +23,8 @@ public class PieceDatabaseInspector : Editor {
 		foreach (PieceData piece in ((PieceDatabase)target).pieces) {
 			EditorGUILayout.BeginHorizontal ();
 			EditorGUILayout.LabelField (piece.type.ToString());
-			piece.prefab = (GameObject)EditorGUILayout.ObjectField (piece.prefab,(typeof(GameObject)));
+			piece.prefab = (Piece)EditorGUILayout.ObjectField (piece.prefab,(typeof(Piece)));
+			if (piece.prefab != null) piece.prefab.IsPassable = EditorGUILayout.Toggle (piece.prefab.IsPassable);
 			EditorGUILayout.EndHorizontal ();
 		}
 

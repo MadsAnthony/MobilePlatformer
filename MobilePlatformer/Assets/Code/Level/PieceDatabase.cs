@@ -22,7 +22,7 @@ public enum PieceType {
 [Serializable]
 public class PieceData {
 	public PieceType type;
-	public GameObject prefab;
+	public Piece prefab;
 
 	public PieceData(PieceType type) {
 		this.type = type;
