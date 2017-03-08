@@ -5,9 +5,9 @@ using UnityEngine;
 
 [Serializable]
 public abstract class Piece : MonoBehaviour {
-	[SerializeField][HideInInspector]
+	[HideInInspector]
 	public PieceType Type;
-	[SerializeField][HideInInspector]
+	[HideInInspector]
 	public bool IsPassable;
 
 	public abstract void Hit (Piece hitPiece);

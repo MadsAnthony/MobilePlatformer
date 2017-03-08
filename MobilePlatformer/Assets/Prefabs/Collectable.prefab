@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09466cbdece5f7f468016e65158cb699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  IsPassable: 0
+  Type: 5
+  IsPassable: 1
 --- !u!212 &212515996307469768
 SpriteRenderer:
   m_ObjectHideFlags: 1
