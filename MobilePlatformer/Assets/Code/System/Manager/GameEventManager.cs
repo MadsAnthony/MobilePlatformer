@@ -18,16 +18,6 @@ public class GameEventManager {
 		reusableEvent.type = type;
 		Emit(reusableEvent);
 	}
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
 
 public class GameEvent {
@@ -36,5 +26,6 @@ public class GameEvent {
 
 public enum GameEventType {
 	BlockColored,
+	CollectableCollected,
 	LevelCompleted
 }

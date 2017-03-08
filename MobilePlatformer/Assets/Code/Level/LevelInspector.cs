@@ -125,6 +125,10 @@ public class LevelInspector : Editor {
 							GUI.color = Color.black;
 							break;
 						}
+						if (block.type == BlockType.Collectable) {
+							GUI.color = Color.yellow;
+							break;
+						}
 					}
 				}
 

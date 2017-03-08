@@ -12,6 +12,7 @@ public class LevelInit : MonoBehaviour {
 	public GameObject spikePrefab;
 	public GameObject heroPrefab;
 	public GameObject nonStickyPrefab;
+	public GameObject collectablePrefab;
 
 	private GameLogic gameLogic;
 	// Use this for initialization
@@ -45,6 +46,11 @@ public class LevelInit : MonoBehaviour {
 			if (block.type == BlockType.NonSticky) {
 				tmpBlock = Instantiate(nonStickyPrefab);
 				tmpBlock.name = "NonSticky"+i;
+			}
+			if (block.type == BlockType.Collectable) {
+				tmpBlock = Instantiate(collectablePrefab);
+				tmpBlock.name = "Collectable"+i;
+				gameLogic.collectablesGoal++;
 			}
 			i ++;
 

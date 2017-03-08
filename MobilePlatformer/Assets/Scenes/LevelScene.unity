@@ -252,6 +252,7 @@ RectTransform:
   m_Children:
   - {fileID: 1670726657}
   - {fileID: 362764071}
+  - {fileID: 1127942512}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameLogic: {fileID: 1490478948}
   goalText: {fileID: 362764072}
+  collectableText: {fileID: 1127942513}
 --- !u!1 &1000987167
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +349,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1000987167}
+--- !u!1 &1127942511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1127942512}
+  - component: {fileID: 1127942514}
+  - component: {fileID: 1127942513}
+  m_Layer: 5
+  m_Name: CollectableText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1127942512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127942511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 729583848}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -21, y: 27.000044}
+  m_SizeDelta: {x: 173.4, y: 49.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1127942513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127942511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 150
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0/10
+--- !u!222 &1127942514
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127942511}
 --- !u!1 &1236969074
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08743de50e8ad674a9958776c8c754fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 04b7bf9958cc6194eb1848a6a4aef4dd, type: 2}
+  level: {fileID: 11400000, guid: 852b65f48d20bcb46b06b299b66a5146, type: 2}
   normalBlockPrefab: {fileID: 1811242072951080, guid: 22567ae4064397746b508fbd71d79a8e,
     type: 2}
   blockPrefab: {fileID: 1811242072951080, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd,
@@ -545,6 +621,8 @@ MonoBehaviour:
     type: 2}
   heroPrefab: {fileID: 1811242072951080, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
   nonStickyPrefab: {fileID: 1811242072951080, guid: 863a5724184449a48bc60e0b057c5d43,
+    type: 2}
+  collectablePrefab: {fileID: 1204517869738968, guid: 2b0f06acec968d349a393d598a389cfd,
     type: 2}
 --- !u!4 &1490478947
 Transform:
@@ -570,6 +648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692e3908d3d8a545ba1c8c23ef5001d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectablesCollected: 0
+  collectablesGoal: 0
   coloredBlocksGoal: 0
   hero: {fileID: 0}
 --- !u!1 &1670726656

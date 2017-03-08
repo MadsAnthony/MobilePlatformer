@@ -15,10 +15,12 @@ MonoBehaviour:
   - type: 0
     prefab: {fileID: 114696515741980306, guid: 22567ae4064397746b508fbd71d79a8e, type: 2}
   - type: 1
-    prefab: {fileID: 114755242906063888, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd, type: 2}
+    prefab: {fileID: 114720772077286378, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd, type: 2}
   - type: 2
     prefab: {fileID: 114257243380332994, guid: 863a5724184449a48bc60e0b057c5d43, type: 2}
   - type: 3
-    prefab: {fileID: 114878657241631034, guid: d70ec4d66d72d184eb946d441ad165a6, type: 2}
+    prefab: {fileID: 114959775223496148, guid: d70ec4d66d72d184eb946d441ad165a6, type: 2}
   - type: 4
     prefab: {fileID: 114962753362083128, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
+  - type: 5
+    prefab: {fileID: 114862069895169678, guid: 2b0f06acec968d349a393d598a389cfd, type: 2}

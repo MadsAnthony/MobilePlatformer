@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameView : UIView {
 	public GameLogic gameLogic;
 	public Text goalText;
+	public Text collectableText;
 
 	protected override void OnStart () {
 		Director.GameEventManager.OnGameEvent += HandleGameEvent;
@@ -32,5 +33,6 @@ public class GameView : UIView {
 	// Update is called once per frame
 	void Update () {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
+		collectableText.text = gameLogic.CollectablesCollected+"/"+gameLogic.collectablesGoal;
 	}
 }
