@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hero : DynamicBody {
 	float gravity;
 	float speed = 7;
-	float maxGravity = 50;
+	public float maxGravity = 50;
 	Vector3 dir;
 
 	Vector3[] dirs = new Vector3[4]{new Vector3(-1,0,0),
@@ -18,6 +18,7 @@ public class Hero : DynamicBody {
 	int movingDir = -1;
 	bool isOnGround;
 
+	public float Gravity {get { return gravity;}}
 	// Use this for initialization
 	void Start () {
 		dir = dirs[dirsIndex];

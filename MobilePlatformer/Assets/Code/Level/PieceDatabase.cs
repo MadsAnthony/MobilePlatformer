@@ -24,7 +24,8 @@ public enum PieceType {
 	BlockNonSticky,
 	Spike,
 	Hero,
-	Collectable
+	Collectable,
+	BlockDestructible
 };
 
 [Serializable]

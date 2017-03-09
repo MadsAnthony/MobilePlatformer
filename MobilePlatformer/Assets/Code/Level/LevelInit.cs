@@ -47,6 +47,9 @@ public class LevelInit : MonoBehaviour {
 				tmpBlock.name = "Collectable"+i;
 				gameLogic.collectablesGoal++;
 			}
+			if (piece.type == PieceType.BlockDestructible) {
+				tmpBlock.name = "Destructable"+i;
+			}
 
 			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)piece.dir)*-90);
 			tmpBlock.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;

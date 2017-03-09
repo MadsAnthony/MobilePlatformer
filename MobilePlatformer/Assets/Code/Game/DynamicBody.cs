@@ -15,6 +15,7 @@ public abstract class DynamicBody : Piece {
 	protected void Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null) {
 		Vector3 inputDir = dir * Time.deltaTime;
 		Vector3 newDir = inputDir;
+		bool newDirHasBeenSet = false;
 
 		int i = 0;
 		Vector3 tmpDir;
@@ -24,10 +25,11 @@ public abstract class DynamicBody : Piece {
 			tmpDir = inputDir.normalized * (hit.distance - gap);
 
 			// check if the rest of the hits are approximately at the same distance, if not then check the next of the rest.
-			if (i >0 && !newDir.Equals (tmpDir)) continue;
+			if (i >0 && newDirHasBeenSet && !newDir.Equals (tmpDir)) continue;
 
 			piece.Hit(this);
 			if (!piece.IsPassable) {
+				newDirHasBeenSet = true;
 				newDir = tmpDir;
 
 				// only call callbackInterrupted on the first hit

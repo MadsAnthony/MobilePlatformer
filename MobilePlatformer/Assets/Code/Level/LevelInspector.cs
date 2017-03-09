@@ -12,6 +12,7 @@ public class LevelInspector : Editor {
 
 	private Texture2D cellTexture;
 	private Texture2D spikeTexture;
+	private Texture2D blockDestructibleTexture;
 	private Vector2 selectedIndex;
 
 	private Vector2 gridStartPos = new Vector2 (100,200);
@@ -24,6 +25,7 @@ public class LevelInspector : Editor {
 	{
 		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
 		spikeTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/spike.png", typeof(Texture2D)) as Texture2D;
+		blockDestructibleTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareDestructible.png", typeof(Texture2D)) as Texture2D;
 
 		LevelAsset myTarget = (LevelAsset)target;
 		myTarget.someInt = EditorGUILayout.IntField ("Experience", myTarget.someInt);
@@ -129,6 +131,11 @@ public class LevelInspector : Editor {
 						}
 						if (piece.type == PieceType.Collectable) {
 							GUI.color = Color.yellow;
+							break;
+						}
+						if (piece.type == PieceType.BlockDestructible) {
+							GUI.color = new Color(0.2f,0.2f,0.2f,1);
+							tmpTexture = blockDestructibleTexture;
 							break;
 						}
 					}
