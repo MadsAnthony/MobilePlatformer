@@ -144,12 +144,6 @@ MonoBehaviour:
   - type: 5
     pos: {x: 7, y: 20}
     dir: 2
-  - type: 5
-    pos: {x: 14, y: 12}
-    dir: 2
-  - type: 5
-    pos: {x: 16, y: 16}
-    dir: 2
   - type: 1
     pos: {x: 6, y: 21}
     dir: 2
@@ -195,6 +189,12 @@ MonoBehaviour:
   - type: 3
     pos: {x: 7, y: 11}
     dir: 2
+  - type: 5
+    pos: {x: 17, y: 15}
+    dir: 0
+  - type: 5
+    pos: {x: 12, y: 11}
+    dir: 0
   heroPos: {x: 4, y: 20}
   levelName: 
   someInt: 0

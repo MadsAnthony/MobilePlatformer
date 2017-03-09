@@ -613,7 +613,7 @@ MonoBehaviour:
     pos: {x: 1, y: 10}
     dir: 0
   - type: 5
-    pos: {x: 7, y: 18}
+    pos: {x: 7, y: 17}
     dir: 0
   heroPos: {x: 5, y: 10}
   levelName: 
