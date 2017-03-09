@@ -17,7 +17,7 @@ public class LevelInspector : Editor {
 	private Vector2 gridStartPos = new Vector2 (100,200);
 	private float cellSize = 20;
 	int cellType = 1;
-	BlockType blockType;
+	PieceType pieceType;
 	public Direction direction;
 
 	public override void OnInspectorGUI()
@@ -37,7 +37,7 @@ public class LevelInspector : Editor {
 			EditorApplication.isPlaying = true;
 		}
 		if (GUILayout.Button ("Clear")) {
-			myTarget.blocks.Clear();
+			myTarget.pieces.Clear();
 		}
 
 		string[] cellOptions = new string[]
@@ -48,8 +48,8 @@ public class LevelInspector : Editor {
 		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions);
 
 		if (cellType == 1) {
-			string[] blockOptions = Enum.GetNames (typeof(BlockType));
-			blockType = (BlockType)EditorGUILayout.Popup ("Block Type", (int)blockType, blockOptions);
+			string[] pieceOptions = Enum.GetNames (typeof(PieceType));
+			pieceType = (PieceType)EditorGUILayout.Popup ("Piece Type", (int)pieceType, pieceOptions);
 		}
 
 		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
@@ -57,20 +57,21 @@ public class LevelInspector : Editor {
 		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
 			GetClosestCell (Event.current.mousePosition);
 		}
+
 		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
 			if (Event.current.button == 0) {
 				if (cellType == 0) {
 					myTarget.heroPos = selectedIndex;
 				}
 				if (cellType == 1) {
-					BlockObject existingBlock = GetBlockWithPos (selectedIndex);
-					if (existingBlock != null) myTarget.blocks.Remove (existingBlock);
-					myTarget.blocks.Add (new BlockObject (blockType, selectedIndex, direction));
+					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+					if (existingPiece != null) myTarget.pieces.Remove (existingPiece);
+					myTarget.pieces.Add (new PieceLevelData (pieceType, selectedIndex, direction));
 				}
 			}
 			if (Event.current.button == 1) {
-				BlockObject existingBlock = GetBlockWithPos (selectedIndex);
-				if (existingBlock != null) myTarget.blocks.Remove(existingBlock);
+				PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+				if (existingPiece != null) myTarget.pieces.Remove(existingPiece);
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
@@ -82,10 +83,10 @@ public class LevelInspector : Editor {
 		}
 	}
 
-	BlockObject GetBlockWithPos(Vector2 pos) {
-		foreach(BlockObject block in ((LevelAsset)target).blocks) {
-			if (pos == block.pos) {
-				return block;
+	PieceLevelData GetPieceWithPos(Vector2 pos) {
+		foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+			if (piece.pos == pos) {
+				return piece;
 			}
 		}
 		return null;
@@ -105,27 +106,28 @@ public class LevelInspector : Editor {
 				GUI.color = Color.white;
 
 				Texture2D tmpTexture = cellTexture;
-				foreach(BlockObject block in ((LevelAsset)target).blocks) {
-					if (x == block.pos.x && y == block.pos.y) {
-						if (block.type == BlockType.Normal) {
+
+				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+					if (x == piece.pos.x && y == piece.pos.y) {
+						if (piece.type == PieceType.BlockNormal) {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 							break;
 						}
-						if (block.type == BlockType.Color) {
+						if (piece.type == PieceType.BlockColor) {
 							GUI.color = Color.grey;
 							break;
 						}
-						if (block.type == BlockType.Spike) {
-							GUIUtility.RotateAroundPivot((int)block.dir*90, rect.center);
+						if (piece.type == PieceType.Spike) {
+							GUIUtility.RotateAroundPivot((int)piece.dir*90, rect.center);
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
 							break;
 						}
-						if (block.type == BlockType.NonSticky) {
+						if (piece.type == PieceType.BlockNonSticky) {
 							GUI.color = Color.black;
 							break;
 						}
-						if (block.type == BlockType.Collectable) {
+						if (piece.type == PieceType.Collectable) {
 							GUI.color = Color.yellow;
 							break;
 						}

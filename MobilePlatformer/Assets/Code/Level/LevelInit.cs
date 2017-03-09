@@ -7,12 +7,6 @@ public class LevelInit : MonoBehaviour {
 	public LevelAsset level;
 
 	private Vector3 levelStartPos = new Vector3(-9.5f,16,0);
-	public GameObject normalBlockPrefab;
-	public GameObject blockPrefab;
-	public GameObject spikePrefab;
-	public GameObject heroPrefab;
-	public GameObject nonStickyPrefab;
-	public GameObject collectablePrefab;
 
 	private GameLogic gameLogic;
 	// Use this for initialization
@@ -28,37 +22,37 @@ public class LevelInit : MonoBehaviour {
 	void InitializeLevel() {
 		int i = 0;
 
-		foreach (var block in level.blocks) {
-			GameObject tmpBlock = null;
-			if (block.type == BlockType.Normal) {
-				tmpBlock = Instantiate(normalBlockPrefab);
+		foreach (var piece in level.pieces) {
+			PieceData pieceData = Director.PieceDatabase.GetPieceData (piece.type);
+			var tmpBlock = Instantiate(pieceData.prefab);
+
+			if (piece.type == PieceType.BlockNormal) {
 				tmpBlock.name = "Block"+i;
 			}
-			if (block.type == BlockType.Color) {
-				tmpBlock = Instantiate(blockPrefab);
-				tmpBlock.name = "ColorBlock"+i;
+
+			if (piece.type == PieceType.BlockColor) {
 				gameLogic.coloredBlocksGoal++;
+				tmpBlock.name = "ColorBlock"+i;
 			}
-			if (block.type == BlockType.Spike) {
-				tmpBlock = Instantiate(spikePrefab);
+
+			if (piece.type == PieceType.Spike) {
 				tmpBlock.name = "Spike"+i;
 			}
-			if (block.type == BlockType.NonSticky) {
-				tmpBlock = Instantiate(nonStickyPrefab);
+
+			if (piece.type == PieceType.BlockNonSticky) {
 				tmpBlock.name = "NonSticky"+i;
 			}
-			if (block.type == BlockType.Collectable) {
-				tmpBlock = Instantiate(collectablePrefab);
+
+			if (piece.type == PieceType.Collectable) {
 				tmpBlock.name = "Collectable"+i;
 				gameLogic.collectablesGoal++;
 			}
-			i ++;
 
-			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)block.dir)*-90);
-			tmpBlock.transform.position = new Vector3(block.pos.x,-block.pos.y,0)+levelStartPos;
+			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)piece.dir)*-90);
+			tmpBlock.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
 		}
 
-		var hero = Instantiate(heroPrefab);
+		var hero = Instantiate(Director.PieceDatabase.GetPieceData (PieceType.Hero).prefab);
 		hero.transform.position = new Vector3(level.heroPos.x,-level.heroPos.y+0.05f,0)+levelStartPos;
 
 		gameLogic.hero = hero.GetComponent<Hero> ();
