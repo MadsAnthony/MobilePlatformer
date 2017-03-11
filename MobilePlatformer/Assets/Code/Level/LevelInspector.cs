@@ -15,11 +15,12 @@ public class LevelInspector : Editor {
 	private Texture2D blockDestructibleTexture;
 	private Vector2 selectedIndex;
 
-	private Vector2 gridStartPos = new Vector2 (100,200);
+	private Rect levelGridRect = new Rect(100, 200, 420, 620);
 	private float cellSize = 20;
 	int cellType = 1;
 	PieceType pieceType;
 	public Direction direction;
+	Vector2 scrollPos;
 
 	public override void OnInspectorGUI()
 	{
@@ -28,8 +29,6 @@ public class LevelInspector : Editor {
 		blockDestructibleTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareDestructible.png", typeof(Texture2D)) as Texture2D;
 
 		LevelAsset myTarget = (LevelAsset)target;
-		myTarget.someInt = EditorGUILayout.IntField ("Experience", myTarget.someInt);
-		EditorGUILayout.LabelField ("Level", myTarget.levelName);
 
 		if (GUILayout.Button ("Play")) {
 			EditorApplication.isPlaying = false;
@@ -47,14 +46,20 @@ public class LevelInspector : Editor {
 			"Hero", "Blocks"
 		};
 
+		var levelSizeX = EditorGUILayout.IntSlider((int)myTarget.levelSize.x,0,50);
+		var levelSizeY = EditorGUILayout.IntSlider((int)myTarget.levelSize.y,0,50);
+
+		myTarget.levelSize = new Vector2 (levelSizeX, levelSizeY);
 		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions);
 
+		EditorGUILayout.BeginHorizontal();
 		if (cellType == 1) {
 			string[] pieceOptions = Enum.GetNames (typeof(PieceType));
 			pieceType = (PieceType)EditorGUILayout.Popup ("Piece Type", (int)pieceType, pieceOptions);
 		}
 
 		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
+		EditorGUILayout.EndHorizontal();
 
 		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
 			GetClosestCell (Event.current.mousePosition);
@@ -77,8 +82,16 @@ public class LevelInspector : Editor {
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
-
+			
+		GUILayout.BeginArea(levelGridRect);
+		var levelSize = ((LevelAsset)target).levelSize;
+		scrollPos = EditorGUILayout.BeginScrollView (scrollPos,GUILayout.Width(Mathf.Min(levelGridRect.width,levelSize.x*(cellSize+1))),GUILayout.Height(Mathf.Min(levelGridRect.height,levelSize.y*(cellSize+1))));
 		DrawGrid ();
+		EditorGUILayout.EndScrollView ();
+		GUILayout.EndArea();
+
+
+
 
 		if (GUI.changed) {
 			EditorUtility.SetDirty (myTarget);
@@ -95,16 +108,23 @@ public class LevelInspector : Editor {
 	}
 
 	Vector2 GetClosestCell(Vector2 mousePos) {
-		mousePos -= gridStartPos;
+		mousePos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
 		selectedIndex = new Vector2(Mathf.FloorToInt(mousePos.x/cellSize),Mathf.FloorToInt(mousePos.y/cellSize));
 		return selectedIndex;
 	}
 
 	void DrawGrid() {
-		for (int x = 0; x<Level.GRIDSIZE.x;x++) {
-			for (int y = 0; y<Level.GRIDSIZE.y;y++) {
+		var levelSize = ((LevelAsset)target).levelSize;
+
+		GUILayout.Space (levelSize.y*cellSize);
+		EditorGUILayout.BeginHorizontal();
+		GUILayout.Space (levelSize.x*cellSize);
+		EditorGUILayout.EndHorizontal();
+
+		for (int x = 0; x<levelSize.x;x++) {
+			for (int y = 0; y<levelSize.y;y++) {
 				var prevMatrix = GUI.matrix;
-				var rect = new Rect (gridStartPos.x+x*cellSize, gridStartPos.y+y*cellSize, cellSize, cellSize);
+				var rect = new Rect (x*cellSize, y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
 
 				Texture2D tmpTexture = cellTexture;

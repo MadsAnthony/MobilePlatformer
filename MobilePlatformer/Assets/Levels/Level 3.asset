@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
+  levelSize: {x: 20, y: 30}
   pieces:
   - type: 0
     pos: {x: 1, y: 20}

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
   m_Name: Level 9
   m_EditorClassIdentifier: 
+  levelSize: {x: 20, y: 30}
   pieces:
   - type: 2
     pos: {x: 1, y: 3}
@@ -657,7 +658,6 @@ MonoBehaviour:
   - type: 3
     pos: {x: 13, y: 12}
     dir: 1
-  blocks: []
   heroPos: {x: 2, y: 6}
   levelName: 
   someInt: 30
