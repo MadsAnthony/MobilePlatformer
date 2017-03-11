@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour {
 	public int CurrentColoredBlocks {get {return currentColoredBlocks;}}
 	int currentColoredBlocks = 0;
 	public int CollectablesCollected { get; set;}
+	public LevelAsset level;
 
 	public Hero hero;
 	// Use this for initialization

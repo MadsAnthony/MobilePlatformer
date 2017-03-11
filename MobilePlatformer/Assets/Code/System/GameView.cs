@@ -9,6 +9,8 @@ public class GameView : UIView {
 	public Text goalText;
 	public Text collectableText;
 
+	public Camera camera;
+
 	protected override void OnStart () {
 		Director.GameEventManager.OnGameEvent += HandleGameEvent;
 	}
@@ -34,5 +36,10 @@ public class GameView : UIView {
 	void Update () {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
 		collectableText.text = gameLogic.CollectablesCollected+"/"+gameLogic.collectablesGoal;
+
+		var distance = gameLogic.hero.transform.position - camera.transform.position;
+		camera.transform.position += Time.deltaTime*3*new Vector3(distance.x,distance.y,0);
+
+		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,0,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
 	}
 }

@@ -15,6 +15,7 @@ public class LevelInit : MonoBehaviour {
 		if (Director.Instance.levelIndex >= 0) {
 			level = Director.LevelDatabase.levels[Director.Instance.levelIndex];
 		}
+		gameLogic.level = level;
 
 		InitializeLevel();
 	}

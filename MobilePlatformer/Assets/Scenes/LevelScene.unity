@@ -275,6 +275,7 @@ MonoBehaviour:
   gameLogic: {fileID: 1490478948}
   goalText: {fileID: 362764072}
   collectableText: {fileID: 1127942513}
+  camera: {fileID: 1236969078}
 --- !u!1 &1000987167
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,18 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08743de50e8ad674a9958776c8c754fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: 852b65f48d20bcb46b06b299b66a5146, type: 2}
-  normalBlockPrefab: {fileID: 1811242072951080, guid: 22567ae4064397746b508fbd71d79a8e,
-    type: 2}
-  blockPrefab: {fileID: 1811242072951080, guid: 6ad2d91db76aa1c48a2e6f05ac6533bd,
-    type: 2}
-  spikePrefab: {fileID: 1811242072951080, guid: d70ec4d66d72d184eb946d441ad165a6,
-    type: 2}
-  heroPrefab: {fileID: 1811242072951080, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
-  nonStickyPrefab: {fileID: 1811242072951080, guid: 863a5724184449a48bc60e0b057c5d43,
-    type: 2}
-  collectablePrefab: {fileID: 1204517869738968, guid: 2b0f06acec968d349a393d598a389cfd,
-    type: 2}
+  level: {fileID: 11400000, guid: 6ea4f67df944cdd4ea458843519a7358, type: 2}
 --- !u!4 &1490478947
 Transform:
   m_ObjectHideFlags: 0
