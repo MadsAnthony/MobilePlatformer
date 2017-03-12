@@ -108,9 +108,15 @@ public class LevelInspector : Editor {
 	}
 
 	Vector2 GetClosestCell(Vector2 mousePos) {
-		mousePos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
-		selectedIndex = new Vector2(Mathf.FloorToInt(mousePos.x/cellSize),Mathf.FloorToInt(mousePos.y/cellSize));
-		return selectedIndex;
+		if (mousePos.x > levelGridRect.x && mousePos.x < levelGridRect.x + levelGridRect.width &&
+			mousePos.y > levelGridRect.y && mousePos.y < levelGridRect.y + levelGridRect.height) {
+			mousePos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
+			selectedIndex = new Vector2(Mathf.FloorToInt(mousePos.x/cellSize),Mathf.FloorToInt(mousePos.y/cellSize));
+			return selectedIndex;
+		} else {
+			selectedIndex = new Vector2 (-1, -1);
+			return selectedIndex;
+		}
 	}
 
 	void DrawGrid() {

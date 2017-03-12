@@ -324,4 +324,3 @@ MonoBehaviour:
     dir: 0
   heroPos: {x: 4, y: 19}
   levelName: 
-  someInt: 30

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
   m_Name: Level 12
   m_EditorClassIdentifier: 
-  levelSize: {x: 37, y: 43}
+  levelSize: {x: 37, y: 41}
   pieces:
   - type: 0
     pos: {x: 41, y: 30}
@@ -113,57 +113,6 @@ MonoBehaviour:
     pos: {x: -4, y: 50}
     dir: 0
   - type: 0
-    pos: {x: 15, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 13, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 12, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 11, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 10, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 9, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 8, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 7, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 6, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 5, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 4, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 3, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 2, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 1, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 1}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 2}
-    dir: 0
-  - type: 0
     pos: {x: -1, y: 3}
     dir: 0
   - type: 0
@@ -186,66 +135,6 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: -1, y: 10}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 3}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 4}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 5}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 6}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 7}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 8}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 9}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 10}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 11}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 12}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 13}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 14}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 15}
-    dir: 0
-  - type: 0
-    pos: {x: 14, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 31, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 15}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 14}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 13}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 12}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 11}
     dir: 0
   - type: 0
     pos: {x: 36, y: 10}
@@ -281,54 +170,6 @@ MonoBehaviour:
     pos: {x: 36, y: 0}
     dir: 0
   - type: 0
-    pos: {x: 16, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 17, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 18, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 19, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 20, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 21, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 22, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 23, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 24, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 25, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 26, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 27, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 28, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 29, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 30, y: 0}
-    dir: 0
-  - type: 0
-    pos: {x: 31, y: 0}
-    dir: 0
-  - type: 0
     pos: {x: 32, y: 0}
     dir: 0
   - type: 0
@@ -345,9 +186,6 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: -2, y: 31}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 29}
     dir: 0
   - type: 0
     pos: {x: 39, y: 30}
@@ -377,9 +215,6 @@ MonoBehaviour:
     pos: {x: -17, y: 30}
     dir: 0
   - type: 0
-    pos: {x: 36, y: 30}
-    dir: 0
-  - type: 0
     pos: {x: -1, y: 30}
     dir: 0
   - type: 0
@@ -398,9 +233,6 @@ MonoBehaviour:
     pos: {x: 38, y: 29}
     dir: 0
   - type: 0
-    pos: {x: 37, y: 29}
-    dir: 0
-  - type: 0
     pos: {x: -13, y: 29}
     dir: 0
   - type: 0
@@ -410,40 +242,7 @@ MonoBehaviour:
     pos: {x: -14, y: 28}
     dir: 0
   - type: 0
-    pos: {x: 36, y: 28}
-    dir: 0
-  - type: 0
     pos: {x: 38, y: 30}
-    dir: 0
-  - type: 0
-    pos: {x: 37, y: 30}
-    dir: 0
-  - type: 0
-    pos: {x: 10, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 20, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 23, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 32, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 35, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 33, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 21, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 19, y: 16}
     dir: 0
   - type: 0
     pos: {x: 37, y: 15}
@@ -456,21 +255,6 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: 39, y: 14}
-    dir: 0
-  - type: 0
-    pos: {x: 17, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 14, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 9, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 8, y: 16}
     dir: 0
   - type: 0
     pos: {x: -9, y: 18}
@@ -503,52 +287,13 @@ MonoBehaviour:
     pos: {x: -1, y: 29}
     dir: 0
   - type: 0
-    pos: {x: 22, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 31, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 18}
-    dir: 0
-  - type: 0
     pos: {x: 38, y: 18}
     dir: 0
   - type: 0
     pos: {x: 37, y: 18}
     dir: 0
   - type: 0
-    pos: {x: 13, y: 16}
-    dir: 0
-  - type: 0
     pos: {x: -1, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 24, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 30, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 32, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 33, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 35, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 18}
-    dir: 0
-  - type: 0
-    pos: {x: 16, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 7, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 5, y: 16}
     dir: 0
   - type: 0
     pos: {x: -2, y: 17}
@@ -566,30 +311,6 @@ MonoBehaviour:
     pos: {x: -6, y: 17}
     dir: 0
   - type: 0
-    pos: {x: 31, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 29, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 18, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 11, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 0, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 33, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 35, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 30, y: 17}
-    dir: 0
-  - type: 0
     pos: {x: -7, y: 16}
     dir: 0
   - type: 0
@@ -599,16 +320,7 @@ MonoBehaviour:
     pos: {x: -21, y: 15}
     dir: 0
   - type: 0
-    pos: {x: 24, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 16}
-    dir: 0
-  - type: 0
     pos: {x: 38, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 29, y: 17}
     dir: 0
   - type: 0
     pos: {x: -1, y: 16}
@@ -621,30 +333,6 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: 4, y: -2}
-    dir: 0
-  - type: 2
-    pos: {x: 10, y: 15}
-    dir: 0
-  - type: 2
-    pos: {x: 10, y: 14}
-    dir: 0
-  - type: 2
-    pos: {x: 17, y: 15}
-    dir: 0
-  - type: 2
-    pos: {x: 17, y: 14}
-    dir: 0
-  - type: 2
-    pos: {x: 17, y: 13}
-    dir: 0
-  - type: 0
-    pos: {x: 24, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 36, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 17}
     dir: 0
   - type: 0
     pos: {x: 12, y: -8}
@@ -659,22 +347,10 @@ MonoBehaviour:
     pos: {x: 11, y: -8}
     dir: 0
   - type: 0
-    pos: {x: 1, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 32, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 37, y: 17}
-    dir: 0
-  - type: 0
     pos: {x: 39, y: 17}
     dir: 0
   - type: 0
     pos: {x: 38, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 30, y: 16}
     dir: 0
   - type: 0
     pos: {x: -2, y: 14}
@@ -692,78 +368,6 @@ MonoBehaviour:
     pos: {x: -9, y: 13}
     dir: 0
   - type: 0
-    pos: {x: 8, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 10, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 11, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 13, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 15, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 16, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 17, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 18, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 19, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 21, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 22, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 23, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 22, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 20, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 14, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 7, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 4, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 3, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 2, y: 17}
-    dir: 0
-  - type: 0
-    pos: {x: 2, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 3, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 4, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 6, y: 16}
-    dir: 0
-  - type: 0
-    pos: {x: 12, y: 16}
-    dir: 0
-  - type: 0
     pos: {x: 37, y: 14}
     dir: 0
   - type: 0
@@ -774,93 +378,6 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: 19, y: 38}
-    dir: 0
-  - type: 0
-    pos: {x: 20, y: 38}
-    dir: 0
-  - type: 0
-    pos: {x: 20, y: 39}
-    dir: 0
-  - type: 0
-    pos: {x: 21, y: 39}
-    dir: 0
-  - type: 0
-    pos: {x: 21, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 22, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 23, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 24, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 25, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 25, y: 41}
-    dir: 0
-  - type: 0
-    pos: {x: 26, y: 41}
-    dir: 0
-  - type: 0
-    pos: {x: 27, y: 41}
-    dir: 0
-  - type: 0
-    pos: {x: 28, y: 41}
-    dir: 0
-  - type: 0
-    pos: {x: 29, y: 41}
-    dir: 0
-  - type: 0
-    pos: {x: 30, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 31, y: 40}
-    dir: 0
-  - type: 0
-    pos: {x: 32, y: 39}
-    dir: 0
-  - type: 0
-    pos: {x: 33, y: 38}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 37}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 36}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 35}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 34}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 33}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 32}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 31}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 30}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 29}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 27}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 26}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 25}
     dir: 0
   - type: 0
     pos: {x: 19, y: 34}
@@ -875,16 +392,43 @@ MonoBehaviour:
     pos: {x: 19, y: 32}
     dir: 0
   - type: 0
+    pos: {x: 11, y: -9}
+    dir: 0
+  - type: 0
+    pos: {x: 19, y: 39}
+    dir: 0
+  - type: 0
+    pos: {x: 19, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 20, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 32, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 34, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 33, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 27, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 26, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 25, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 24, y: 40}
+    dir: 0
+  - type: 0
     pos: {x: 19, y: 31}
     dir: 0
   - type: 0
-    pos: {x: 19, y: 30}
-    dir: 0
-  - type: 0
     pos: {x: 19, y: 29}
-    dir: 0
-  - type: 0
-    pos: {x: 34, y: 28}
     dir: 0
   - type: 0
     pos: {x: 19, y: 28}
@@ -897,6 +441,1119 @@ MonoBehaviour:
     dir: 0
   - type: 0
     pos: {x: 19, y: 25}
+    dir: 0
+  - type: 0
+    pos: {x: 19, y: 24}
+    dir: 0
+  - type: 0
+    pos: {x: 19, y: 23}
+    dir: 0
+  - type: 0
+    pos: {x: 19, y: 22}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 23}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 24}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 25}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 26}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 27}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 28}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 31}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 32}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 33}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 34}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 35}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 38}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 39}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 37}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 36}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 29}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 22}
+    dir: 0
+  - type: 0
+    pos: {x: 30, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 29, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 28, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 25, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 21, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 17, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 3, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 2, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 10, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 15, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 26, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 34, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 37, y: 45}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 30}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 10}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 16}
+    dir: 0
+  - type: 3
+    pos: {x: 25, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 24, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 29, y: 10}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 11}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 12}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 13}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 14}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 15}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 16}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 17}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 18}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 19}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 20}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 21}
+    dir: 3
+  - type: 3
+    pos: {x: 29, y: 22}
+    dir: 3
+  - type: 2
+    pos: {x: 30, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 30, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 21}
+    dir: 0
+  - type: 0
+    pos: {x: 20, y: 22}
+    dir: 0
+  - type: 0
+    pos: {x: 24, y: 22}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 22}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 21}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 19}
+    dir: 0
+  - type: 1
+    pos: {x: 23, y: 22}
+    dir: 0
+  - type: 1
+    pos: {x: 22, y: 22}
+    dir: 0
+  - type: 1
+    pos: {x: 21, y: 22}
+    dir: 0
+  - type: 1
+    pos: {x: 29, y: 40}
+    dir: 0
+  - type: 1
+    pos: {x: 30, y: 40}
+    dir: 0
+  - type: 1
+    pos: {x: 31, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 35, y: 22}
+    dir: 3
+  - type: 0
+    pos: {x: 34, y: 22}
+    dir: 3
+  - type: 0
+    pos: {x: 33, y: 22}
+    dir: 3
+  - type: 0
+    pos: {x: 32, y: 22}
+    dir: 3
+  - type: 0
+    pos: {x: 31, y: 22}
+    dir: 3
+  - type: 0
+    pos: {x: 30, y: 22}
+    dir: 3
+  - type: 3
+    pos: {x: 34, y: 29}
+    dir: 3
+  - type: 3
+    pos: {x: 34, y: 30}
+    dir: 3
+  - type: 2
+    pos: {x: 35, y: 29}
+    dir: 3
+  - type: 2
+    pos: {x: 35, y: 30}
+    dir: 3
+  - type: 3
+    pos: {x: 35, y: 35}
+    dir: 3
+  - type: 2
+    pos: {x: 25, y: 39}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 38}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 37}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 36}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 35}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 34}
+    dir: 0
+  - type: 1
+    pos: {x: 23, y: 40}
+    dir: 0
+  - type: 1
+    pos: {x: 22, y: 40}
+    dir: 0
+  - type: 1
+    pos: {x: 21, y: 40}
+    dir: 0
+  - type: 3
+    pos: {x: 24, y: 39}
+    dir: 3
+  - type: 3
+    pos: {x: 24, y: 38}
+    dir: 3
+  - type: 3
+    pos: {x: 24, y: 37}
+    dir: 3
+  - type: 3
+    pos: {x: 24, y: 36}
+    dir: 3
+  - type: 3
+    pos: {x: 24, y: 35}
+    dir: 3
+  - type: 3
+    pos: {x: 24, y: 34}
+    dir: 3
+  - type: 3
+    pos: {x: 26, y: 34}
+    dir: 1
+  - type: 3
+    pos: {x: 26, y: 36}
+    dir: 1
+  - type: 3
+    pos: {x: 26, y: 37}
+    dir: 1
+  - type: 3
+    pos: {x: 26, y: 39}
+    dir: 1
+  - type: 3
+    pos: {x: 26, y: 38}
+    dir: 1
+  - type: 3
+    pos: {x: 26, y: 35}
+    dir: 1
+  - type: 3
+    pos: {x: 25, y: 33}
+    dir: 0
+  - type: 0
+    pos: {x: 27, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 26, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 24, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 21, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 14, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 15, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 18, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 31, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 35, y: 42}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 18}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 19}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 20}
+    dir: 0
+  - type: 2
+    pos: {x: 36, y: 21}
+    dir: 0
+  - type: 3
+    pos: {x: 20, y: 29}
+    dir: 1
+  - type: 3
+    pos: {x: 20, y: 30}
+    dir: 1
+  - type: 0
+    pos: {x: 32, y: 10}
+    dir: 1
+  - type: 0
+    pos: {x: 35, y: 10}
+    dir: 1
+  - type: 0
+    pos: {x: 34, y: 10}
+    dir: 1
+  - type: 0
+    pos: {x: 33, y: 10}
+    dir: 1
+  - type: 2
+    pos: {x: 36, y: 11}
+    dir: 1
+  - type: 2
+    pos: {x: 36, y: 12}
+    dir: 1
+  - type: 2
+    pos: {x: 36, y: 13}
+    dir: 1
+  - type: 2
+    pos: {x: 36, y: 14}
+    dir: 1
+  - type: 2
+    pos: {x: 36, y: 15}
+    dir: 1
+  - type: 2
+    pos: {x: 35, y: 15}
+    dir: 1
+  - type: 2
+    pos: {x: 34, y: 15}
+    dir: 1
+  - type: 2
+    pos: {x: 33, y: 15}
+    dir: 1
+  - type: 2
+    pos: {x: 32, y: 15}
+    dir: 1
+  - type: 2
+    pos: {x: 30, y: 9}
+    dir: 1
+  - type: 2
+    pos: {x: 30, y: 8}
+    dir: 1
+  - type: 2
+    pos: {x: 30, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 31, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 31, y: 9}
+    dir: 1
+  - type: 2
+    pos: {x: 31, y: 8}
+    dir: 1
+  - type: 2
+    pos: {x: 22, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 23, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 24, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 25, y: 7}
+    dir: 1
+  - type: 2
+    pos: {x: 31, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 35, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 34, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 33, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 32, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 13}
+    dir: 0
+  - type: 1
+    pos: {x: 29, y: 0}
+    dir: 0
+  - type: 1
+    pos: {x: 30, y: 0}
+    dir: 0
+  - type: 1
+    pos: {x: 31, y: 0}
+    dir: 0
+  - type: 0
+    pos: {x: 35, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 40}
+    dir: 0
+  - type: 0
+    pos: {x: 28, y: 40}
+    dir: 0
+  - type: 3
+    pos: {x: 27, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 26, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 25, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 24, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 23, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 22, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 21, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 20, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 19, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 18, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 17, y: 1}
+    dir: 2
+  - type: 3
+    pos: {x: 22, y: 8}
+    dir: 2
+  - type: 3
+    pos: {x: 23, y: 8}
+    dir: 2
+  - type: 3
+    pos: {x: 24, y: 8}
+    dir: 2
+  - type: 3
+    pos: {x: 25, y: 8}
+    dir: 2
+  - type: 3
+    pos: {x: 19, y: 6}
+    dir: 2
+  - type: 3
+    pos: {x: 18, y: 6}
+    dir: 2
+  - type: 3
+    pos: {x: 17, y: 6}
+    dir: 2
+  - type: 0
+    pos: {x: 19, y: 30}
+    dir: 2
+  - type: 1
+    pos: {x: 3, y: 5}
+    dir: 2
+  - type: 1
+    pos: {x: 4, y: 5}
+    dir: 2
+  - type: 1
+    pos: {x: 5, y: 5}
+    dir: 2
+  - type: 1
+    pos: {x: 6, y: 5}
+    dir: 2
+  - type: 1
+    pos: {x: 2, y: 5}
+    dir: 2
+  - type: 1
+    pos: {x: 1, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 0}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 1}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 4}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 3}
+    dir: 2
+  - type: 2
+    pos: {x: 0, y: 2}
+    dir: 2
+  - type: 2
+    pos: {x: 7, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 8, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 9, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 10, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 11, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 12, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 13, y: 5}
+    dir: 2
+  - type: 2
+    pos: {x: 11, y: 15}
+    dir: 2
+  - type: 2
+    pos: {x: 11, y: 14}
+    dir: 2
+  - type: 3
+    pos: {x: 9, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 10, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 13, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 14, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 12, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 15, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 15, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 15, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 16, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 16, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 16, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 17, y: 15}
+    dir: 0
+  - type: 3
+    pos: {x: 18, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 22, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 25, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 24, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 23, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 21, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 20, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 18, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 17, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 16, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 15, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 14, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 13, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 12, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 11, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 10, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 9, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 8, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 7, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 6, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 5, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 4, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 3, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 2, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 1, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 6}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 7}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 8}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 9}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 10}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 12}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 13}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 14}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 15}
+    dir: 0
+  - type: 2
+    pos: {x: 0, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 1, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 4, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 3, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 2, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 5, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 6, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 16, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 18, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 17, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 12, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 10, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 8, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 7, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 9, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 11, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 13, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 14, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 15, y: 16}
+    dir: 0
+  - type: 2
+    pos: {x: 17, y: 5}
+    dir: 0
+  - type: 2
+    pos: {x: 18, y: 5}
+    dir: 0
+  - type: 2
+    pos: {x: 19, y: 5}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 30}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 29}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 25}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 17}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 11}
+    dir: 0
+  - type: 2
+    pos: {x: 37, y: 8}
+    dir: 0
+  - type: 2
+    pos: {x: 31, y: 10}
+    dir: 0
+  - type: 2
+    pos: {x: 26, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 27, y: 0}
+    dir: 0
+  - type: 2
+    pos: {x: 28, y: 0}
+    dir: 0
+  - type: 0
+    pos: {x: 37, y: 41}
+    dir: 0
+  - type: 0
+    pos: {x: 9, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 11, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 16, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 23, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 29, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 34, y: 42}
+    dir: 0
+  - type: 0
+    pos: {x: 36, y: 42}
     dir: 0
   heroPos: {x: 2, y: 15}
   levelName: 
