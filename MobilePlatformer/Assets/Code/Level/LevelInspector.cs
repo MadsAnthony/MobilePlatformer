@@ -21,6 +21,8 @@ public class LevelInspector : Editor {
 	PieceType pieceType;
 	public Direction direction;
 	Vector2 scrollPos;
+	Vector2 mouseDownPos;
+
 
 	public override void OnInspectorGUI()
 	{
@@ -61,11 +63,17 @@ public class LevelInspector : Editor {
 		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
 		EditorGUILayout.EndHorizontal();
 
-		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
-			GetClosestCell (Event.current.mousePosition);
+		if (Event.current.type == EventType.MouseDown) {
+			mouseDownPos = Event.current.mousePosition;
 		}
 
-		if (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag) {
+		if (Event.current.type == EventType.MouseUp && mouseDownPos.x != 0 && mouseDownPos.y != 0) {
+			mouseDownPos = Vector2.zero;
+		}
+
+		if (IsPositionWithinGrid(mouseDownPos) && (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag)) {
+			GetClosestCell (Event.current.mousePosition);
+
 			if (Event.current.button == 0) {
 				if (cellType == 0) {
 					myTarget.heroPos = selectedIndex;
@@ -107,9 +115,13 @@ public class LevelInspector : Editor {
 		return null;
 	}
 
+	bool IsPositionWithinGrid(Vector2 pos) {
+		return pos.x > levelGridRect.x && pos.x < levelGridRect.x + levelGridRect.width &&
+			   pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height;
+	}
+
 	Vector2 GetClosestCell(Vector2 mousePos) {
-		if (mousePos.x > levelGridRect.x && mousePos.x < levelGridRect.x + levelGridRect.width &&
-			mousePos.y > levelGridRect.y && mousePos.y < levelGridRect.y + levelGridRect.height) {
+		if (IsPositionWithinGrid(mousePos)) {
 			mousePos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
 			selectedIndex = new Vector2(Mathf.FloorToInt(mousePos.x/cellSize),Mathf.FloorToInt(mousePos.y/cellSize));
 			return selectedIndex;
@@ -162,6 +174,14 @@ public class LevelInspector : Editor {
 						if (piece.type == PieceType.BlockDestructible) {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 							tmpTexture = blockDestructibleTexture;
+							break;
+						}
+						if (piece.type == PieceType.BlockMoving) {
+							GUI.color = new Color(0.2f,0.2f,0.8f,1);
+							break;
+						}
+						if (piece.type == PieceType.Ball) {
+							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 							break;
 						}
 					}

@@ -9,6 +9,8 @@ public abstract class Piece : MonoBehaviour {
 	public PieceType Type;
 	[HideInInspector]
 	public bool IsPassable;
+	[HideInInspector]
+	public bool IsPushable;
 
 	public abstract void Hit (Piece hitPiece);
 }

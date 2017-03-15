@@ -27,6 +27,7 @@ public class PieceDatabaseInspector : Editor {
 			if (piece.prefab != null) {
 				piece.prefab.Type = piece.type;
 				piece.prefab.IsPassable = EditorGUILayout.Toggle (piece.prefab.IsPassable);
+				piece.prefab.IsPushable = EditorGUILayout.Toggle (piece.prefab.IsPushable);
 				EditorUtility.SetDirty (piece.prefab);
 			}
 			EditorGUILayout.EndHorizontal ();

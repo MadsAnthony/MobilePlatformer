@@ -51,9 +51,16 @@ public class LevelInit : MonoBehaviour {
 			if (piece.type == PieceType.BlockDestructible) {
 				tmpBlock.name = "Destructable"+i;
 			}
+			if (piece.type == PieceType.BlockMoving) {
+				tmpBlock.name = "NonSticky"+i;
+			}
+			if (piece.type == PieceType.Ball) {
+				tmpBlock.name = "Ball"+i;
+			}
 
 			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)piece.dir)*-90);
 			tmpBlock.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
+			i++;
 		}
 
 		var hero = Instantiate(Director.PieceDatabase.GetPieceData (PieceType.Hero).prefab);

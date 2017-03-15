@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 3
   IsPassable: 0
+  IsPushable: 0
 --- !u!212 &212922994748774874
 SpriteRenderer:
   m_ObjectHideFlags: 1

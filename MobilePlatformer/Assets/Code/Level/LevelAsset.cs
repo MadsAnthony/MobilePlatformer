@@ -10,6 +10,7 @@ public class LevelAsset : ScriptableObject {
 	public Vector2 heroPos;
 
 	public string levelName;
+
 }
 
 public enum BlockType {Normal, Color, Spike, NonSticky, Collectable};
@@ -20,6 +21,7 @@ public class PieceLevelData {
 	public PieceType type;
 	public Vector2 pos;
 	public Direction dir;
+	//public SpecificPieceLevelData specific;
 
 	public PieceLevelData(PieceType type, Vector2 pos, Direction dir) {
 		this.type = type;
@@ -27,3 +29,10 @@ public class PieceLevelData {
 		this.dir  = dir;
 	}
 }
+
+/*
+[Serializable]
+public class SpecificPieceLevelData {
+	public Vector2 moveDir;
+}
+*/
