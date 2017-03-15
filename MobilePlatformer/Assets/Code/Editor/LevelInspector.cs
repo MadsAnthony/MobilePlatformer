@@ -75,19 +75,38 @@ public class LevelInspector : Editor {
 		if (IsPositionWithinGrid(mouseDownPos) && (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag)) {
 			GetClosestCell (Event.current.mousePosition);
 
-			if (Event.current.button == 0) {
-				if (cellType == 0) {
-					myTarget.heroPos = selectedIndex;
+			if (selectedPieceGroup == null) {
+				if (Event.current.button == 0) {
+					if (cellType == 0) {
+						myTarget.heroPos = selectedIndex;
+					}
+					if (cellType == 1) {
+						PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+						if (existingPiece != null)
+							myTarget.pieces.Remove (existingPiece);
+						myTarget.pieces.Add (new PieceLevelData (pieceType, selectedIndex, direction));
+					}
 				}
-				if (cellType == 1) {
+				if (Event.current.button == 1) {
 					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-					if (existingPiece != null) myTarget.pieces.Remove (existingPiece);
-					myTarget.pieces.Add (new PieceLevelData (pieceType, selectedIndex, direction));
+					if (existingPiece != null)
+						myTarget.pieces.Remove (existingPiece);
 				}
-			}
-			if (Event.current.button == 1) {
-				PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-				if (existingPiece != null) myTarget.pieces.Remove(existingPiece);
+			} else {
+				if (Event.current.button == 0) {
+					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+					if (existingPiece != null) {
+						if (!selectedPieceGroup.pieceIds.Contains (existingPiece.id)) {
+							selectedPieceGroup.pieceIds.Add (existingPiece.id);
+						}
+					}
+				}
+				if (Event.current.button == 1) {
+					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+					if (existingPiece != null) {
+						selectedPieceGroup.pieceIds.Remove (existingPiece.id);
+					}
+				}
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
@@ -99,15 +118,38 @@ public class LevelInspector : Editor {
 		DrawGrid ();
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
-		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
-
-
-
+		ReorderableListGUI.Title("Groups");
+		ReorderableListGUI.ListField<PieceGroup>(myTarget.pieceGroups, PieceGroupDrawer);
 
 
 		if (GUI.changed) {
 			EditorUtility.SetDirty (myTarget);
 		}
+		serializedObject.ApplyModifiedProperties();
+	}
+
+	PieceGroup selectedPieceGroup = null;
+	PieceGroup PieceGroupDrawer(Rect rect, PieceGroup value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 20;
+			bool isOn = EditorGUI.Toggle (r, selectedPieceGroup == value);
+			if (isOn) {
+				selectedPieceGroup = value;
+			} else {
+				if (selectedPieceGroup == value) {
+					selectedPieceGroup = null;
+				}
+			}
+			string[] cellOptions = new string[]
+			{
+				"Select pieces to group", "Select anchor piece", "Select move to"
+			};
+			r.x += 40;
+			r.width = 50;
+			EditorGUI.Popup (r, 0, cellOptions);
+		}
+		return value;
 	}
 
 	PieceLevelData GetPieceWithPos(Vector2 pos) {
@@ -150,43 +192,42 @@ public class LevelInspector : Editor {
 				GUI.color = Color.white;
 
 				Texture2D tmpTexture = cellTexture;
-
 				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
 					if (x == piece.pos.x && y == piece.pos.y) {
+						if (String.IsNullOrEmpty (piece.id)) {
+							//remove this at some point.
+							piece.id = Guid.NewGuid ().ToString ();
+						}
 						if (piece.type == PieceType.BlockNormal) {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
-							break;
 						}
 						if (piece.type == PieceType.BlockColor) {
 							GUI.color = Color.grey;
-							break;
 						}
 						if (piece.type == PieceType.Spike) {
 							GUIUtility.RotateAroundPivot((int)piece.dir*90, rect.center);
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
-							break;
 						}
 						if (piece.type == PieceType.BlockNonSticky) {
 							GUI.color = Color.black;
-							break;
 						}
 						if (piece.type == PieceType.Collectable) {
 							GUI.color = Color.yellow;
-							break;
 						}
 						if (piece.type == PieceType.BlockDestructible) {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 							tmpTexture = blockDestructibleTexture;
-							break;
 						}
 						if (piece.type == PieceType.BlockMoving) {
 							GUI.color = new Color(0.2f,0.2f,0.8f,1);
-							break;
 						}
 						if (piece.type == PieceType.Ball) {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
-							break;
+						}
+
+						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
+							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b+0.5f,GUI.color.a);
 						}
 					}
 				}
