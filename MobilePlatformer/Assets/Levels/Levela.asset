@@ -276,10 +276,14 @@ MonoBehaviour:
     - 683b4293-8af6-4fa8-9ce1-5cf53570cf7b
     - f17adc03-42c2-449c-b99e-8ddfe17f8a40
     - ff436dbf-ad42-4441-8ea3-505856bac74e
-    animationCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+    moves:
+    - id: b79c3cd3-74e7-47b8-9f4a-bbcbd10415a9
+      startPoint: {x: 5, y: 19}
+      endPoint: {x: 8, y: 19}
+      animationCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
   levelName: 

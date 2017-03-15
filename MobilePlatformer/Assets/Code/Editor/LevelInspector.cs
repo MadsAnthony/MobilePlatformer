@@ -100,6 +100,12 @@ public class LevelInspector : Editor {
 							selectedPieceGroup.pieceIds.Add (existingPiece.id);
 						}
 					}
+					if (startPointId != "-1") {
+						GetGroupMovementWithId(startPointId).startPoint = selectedIndex;
+					}
+					if (endPointId != "-1") {
+						GetGroupMovementWithId(endPointId).endPoint = selectedIndex;
+					}
 				}
 				if (Event.current.button == 1) {
 					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
@@ -129,6 +135,9 @@ public class LevelInspector : Editor {
 	}
 
 	PieceGroup selectedPieceGroup = null;
+	string startPointId = "-1";
+	string endPointId = "-1";
+
 	PieceGroup PieceGroupDrawer(Rect rect, PieceGroup value) {
 		var r = new Rect (rect);
 		if (value != null) {
@@ -141,13 +150,37 @@ public class LevelInspector : Editor {
 					selectedPieceGroup = null;
 				}
 			}
-			string[] cellOptions = new string[]
-			{
-				"Select pieces to group", "Select anchor piece", "Select move to"
-			};
+
+			if (isOn) {
+				ReorderableListGUI.ListField<GroupMovement> (value.moves, PieceGroupMovesDrawer);
+			}
+		}
+		return value;
+	}
+
+	GroupMovement PieceGroupMovesDrawer(Rect rect, GroupMovement value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 20;
+			bool isChoosingStartPoint = EditorGUI.Toggle (r, startPointId == value.id);
+			if (isChoosingStartPoint) {
+				startPointId = value.id;
+			} else {
+				if (startPointId == value.id) {
+					startPointId = "-1";
+				}
+			}
+
 			r.x += 40;
-			r.width = 50;
-			EditorGUI.Popup (r, 0, cellOptions);
+
+			bool isChoosingEndPoint = EditorGUI.Toggle (r, endPointId == value.id);
+			if (isChoosingEndPoint) {
+				endPointId = value.id;
+			} else {
+				if (endPointId == value.id) {
+					endPointId = "-1";
+				}
+			}
 		}
 		return value;
 	}
@@ -156,6 +189,15 @@ public class LevelInspector : Editor {
 		foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
 			if (piece.pos == pos) {
 				return piece;
+			}
+		}
+		return null;
+	}
+
+	GroupMovement GetGroupMovementWithId(string id) {
+		foreach(GroupMovement move in selectedPieceGroup.moves) {
+			if (move.id == id) {
+				return move;
 			}
 		}
 		return null;
@@ -239,6 +281,14 @@ public class LevelInspector : Editor {
 				GUI.matrix = prevMatrix;
 			}
 		}
+		if (selectedPieceGroup != null) {
+			foreach(var move in selectedPieceGroup.moves) {
+				Handles.color = Color.red;
+				Handles.DrawLine (move.startPoint*cellSize+new Vector2(cellSize,cellSize)*0.5f,move.endPoint*cellSize+new Vector2(cellSize,cellSize)*0.5f);
+				Handles.color = Color.white;
+			}
+		}
+
 		GUI.color = Color.white;
 	}
 }

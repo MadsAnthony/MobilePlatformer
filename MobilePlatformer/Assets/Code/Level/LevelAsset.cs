@@ -36,6 +36,14 @@ public class PieceLevelData {
 [Serializable]
 public class PieceGroup {
 	public List<string> pieceIds = new List<string>();
+	public List<GroupMovement> moves = new List<GroupMovement>();
+}
+
+[Serializable]
+public class GroupMovement {
+	public string id = Guid.NewGuid ().ToString ();
+	public Vector2 startPoint;
+	public Vector2 endPoint;
 	public AnimationCurve animationCurve;
 }
 
