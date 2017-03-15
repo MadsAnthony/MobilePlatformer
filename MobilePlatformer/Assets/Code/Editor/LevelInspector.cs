@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rotorz.ReorderableList;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -90,13 +91,16 @@ public class LevelInspector : Editor {
 			}
 			EditorUtility.SetDirty (myTarget);
 		}
-			
+
+		GUILayout.Space (levelGridRect.height+50);
 		GUILayout.BeginArea(levelGridRect);
 		var levelSize = ((LevelAsset)target).levelSize;
 		scrollPos = EditorGUILayout.BeginScrollView (scrollPos,GUILayout.Width(Mathf.Min(levelGridRect.width,levelSize.x*(cellSize+1))),GUILayout.Height(Mathf.Min(levelGridRect.height,levelSize.y*(cellSize+1))));
 		DrawGrid ();
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
+		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
+
 
 
 
@@ -194,6 +198,7 @@ public class LevelInspector : Editor {
 				GUI.matrix = prevMatrix;
 			}
 		}
+		GUI.color = Color.white;
 	}
 }
 #endif
