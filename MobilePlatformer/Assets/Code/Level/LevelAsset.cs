@@ -8,7 +8,7 @@ public class LevelAsset : ScriptableObject {
 	public Vector2 levelSize = new Vector2(20,30);
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
 	public Vector2 heroPos;
-	public List<PieceGroup> pieceGroups;
+	public List<PieceGroupData> pieceGroups;
 
 	public string levelName;
 
@@ -34,7 +34,7 @@ public class PieceLevelData {
 }
 
 [Serializable]
-public class PieceGroup {
+public class PieceGroupData {
 	public List<string> pieceIds = new List<string>();
 	public List<GroupMovement> moves = new List<GroupMovement>();
 }
@@ -44,7 +44,8 @@ public class GroupMovement {
 	public string id = Guid.NewGuid ().ToString ();
 	public Vector2 startPoint;
 	public Vector2 endPoint;
-	public AnimationCurve animationCurve;
+	public float time = 1;
+	public AnimationCurve animationCurve = new AnimationCurve();
 }
 
 /*

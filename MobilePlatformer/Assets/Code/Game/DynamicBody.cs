@@ -13,7 +13,7 @@ public abstract class DynamicBody : Piece {
 		rb = GetComponent<Rigidbody>();
 	}
 		
-	protected Vector3 Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true) {
+	public Vector3 Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true) {
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
 		bool newDirHasBeenSet = false;

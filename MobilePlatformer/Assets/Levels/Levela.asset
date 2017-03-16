@@ -153,26 +153,6 @@ MonoBehaviour:
     type: 2
     pos: {x: 10, y: 6}
     dir: 0
-  - id: db788673-319f-4ae4-b7a8-ab2e8c2e8e69
-    type: 2
-    pos: {x: 9, y: 6}
-    dir: 0
-  - id: a680c934-a7e2-4488-99b7-940da32c9d8d
-    type: 2
-    pos: {x: 8, y: 6}
-    dir: 0
-  - id: 20c0b968-e269-42a4-9a1c-7034cc1685a8
-    type: 2
-    pos: {x: 7, y: 6}
-    dir: 0
-  - id: 621194a1-b853-4f09-bac6-ee9255eb186a
-    type: 2
-    pos: {x: 6, y: 6}
-    dir: 0
-  - id: e26faf6a-f51a-4cda-940a-95b85d4f69a1
-    type: 2
-    pos: {x: 5, y: 6}
-    dir: 0
   - id: a174209c-3c40-486e-88a6-b8d94eab1ede
     type: 2
     pos: {x: 4, y: 6}
@@ -269,21 +249,84 @@ MonoBehaviour:
     type: 2
     pos: {x: 2, y: 6}
     dir: 0
-  heroPos: {x: 10, y: 19}
+  heroPos: {x: 13, y: 19}
   pieceGroups:
   - pieceIds:
     - 100f03ff-53fa-4bfb-ba8f-322686e034e6
-    - 683b4293-8af6-4fa8-9ce1-5cf53570cf7b
     - f17adc03-42c2-449c-b99e-8ddfe17f8a40
     - ff436dbf-ad42-4441-8ea3-505856bac74e
+    - 683b4293-8af6-4fa8-9ce1-5cf53570cf7b
     moves:
-    - id: b79c3cd3-74e7-47b8-9f4a-bbcbd10415a9
-      startPoint: {x: 5, y: 19}
-      endPoint: {x: 8, y: 19}
+    - id: c091bfa5-fa0f-4af1-9f72-493b6fa3cafd
+      startPoint: {x: 6, y: 19}
+      endPoint: {x: 6, y: 15}
+      time: 2
       animationCurve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 0
+        m_RotationOrder: 4
+    - id: ed9be849-596a-4315-ae47-a90b2605389a
+      startPoint: {x: 6, y: 12}
+      endPoint: {x: 9, y: 12}
+      time: 4
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
         m_PreInfinity: 2
         m_PostInfinity: 2
+        m_RotationOrder: 4
+  - pieceIds:
+    - ef51457e-376b-4214-ad33-a5c36cd9743e
+    - 62cdfd46-55da-457a-a6e0-c936890bd2a2
+    - 47098f4b-9449-4099-9076-e3f22e517c72
+    - 7eac812d-7dce-4e08-b096-05e3db0cbc39
+    moves:
+    - id: 7765d260-a585-4ecb-9dbc-bfccfc5acd9f
+      startPoint: {x: 9, y: 15}
+      endPoint: {x: 9, y: 19}
+      time: 0.5
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 0
         m_RotationOrder: 4
   levelName: 

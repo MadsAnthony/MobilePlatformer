@@ -9,6 +9,8 @@ public class LevelInit : MonoBehaviour {
 	private Vector3 levelStartPos = new Vector3(-9.5f,16,0);
 
 	private GameLogic gameLogic;
+
+	private Dictionary<string, Piece> pieces = new Dictionary<string, Piece>();
 	// Use this for initialization
 	void Start () {
 		gameLogic = GetComponent<GameLogic>();
@@ -25,42 +27,56 @@ public class LevelInit : MonoBehaviour {
 
 		foreach (var piece in level.pieces) {
 			PieceData pieceData = Director.PieceDatabase.GetPieceData (piece.type);
-			var tmpBlock = Instantiate(pieceData.prefab);
+			var tmpPiece = Instantiate(pieceData.prefab);
 
 			if (piece.type == PieceType.BlockNormal) {
-				tmpBlock.name = "Block"+i;
+				tmpPiece.name = "Block"+i;
 			}
 
 			if (piece.type == PieceType.BlockColor) {
 				gameLogic.coloredBlocksGoal++;
-				tmpBlock.name = "ColorBlock"+i;
+				tmpPiece.name = "ColorBlock"+i;
 			}
 
 			if (piece.type == PieceType.Spike) {
-				tmpBlock.name = "Spike"+i;
+				tmpPiece.name = "Spike"+i;
 			}
 
 			if (piece.type == PieceType.BlockNonSticky) {
-				tmpBlock.name = "NonSticky"+i;
+				tmpPiece.name = "NonSticky"+i;
 			}
 
 			if (piece.type == PieceType.Collectable) {
-				tmpBlock.name = "Collectable"+i;
+				tmpPiece.name = "Collectable"+i;
 				gameLogic.collectablesGoal++;
 			}
 			if (piece.type == PieceType.BlockDestructible) {
-				tmpBlock.name = "Destructable"+i;
+				tmpPiece.name = "Destructable"+i;
 			}
 			if (piece.type == PieceType.BlockMoving) {
-				tmpBlock.name = "NonSticky"+i;
+				tmpPiece.name = "NonSticky"+i;
 			}
 			if (piece.type == PieceType.Ball) {
-				tmpBlock.name = "Ball"+i;
+				tmpPiece.name = "Ball"+i;
 			}
 
-			tmpBlock.transform.eulerAngles = new Vector3(tmpBlock.transform.eulerAngles.x,tmpBlock.transform.eulerAngles.y,((int)piece.dir)*-90);
-			tmpBlock.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
+			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);
+			tmpPiece.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
 			i++;
+
+			// Remove this condition at some time.
+			if (!string.IsNullOrEmpty(piece.id)) {
+				pieces.Add (piece.id, tmpPiece);
+			}
+		}
+
+		foreach (PieceGroupData pieceGroup in level.pieceGroups) {
+			var go = new GameObject();
+			PieceGroup goPieceGroup = go.AddComponent<PieceGroup> ();
+			goPieceGroup.pieceGroupData = pieceGroup;
+			foreach (var pieceId in pieceGroup.pieceIds) {
+				goPieceGroup.pieces.Add(pieces [pieceId]);
+			}
 		}
 
 		var hero = Instantiate(Director.PieceDatabase.GetPieceData (PieceType.Hero).prefab);

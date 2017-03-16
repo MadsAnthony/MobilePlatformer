@@ -125,7 +125,7 @@ public class LevelInspector : Editor {
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
 		ReorderableListGUI.Title("Groups");
-		ReorderableListGUI.ListField<PieceGroup>(myTarget.pieceGroups, PieceGroupDrawer);
+		ReorderableListGUI.ListField<PieceGroupData>(myTarget.pieceGroups, PieceGroupDrawer);
 
 
 		if (GUI.changed) {
@@ -134,11 +134,11 @@ public class LevelInspector : Editor {
 		serializedObject.ApplyModifiedProperties();
 	}
 
-	PieceGroup selectedPieceGroup = null;
+	PieceGroupData selectedPieceGroup = null;
 	string startPointId = "-1";
 	string endPointId = "-1";
 
-	PieceGroup PieceGroupDrawer(Rect rect, PieceGroup value) {
+	PieceGroupData PieceGroupDrawer(Rect rect, PieceGroupData value) {
 		var r = new Rect (rect);
 		if (value != null) {
 			r.width = 20;
@@ -181,6 +181,13 @@ public class LevelInspector : Editor {
 					endPointId = "-1";
 				}
 			}
+
+			r.x += 80;
+			r.width = 40;
+			value.time = EditorGUI.FloatField (r, value.time);
+			r.x += 80;
+			r.width = 80;
+			value.animationCurve = EditorGUI.CurveField (r, value.animationCurve);
 		}
 		return value;
 	}

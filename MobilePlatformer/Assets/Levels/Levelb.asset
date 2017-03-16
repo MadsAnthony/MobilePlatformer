@@ -278,5 +278,7 @@ MonoBehaviour:
     pos: {x: 11, y: 19}
     dir: 0
   heroPos: {x: 4, y: 19}
-  pieceGroups: []
+  pieceGroups:
+  - pieceIds: []
+    moves: []
   levelName: 
