@@ -44,8 +44,10 @@ public class GroupMovement {
 	public string id = Guid.NewGuid ().ToString ();
 	public Vector2 startPoint;
 	public Vector2 endPoint;
+	public float delay = 0;
 	public float time = 1;
 	public AnimationCurve animationCurve = new AnimationCurve();
+	public float maxT = 1;
 }
 
 /*

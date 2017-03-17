@@ -13,7 +13,7 @@ public abstract class DynamicBody : Piece {
 		rb = GetComponent<Rigidbody>();
 	}
 		
-	public Vector3 Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true) {
+	public Vector3 Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null) {
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
 		bool newDirHasBeenSet = false;
@@ -33,6 +33,10 @@ public abstract class DynamicBody : Piece {
 		});
 		foreach(var hit in sortedHits) {
 			var piece = hit.collider.GetComponent<Piece> ();
+
+			if (excludePieces != null && excludePieces.Contains(piece)) continue;
+
+
 			tmpDir = inputDir.normalized * (hit.distance - gap);
 
 			// check if the rest of the hits are approximately at the same distance, if they are then they should be hit.

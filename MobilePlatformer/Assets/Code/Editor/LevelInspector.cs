@@ -184,10 +184,16 @@ public class LevelInspector : Editor {
 
 			r.x += 80;
 			r.width = 40;
+			value.delay = EditorGUI.FloatField (r, value.delay);
+			r.x += 80;
+			r.width = 40;
 			value.time = EditorGUI.FloatField (r, value.time);
 			r.x += 80;
 			r.width = 80;
 			value.animationCurve = EditorGUI.CurveField (r, value.animationCurve);
+			r.x += 100;
+			r.width = 80;
+			value.maxT = EditorGUI.FloatField (r, value.maxT);
 		}
 		return value;
 	}

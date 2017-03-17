@@ -249,6 +249,22 @@ MonoBehaviour:
     type: 2
     pos: {x: 2, y: 6}
     dir: 0
+  - id: a1dddb01-48bd-4593-92f5-b8159523bb4c
+    type: 7
+    pos: {x: 3, y: 8}
+    dir: 0
+  - id: 9c7473c9-93fd-4943-846f-31cc22550f29
+    type: 7
+    pos: {x: 4, y: 8}
+    dir: 0
+  - id: ff686c9b-449e-477c-a71a-76568e9bd685
+    type: 7
+    pos: {x: 5, y: 8}
+    dir: 0
+  - id: d6874308-e2d5-40b4-bacc-769230f9248c
+    type: 7
+    pos: {x: 6, y: 8}
+    dir: 0
   heroPos: {x: 13, y: 19}
   pieceGroups:
   - pieceIds:
@@ -311,6 +327,34 @@ MonoBehaviour:
       startPoint: {x: 9, y: 15}
       endPoint: {x: 9, y: 19}
       time: 0.5
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 0
+        m_RotationOrder: 4
+  - pieceIds:
+    - a1dddb01-48bd-4593-92f5-b8159523bb4c
+    - 9c7473c9-93fd-4943-846f-31cc22550f29
+    - ff686c9b-449e-477c-a71a-76568e9bd685
+    - d6874308-e2d5-40b4-bacc-769230f9248c
+    moves:
+    - id: 845ad289-b8cc-4708-a28d-c6f4da442196
+      startPoint: {x: 6, y: 8}
+      endPoint: {x: 14, y: 8}
+      time: 2
       animationCurve:
         serializedVersion: 2
         m_Curve:
