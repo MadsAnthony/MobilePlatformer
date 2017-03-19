@@ -35,12 +35,16 @@ public class PieceGroup : MonoBehaviour {
 			}
 
 
+			if (groupMovement.maxT > 0 && t >= groupMovement.maxT) {
+				t = groupMovement.maxT;
+			}
+
 			float evalT = groupMovement.animationCurve.Evaluate (t);
 			Vector3 dirEvalT = (dir * evalT);
 
 			foreach (Piece piece  in pieces) {
 				if ((DynamicBody)piece != null) {
-					((DynamicBody)piece).Move ((dirEvalT - pos), null, null, false, pieces.ToArray ());
+					((DynamicBody)piece).Move ((dirEvalT - pos), null, null, false, pieces.ToArray (),true);
 				}
 			}
 

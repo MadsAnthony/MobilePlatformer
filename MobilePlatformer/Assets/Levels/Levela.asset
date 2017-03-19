@@ -276,6 +276,7 @@ MonoBehaviour:
     - id: c091bfa5-fa0f-4af1-9f72-493b6fa3cafd
       startPoint: {x: 6, y: 19}
       endPoint: {x: 6, y: 15}
+      delay: 0
       time: 2
       animationCurve:
         serializedVersion: 2
@@ -295,9 +296,11 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 0
         m_RotationOrder: 4
+      maxT: 1
     - id: ed9be849-596a-4315-ae47-a90b2605389a
       startPoint: {x: 6, y: 12}
       endPoint: {x: 9, y: 12}
+      delay: 0
       time: 4
       animationCurve:
         serializedVersion: 2
@@ -317,6 +320,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      maxT: 1
   - pieceIds:
     - ef51457e-376b-4214-ad33-a5c36cd9743e
     - 62cdfd46-55da-457a-a6e0-c936890bd2a2
@@ -326,6 +330,7 @@ MonoBehaviour:
     - id: 7765d260-a585-4ecb-9dbc-bfccfc5acd9f
       startPoint: {x: 9, y: 15}
       endPoint: {x: 9, y: 19}
+      delay: 0
       time: 0.5
       animationCurve:
         serializedVersion: 2
@@ -345,6 +350,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 0
         m_RotationOrder: 4
+      maxT: 1
   - pieceIds:
     - a1dddb01-48bd-4593-92f5-b8159523bb4c
     - 9c7473c9-93fd-4943-846f-31cc22550f29
@@ -354,6 +360,7 @@ MonoBehaviour:
     - id: 845ad289-b8cc-4708-a28d-c6f4da442196
       startPoint: {x: 6, y: 8}
       endPoint: {x: 14, y: 8}
+      delay: 0
       time: 2
       animationCurve:
         serializedVersion: 2
@@ -373,4 +380,5 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 0
         m_RotationOrder: 4
+      maxT: 1
   levelName: 

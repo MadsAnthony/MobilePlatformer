@@ -1,0 +1,690 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
+  m_Name: Leveld
+  m_EditorClassIdentifier: 
+  levelSize: {x: 20, y: 29}
+  pieces:
+  - id: e57c001a-f06e-4657-acd0-a748237351fe
+    type: 2
+    pos: {x: 1, y: 27}
+    dir: 0
+  - id: 2fd1ba74-39b0-4614-b53c-89fd0ebbe9c3
+    type: 2
+    pos: {x: 2, y: 27}
+    dir: 0
+  - id: b0f2cb57-dc8d-4ece-85e0-deae9e5eecdf
+    type: 2
+    pos: {x: 3, y: 27}
+    dir: 0
+  - id: 7d3ac9e5-87e1-445d-be9d-04c28a2edbeb
+    type: 2
+    pos: {x: 4, y: 27}
+    dir: 0
+  - id: 29b9e592-0091-42a2-9804-e6d24166989a
+    type: 2
+    pos: {x: 5, y: 27}
+    dir: 0
+  - id: c19d0faa-3905-43da-8d00-379042903c8e
+    type: 2
+    pos: {x: 6, y: 27}
+    dir: 0
+  - id: 8f5858e1-374b-47be-9fee-817d2f6cc2eb
+    type: 2
+    pos: {x: 7, y: 27}
+    dir: 0
+  - id: 2621202e-3a2e-4ed5-9c39-27fe87901f62
+    type: 2
+    pos: {x: 8, y: 27}
+    dir: 0
+  - id: b8621c27-cec5-4cb9-8802-859d1e401017
+    type: 2
+    pos: {x: 9, y: 27}
+    dir: 0
+  - id: 0abc831d-9d7e-446c-813f-2d13e4bf7564
+    type: 2
+    pos: {x: 10, y: 27}
+    dir: 0
+  - id: a411cd67-df1a-4d20-8afa-1bb7baf2ab0d
+    type: 2
+    pos: {x: 11, y: 27}
+    dir: 0
+  - id: a736783a-0986-4bac-b308-fd7d8af8fd35
+    type: 2
+    pos: {x: 12, y: 27}
+    dir: 0
+  - id: 110f4579-400f-45f9-81dd-b25680aa74a8
+    type: 2
+    pos: {x: 13, y: 27}
+    dir: 0
+  - id: aa28e544-47eb-495c-9880-3ab48136cd02
+    type: 2
+    pos: {x: 14, y: 27}
+    dir: 0
+  - id: 3d16ac11-5fb2-4f4a-891e-bace24c9da5c
+    type: 2
+    pos: {x: 15, y: 27}
+    dir: 0
+  - id: 4a239407-944a-4452-90e7-c1e6d5256eab
+    type: 2
+    pos: {x: 16, y: 27}
+    dir: 0
+  - id: 45087f4f-b921-4080-a5aa-9de89350ee8f
+    type: 2
+    pos: {x: 17, y: 27}
+    dir: 0
+  - id: 3a2279a0-1c88-410c-9eba-4749208ef239
+    type: 2
+    pos: {x: 6, y: 26}
+    dir: 0
+  - id: f1b5e8f9-ad6a-4389-a660-a470e781c4dd
+    type: 2
+    pos: {x: 7, y: 26}
+    dir: 0
+  - id: a6bb0175-a4f1-4b47-a9fc-16fd6a6497d7
+    type: 2
+    pos: {x: 13, y: 21}
+    dir: 0
+  - id: 47507c56-906a-4fa6-afa7-6224b27ce414
+    type: 2
+    pos: {x: 12, y: 21}
+    dir: 0
+  - id: cb78d96c-d593-43d5-aeab-d5d5058edeab
+    type: 2
+    pos: {x: 11, y: 21}
+    dir: 0
+  - id: 97b1ab81-b12f-4740-b9c9-6a84bf9114a3
+    type: 2
+    pos: {x: 10, y: 21}
+    dir: 0
+  - id: e18f97ed-2df0-4f00-8993-d4df7245b9a6
+    type: 2
+    pos: {x: 9, y: 21}
+    dir: 0
+  - id: adc4194d-2798-449c-b949-f5733c6fe816
+    type: 2
+    pos: {x: 8, y: 21}
+    dir: 0
+  - id: b160ac8b-f560-4335-855b-591cf8413275
+    type: 2
+    pos: {x: 1, y: 21}
+    dir: 0
+  - id: 434db4f7-76c3-4574-a05a-255e9a0d02f2
+    type: 2
+    pos: {x: 1, y: 22}
+    dir: 0
+  - id: 849313d1-ad34-423b-aea8-fb21464764d5
+    type: 2
+    pos: {x: 1, y: 23}
+    dir: 0
+  - id: 82f35406-063e-4183-89e7-25812f452515
+    type: 2
+    pos: {x: 1, y: 24}
+    dir: 0
+  - id: 8e5f8765-19ac-4d0d-bd43-8ba1c25d015a
+    type: 2
+    pos: {x: 1, y: 25}
+    dir: 0
+  - id: 7bc4ffcf-d281-4469-8d4b-3506f9560d30
+    type: 2
+    pos: {x: 1, y: 26}
+    dir: 0
+  - id: c3f43cdc-238d-4cf0-88b1-c65ad6ed49b0
+    type: 2
+    pos: {x: 1, y: 20}
+    dir: 0
+  - id: 80d020d9-e046-47d8-8365-d4f0178cc1f7
+    type: 2
+    pos: {x: 1, y: 19}
+    dir: 0
+  - id: 8bfe381d-ddd0-4574-940c-6feb9b9e143e
+    type: 2
+    pos: {x: 1, y: 18}
+    dir: 0
+  - id: e49e27fc-ad7c-408f-b32a-5e4412411d08
+    type: 2
+    pos: {x: 1, y: 17}
+    dir: 0
+  - id: ad9cfef7-9a11-4a9a-8d61-561e414c88d9
+    type: 2
+    pos: {x: 1, y: 16}
+    dir: 0
+  - id: ba46673e-885e-463c-bfb9-704ec978a5e2
+    type: 2
+    pos: {x: 1, y: 15}
+    dir: 0
+  - id: 2ff5fa3b-6945-4a41-aad0-ab5c96c8a334
+    type: 2
+    pos: {x: 1, y: 14}
+    dir: 0
+  - id: e57c524f-a461-433b-ac71-a43dc4e0087c
+    type: 2
+    pos: {x: 1, y: 13}
+    dir: 0
+  - id: b1dd4e16-cab9-4c6e-bc87-d643e442134e
+    type: 2
+    pos: {x: 1, y: 12}
+    dir: 0
+  - id: b58e88e3-22f7-4e2a-b833-637c1f2a7c11
+    type: 2
+    pos: {x: 7, y: 21}
+    dir: 0
+  - id: 9588c4e9-28eb-4844-aa50-97508b62ff8b
+    type: 2
+    pos: {x: 6, y: 21}
+    dir: 0
+  - id: eabbbfd7-2c16-4713-8723-cc3ed2e687e1
+    type: 7
+    pos: {x: 8, y: 11}
+    dir: 0
+  - id: e9b895f1-1e03-4e34-ae90-a0932567e892
+    type: 7
+    pos: {x: 9, y: 11}
+    dir: 0
+  - id: 177014eb-6143-4873-9871-4bf55df6d91f
+    type: 7
+    pos: {x: 10, y: 11}
+    dir: 0
+  - id: bcaf1c47-ea6f-434a-a2b4-1e4da4c4d386
+    type: 7
+    pos: {x: 11, y: 11}
+    dir: 0
+  - id: e7752750-3a5b-4bf9-9e0f-3f823a9a2f65
+    type: 7
+    pos: {x: 12, y: 11}
+    dir: 0
+  - id: 632e1162-2bfc-4531-948c-975157d8d1eb
+    type: 7
+    pos: {x: 13, y: 3}
+    dir: 0
+  - id: e1cae77d-d4c8-476b-b263-7a604fbc6ce7
+    type: 7
+    pos: {x: 12, y: 3}
+    dir: 0
+  - id: b798f5f0-2258-48b1-adcc-2aca883930bf
+    type: 7
+    pos: {x: 11, y: 3}
+    dir: 0
+  - id: 177c62bf-1877-4be0-b7e1-46310dc1b189
+    type: 7
+    pos: {x: 10, y: 3}
+    dir: 0
+  - id: 6be47db3-9e7d-4cca-8d49-0b371856aa29
+    type: 7
+    pos: {x: 8, y: 3}
+    dir: 0
+  - id: 5d93b669-80bc-46f6-883b-7077b4376c78
+    type: 7
+    pos: {x: 8, y: 4}
+    dir: 0
+  - id: eae32bfb-8cfa-4bf4-97f5-a527121e750c
+    type: 7
+    pos: {x: 8, y: 10}
+    dir: 0
+  - id: f3e8a6f2-0d9b-4d67-a892-d718cc3191a3
+    type: 7
+    pos: {x: 8, y: 9}
+    dir: 0
+  - id: 20b522ea-b8dc-4ae0-a687-174a81be3e7a
+    type: 7
+    pos: {x: 8, y: 8}
+    dir: 0
+  - id: 3d5c5907-e474-48f8-bf02-75e6d9e32906
+    type: 7
+    pos: {x: 8, y: 7}
+    dir: 0
+  - id: 1cdbf0b1-a644-4c30-8f6e-2bcdd3f43625
+    type: 7
+    pos: {x: 8, y: 6}
+    dir: 0
+  - id: cb8a6d57-b441-4b7c-82a5-37558e54603c
+    type: 7
+    pos: {x: 8, y: 5}
+    dir: 0
+  - id: d1387608-e96d-478a-819b-24204a25b169
+    type: 7
+    pos: {x: 9, y: 3}
+    dir: 0
+  - id: c8570d09-04ff-4ac7-a5ce-8c13f3ba1e86
+    type: 7
+    pos: {x: 9, y: 4}
+    dir: 0
+  - id: 69ec1b9c-6857-4a1d-9296-97f317ad1ca2
+    type: 7
+    pos: {x: 10, y: 4}
+    dir: 0
+  - id: 15a0b3cd-386a-4a70-b4bf-0be24c77533b
+    type: 7
+    pos: {x: 10, y: 5}
+    dir: 0
+  - id: 69c43041-fde7-442d-860a-58f2c47df956
+    type: 7
+    pos: {x: 9, y: 5}
+    dir: 0
+  - id: c63ad49f-4b31-4794-a5a0-dfecd6c9e35f
+    type: 7
+    pos: {x: 9, y: 6}
+    dir: 0
+  - id: 0d27123a-e4e8-496c-a97b-031ec5e18a17
+    type: 7
+    pos: {x: 9, y: 7}
+    dir: 0
+  - id: a0cd83b2-5973-41ae-8389-3b9c3a752d49
+    type: 7
+    pos: {x: 9, y: 8}
+    dir: 0
+  - id: 376ab8e4-85c1-4cd7-9361-d6ce040cd3f7
+    type: 7
+    pos: {x: 9, y: 9}
+    dir: 0
+  - id: 570a9f21-1273-4e12-b6f2-7f70f2dd8e22
+    type: 7
+    pos: {x: 10, y: 7}
+    dir: 0
+  - id: b9d447fc-532f-4e35-b0db-596d56ed6f3f
+    type: 7
+    pos: {x: 10, y: 6}
+    dir: 0
+  - id: 625a3fa6-c811-4cfb-8411-668725fe4161
+    type: 7
+    pos: {x: 11, y: 5}
+    dir: 0
+  - id: 5164f64b-127c-4088-ad2c-f84983d804c5
+    type: 7
+    pos: {x: 11, y: 4}
+    dir: 0
+  - id: 79aeeb6b-adea-4fe7-8681-129f7d7442a6
+    type: 7
+    pos: {x: 12, y: 4}
+    dir: 0
+  - id: be2591a1-69e9-4e29-bea3-42c43c647c41
+    type: 7
+    pos: {x: 12, y: 5}
+    dir: 0
+  - id: 8669261b-f6af-4dcf-b58f-62386501ef0b
+    type: 7
+    pos: {x: 11, y: 6}
+    dir: 0
+  - id: 04197c31-51a0-4eaa-a75e-660b9c072efb
+    type: 7
+    pos: {x: 11, y: 7}
+    dir: 0
+  - id: 10ade05d-0a5b-40ec-be18-2264cf6b4b28
+    type: 7
+    pos: {x: 10, y: 8}
+    dir: 0
+  - id: e7686c27-ae48-4b8f-87a9-e89f804a7104
+    type: 7
+    pos: {x: 9, y: 10}
+    dir: 0
+  - id: 40201839-a0b8-4214-976d-4275c4ec7137
+    type: 7
+    pos: {x: 10, y: 10}
+    dir: 0
+  - id: 8ea8935e-e0b8-4fb5-b095-55c5d4d60a3f
+    type: 7
+    pos: {x: 10, y: 9}
+    dir: 0
+  - id: 1f62cc06-84cd-480f-864d-748af0365946
+    type: 7
+    pos: {x: 11, y: 9}
+    dir: 0
+  - id: 907bf0bf-f942-4ad1-8e84-ebf7456ad384
+    type: 7
+    pos: {x: 11, y: 8}
+    dir: 0
+  - id: 424bf02b-c265-43d4-adfb-9138a05c3fb9
+    type: 7
+    pos: {x: 12, y: 6}
+    dir: 0
+  - id: e46ba24c-ad84-4cfb-bf05-44660bcab8c9
+    type: 7
+    pos: {x: 13, y: 4}
+    dir: 0
+  - id: 55fbaf4f-62b6-4b2d-9907-4e1bb07f3751
+    type: 7
+    pos: {x: 13, y: 5}
+    dir: 0
+  - id: c17a599b-a6fe-4c5b-b67e-ec4511dc3273
+    type: 7
+    pos: {x: 13, y: 6}
+    dir: 0
+  - id: 432b2db2-0cbd-4926-a833-fbf919f0dd29
+    type: 7
+    pos: {x: 12, y: 7}
+    dir: 0
+  - id: 24404090-54f1-4959-874f-58287694ed93
+    type: 7
+    pos: {x: 12, y: 8}
+    dir: 0
+  - id: 429f5cbf-3a91-4584-a8b3-3cc1553769d1
+    type: 7
+    pos: {x: 11, y: 10}
+    dir: 0
+  - id: efa57f74-befa-4de5-a67c-58d0d67757e4
+    type: 7
+    pos: {x: 12, y: 10}
+    dir: 0
+  - id: b99782d4-3f6d-450e-b45a-26bfd3636c33
+    type: 7
+    pos: {x: 12, y: 9}
+    dir: 0
+  - id: c21cf240-8d3e-4196-926c-04e1cbaf2796
+    type: 7
+    pos: {x: 13, y: 11}
+    dir: 0
+  - id: cc1ef89a-0f7d-4896-ad8c-4b366808835b
+    type: 7
+    pos: {x: 13, y: 7}
+    dir: 0
+  - id: ec8e08a3-9b11-4754-9fd1-4aac726dd2be
+    type: 7
+    pos: {x: 13, y: 8}
+    dir: 0
+  - id: e6beb97b-9d9b-401b-bc5e-f49bbe8b4c74
+    type: 7
+    pos: {x: 13, y: 9}
+    dir: 0
+  - id: 517e59af-89bf-4f95-a632-ea207a7ae081
+    type: 7
+    pos: {x: 13, y: 10}
+    dir: 0
+  - id: 685c4e4f-a8a6-4637-9de9-ec220007234e
+    type: 0
+    pos: {x: 14, y: 11}
+    dir: 0
+  - id: 5780ec85-0331-4f15-bf1b-175ebccfa33a
+    type: 0
+    pos: {x: 15, y: 11}
+    dir: 0
+  - id: 164aa130-c788-4151-8bc4-47b6d95d0da8
+    type: 0
+    pos: {x: 16, y: 11}
+    dir: 0
+  - id: 7eb3d3ac-48ff-4663-ac7a-90b4a30bcd0c
+    type: 0
+    pos: {x: 17, y: 11}
+    dir: 0
+  - id: 78da357c-2703-4b4f-b997-0ec72910e9ee
+    type: 0
+    pos: {x: 7, y: 11}
+    dir: 0
+  - id: 144d8f23-e85e-4208-a45a-4a6c6518f27e
+    type: 0
+    pos: {x: 6, y: 11}
+    dir: 0
+  - id: 8f4ab455-25f1-4ee4-a2e3-090400c8f9bd
+    type: 2
+    pos: {x: 1, y: 11}
+    dir: 0
+  - id: 64c5b8b7-05dd-44c0-bac0-42d84d807d89
+    type: 1
+    pos: {x: 2, y: 11}
+    dir: 0
+  - id: 4063026e-9320-454a-a846-0db157ec5a62
+    type: 1
+    pos: {x: 3, y: 11}
+    dir: 0
+  - id: 4586cfd4-bb4a-49bf-9a89-6baecbb33317
+    type: 1
+    pos: {x: 4, y: 11}
+    dir: 0
+  - id: 6f8d3b27-43a0-411f-8fa8-1c8967847544
+    type: 1
+    pos: {x: 5, y: 11}
+    dir: 0
+  - id: dbbd5622-db67-4737-a800-d23e99f44eb2
+    type: 0
+    pos: {x: 16, y: 21}
+    dir: 0
+  - id: 93d771d9-a684-4756-b2f9-0eef3c8cad89
+    type: 0
+    pos: {x: 18, y: 11}
+    dir: 0
+  - id: e993686b-1f93-4c83-bf6c-2953984ac79d
+    type: 0
+    pos: {x: 18, y: 12}
+    dir: 0
+  - id: 7874af57-0253-48fa-8fcf-9b127b51df8a
+    type: 0
+    pos: {x: 18, y: 13}
+    dir: 0
+  - id: f451b02f-c0a7-42d4-a319-719a2447b6bc
+    type: 0
+    pos: {x: 18, y: 14}
+    dir: 0
+  - id: 696599a0-7412-44df-a99a-bfd0e83257be
+    type: 0
+    pos: {x: 18, y: 15}
+    dir: 0
+  - id: cbed4d47-da2a-44ca-9578-7936212b62fc
+    type: 0
+    pos: {x: 18, y: 16}
+    dir: 0
+  - id: 3952a223-b4e4-401f-9aba-185a5fb550e3
+    type: 0
+    pos: {x: 18, y: 17}
+    dir: 0
+  - id: cad5e88d-8289-44da-b62c-f58f592ccd19
+    type: 0
+    pos: {x: 18, y: 18}
+    dir: 0
+  - id: 746081e1-f40a-45c3-978f-f2d1069f2cb5
+    type: 0
+    pos: {x: 18, y: 19}
+    dir: 0
+  - id: 2869d619-cb51-4ec7-be01-00442b104bff
+    type: 0
+    pos: {x: 18, y: 20}
+    dir: 0
+  - id: 73a6ed0b-ba93-4a71-972a-292127195823
+    type: 0
+    pos: {x: 18, y: 21}
+    dir: 0
+  - id: b33ac15c-3f8c-4044-94f0-ab9bbce997a1
+    type: 0
+    pos: {x: 17, y: 21}
+    dir: 0
+  - id: a0dafcf0-2c89-4e40-beb3-3cbc1dca127f
+    type: 2
+    pos: {x: 18, y: 22}
+    dir: 0
+  - id: 9b16a88c-fccc-43d9-bafd-f22f96a5955b
+    type: 2
+    pos: {x: 18, y: 23}
+    dir: 0
+  - id: e81b7df2-1fa3-4d46-b28e-f4654c563220
+    type: 2
+    pos: {x: 18, y: 24}
+    dir: 0
+  - id: ae8d6154-1525-4ea5-8d23-cd00b46ea0d6
+    type: 2
+    pos: {x: 18, y: 25}
+    dir: 0
+  - id: ccb8e278-4176-4c86-8a2d-08dbf8911906
+    type: 2
+    pos: {x: 18, y: 26}
+    dir: 0
+  - id: 95563fad-b60e-4abf-89e0-e54f0adf40e1
+    type: 2
+    pos: {x: 18, y: 27}
+    dir: 0
+  - id: 14cf56ea-51a4-4a2c-a515-089fdf39f169
+    type: 2
+    pos: {x: 14, y: 21}
+    dir: 0
+  - id: e2d7876c-b43b-4549-96ce-d2ed15634960
+    type: 2
+    pos: {x: 15, y: 21}
+    dir: 0
+  - id: 53d8e294-7024-4c71-8cad-8deacb9f3dbb
+    type: 7
+    pos: {x: 2, y: 21}
+    dir: 0
+  - id: a047282d-74d0-4ef9-8d3c-785dbbc12a9a
+    type: 7
+    pos: {x: 3, y: 21}
+    dir: 0
+  - id: 769d8fc0-3614-4815-b8b2-08856fd2a3fc
+    type: 7
+    pos: {x: 4, y: 21}
+    dir: 0
+  - id: 317955f5-3663-4b5c-b7ce-4e57908ec99c
+    type: 7
+    pos: {x: 5, y: 21}
+    dir: 0
+  - id: 69cfa9d9-7846-49c1-929a-0a4a10c2954b
+    type: 5
+    pos: {x: 2, y: 26}
+    dir: 0
+  heroPos: {x: 9, y: 26}
+  pieceGroups:
+  - pieceIds:
+    - eabbbfd7-2c16-4713-8723-cc3ed2e687e1
+    - e7686c27-ae48-4b8f-87a9-e89f804a7104
+    - 376ab8e4-85c1-4cd7-9361-d6ce040cd3f7
+    - a0cd83b2-5973-41ae-8389-3b9c3a752d49
+    - 0d27123a-e4e8-496c-a97b-031ec5e18a17
+    - c63ad49f-4b31-4794-a5a0-dfecd6c9e35f
+    - 69c43041-fde7-442d-860a-58f2c47df956
+    - c8570d09-04ff-4ac7-a5ce-8c13f3ba1e86
+    - d1387608-e96d-478a-819b-24204a25b169
+    - 6be47db3-9e7d-4cca-8d49-0b371856aa29
+    - 177c62bf-1877-4be0-b7e1-46310dc1b189
+    - b798f5f0-2258-48b1-adcc-2aca883930bf
+    - e1cae77d-d4c8-476b-b263-7a604fbc6ce7
+    - 632e1162-2bfc-4531-948c-975157d8d1eb
+    - e46ba24c-ad84-4cfb-bf05-44660bcab8c9
+    - 55fbaf4f-62b6-4b2d-9907-4e1bb07f3751
+    - c17a599b-a6fe-4c5b-b67e-ec4511dc3273
+    - cc1ef89a-0f7d-4896-ad8c-4b366808835b
+    - ec8e08a3-9b11-4754-9fd1-4aac726dd2be
+    - e6beb97b-9d9b-401b-bc5e-f49bbe8b4c74
+    - 517e59af-89bf-4f95-a632-ea207a7ae081
+    - efa57f74-befa-4de5-a67c-58d0d67757e4
+    - e7752750-3a5b-4bf9-9e0f-3f823a9a2f65
+    - bcaf1c47-ea6f-434a-a2b4-1e4da4c4d386
+    - 177014eb-6143-4873-9871-4bf55df6d91f
+    - e9b895f1-1e03-4e34-ae90-a0932567e892
+    - c21cf240-8d3e-4196-926c-04e1cbaf2796
+    - 432b2db2-0cbd-4926-a833-fbf919f0dd29
+    - 424bf02b-c265-43d4-adfb-9138a05c3fb9
+    - be2591a1-69e9-4e29-bea3-42c43c647c41
+    - 79aeeb6b-adea-4fe7-8681-129f7d7442a6
+    - 8669261b-f6af-4dcf-b58f-62386501ef0b
+    - 04197c31-51a0-4eaa-a75e-660b9c072efb
+    - 907bf0bf-f942-4ad1-8e84-ebf7456ad384
+    - 1f62cc06-84cd-480f-864d-748af0365946
+    - 24404090-54f1-4959-874f-58287694ed93
+    - 429f5cbf-3a91-4584-a8b3-3cc1553769d1
+    - b99782d4-3f6d-450e-b45a-26bfd3636c33
+    - 40201839-a0b8-4214-976d-4275c4ec7137
+    - 8ea8935e-e0b8-4fb5-b095-55c5d4d60a3f
+    - 625a3fa6-c811-4cfb-8411-668725fe4161
+    - 570a9f21-1273-4e12-b6f2-7f70f2dd8e22
+    - b9d447fc-532f-4e35-b0db-596d56ed6f3f
+    - 15a0b3cd-386a-4a70-b4bf-0be24c77533b
+    - 5164f64b-127c-4088-ad2c-f84983d804c5
+    - 69ec1b9c-6857-4a1d-9296-97f317ad1ca2
+    - 10ade05d-0a5b-40ec-be18-2264cf6b4b28
+    - cb8a6d57-b441-4b7c-82a5-37558e54603c
+    - 5d93b669-80bc-46f6-883b-7077b4376c78
+    - 1cdbf0b1-a644-4c30-8f6e-2bcdd3f43625
+    - 3d5c5907-e474-48f8-bf02-75e6d9e32906
+    - 20b522ea-b8dc-4ae0-a687-174a81be3e7a
+    - f3e8a6f2-0d9b-4d67-a892-d718cc3191a3
+    - eae32bfb-8cfa-4bf4-97f5-a527121e750c
+    moves:
+    - id: ecbeac49-843b-4105-8327-1b13c957d8e5
+      startPoint: {x: 10, y: 11}
+      endPoint: {x: 10, y: 20}
+      delay: 0.8
+      time: 0.5
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.75944126
+          value: 0.29637545
+          inSlope: 1.2892404
+          outSlope: 1.2892404
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 4.6958833
+          outSlope: 4.6958833
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxT: 1
+    - id: 23e71c59-2bd6-40dc-8da0-33b9bff482e3
+      startPoint: {x: 11, y: 20}
+      endPoint: {x: 11, y: 11}
+      delay: 0
+      time: 1
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxT: 1
+  - pieceIds:
+    - 53d8e294-7024-4c71-8cad-8deacb9f3dbb
+    - a047282d-74d0-4ef9-8d3c-785dbbc12a9a
+    - 769d8fc0-3614-4815-b8b2-08856fd2a3fc
+    - 317955f5-3663-4b5c-b7ce-4e57908ec99c
+    moves:
+    - id: a3829298-8803-4b38-bee7-81049d99c090
+      startPoint: {x: 3, y: 21}
+      endPoint: {x: 3, y: 26}
+      delay: 0
+      time: 1.5
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 0
+        m_RotationOrder: 4
+      maxT: -1
+  levelName: 

@@ -13,4 +13,8 @@ public abstract class Piece : MonoBehaviour {
 	public bool IsPushable;
 
 	public abstract void Hit (Piece hitPiece);
+
+	public void Destroy() {
+		GameObject.Destroy (gameObject);
+	}
 }

@@ -13,7 +13,7 @@ public abstract class DynamicBody : Piece {
 		rb = GetComponent<Rigidbody>();
 	}
 		
-	public Vector3 Move(Vector3 dir, Action<string> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null) {
+	public Vector3 Move(Vector3 dir, Action<string,bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
 		bool newDirHasBeenSet = false;
@@ -34,6 +34,7 @@ public abstract class DynamicBody : Piece {
 		foreach(var hit in sortedHits) {
 			var piece = hit.collider.GetComponent<Piece> ();
 
+			// ignore pieces that are part of excludePieces.
 			if (excludePieces != null && excludePieces.Contains(piece)) continue;
 
 
@@ -52,14 +53,22 @@ public abstract class DynamicBody : Piece {
 
 				// only call callbackInterrupted on the first hit
 				if (i == 0 && callbackInterrupted != null) {
-					callbackInterrupted (hit.collider.name);
+					callbackInterrupted (hit.collider.name,false);
 				}
 			}
 			if (piece.IsPushable) {
 				if ((DynamicBody)piece != null) {
-					newDir = tmpDir+((DynamicBody)piece).Move ((inputDir-tmpDir),null,null,false);
+
+					bool shouldDestroy = false;
+					newDir = tmpDir+((DynamicBody)piece).Move ((inputDir-tmpDir),(string s, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
+					if (shouldDestroy && canDestroy) {
+						newDir = inputDir;
+						piece.Destroy();
+						continue;
+					}
+
 					if (i == 0 && callbackInterrupted != null) {
-						callbackInterrupted (hit.collider.name);
+						callbackInterrupted (hit.collider.name,true);
 					}
 				}
 			}
