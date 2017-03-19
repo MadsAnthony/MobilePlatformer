@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour {
 	public int collectablesCollected;
@@ -36,7 +37,19 @@ public class GameLogic : MonoBehaviour {
 		case GameEventType.LevelCompleted:
 			hero.StopMoving ();
 			break;
+		case GameEventType.PieceDestroyed:
+			Piece tmpPiece = ((Piece)e.context);
+			if (tmpPiece.Type == PieceType.Hero) {
+				StartCoroutine (RestartLevelCr (0.2f));
+			}
+			break;
 		}
+	}
+
+	IEnumerator RestartLevelCr(float delay) {
+		yield return new WaitForSeconds(delay);
+		Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0,Director.TransitionManager.FadeToColor(new Color(1,1,1,1),0.2f),Director.TransitionManager.FadeOut(0.2f));
+		//SceneManager.LoadScene ("LevelScene");
 	}
 
 	// Update is called once per frame

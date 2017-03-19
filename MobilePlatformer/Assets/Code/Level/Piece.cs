@@ -15,6 +15,7 @@ public abstract class Piece : MonoBehaviour {
 	public abstract void Hit (Piece hitPiece);
 
 	public void Destroy() {
-		GameObject.Destroy (gameObject);
+		Director.GameEventManager.Emit(new GameEvent(GameEventType.PieceDestroyed, this));
+		gameObject.SetActive(false);
 	}
 }

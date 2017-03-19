@@ -13,485 +13,646 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSize: {x: 20, y: 30}
   pieces:
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 5, y: -3}
     dir: 0
-  - type: 6
+  - id: 
+    type: 6
     pos: {x: 3, y: -2}
     dir: 0
-  - type: 2
+  - id: 15d999b1-6993-48fd-9045-9792a53c9169
+    type: 2
     pos: {x: 17, y: 9}
     dir: 0
-  - type: 2
+  - id: 12ddc868-b45d-4d7b-b596-36de088594e8
+    type: 2
     pos: {x: 17, y: 10}
     dir: 0
-  - type: 2
+  - id: 90ab7300-f4a1-400f-bda2-29d5bc66da57
+    type: 2
     pos: {x: 17, y: 11}
     dir: 0
-  - type: 2
+  - id: ff2033df-6f20-4355-bad1-5684c5ee1fde
+    type: 2
     pos: {x: 17, y: 12}
     dir: 0
-  - type: 2
+  - id: a1b1a95c-b7a6-4975-b068-d022946fde30
+    type: 2
     pos: {x: 17, y: 13}
     dir: 0
-  - type: 2
+  - id: af0d095a-0fd5-4193-b29a-66fce8d07b29
+    type: 2
     pos: {x: 17, y: 14}
     dir: 0
-  - type: 2
+  - id: 1f440e3c-9db0-4041-82d3-0683f282f681
+    type: 2
     pos: {x: 17, y: 15}
     dir: 0
-  - type: 2
+  - id: 079f22dc-8d64-4242-8250-f0f95c5b7726
+    type: 2
     pos: {x: 1, y: 15}
     dir: 0
-  - type: 2
+  - id: fd04a1ec-950e-4442-8aad-d85b32bdd584
+    type: 2
     pos: {x: 1, y: 14}
     dir: 0
-  - type: 2
+  - id: 049b8f2a-36be-4ac8-b28b-0cbd47e54dd5
+    type: 2
     pos: {x: 1, y: 13}
     dir: 0
-  - type: 2
+  - id: 3d6c3a1a-74d0-4083-a305-1f4efef0eff0
+    type: 2
     pos: {x: 1, y: 12}
     dir: 0
-  - type: 2
+  - id: 5f551d48-03aa-4f9c-a142-ac4d70e60358
+    type: 2
     pos: {x: 1, y: 11}
     dir: 0
-  - type: 2
+  - id: dd08a371-a680-4f8b-bec9-572d91a04055
+    type: 2
     pos: {x: 1, y: 10}
     dir: 0
-  - type: 2
+  - id: 1190e5d9-f7c0-4431-ae9a-787a895e9a4f
+    type: 2
     pos: {x: 1, y: 9}
     dir: 0
-  - type: 2
+  - id: 7705a6e3-bc81-449e-b9a7-7663b8d64778
+    type: 2
     pos: {x: 1, y: 8}
     dir: 0
-  - type: 2
+  - id: ac03cc30-9f6d-43a0-ab8f-12cd30621cab
+    type: 2
     pos: {x: 1, y: 7}
     dir: 0
-  - type: 6
+  - id: 37d4d214-2cd1-4c2e-8e39-b6e27e6234bd
+    type: 6
     pos: {x: 8, y: 16}
     dir: 0
-  - type: 6
+  - id: cdd39c0f-4086-4fb1-91e3-7dc398155a9c
+    type: 6
     pos: {x: 9, y: 16}
     dir: 0
-  - type: 2
+  - id: 
+    type: 2
     pos: {x: 8, y: -5}
     dir: 0
-  - type: 6
+  - id: d7d5ca5c-d76b-44f9-a1ec-56882d271902
+    type: 6
     pos: {x: 8, y: 17}
     dir: 0
-  - type: 6
+  - id: 1431dbca-67ae-4f24-8c1f-7b7be1d97231
+    type: 6
     pos: {x: 9, y: 17}
     dir: 0
-  - type: 2
+  - id: c7d3ae93-518a-4cb5-9cb2-ef767529274f
+    type: 2
     pos: {x: 17, y: 16}
     dir: 0
-  - type: 2
+  - id: 0434c47f-b400-481a-9f50-054c8d38abb6
+    type: 2
     pos: {x: 16, y: 16}
     dir: 0
-  - type: 2
+  - id: 2226e313-5eb2-431b-bfee-c778f8c4c5e8
+    type: 2
     pos: {x: 13, y: 16}
     dir: 0
-  - type: 2
+  - id: 864f3ea6-cb4d-4389-9750-d026839c374e
+    type: 2
     pos: {x: 12, y: 16}
     dir: 0
-  - type: 2
+  - id: c1a122c7-2ba0-4ade-ac53-2c61d9c37f24
+    type: 2
     pos: {x: 6, y: 16}
     dir: 0
-  - type: 2
+  - id: e36f0bb5-c9d6-4417-9e47-a8fb13ab31a2
+    type: 2
     pos: {x: 11, y: 16}
     dir: 0
-  - type: 2
+  - id: e1e5c9b2-5a86-40b1-9ecf-40d366a84866
+    type: 2
     pos: {x: 7, y: 16}
     dir: 0
-  - type: 2
+  - id: ae6047ba-54d4-4bc8-8210-bcbec1220d27
+    type: 2
     pos: {x: 7, y: 17}
     dir: 0
-  - type: 2
+  - id: 647e9228-11f2-4c56-8a0e-a8053a225658
+    type: 2
     pos: {x: 7, y: 18}
     dir: 0
-  - type: 2
+  - id: 329ded71-e02e-40f2-9412-3af3055c2c84
+    type: 2
     pos: {x: 7, y: 19}
     dir: 0
-  - type: 2
+  - id: 53112abd-5fdf-4bdc-a820-c0097c66dffd
+    type: 2
     pos: {x: 6, y: 19}
     dir: 0
-  - type: 2
+  - id: c048eb90-de95-4166-a946-0ec988d30065
+    type: 2
     pos: {x: 10, y: 16}
     dir: 0
-  - type: 2
+  - id: 4b30c6fa-109e-4e22-9080-3a32afe06d8a
+    type: 2
     pos: {x: 10, y: 17}
     dir: 0
-  - type: 2
+  - id: 0d676c92-cc09-48ee-a814-9f4a267c40e3
+    type: 2
     pos: {x: 10, y: 18}
     dir: 0
-  - type: 2
+  - id: 4fb6899a-145f-4d75-bce1-c13b78f1e0fa
+    type: 2
     pos: {x: 5, y: 19}
     dir: 0
-  - type: 2
+  - id: b373482e-6445-4189-b189-5ac9ec20f216
+    type: 2
     pos: {x: 4, y: 19}
     dir: 0
-  - type: 2
+  - id: 100c74dc-c968-4467-93c9-9358ac5aa728
+    type: 2
     pos: {x: 6, y: 27}
     dir: 0
-  - type: 2
+  - id: 2d2e8348-7d80-4d39-9eb0-d515d1d7b9f3
+    type: 2
     pos: {x: 7, y: 27}
     dir: 0
-  - type: 2
+  - id: 998b1a77-913c-42ee-ad81-745be1f0501f
+    type: 2
     pos: {x: 8, y: 27}
     dir: 0
-  - type: 2
+  - id: 41dcf08f-4abe-4db9-974e-badd49a75211
+    type: 2
     pos: {x: 9, y: 27}
     dir: 0
-  - type: 2
+  - id: b5cc1a1c-2eb8-4618-ac41-bb707f60735f
+    type: 2
     pos: {x: 10, y: 27}
     dir: 0
-  - type: 2
+  - id: 964952e9-a9ab-4b91-a128-66e6dba900c2
+    type: 2
     pos: {x: 11, y: 27}
     dir: 0
-  - type: 2
+  - id: d93c2c63-66e8-45e3-9036-74de0257ff66
+    type: 2
     pos: {x: 12, y: 27}
     dir: 0
-  - type: 2
+  - id: 7a86f0bd-2ae2-4a0d-95da-481f5ef54800
+    type: 2
     pos: {x: 13, y: 27}
     dir: 0
-  - type: 2
+  - id: 8b2dfebc-985c-471a-b2c2-8c39d471295d
+    type: 2
     pos: {x: 14, y: 27}
     dir: 0
-  - type: 2
+  - id: 80610b64-6d24-4e3b-9186-1a161c102725
+    type: 2
     pos: {x: 15, y: 27}
     dir: 0
-  - type: 2
+  - id: dcaf05da-1fcc-42ac-bdcd-cc185fcba95a
+    type: 2
     pos: {x: 16, y: 27}
     dir: 0
-  - type: 2
+  - id: 90818c7c-6bf8-4896-80a4-6a1d1086cd51
+    type: 2
     pos: {x: 17, y: 27}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 8, y: -6}
     dir: 0
-  - type: 6
+  - id: 0d83e24d-74fe-43fc-91a6-358e661a38d0
+    type: 6
     pos: {x: 8, y: 18}
     dir: 0
-  - type: 6
+  - id: c2d1e009-435c-4507-8324-332d648ccf6e
+    type: 6
     pos: {x: 8, y: 19}
     dir: 0
-  - type: 6
+  - id: 2f1489d4-c3c4-4263-8b0e-f6876ad657f4
+    type: 6
     pos: {x: 9, y: 19}
     dir: 0
-  - type: 6
+  - id: b159c724-88f6-48b8-a607-f2f97993aebc
+    type: 6
     pos: {x: 9, y: 18}
     dir: 0
-  - type: 0
+  - id: 1b9f3a52-48c1-4c34-ab7d-16da7d604984
+    type: 0
     pos: {x: 17, y: 26}
     dir: 0
-  - type: 0
+  - id: 25ae911d-552c-45bd-9c84-43fd688f9e9e
+    type: 0
     pos: {x: 17, y: 25}
     dir: 0
-  - type: 0
+  - id: a4fb7596-6e62-4830-a327-1db81cfa88ec
+    type: 0
     pos: {x: 17, y: 24}
     dir: 0
-  - type: 0
+  - id: 0551fdde-b787-4aef-a862-f1341207cfea
+    type: 0
     pos: {x: 17, y: 23}
     dir: 0
-  - type: 0
+  - id: 0b8a88d9-c4dd-4536-856d-f8aaeeba8298
+    type: 0
     pos: {x: 17, y: 22}
     dir: 0
-  - type: 0
+  - id: e28906ce-9960-4e90-8aae-df61a6a2cdf7
+    type: 0
     pos: {x: 17, y: 21}
     dir: 0
-  - type: 0
+  - id: ce5ea209-449e-4e21-86a6-ec39efa07df7
+    type: 0
     pos: {x: 17, y: 20}
     dir: 0
-  - type: 0
+  - id: 21d27fd8-e904-4e7b-bc8f-77c737f338da
+    type: 0
     pos: {x: 17, y: 19}
     dir: 0
-  - type: 0
+  - id: 36ce2b05-b613-417a-b2b1-181d3fbe52e5
+    type: 0
     pos: {x: 16, y: 19}
     dir: 0
-  - type: 0
+  - id: 1981e586-c6d1-4481-b51a-be96317c826e
+    type: 0
     pos: {x: 15, y: 19}
     dir: 0
-  - type: 0
+  - id: b2ebf2bd-6485-4f54-84a5-2eb110c14948
+    type: 0
     pos: {x: 14, y: 19}
     dir: 0
-  - type: 0
+  - id: 94b330cf-dd2b-4e01-a71b-056f8b2e4149
+    type: 0
     pos: {x: 13, y: 19}
     dir: 0
-  - type: 0
+  - id: 0dc20ac3-fc7e-4db1-8ac3-0b69c9d23894
+    type: 0
     pos: {x: 12, y: 19}
     dir: 0
-  - type: 2
+  - id: ea086236-d891-4451-9925-8bd292bae8cc
+    type: 2
     pos: {x: 10, y: 19}
     dir: 0
-  - type: 2
+  - id: 44d2ed52-3bb5-411b-b5fe-9d343eb6bdbc
+    type: 2
     pos: {x: 11, y: 19}
     dir: 0
-  - type: 3
+  - id: 891a2b08-4ff9-451d-8c28-ae39dc508887
+    type: 3
     pos: {x: 10, y: 20}
     dir: 2
-  - type: 3
+  - id: 2e3c65e8-b2c1-46d5-963c-3d834b4628c6
+    type: 3
     pos: {x: 7, y: 20}
     dir: 2
-  - type: 0
+  - id: 9618d3b1-a8ff-44cb-aee0-d9203eb8b9d8
+    type: 0
     pos: {x: 1, y: 5}
     dir: 0
-  - type: 0
+  - id: 9ab599d5-93d2-4539-ae24-961c8fb27c67
+    type: 0
     pos: {x: 1, y: 6}
     dir: 0
-  - type: 0
+  - id: 3de82399-7a1a-4c13-85a7-1c21d70d36ed
+    type: 0
     pos: {x: 1, y: 16}
     dir: 0
-  - type: 0
+  - id: bebe16ff-6a27-427c-a1a7-2b857f78c1f7
+    type: 0
     pos: {x: 2, y: 16}
     dir: 0
-  - type: 0
+  - id: 0752c8ce-43da-47f2-a820-bc53d24e8406
+    type: 0
     pos: {x: 3, y: 16}
     dir: 0
-  - type: 0
+  - id: a5d44934-804c-45ec-9619-e6df3f6b42f3
+    type: 0
     pos: {x: 4, y: 16}
     dir: 0
-  - type: 0
+  - id: 727d7c4e-b92d-4fd8-9e34-619cb4ff9e74
+    type: 0
     pos: {x: 5, y: 16}
     dir: 0
-  - type: 0
+  - id: cf179442-59e1-43fa-8b55-126c00746c1e
+    type: 0
     pos: {x: 1, y: 20}
     dir: 0
-  - type: 0
+  - id: 4b86be99-ce10-49d2-b0e6-2381283bf1ba
+    type: 0
     pos: {x: 1, y: 21}
     dir: 0
-  - type: 0
+  - id: ed999edc-8d4e-4f30-a2cc-39fb3f71a170
+    type: 0
     pos: {x: 1, y: 22}
     dir: 0
-  - type: 0
+  - id: c4275507-48ed-4ca2-aba4-cf0d5d05eaf8
+    type: 0
     pos: {x: 1, y: 23}
     dir: 0
-  - type: 3
+  - id: 4355ff45-938a-4495-a8f4-9bffcf759c36
+    type: 3
     pos: {x: 11, y: 15}
     dir: 0
-  - type: 3
+  - id: f40b10d8-d7a2-4094-b718-d1181d86d071
+    type: 3
     pos: {x: 12, y: 15}
     dir: 0
-  - type: 1
+  - id: 744ddb8e-242a-499e-a8b8-36d5474dd865
+    type: 1
     pos: {x: 14, y: 16}
     dir: 0
-  - type: 1
+  - id: fd276fa8-cede-49f3-9aff-69433bf65c04
+    type: 1
     pos: {x: 15, y: 16}
     dir: 0
-  - type: 0
+  - id: e4ad8c54-d5c2-40d9-ab43-ec91720df937
+    type: 0
     pos: {x: 2, y: 5}
     dir: 0
-  - type: 0
+  - id: ba521648-1e1d-4613-8f18-cccb07c40f32
+    type: 0
     pos: {x: 3, y: 5}
     dir: 0
-  - type: 0
+  - id: c110c6ed-edc1-4a57-bdf5-fc8a9553f929
+    type: 0
     pos: {x: 8, y: 5}
     dir: 0
-  - type: 0
+  - id: aaa9398a-9680-41b3-b48d-fff00f31d674
+    type: 0
     pos: {x: 9, y: 5}
     dir: 0
-  - type: 0
+  - id: f0e6c960-3204-4c7a-9eb5-1099feaaa411
+    type: 0
     pos: {x: 10, y: 5}
     dir: 0
-  - type: 0
+  - id: 129a2f07-e5f6-44e4-9396-2bfb5200197f
+    type: 0
     pos: {x: 11, y: 5}
     dir: 0
-  - type: 0
+  - id: 675654cb-0b03-4400-a58b-a992c8642fc5
+    type: 0
     pos: {x: 12, y: 5}
     dir: 0
-  - type: 0
+  - id: 9cea62c7-f397-4365-bb02-1402cc476bed
+    type: 0
     pos: {x: 13, y: 5}
     dir: 0
-  - type: 0
+  - id: 3c8a93fc-fd7c-4aea-9fd3-4cb9e15d63ff
+    type: 0
     pos: {x: 14, y: 5}
     dir: 0
-  - type: 0
+  - id: 2607c893-1d40-44d7-9b2e-2b5095fc0b61
+    type: 0
     pos: {x: 15, y: 5}
     dir: 0
-  - type: 0
+  - id: 6326a458-b1ac-4a10-9424-9169c8d31e57
+    type: 0
     pos: {x: 16, y: 5}
     dir: 0
-  - type: 1
+  - id: e4f7cf6d-4c41-4c9b-aeea-8753a4e078ae
+    type: 1
     pos: {x: 7, y: 5}
     dir: 0
-  - type: 1
+  - id: 444ef76a-6c88-4a99-9061-666a61cc93af
+    type: 1
     pos: {x: 6, y: 5}
     dir: 0
-  - type: 1
+  - id: cf71b380-5d8b-44e4-9062-8a08009d1c4d
+    type: 1
     pos: {x: 5, y: 5}
     dir: 0
-  - type: 1
+  - id: 0d5b4b30-14ae-46c2-a733-029599e619c4
+    type: 1
     pos: {x: 4, y: 5}
     dir: 0
-  - type: 0
+  - id: 45bb48c5-5c93-425f-a0d5-57a06554694d
+    type: 0
     pos: {x: 2, y: 27}
     dir: 0
-  - type: 0
+  - id: 45f4c874-4de2-4d53-b275-8828b4c40104
+    type: 0
     pos: {x: 3, y: 27}
     dir: 0
-  - type: 2
+  - id: 7caeea28-13c2-4773-9acf-a755c0f97d5d
+    type: 2
     pos: {x: 6, y: 26}
     dir: 0
-  - type: 2
+  - id: 51b5beeb-2db8-48b9-9daa-7d32ba14a212
+    type: 2
     pos: {x: 6, y: 25}
     dir: 0
-  - type: 2
+  - id: be48f200-ff12-45fc-882d-e61cf16d3fb5
+    type: 2
     pos: {x: 6, y: 24}
     dir: 0
-  - type: 1
+  - id: 321ea1c5-9cd1-4fc2-8797-1f6e65d59dd9
+    type: 1
     pos: {x: 5, y: 27}
     dir: 0
-  - type: 1
+  - id: cd1d52d9-a33a-466c-ad0c-9c48ee0b8d53
+    type: 1
     pos: {x: 4, y: 27}
     dir: 0
-  - type: 2
+  - id: a40b1dd2-12d6-4529-9b12-72912fbd3bfd
+    type: 2
     pos: {x: 5, y: 24}
     dir: 0
-  - type: 2
+  - id: 779d06d7-7297-40ec-a31b-94916fcae519
+    type: 2
     pos: {x: 4, y: 24}
     dir: 0
-  - type: 0
+  - id: 7d4324c7-5c0b-4ed7-ac2b-7db5d967da07
+    type: 0
     pos: {x: 1, y: 19}
     dir: 0
-  - type: 0
+  - id: b84e5a58-e876-4235-9309-ed3ae31de5c7
+    type: 0
     pos: {x: 2, y: 19}
     dir: 0
-  - type: 0
+  - id: d26e973c-cb65-45fb-acb6-a726804cda27
+    type: 0
     pos: {x: 3, y: 19}
     dir: 0
-  - type: 0
+  - id: 22001a58-aeca-498a-b90d-b0ff03098dd4
+    type: 0
     pos: {x: 1, y: 24}
     dir: 0
-  - type: 0
+  - id: ebfcd53c-c870-4a78-8aa8-dd9464dde3c7
+    type: 0
     pos: {x: 1, y: 25}
     dir: 0
-  - type: 0
+  - id: 9eeafb66-9f15-4c2f-995d-f897382e2b7e
+    type: 0
     pos: {x: 1, y: 26}
     dir: 0
-  - type: 0
+  - id: 6ef40edc-6e1b-4a90-be6d-0dff5939f0d6
+    type: 0
     pos: {x: 1, y: 27}
     dir: 0
-  - type: 3
+  - id: 71e6e004-bd7e-4995-93c3-ceea6fb9800d
+    type: 3
     pos: {x: 4, y: 23}
     dir: 0
-  - type: 3
+  - id: 99878b5c-2974-4729-8e9d-6d932a432869
+    type: 3
     pos: {x: 5, y: 23}
     dir: 0
-  - type: 3
+  - id: 004170e3-628f-47e3-9fe1-d580faf76257
+    type: 3
     pos: {x: 6, y: 23}
     dir: 0
-  - type: 3
+  - id: 558850b1-4afd-4c4c-af57-d2d9af2c3a0d
+    type: 3
     pos: {x: 16, y: 23}
     dir: 3
-  - type: 2
+  - id: a170fb7d-6ff4-4071-bb2f-9276ec383767
+    type: 2
     pos: {x: 16, y: 10}
     dir: 0
-  - type: 2
+  - id: 6c0cf6e9-cc54-4aed-a890-7492c53a912d
+    type: 2
     pos: {x: 15, y: 10}
     dir: 0
-  - type: 2
+  - id: a4671f23-111a-43e4-a53e-32715bf14d3a
+    type: 2
     pos: {x: 14, y: 10}
     dir: 0
-  - type: 2
+  - id: 81f74f8e-993a-414d-b293-3949654c3d28
+    type: 2
     pos: {x: 13, y: 10}
     dir: 0
-  - type: 2
+  - id: 1c180e90-8007-4379-b500-9b89bb9f131a
+    type: 2
     pos: {x: 12, y: 10}
     dir: 0
-  - type: 2
+  - id: ca69a14b-b1a8-4b3a-becf-90df146e67a4
+    type: 2
     pos: {x: 11, y: 10}
     dir: 0
-  - type: 2
+  - id: 0d603a2e-e00d-4f16-afa6-f619fb0bb09d
+    type: 2
     pos: {x: 11, y: 9}
     dir: 0
-  - type: 2
+  - id: 871cef95-309d-4091-9ca3-fca3442dfcfc
+    type: 2
     pos: {x: 11, y: 8}
     dir: 0
-  - type: 1
+  - id: 1a7e2359-bb69-4288-9e97-3b50499d68be
+    type: 1
     pos: {x: 16, y: 9}
     dir: 0
-  - type: 1
+  - id: 96c857fa-d6ba-4cff-b729-773432a754c2
+    type: 1
     pos: {x: 15, y: 9}
     dir: 0
-  - type: 1
+  - id: 2114b2e2-e175-4eb6-a4d9-3a953a6700ea
+    type: 1
     pos: {x: 14, y: 9}
     dir: 0
-  - type: 1
+  - id: 9f0b8e84-3e98-46d9-809a-3245674e6e8e
+    type: 1
     pos: {x: 13, y: 9}
     dir: 0
-  - type: 1
+  - id: 60f6bec8-31ca-4750-ab24-f6d7e03b3472
+    type: 1
     pos: {x: 12, y: 9}
     dir: 0
-  - type: 0
+  - id: d50b3e70-0b8b-4d1b-a46e-4f5601f6e234
+    type: 0
     pos: {x: 17, y: 8}
     dir: 0
-  - type: 0
+  - id: ba8d9b16-e4c5-40a4-b0df-fedf0840ab93
+    type: 0
     pos: {x: 17, y: 7}
     dir: 0
-  - type: 0
+  - id: af58e7c1-a17f-449f-994b-f637eb3fcb57
+    type: 0
     pos: {x: 17, y: 6}
     dir: 0
-  - type: 0
+  - id: ca1c7887-ed82-41b8-af60-2ee64535cd8e
+    type: 0
     pos: {x: 17, y: 5}
     dir: 0
-  - type: 5
+  - id: ea192a63-d811-4be0-86a2-0804444c48e8
+    type: 5
     pos: {x: 9, y: 10}
     dir: 0
-  - type: 5
+  - id: 3e688de7-1e85-43f0-90d0-745306169464
+    type: 5
     pos: {x: 14, y: 8}
     dir: 0
-  - type: 5
+  - id: ade95747-8d74-4e5f-ac02-5216979a7452
+    type: 5
     pos: {x: 3, y: 9}
     dir: 0
-  - type: 5
+  - id: bed6c29e-04da-4c46-8b9f-b164954da3fb
+    type: 5
     pos: {x: 7, y: 26}
     dir: 0
-  - type: 5
+  - id: c76c2acf-5689-4df6-92d7-f91fbecb948e
+    type: 5
     pos: {x: 15, y: 20}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -3, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -2, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -1, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -4, y: 4}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -3, y: 4}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -2, y: 4}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -4, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -5, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -8, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: -7, y: 3}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 25, y: 11}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 25, y: 14}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 25, y: 13}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 25, y: 12}
     dir: 0
-  - type: 0
+  - id: 
+    type: 0
     pos: {x: 10, y: -8}
     dir: 0
   heroPos: {x: 2, y: 15}
+  pieceGroups: []
   levelName: 

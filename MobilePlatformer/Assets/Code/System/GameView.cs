@@ -26,7 +26,7 @@ public class GameView : UIView {
 			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
 				SceneManager.LoadScene ("IntroScene");
 			} else {
-				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f);
+				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 			}
 			break;
 		}
@@ -37,8 +37,10 @@ public class GameView : UIView {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
 		collectableText.text = gameLogic.CollectablesCollected+"/"+gameLogic.collectablesGoal;
 
-		var distance = gameLogic.hero.transform.position - camera.transform.position;
-		camera.transform.position += Time.deltaTime*3*new Vector3(distance.x,distance.y,0);
+		if (gameLogic.hero != null) {
+			var distance = gameLogic.hero.transform.position - camera.transform.position;
+			camera.transform.position += Time.deltaTime * 3 * new Vector3 (distance.x, distance.y, 0);
+		}
 
 		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,0,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
 	}

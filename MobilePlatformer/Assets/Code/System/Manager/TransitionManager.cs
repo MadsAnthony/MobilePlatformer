@@ -13,33 +13,41 @@ public class TransitionManager : MonoBehaviour {
 		camera.transform.gameObject.SetActive(false);
 	}
 
-	public void PlayTransition(Action callInBetween = null, float waitTime = 0) {
-		StartCoroutine(PlayTransitionCr(callInBetween, waitTime));
+	public void PlayTransition(Action callInBetween = null, float waitTime = 0, IEnumerator transitionIn = null, IEnumerator transitionOut = null) {
+		StartCoroutine(PlayTransitionCr(callInBetween, waitTime, transitionIn, transitionOut));
 	}
 
-	IEnumerator PlayTransitionCr(Action callInBetween, float waitTime) {
+	IEnumerator PlayTransitionCr(Action callInBetween, float waitTime, IEnumerator transitionIn, IEnumerator transitionOut = null) {
 		camera.transform.gameObject.SetActive (true);
-		yield return FadeToBlack();
+		yield return transitionIn;
 		yield return new WaitForSeconds(waitTime);
 		if (callInBetween != null) {
 			callInBetween ();
 		}
-		yield return FadeOut();
+		yield return transitionOut;
 		camera.transform.gameObject.SetActive(false);
 	}
 
-	IEnumerator FadeToBlack() {
-		yield return Fade(overlay.color,new Color(0,0,0,1));
+	public IEnumerator FadeToBlack() {
+		yield return Fade(new Color(0,0,0,0),new Color(0,0,0,1),0.5f);
 	}
 
-	IEnumerator FadeOut() {
-		yield return Fade(overlay.color,new Color(overlay.color.r,overlay.color.g,overlay.color.b,0));
+	public IEnumerator FadeToColor(Color color,float time) {
+		yield return Fade(overlay.color,color,time);
 	}
 
-	IEnumerator Fade(Color startColor, Color endColor) {
+	public IEnumerator FadeOut(float time= 0.5f) {
+		yield return Fade(overlay.color,new Color(overlay.color.r,overlay.color.g,overlay.color.b,0),time);
+	}
+
+	IEnumerator Fade(Color startColor, Color endColor, float time) {
 		float t = 0;
 		while (true) {
-			t += 2f * Time.deltaTime;
+			if (time > 0) {
+				t += (1 / (time)) * Time.deltaTime;
+			} else {
+				t = 1;
+			}
 			overlay.color = Color.Lerp (startColor,endColor,t);
 			if (t > 1) {
 				break;
