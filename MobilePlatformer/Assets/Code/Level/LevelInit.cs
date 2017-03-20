@@ -53,9 +53,6 @@ public class LevelInit : MonoBehaviour {
 			if (piece.type == PieceType.BlockDestructible) {
 				tmpPiece.name = "Destructable"+i;
 			}
-			if (piece.type == PieceType.BlockMoving) {
-				tmpPiece.name = "NonSticky"+i;
-			}
 			if (piece.type == PieceType.Ball) {
 				tmpPiece.name = "Ball"+i;
 			}

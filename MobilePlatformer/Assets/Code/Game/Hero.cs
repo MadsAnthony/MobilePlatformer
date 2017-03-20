@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : DynamicBody {
+public class Hero : Piece {
 	float gravity;
 	float speed = 7;
 	public float maxGravity = 50;

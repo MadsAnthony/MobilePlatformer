@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71255917bae18084e9419324ed902bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 8
+  Type: 7
   IsPassable: 1
   IsPushable: 1
 --- !u!212 &212922994748774874

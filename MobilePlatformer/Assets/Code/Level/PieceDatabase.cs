@@ -26,7 +26,6 @@ public enum PieceType {
 	Hero,
 	Collectable,
 	BlockDestructible,
-	BlockMoving,
 	Ball
 };
 

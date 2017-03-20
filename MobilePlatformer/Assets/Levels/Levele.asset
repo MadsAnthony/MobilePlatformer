@@ -1,0 +1,393 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
+  m_Name: Levele
+  m_EditorClassIdentifier: 
+  levelSize: {x: 20, y: 30}
+  pieces:
+  - id: 28c15faf-cb67-4db2-b690-ab2b73166df0
+    type: 2
+    pos: {x: 2, y: 15}
+    dir: 0
+  - id: d3cbc9d1-abe7-43d0-8065-a5bcaef1fd60
+    type: 2
+    pos: {x: 2, y: 16}
+    dir: 0
+  - id: 68ffc049-95d2-49c6-9bcb-c37b367c0505
+    type: 2
+    pos: {x: 2, y: 17}
+    dir: 0
+  - id: 2268799f-0263-491b-b9f3-98927f5b5516
+    type: 2
+    pos: {x: 2, y: 18}
+    dir: 0
+  - id: 6a37b6bd-6696-4c91-82fc-5f510d65e3d3
+    type: 2
+    pos: {x: 2, y: 19}
+    dir: 0
+  - id: fdd78fe3-d1f2-4c93-904d-38d4ce5da191
+    type: 2
+    pos: {x: 3, y: 19}
+    dir: 0
+  - id: 86e4d02e-5b6f-4a5a-a11e-a655569cb0ff
+    type: 2
+    pos: {x: 4, y: 19}
+    dir: 0
+  - id: c1caebc4-32ad-4165-a8dc-7cbd2cde1b22
+    type: 2
+    pos: {x: 5, y: 19}
+    dir: 0
+  - id: c67f68ab-0393-4474-9735-2e9011b5ec83
+    type: 2
+    pos: {x: 6, y: 19}
+    dir: 0
+  - id: e65ba8ba-9e67-4055-b174-ed538aed2c9b
+    type: 2
+    pos: {x: 7, y: 19}
+    dir: 0
+  - id: ab903946-4ddf-4fb4-8acb-ed38147cfebc
+    type: 2
+    pos: {x: 8, y: 19}
+    dir: 0
+  - id: 822e59b3-8b2b-4ac5-b494-7b59fa58f772
+    type: 2
+    pos: {x: 9, y: 19}
+    dir: 0
+  - id: 6ccfc4fd-dbfd-4e8e-ab53-39b09fe2b5ec
+    type: 2
+    pos: {x: 10, y: 19}
+    dir: 0
+  - id: 5e2dc237-dd7b-495b-82e4-6356aedde63e
+    type: 2
+    pos: {x: 11, y: 19}
+    dir: 0
+  - id: de66eac9-82e1-414b-aa77-a3d667faf060
+    type: 2
+    pos: {x: 12, y: 19}
+    dir: 0
+  - id: 0584b5d2-3e55-444e-8fdc-605c86afea9e
+    type: 2
+    pos: {x: 13, y: 19}
+    dir: 0
+  - id: c0ef3ae8-1e33-4616-bd23-188e675c5d5f
+    type: 2
+    pos: {x: 14, y: 19}
+    dir: 0
+  - id: 43c5716d-7816-40cb-ae9f-262e55cd13eb
+    type: 2
+    pos: {x: 15, y: 19}
+    dir: 0
+  - id: 6f650e4e-36ed-4a84-9db5-f145998fd01b
+    type: 2
+    pos: {x: 16, y: 19}
+    dir: 0
+  - id: a861399f-6c74-4007-b6ec-95a6cd8e4672
+    type: 2
+    pos: {x: 17, y: 19}
+    dir: 0
+  - id: 07e247f1-bbc8-45aa-a40c-9404900eb45d
+    type: 2
+    pos: {x: 18, y: 19}
+    dir: 0
+  - id: a9194422-e14a-49f9-ac12-1cc8aa124f39
+    type: 2
+    pos: {x: 18, y: 18}
+    dir: 0
+  - id: 53863da4-3ed4-4f30-95c9-6ad81ffa4379
+    type: 2
+    pos: {x: 18, y: 17}
+    dir: 0
+  - id: 0a92a4da-9e24-4bef-9ec2-e1b8ea87e5bd
+    type: 2
+    pos: {x: 18, y: 16}
+    dir: 0
+  - id: 4ace68c2-3110-4404-8d89-0cdd7e13fedc
+    type: 2
+    pos: {x: 18, y: 15}
+    dir: 0
+  - id: c90b737e-8ded-4995-80e0-aacd219af3b4
+    type: 2
+    pos: {x: 18, y: 14}
+    dir: 0
+  - id: 1fe7f1c5-2d94-43fb-b177-f33b48660687
+    type: 2
+    pos: {x: 18, y: 13}
+    dir: 0
+  - id: 3bcba556-c2c2-4023-84a4-1356a5d9dd06
+    type: 2
+    pos: {x: 18, y: 12}
+    dir: 0
+  - id: 510a94c3-f32d-4133-836b-2a3cd7b5cd03
+    type: 2
+    pos: {x: 18, y: 11}
+    dir: 0
+  - id: 0d0e492a-8ecf-46c8-94eb-64e755a7747c
+    type: 2
+    pos: {x: 18, y: 10}
+    dir: 0
+  - id: 8dd303ef-3d0a-4cc3-8b59-f8a1b8701499
+    type: 2
+    pos: {x: 18, y: 9}
+    dir: 0
+  - id: b01e3ccf-0773-4e45-8dbb-06fbdb703f13
+    type: 2
+    pos: {x: 18, y: 8}
+    dir: 0
+  - id: 97d7ec60-82d5-4f74-9d9d-1a852f2ab9dd
+    type: 2
+    pos: {x: 18, y: 7}
+    dir: 0
+  - id: ca6559eb-c71a-4e05-a25b-e206cfb96c1e
+    type: 2
+    pos: {x: 18, y: 6}
+    dir: 0
+  - id: cab311e5-741e-431a-bf8e-8d8ef1187154
+    type: 2
+    pos: {x: 17, y: 6}
+    dir: 0
+  - id: 962563c6-632b-4112-a400-e82d8e818267
+    type: 2
+    pos: {x: 16, y: 6}
+    dir: 0
+  - id: 82750878-7d39-4125-b7b9-90349939105b
+    type: 2
+    pos: {x: 15, y: 6}
+    dir: 0
+  - id: 64358c43-4a09-4bea-a33f-2a6818231bd8
+    type: 2
+    pos: {x: 14, y: 6}
+    dir: 0
+  - id: cf56aa50-2d3c-473f-92b2-459bbe88b7f1
+    type: 2
+    pos: {x: 13, y: 6}
+    dir: 0
+  - id: 54595d71-aabc-429e-8694-74f99d2fe799
+    type: 2
+    pos: {x: 12, y: 6}
+    dir: 0
+  - id: c74c787f-a721-415d-97a9-749ed07281f1
+    type: 2
+    pos: {x: 11, y: 6}
+    dir: 0
+  - id: fa62f11c-3831-4140-ac1d-73a3d1fee81a
+    type: 2
+    pos: {x: 10, y: 6}
+    dir: 0
+  - id: b90bfd64-1025-42ed-952a-63b66a625a40
+    type: 2
+    pos: {x: 9, y: 6}
+    dir: 0
+  - id: 252ede64-1e90-4ade-aa00-630771172c3f
+    type: 2
+    pos: {x: 8, y: 6}
+    dir: 0
+  - id: 42f30c29-99c4-46ee-8f58-81b68b497fa1
+    type: 2
+    pos: {x: 7, y: 6}
+    dir: 0
+  - id: faa4b2e1-21e6-48c2-b9a0-801a82ba3fcb
+    type: 2
+    pos: {x: 6, y: 6}
+    dir: 0
+  - id: e67736a8-9363-4ca8-b915-b2abd9a80761
+    type: 2
+    pos: {x: 5, y: 6}
+    dir: 0
+  - id: d36cde48-a4d6-4a1f-a91b-27e0d91c4190
+    type: 2
+    pos: {x: 4, y: 6}
+    dir: 0
+  - id: 7b447224-949b-4ca8-ad21-5be888630c3e
+    type: 2
+    pos: {x: 3, y: 6}
+    dir: 0
+  - id: 96398388-d4b3-446a-85b8-5e6b1f2a0886
+    type: 2
+    pos: {x: 2, y: 6}
+    dir: 0
+  - id: d48625b1-21c2-4940-9476-04dafa23f8ae
+    type: 2
+    pos: {x: 2, y: 7}
+    dir: 0
+  - id: b9907361-b1af-4898-bbc1-250092e9899b
+    type: 2
+    pos: {x: 2, y: 8}
+    dir: 0
+  - id: fa0f01c7-7107-4383-9099-0ba30796b2a1
+    type: 2
+    pos: {x: 2, y: 9}
+    dir: 0
+  - id: 2fba4a23-a69b-4853-bbab-72bbb59566c8
+    type: 2
+    pos: {x: 2, y: 10}
+    dir: 0
+  - id: fe54fd59-0e3e-4232-a8e8-8010b639e3c4
+    type: 2
+    pos: {x: 2, y: 11}
+    dir: 0
+  - id: 7f60ec24-7412-45e6-96ea-3ef075842287
+    type: 2
+    pos: {x: 2, y: 12}
+    dir: 0
+  - id: bc96d848-e096-447e-9a10-29dd22d124fb
+    type: 2
+    pos: {x: 2, y: 13}
+    dir: 0
+  - id: 05ca68ae-8659-4e4c-981b-c0ea508513a5
+    type: 2
+    pos: {x: 2, y: 14}
+    dir: 0
+  - id: 73851da6-abad-4568-a0e0-fdffbc68f484
+    type: 2
+    pos: {x: 16, y: 17}
+    dir: 0
+  - id: 31e304a7-b84b-4527-ba95-46c3eb6b4a64
+    type: 2
+    pos: {x: 15, y: 16}
+    dir: 0
+  - id: ddf7d7b2-3dee-4cfe-8dc8-d787a5b94385
+    type: 2
+    pos: {x: 15, y: 17}
+    dir: 0
+  - id: 1001e2d5-1531-4032-8e88-ef962397ce82
+    type: 2
+    pos: {x: 15, y: 18}
+    dir: 0
+  - id: 2d8d691b-eebf-4be8-8477-afbe5cf3f77a
+    type: 2
+    pos: {x: 16, y: 18}
+    dir: 0
+  - id: 6a15cb56-67b3-473f-89a1-51c1baa43ddb
+    type: 2
+    pos: {x: 17, y: 18}
+    dir: 0
+  - id: 829052ea-5d25-4710-8634-9b56b831d086
+    type: 2
+    pos: {x: 17, y: 17}
+    dir: 0
+  - id: 44692959-52ad-47d0-a691-0bdf1e12834f
+    type: 2
+    pos: {x: 17, y: 16}
+    dir: 0
+  - id: 1743c7e6-197d-46bb-a679-096d1e6b82cf
+    type: 2
+    pos: {x: 16, y: 16}
+    dir: 0
+  heroPos: {x: 5, y: 18}
+  pieceGroups:
+  - pieceIds:
+    - 73851da6-abad-4568-a0e0-fdffbc68f484
+    - 31e304a7-b84b-4527-ba95-46c3eb6b4a64
+    - ddf7d7b2-3dee-4cfe-8dc8-d787a5b94385
+    - 1001e2d5-1531-4032-8e88-ef962397ce82
+    - 2d8d691b-eebf-4be8-8477-afbe5cf3f77a
+    - 6a15cb56-67b3-473f-89a1-51c1baa43ddb
+    - 829052ea-5d25-4710-8634-9b56b831d086
+    - 44692959-52ad-47d0-a691-0bdf1e12834f
+    - 1743c7e6-197d-46bb-a679-096d1e6b82cf
+    moves:
+    - id: 86aa5246-c851-4e01-8795-12c75641af37
+      startPoint: {x: 15, y: 18}
+      endPoint: {x: 3, y: 18}
+      delay: 0
+      time: 2
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+        m_PreInfinity: 2
+        m_PostInfinity: 0
+        m_RotationOrder: 4
+      maxT: 1
+    - id: 2a325f80-9f57-4cd5-aacb-2104328a7b9d
+      startPoint: {x: 3, y: 16}
+      endPoint: {x: 3, y: 7}
+      delay: 0
+      time: 2
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxT: 1
+    - id: 32c98fbe-ca2a-4f59-ad11-f100ece5447b
+      startPoint: {x: 5, y: 7}
+      endPoint: {x: 17, y: 7}
+      delay: 0
+      time: 2
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxT: 1
+    - id: e082e663-6eae-4d3d-9541-b6e902491267
+      startPoint: {x: 17, y: 9}
+      endPoint: {x: 17, y: 18}
+      delay: 0
+      time: 2
+      animationCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 2
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      maxT: 1
+  levelName: 

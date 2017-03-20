@@ -29,22 +29,6 @@ MonoBehaviour:
     type: 2
     pos: {x: 3, y: 12}
     dir: 0
-  - id: f87e50ae-bfa9-4055-ac98-c50e7d7727d3
-    type: 7
-    pos: {x: 9, y: 11}
-    dir: 0
-  - id: 359a7029-b066-4129-8ee7-3cd38e0cc522
-    type: 7
-    pos: {x: 9, y: 10}
-    dir: 0
-  - id: a4a07710-05fa-4ef3-b4e4-9d5301400729
-    type: 7
-    pos: {x: 9, y: 9}
-    dir: 0
-  - id: 35df24ce-6cdc-41a6-bf31-7db68a3f27c1
-    type: 7
-    pos: {x: 9, y: 8}
-    dir: 0
   - id: 5f4f6ccd-a384-4ea6-ae68-2ffac294026d
     type: 2
     pos: {x: 8, y: 11}
@@ -68,38 +52,6 @@ MonoBehaviour:
   - id: bcb2e129-53f0-427a-a608-ac2f766a9686
     type: 2
     pos: {x: 6, y: 11}
-    dir: 0
-  - id: a4bfc01a-8fda-4320-9d65-839399c1767f
-    type: 7
-    pos: {x: 10, y: 8}
-    dir: 0
-  - id: 05e3d2f1-4799-4cdb-bcd4-5b42c67c36f5
-    type: 7
-    pos: {x: 10, y: 9}
-    dir: 0
-  - id: b6f156eb-ec21-4881-9449-2daa701b5dc6
-    type: 7
-    pos: {x: 10, y: 10}
-    dir: 0
-  - id: 35359915-d230-4060-a6f7-56b4a809757f
-    type: 7
-    pos: {x: 10, y: 11}
-    dir: 0
-  - id: 2ecd9274-270d-464c-91c7-afc15ee05e7a
-    type: 7
-    pos: {x: 11, y: 8}
-    dir: 0
-  - id: ff27aec7-bdd4-4f4c-8bbf-1a31d6ec24ce
-    type: 7
-    pos: {x: 11, y: 9}
-    dir: 0
-  - id: fc7f6c72-0604-4f98-88a1-924ec8f1629f
-    type: 7
-    pos: {x: 11, y: 10}
-    dir: 0
-  - id: fa116570-092a-4ba2-b5bd-85c971224820
-    type: 7
-    pos: {x: 11, y: 11}
     dir: 0
   - id: 6d78c7f6-779f-4109-a565-ef8b755cd629
     type: 2
@@ -201,13 +153,61 @@ MonoBehaviour:
     type: 2
     pos: {x: 17, y: 16}
     dir: 0
+  - id: 328af7c0-c962-4160-95fc-dfd66009c51a
+    type: 2
+    pos: {x: 9, y: 8}
+    dir: 0
+  - id: a23a7eff-8c96-4cec-b46a-a0a21b1a3598
+    type: 2
+    pos: {x: 9, y: 9}
+    dir: 0
+  - id: bde4b55d-bc71-4bdc-8295-35b06bdba358
+    type: 2
+    pos: {x: 9, y: 10}
+    dir: 0
+  - id: 84b1c3d3-b1f7-4eed-b722-2f10de8b6866
+    type: 2
+    pos: {x: 9, y: 11}
+    dir: 0
+  - id: 79bff402-3134-419a-8071-9d3900e4d970
+    type: 2
+    pos: {x: 10, y: 8}
+    dir: 0
+  - id: bad4b997-2164-4c52-b59e-a5e41bf4d003
+    type: 2
+    pos: {x: 10, y: 9}
+    dir: 0
+  - id: 0f0e6286-90dc-472c-8503-bec94a5794b9
+    type: 2
+    pos: {x: 10, y: 10}
+    dir: 0
+  - id: 2a1b8790-3f04-465a-8cfc-eaea73039e9e
+    type: 2
+    pos: {x: 10, y: 11}
+    dir: 0
+  - id: 7ece89fc-a789-47fe-98ec-4e42acbf3ad0
+    type: 2
+    pos: {x: 11, y: 8}
+    dir: 0
+  - id: 01da86a7-3b59-439a-8c75-6af907bab429
+    type: 2
+    pos: {x: 11, y: 9}
+    dir: 0
+  - id: be8d1524-2c0d-4ccf-85ce-3a65f24bf11c
+    type: 2
+    pos: {x: 11, y: 10}
+    dir: 0
+  - id: ec065f11-dcbb-402c-9fca-f27c6354a623
+    type: 2
+    pos: {x: 11, y: 11}
+    dir: 0
   heroPos: {x: 5, y: 15}
   pieceGroups:
   - pieceIds:
-    - 35df24ce-6cdc-41a6-bf31-7db68a3f27c1
-    - a4a07710-05fa-4ef3-b4e4-9d5301400729
-    - 359a7029-b066-4129-8ee7-3cd38e0cc522
-    - f87e50ae-bfa9-4055-ac98-c50e7d7727d3
+    - 328af7c0-c962-4160-95fc-dfd66009c51a
+    - a23a7eff-8c96-4cec-b46a-a0a21b1a3598
+    - bde4b55d-bc71-4bdc-8295-35b06bdba358
+    - 84b1c3d3-b1f7-4eed-b722-2f10de8b6866
     moves:
     - id: cf448539-914d-490b-9f77-e4f5f2489c3a
       startPoint: {x: 9, y: 11}
@@ -264,10 +264,10 @@ MonoBehaviour:
         m_RotationOrder: 4
       maxT: 1
   - pieceIds:
-    - 35359915-d230-4060-a6f7-56b4a809757f
-    - b6f156eb-ec21-4881-9449-2daa701b5dc6
-    - 05e3d2f1-4799-4cdb-bcd4-5b42c67c36f5
-    - a4bfc01a-8fda-4320-9d65-839399c1767f
+    - 79bff402-3134-419a-8071-9d3900e4d970
+    - bad4b997-2164-4c52-b59e-a5e41bf4d003
+    - 0f0e6286-90dc-472c-8503-bec94a5794b9
+    - 2a1b8790-3f04-465a-8cfc-eaea73039e9e
     moves:
     - id: dd7f119f-f460-4b54-8c30-e8e148cdd2ac
       startPoint: {x: 10, y: 11}
@@ -324,10 +324,10 @@ MonoBehaviour:
         m_RotationOrder: 4
       maxT: 1
   - pieceIds:
-    - 2ecd9274-270d-464c-91c7-afc15ee05e7a
-    - ff27aec7-bdd4-4f4c-8bbf-1a31d6ec24ce
-    - fc7f6c72-0604-4f98-88a1-924ec8f1629f
-    - fa116570-092a-4ba2-b5bd-85c971224820
+    - 7ece89fc-a789-47fe-98ec-4e42acbf3ad0
+    - 01da86a7-3b59-439a-8c75-6af907bab429
+    - be8d1524-2c0d-4ccf-85ce-3a65f24bf11c
+    - ec065f11-dcbb-402c-9fca-f27c6354a623
     moves:
     - id: 52a0a052-db9e-4d54-8e7b-9109e4c1b221
       startPoint: {x: 11, y: 11}

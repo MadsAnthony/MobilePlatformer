@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : DynamicBody {
+public class Ball : Piece {
 	float gravity;
 	void Update () {
 		gravity -= 1f;

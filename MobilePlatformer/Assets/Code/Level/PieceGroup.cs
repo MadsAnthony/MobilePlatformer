@@ -43,9 +43,7 @@ public class PieceGroup : MonoBehaviour {
 			Vector3 dirEvalT = (dir * evalT);
 
 			foreach (Piece piece  in pieces) {
-				if ((DynamicBody)piece != null) {
-					((DynamicBody)piece).Move ((dirEvalT - pos), null, null, false, pieces.ToArray (),true);
-				}
+				piece.Move ((dirEvalT - pos), null, null, false, pieces.ToArray (),true);
 			}
 
 			pos = dirEvalT;

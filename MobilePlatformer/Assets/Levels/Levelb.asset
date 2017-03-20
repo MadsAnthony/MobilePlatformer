@@ -233,10 +233,6 @@ MonoBehaviour:
     type: 0
     pos: {x: 9, y: 30}
     dir: 0
-  - id: 63aeb406-a686-4a15-882e-8f9c2cfd9e2b
-    type: 8
-    pos: {x: 8, y: 19}
-    dir: 0
   - id: 53d25c84-cc10-4d22-908d-bc56c3d62327
     type: 2
     pos: {x: 14, y: 13}
@@ -257,10 +253,6 @@ MonoBehaviour:
     type: 2
     pos: {x: 10, y: 13}
     dir: 0
-  - id: b5fc06e1-8a88-4a6e-96e7-789b7821fece
-    type: 8
-    pos: {x: 12, y: 12}
-    dir: 0
   - id: 15e5e835-73de-4e3b-a60e-ad2a1f55af3d
     type: 2
     pos: {x: 3, y: 16}
@@ -273,9 +265,17 @@ MonoBehaviour:
     type: 2
     pos: {x: 5, y: 16}
     dir: 0
-  - id: b2903a70-5283-415d-acdb-09f7fde76a82
-    type: 8
+  - id: 1584c8ea-4d59-414e-bb82-13a2b22ceace
+    type: 7
     pos: {x: 11, y: 19}
+    dir: 0
+  - id: 14495baf-373a-4d3e-940d-6def0b902cbb
+    type: 7
+    pos: {x: 8, y: 19}
+    dir: 0
+  - id: cb4a5616-e117-4cf2-82c0-60e059f30f71
+    type: 7
+    pos: {x: 11, y: 12}
     dir: 0
   heroPos: {x: 4, y: 19}
   pieceGroups: []

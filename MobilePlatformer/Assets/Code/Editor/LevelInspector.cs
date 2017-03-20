@@ -274,9 +274,6 @@ public class LevelInspector : Editor {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 							tmpTexture = blockDestructibleTexture;
 						}
-						if (piece.type == PieceType.BlockMoving) {
-							GUI.color = new Color(0.2f,0.2f,0.8f,1);
-						}
 						if (piece.type == PieceType.Ball) {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 						}
