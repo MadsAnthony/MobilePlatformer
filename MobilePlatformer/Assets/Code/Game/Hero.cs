@@ -40,18 +40,26 @@ public class Hero : Piece {
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
-		isOnGround = false;
-
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
 			(Piece p, bool b) => {
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
 					}
-					gravity = 0;
-					isOnGround = true;
+					if (gravity<=0) {
+						gravity = 0;
+						isOnGround = true;
+					} else {
+					if (PieceDatabase.IsSticky(p.Type)) {
+						isOnGround = true;
+						gravity = 0;
+						movingDir *= -1;
+						ChangeGravity(2);
+					}
+				}
 				},
 			() => {
+				isOnGround = false;
 				Check(dir*speed*-movingDir,
 						() => {
 								if (gravity<0f) {
@@ -107,7 +115,7 @@ public class Hero : Piece {
 				movingDir = newMovingDir;
 			}
 
-			if (verticalDotProduct < -threshold  && isOnGround && !touchConsumed) {
+			if (verticalDotProduct < -threshold  && isOnGround && !touchConsumed && noGravityT>=1) {
 				Jump ();
 			}
 			if (verticalDotProduct < -threshold && !touchConsumed) {
@@ -144,6 +152,9 @@ public class Hero : Piece {
 		}
 		dir = dirs [dirsIndex%dirs.Length];
 		gravity = 0;
+
+		// consume all touch inputs - because controls have been changed/rotated.
+		touchConsumed = true;
 	}
 
 	public override void Hit (Piece hitPiece) {

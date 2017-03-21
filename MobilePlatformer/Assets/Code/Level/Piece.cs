@@ -39,6 +39,7 @@ public abstract class Piece : MonoBehaviour {
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
+		bool wasInterrupted = false;
 		bool newDirHasBeenSet = false;
 
 		int i = 0;
@@ -77,6 +78,7 @@ public abstract class Piece : MonoBehaviour {
 				// only call callbackInterrupted on the first hit
 				if (i == 0 && callbackInterrupted != null) {
 					callbackInterrupted (piece,false);
+					wasInterrupted = true;
 				}
 			}
 			if (piece.IsPushable) {
@@ -90,12 +92,13 @@ public abstract class Piece : MonoBehaviour {
 
 				if (i == 0 && callbackInterrupted != null) {
 					callbackInterrupted (piece,true);
+					wasInterrupted = true;
 				}
 			}
 			i++;
 		}
 		this.transform.position += newDir;
-		if (callbackFinished != null) {
+		if (callbackFinished != null && !wasInterrupted) {
 			callbackFinished ();
 		}
 		return newDir;
