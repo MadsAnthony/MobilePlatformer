@@ -28,33 +28,14 @@ public class LevelInit : MonoBehaviour {
 		foreach (var piece in level.pieces) {
 			PieceData pieceData = Director.PieceDatabase.GetPieceData (piece.type);
 			var tmpPiece = Instantiate(pieceData.prefab);
-
-			if (piece.type == PieceType.BlockNormal) {
-				tmpPiece.name = "Block"+i;
-			}
+			tmpPiece.name = "Piece"+i;
 
 			if (piece.type == PieceType.BlockColor) {
 				gameLogic.coloredBlocksGoal++;
-				tmpPiece.name = "ColorBlock"+i;
-			}
-
-			if (piece.type == PieceType.Spike) {
-				tmpPiece.name = "Spike"+i;
-			}
-
-			if (piece.type == PieceType.BlockNonSticky) {
-				tmpPiece.name = "NonSticky"+i;
 			}
 
 			if (piece.type == PieceType.Collectable) {
-				tmpPiece.name = "Collectable"+i;
 				gameLogic.collectablesGoal++;
-			}
-			if (piece.type == PieceType.BlockDestructible) {
-				tmpPiece.name = "Destructable"+i;
-			}
-			if (piece.type == PieceType.Ball) {
-				tmpPiece.name = "Ball"+i;
 			}
 
 			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);

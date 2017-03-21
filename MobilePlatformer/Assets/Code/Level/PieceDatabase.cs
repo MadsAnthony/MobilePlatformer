@@ -15,6 +15,10 @@ public class PieceDatabase : ScriptableObject {
 		}
 		return null;
 	}
+
+	public static bool IsSticky(PieceType pieceType) {
+		return pieceType == PieceType.BlockNormal || pieceType == PieceType.BlockColor;
+	}
 }
 
 // ATTENTION: Always add new entries at the end and be careful when removing entries (as enums are serialized to integers).

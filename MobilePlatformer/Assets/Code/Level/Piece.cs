@@ -34,7 +34,7 @@ public abstract class Piece : MonoBehaviour {
 		}
 	}
 
-	public Vector3 Move(Vector3 dir, Action<string,bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
+	public Vector3 Move(Vector3 dir, Action<Piece,bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
 		EnsureRigidBody();
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
@@ -76,12 +76,12 @@ public abstract class Piece : MonoBehaviour {
 
 				// only call callbackInterrupted on the first hit
 				if (i == 0 && callbackInterrupted != null) {
-					callbackInterrupted (hit.collider.name,false);
+					callbackInterrupted (piece,false);
 				}
 			}
 			if (piece.IsPushable) {
 				bool shouldDestroy = false;
-				newDir = tmpDir+piece.Move ((inputDir-tmpDir),(string s, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
+				newDir = tmpDir+piece.Move ((inputDir-tmpDir),(Piece p, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
 				if (shouldDestroy && canDestroy) {
 					newDir = inputDir;
 					piece.Destroy();
@@ -89,7 +89,7 @@ public abstract class Piece : MonoBehaviour {
 				}
 
 				if (i == 0 && callbackInterrupted != null) {
-					callbackInterrupted (hit.collider.name,true);
+					callbackInterrupted (piece,true);
 				}
 			}
 			i++;
@@ -109,7 +109,8 @@ public abstract class Piece : MonoBehaviour {
 		RaycastHit hit;
 
 		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
-			if (hit.collider.name.Contains ("Block")) {
+			var piece = hit.collider.GetComponent<Piece> ();
+			if (PieceDatabase.IsSticky(piece.Type)) {
 				newDir = inputDir.normalized * (hit.distance - gap);
 
 				if (callbackInterrupted != null) {

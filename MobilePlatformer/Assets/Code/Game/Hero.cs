@@ -36,19 +36,19 @@ public class Hero : Piece {
 			KeyboardInput ();
 		}
 
-		Move(dir*speed*movingDir,(string s, bool b) => { if (s.Contains("Block")) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,(Piece p, bool b) => { if (PieceDatabase.IsSticky(p.Type)) {ChangeGravity(1*-movingDir);}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
 		isOnGround = false;
 
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
-			(string s, bool b) => {
+			(Piece p, bool b) => {
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
 					}
-					gravity = 0; 
+					gravity = 0;
 					isOnGround = true;
 				},
 			() => {
