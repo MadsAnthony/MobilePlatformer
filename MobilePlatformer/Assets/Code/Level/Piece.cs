@@ -34,13 +34,13 @@ public abstract class Piece : MonoBehaviour {
 		}
 	}
 
-	public Vector3 Move(Vector3 dir, Action<Piece,bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
+	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
 		EnsureRigidBody();
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
-		bool wasInterrupted = false;
 		bool newDirHasBeenSet = false;
+		List<Piece> interruptingPieces = new List<Piece>();
 
 		int i = 0;
 		Vector3 tmpDir;
@@ -64,42 +64,39 @@ public abstract class Piece : MonoBehaviour {
 
 			tmpDir = inputDir.normalized * (hit.distance - gap);
 
-			// check if the rest of the hits are approximately at the same distance, if they are then they should be hit.
-			if (i >0 && newDirHasBeenSet && !newDir.Equals (tmpDir)) continue;
-
-			// if pushable has set newDir, do not hit pieces that are farther away (but do hit pieces before).
-			if (i > 0 && tmpDir.magnitude > newDir.magnitude) continue;
+			// Do not hit pieces that are farther away (but do hit pieces before).
+			if (i > 0 && interruptingPieces.Count>0 && tmpDir.magnitude > newDir.magnitude) continue;
 
 			piece.Hit(this);
 			if (!piece.IsPassable && !piece.IsPushable) {
 				newDirHasBeenSet = true;
 				newDir = tmpDir;
 
-				// only call callbackInterrupted on the first hit
-				if (i == 0 && callbackInterrupted != null) {
-					callbackInterrupted (piece,false);
-					wasInterrupted = true;
-				}
+				interruptingPieces.Add (piece);
 			}
 			if (piece.IsPushable) {
 				bool shouldDestroy = false;
-				newDir = tmpDir+piece.Move ((inputDir-tmpDir),(Piece p, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
+				newDir = tmpDir+piece.Move ((inputDir-tmpDir),(Piece[] ps, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
 				if (shouldDestroy && canDestroy) {
 					newDir = inputDir;
 					piece.Destroy();
 					continue;
 				}
 
-				if (i == 0 && callbackInterrupted != null) {
-					callbackInterrupted (piece,true);
-					wasInterrupted = true;
-				}
+				interruptingPieces.Add (piece);
 			}
 			i++;
 		}
+		if (interruptingPieces.Count>0) {
+			if (callbackInterrupted != null) {
+				callbackInterrupted (interruptingPieces.ToArray (), false);
+			}
+		}
 		this.transform.position += newDir;
-		if (callbackFinished != null && !wasInterrupted) {
-			callbackFinished ();
+		if (interruptingPieces.Count == 0) {
+			if (callbackFinished != null) {
+				callbackFinished ();
+			}
 		}
 		return newDir;
 	}

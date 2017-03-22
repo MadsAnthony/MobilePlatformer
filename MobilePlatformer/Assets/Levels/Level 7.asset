@@ -13,213 +13,282 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSize: {x: 20, y: 30}
   pieces:
-  - type: 0
-    pos: {x: 2, y: 14}
-    dir: 0
-  - type: 0
+  - id: 39699c6e-4894-43dd-9817-f6e696006ed5
+    type: 0
     pos: {x: 2, y: 8}
     dir: 0
-  - type: 0
+  - id: 57571a40-eef9-4c9a-bd37-cca712529d1f
+    type: 0
     pos: {x: 2, y: 7}
     dir: 0
-  - type: 0
+  - id: f7b14cbb-b56f-4e49-82d6-d49d54244522
+    type: 0
     pos: {x: 3, y: 7}
     dir: 0
-  - type: 0
+  - id: 921b88f8-0712-4498-99ae-ff46434d5291
+    type: 0
     pos: {x: 4, y: 7}
     dir: 0
-  - type: 0
+  - id: 0b61891e-3fbb-4185-9441-dcd812652ecb
+    type: 0
     pos: {x: 5, y: 7}
     dir: 0
-  - type: 0
+  - id: 8bd146d8-c8d4-4ed5-8f7b-a3a68388e2ee
+    type: 0
     pos: {x: 6, y: 7}
     dir: 0
-  - type: 0
+  - id: e199e839-c163-473f-be56-a20673e749dd
+    type: 0
     pos: {x: 7, y: 7}
     dir: 0
-  - type: 0
+  - id: 71cf1e6d-e657-4060-a58b-75fea28fc43a
+    type: 0
     pos: {x: 8, y: 7}
     dir: 0
-  - type: 0
+  - id: cf1ceb0e-5156-40bf-8295-232dea59c452
+    type: 0
     pos: {x: 9, y: 7}
     dir: 0
-  - type: 0
+  - id: 57f145f0-545d-42e4-8f7b-d4cf5a7538bf
+    type: 0
     pos: {x: 10, y: 7}
     dir: 0
-  - type: 0
+  - id: 758b6957-4c10-4f18-be9c-4cfcf21f4409
+    type: 0
     pos: {x: 11, y: 7}
     dir: 0
-  - type: 0
+  - id: d7f97ccb-bf77-42c8-8960-9cfcd96fe878
+    type: 0
     pos: {x: 12, y: 7}
     dir: 0
-  - type: 0
+  - id: 68ce5ea5-4f0c-4bc4-ab1d-9704e0c280dd
+    type: 0
     pos: {x: 13, y: 7}
     dir: 0
-  - type: 0
+  - id: 054fb439-66ed-4a47-be15-97fb17b28d23
+    type: 0
     pos: {x: 14, y: 7}
     dir: 0
-  - type: 0
+  - id: 126d7b79-7e89-46cf-a148-d21f26aebfe7
+    type: 0
     pos: {x: 15, y: 7}
     dir: 0
-  - type: 0
+  - id: 980af243-66b8-4c37-ad3b-1c72bdd6665b
+    type: 0
     pos: {x: 16, y: 7}
     dir: 0
-  - type: 0
+  - id: 34fc7c1e-af9e-4b4f-896b-e167ebbea867
+    type: 0
     pos: {x: 7, y: 20}
     dir: 0
-  - type: 0
+  - id: 940ca905-cb6b-4c43-8585-1671645d2db8
+    type: 0
     pos: {x: 8, y: 20}
     dir: 0
-  - type: 0
+  - id: e3942049-a4ba-4aec-b5c5-5097ce94c01c
+    type: 0
     pos: {x: 9, y: 20}
     dir: 0
-  - type: 0
+  - id: c880038d-7945-445f-9d79-53d712674a31
+    type: 0
     pos: {x: 11, y: 20}
     dir: 0
-  - type: 0
+  - id: 04f713e4-5d05-4282-96a9-6da4c1b2ede8
+    type: 0
     pos: {x: 12, y: 20}
     dir: 0
-  - type: 0
+  - id: a625fde4-a658-4944-9a18-1a4d8158bd06
+    type: 0
     pos: {x: 13, y: 20}
     dir: 0
-  - type: 0
+  - id: 2946570b-4f78-4a16-a799-7e2791e60d90
+    type: 0
     pos: {x: 14, y: 20}
     dir: 0
-  - type: 0
+  - id: 20e293c4-d632-4783-b6aa-ae8fd87a4d6d
+    type: 0
     pos: {x: 15, y: 20}
     dir: 0
-  - type: 0
+  - id: bd5c53ad-14cf-47e6-b28d-94060232a784
+    type: 0
     pos: {x: 16, y: 20}
     dir: 0
-  - type: 0
+  - id: 320b2a0e-14b1-4f23-aeec-6f817299021c
+    type: 0
     pos: {x: 17, y: 20}
     dir: 0
-  - type: 0
+  - id: cb5f522d-70e5-4fe0-9871-87cf80f3cea1
+    type: 0
     pos: {x: 17, y: 14}
     dir: 0
-  - type: 0
+  - id: 2531e2c5-2c8a-43d0-b83b-fb9b851ce884
+    type: 0
     pos: {x: 17, y: 15}
     dir: 0
-  - type: 0
+  - id: 32619497-df12-4f05-a2c3-92dd89753049
+    type: 0
     pos: {x: 17, y: 16}
     dir: 0
-  - type: 0
+  - id: 0b24bbb3-0eb4-4dd6-ad22-aabc7c7f9c4a
+    type: 0
     pos: {x: 17, y: 17}
     dir: 0
-  - type: 0
+  - id: 292c731d-f7f5-4e6e-a996-cf25f8f063e7
+    type: 0
     pos: {x: 17, y: 18}
     dir: 0
-  - type: 0
+  - id: 2c45eafa-bd88-46a1-a83a-9e557fce24ff
+    type: 0
     pos: {x: 17, y: 19}
     dir: 0
-  - type: 2
+  - id: a29ce279-0c31-4dc3-a27c-b34b647575ee
+    type: 2
     pos: {x: 10, y: 20}
     dir: 0
-  - type: 2
+  - id: e3110296-f675-48f8-9e52-533d0f67af39
+    type: 2
     pos: {x: 10, y: 19}
     dir: 0
-  - type: 2
+  - id: 4cc16f06-960c-4f3f-acf7-e9cdbfaf76b0
+    type: 2
     pos: {x: 10, y: 18}
     dir: 0
-  - type: 2
+  - id: b08ce065-37d6-4487-bf25-cff490fb38c5
+    type: 2
     pos: {x: 10, y: 15}
     dir: 0
-  - type: 2
+  - id: ea512c87-fc7d-4c12-bb90-c73edbdef5eb
+    type: 2
     pos: {x: 10, y: 14}
     dir: 0
-  - type: 2
+  - id: 0aa78ade-5818-4d7c-b08b-e9cc47f74ef5
+    type: 2
     pos: {x: 11, y: 14}
     dir: 0
-  - type: 2
+  - id: f56df3ed-1b63-48cc-869a-4d117c50d19e
+    type: 2
     pos: {x: 12, y: 14}
     dir: 0
-  - type: 2
+  - id: cee7a244-f185-49ac-94b6-5f94bc1e2aab
+    type: 2
     pos: {x: 13, y: 14}
     dir: 0
-  - type: 2
+  - id: 36e3d735-8e29-4472-ab4a-27d4a19e9818
+    type: 2
     pos: {x: 14, y: 14}
     dir: 0
-  - type: 2
-    pos: {x: 17, y: 13}
-    dir: 0
-  - type: 2
+  - id: 7c99b240-b758-43e5-8367-85ba57ae3e3b
+    type: 2
     pos: {x: 17, y: 12}
     dir: 0
-  - type: 2
+  - id: 13b9f5b1-db3e-49cf-906d-73f3f6f7af9e
+    type: 2
     pos: {x: 17, y: 11}
     dir: 0
-  - type: 2
+  - id: 4a9188a0-ffe3-4c1c-a328-0840d6929337
+    type: 2
     pos: {x: 17, y: 10}
     dir: 0
-  - type: 2
-    pos: {x: 17, y: 9}
-    dir: 0
-  - type: 2
-    pos: {x: 17, y: 8}
-    dir: 0
-  - type: 2
-    pos: {x: 17, y: 7}
-    dir: 0
-  - type: 2
+  - id: f6da023f-760e-4f17-a093-421f9f922d63
+    type: 2
     pos: {x: 13, y: 8}
     dir: 0
-  - type: 2
+  - id: c15eab83-8a1d-4e97-99ab-69d75570bc09
+    type: 2
     pos: {x: 6, y: 8}
     dir: 0
-  - type: 2
+  - id: 9d8634ac-8c86-4080-89d7-fd5ac0bc1ff0
+    type: 2
     pos: {x: 6, y: 9}
     dir: 0
-  - type: 2
+  - id: e129ddec-8fd2-477f-a350-757f0c93fb0e
+    type: 2
     pos: {x: 6, y: 10}
     dir: 0
-  - type: 2
-    pos: {x: 6, y: 11}
-    dir: 0
-  - type: 2
-    pos: {x: 2, y: 15}
-    dir: 0
-  - type: 2
-    pos: {x: 2, y: 16}
-    dir: 0
-  - type: 2
+  - id: 88b1f066-7aea-402e-826a-112920063253
+    type: 2
     pos: {x: 2, y: 17}
     dir: 0
-  - type: 2
+  - id: cf17d722-1393-4245-b95f-5ae3da2bd584
+    type: 2
     pos: {x: 2, y: 18}
     dir: 0
-  - type: 2
+  - id: 8f53a147-4bb2-4008-81ca-0b5f3958a937
+    type: 2
     pos: {x: 2, y: 19}
     dir: 0
-  - type: 2
+  - id: b8c01d92-0981-4d02-aa83-26ed5c3b28eb
+    type: 2
     pos: {x: 2, y: 20}
     dir: 0
-  - type: 2
+  - id: f2d0794c-b7de-4c52-b639-18390657d6b1
+    type: 2
     pos: {x: 3, y: 20}
     dir: 0
-  - type: 2
+  - id: 2804e6d9-b9c3-4f05-83dd-8f6df7e31e81
+    type: 2
     pos: {x: 4, y: 20}
     dir: 0
-  - type: 2
+  - id: 65c61e29-5857-405d-84c3-940ff428d1f3
+    type: 2
     pos: {x: 5, y: 20}
     dir: 0
-  - type: 2
+  - id: fe79df1b-531e-4848-a88b-a41f33403664
+    type: 2
     pos: {x: 6, y: 20}
     dir: 0
-  - type: 1
+  - id: 175dd312-1c45-4bb4-bf23-0a3d5b1e6684
+    type: 1
     pos: {x: 2, y: 11}
     dir: 0
-  - type: 1
+  - id: 4d622e83-5801-4c0c-b386-b79d3b37993c
+    type: 1
     pos: {x: 2, y: 12}
     dir: 0
-  - type: 1
+  - id: 2a7a1249-a732-48f2-a119-9fec6c6d6687
+    type: 1
     pos: {x: 2, y: 13}
     dir: 0
-  - type: 0
+  - id: 4e0fc870-e9d7-45fa-896e-718e34c1e679
+    type: 0
     pos: {x: 2, y: 9}
     dir: 0
-  - type: 0
+  - id: 923ffc6b-4e59-4855-8723-6d765803d0c5
+    type: 0
     pos: {x: 2, y: 10}
     dir: 0
+  - id: bdec1d3f-f47e-4016-96fd-5548a5ced63f
+    type: 2
+    pos: {x: 6, y: 11}
+    dir: 0
+  - id: 2cfb96b7-ef27-4055-9892-dc90d963dca0
+    type: 0
+    pos: {x: 17, y: 9}
+    dir: 0
+  - id: dfef5e61-7a26-4dcc-82e4-02ba01db8efd
+    type: 0
+    pos: {x: 17, y: 8}
+    dir: 0
+  - id: 00de488f-479d-42bb-9087-8726f6775b83
+    type: 0
+    pos: {x: 17, y: 7}
+    dir: 0
+  - id: 6e7047bf-e99a-48bb-ba57-8ebbe9474e19
+    type: 0
+    pos: {x: 17, y: 13}
+    dir: 0
+  - id: 91a7c702-9cd4-49c3-801c-9157e8b13685
+    type: 2
+    pos: {x: 2, y: 16}
+    dir: 0
+  - id: b1931803-9494-466b-97f7-6e734840a71a
+    type: 2
+    pos: {x: 2, y: 15}
+    dir: 0
+  - id: 2bc45001-6e08-4a49-a0b1-6068b1ed9184
+    type: 2
+    pos: {x: 2, y: 14}
+    dir: 0
   heroPos: {x: 3, y: 19}
+  pieceGroups: []
   levelName: 
-  someInt: 0

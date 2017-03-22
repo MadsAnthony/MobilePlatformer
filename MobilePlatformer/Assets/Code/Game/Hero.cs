@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,12 +37,12 @@ public class Hero : Piece {
 			KeyboardInput ();
 		}
 
-		Move(dir*speed*movingDir,(Piece p, bool b) => { if (PieceDatabase.IsSticky(p.Type)) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => {return PieceDatabase.IsSticky (p.Type);})) {ChangeGravity(1*-movingDir);}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
 		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
-			(Piece p, bool b) => {
+			(Piece[] ps, bool b) => {
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
@@ -49,8 +50,12 @@ public class Hero : Piece {
 					if (gravity<=0) {
 						gravity = 0;
 						isOnGround = true;
+						if (AllPiece(ps, (Piece p) => {return !PieceDatabase.IsSticky (p.Type);}) && dirsIndex%4 != 0) {
+							movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
+							ChangeGravity(-dirsIndex);
+						}
 					} else {
-					if (PieceDatabase.IsSticky(p.Type)) {
+					if (ExistPiece(ps, (Piece p) => {return PieceDatabase.IsSticky (p.Type);})) {
 						isOnGround = true;
 						gravity = 0;
 						movingDir *= -1;
@@ -67,6 +72,21 @@ public class Hero : Piece {
 									}
 								});
 				});
+	}
+
+
+	public bool ExistPiece(Piece[] pieces, Predicate<Piece> condition) {
+		foreach (Piece piece in pieces) {
+			if (condition(piece)) return true;
+		}
+		return false;
+	}
+
+	public bool AllPiece(Piece[] pieces, Predicate<Piece> condition) {
+		foreach (Piece piece in pieces) {
+			if (!condition(piece)) return false;
+		}
+		return true;
 	}
 
 	void KeyboardInput() {

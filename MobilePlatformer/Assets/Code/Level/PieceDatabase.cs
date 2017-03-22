@@ -17,7 +17,7 @@ public class PieceDatabase : ScriptableObject {
 	}
 
 	public static bool IsSticky(PieceType pieceType) {
-		return pieceType == PieceType.BlockNormal || pieceType == PieceType.BlockColor;
+		return pieceType == PieceType.BlockNormal || pieceType == PieceType.BlockColor || pieceType == PieceType.BlockDestructible;
 	}
 }
 

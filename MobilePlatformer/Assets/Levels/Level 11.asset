@@ -145,10 +145,6 @@ MonoBehaviour:
     type: 2
     pos: {x: 7, y: 19}
     dir: 0
-  - id: 53112abd-5fdf-4bdc-a820-c0097c66dffd
-    type: 2
-    pos: {x: 6, y: 19}
-    dir: 0
   - id: c048eb90-de95-4166-a946-0ec988d30065
     type: 2
     pos: {x: 10, y: 16}
@@ -160,14 +156,6 @@ MonoBehaviour:
   - id: 0d676c92-cc09-48ee-a814-9f4a267c40e3
     type: 2
     pos: {x: 10, y: 18}
-    dir: 0
-  - id: 4fb6899a-145f-4d75-bce1-c13b78f1e0fa
-    type: 2
-    pos: {x: 5, y: 19}
-    dir: 0
-  - id: b373482e-6445-4189-b189-5ac9ec20f216
-    type: 2
-    pos: {x: 4, y: 19}
     dir: 0
   - id: 100c74dc-c968-4467-93c9-9358ac5aa728
     type: 2
@@ -292,10 +280,6 @@ MonoBehaviour:
   - id: ea086236-d891-4451-9925-8bd292bae8cc
     type: 2
     pos: {x: 10, y: 19}
-    dir: 0
-  - id: 44d2ed52-3bb5-411b-b5fe-9d343eb6bdbc
-    type: 2
-    pos: {x: 11, y: 19}
     dir: 0
   - id: 891a2b08-4ff9-451d-8c28-ae39dc508887
     type: 3
@@ -652,6 +636,22 @@ MonoBehaviour:
   - id: 
     type: 0
     pos: {x: 10, y: -8}
+    dir: 0
+  - id: a4b8faff-f2f7-4d64-9e9b-28b8292f74c1
+    type: 0
+    pos: {x: 4, y: 19}
+    dir: 0
+  - id: 0aead457-2ff8-4e72-ae99-781f6daf7a7a
+    type: 0
+    pos: {x: 5, y: 19}
+    dir: 0
+  - id: 9e3f026e-2133-44dc-b940-98cbabbb79e6
+    type: 0
+    pos: {x: 6, y: 19}
+    dir: 0
+  - id: cb91e436-02bc-47eb-a2f2-c98246bac724
+    type: 0
+    pos: {x: 11, y: 19}
     dir: 0
   heroPos: {x: 2, y: 15}
   pieceGroups: []
