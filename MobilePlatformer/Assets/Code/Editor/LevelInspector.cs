@@ -14,6 +14,9 @@ public class LevelInspector : Editor {
 	private Texture2D cellTexture;
 	private Texture2D spikeTexture;
 	private Texture2D blockDestructibleTexture;
+	private Texture2D blockTexture;
+	private Texture2D blockSideTexture;
+	private Texture2D blockCornerTexture;
 	private Vector2 selectedIndex;
 
 	private Rect levelGridRect = new Rect(100, 200, 420, 620);
@@ -27,6 +30,10 @@ public class LevelInspector : Editor {
 
 	public override void OnInspectorGUI()
 	{
+		blockTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/block.png", typeof(Texture2D)) as Texture2D;
+		blockSideTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/blockSide.png", typeof(Texture2D)) as Texture2D;
+		blockCornerTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/blockCorner.png", typeof(Texture2D)) as Texture2D;
+		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
 		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
 		spikeTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/spike.png", typeof(Texture2D)) as Texture2D;
 		blockDestructibleTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareDestructible.png", typeof(Texture2D)) as Texture2D;
@@ -46,7 +53,7 @@ public class LevelInspector : Editor {
 
 		string[] cellOptions = new string[]
 		{
-			"Hero", "Blocks"
+			"Hero", "Blocks", "Modify Block"
 		};
 
 		var levelSizeX = EditorGUILayout.IntSlider((int)myTarget.levelSize.x,0,50);
@@ -81,16 +88,19 @@ public class LevelInspector : Editor {
 						myTarget.heroPos = selectedIndex;
 					}
 					if (cellType == 1) {
-						PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-						if (existingPiece != null)
-							myTarget.pieces.Remove (existingPiece);
-						myTarget.pieces.Add (new PieceLevelData (pieceType, selectedIndex, direction));
+						AddPiece (selectedIndex,pieceType);
+					}
+					if (cellType == 2) {
+						ModifyBlock (selectedIndex,BlockPieceLevelData.SideType.Sticky);
 					}
 				}
 				if (Event.current.button == 1) {
-					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-					if (existingPiece != null)
-						myTarget.pieces.Remove (existingPiece);
+					if (cellType == 1) {
+						RemovePiece (selectedIndex);
+					}
+					if (cellType == 2) {
+						ModifyBlock (selectedIndex,BlockPieceLevelData.SideType.Normal);
+					}
 				}
 			} else {
 				if (Event.current.button == 0) {
@@ -132,6 +142,104 @@ public class LevelInspector : Editor {
 			EditorUtility.SetDirty (myTarget);
 		}
 		serializedObject.ApplyModifiedProperties();
+	}
+
+	void AddPiece(Vector2 index, PieceType pieceType) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+		if (existingPiece != null) {
+			myTarget.pieces.Remove (existingPiece);
+		}
+		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction);
+		myTarget.pieces.Add (newPiece);
+
+		if (pieceType == PieceType.BlockNonSticky) {
+			UpdateBlock (index);
+		}
+		UpdateNeighborBlocks(index);
+	}
+
+	void RemovePiece(Vector2 index) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+		if (existingPiece != null) {
+			myTarget.pieces.Remove (existingPiece);
+		}
+
+		UpdateNeighborBlocks(index);
+	}
+
+	void ModifyBlock(Vector2 index, BlockPieceLevelData.SideType sideType) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+		if (existingPiece != null) {
+			var specific = existingPiece.GetSpecificData<BlockPieceLevelData> ();
+			if (specific.sides[(int)direction] != BlockPieceLevelData.SideType.None) {
+				specific.sides [(int)direction] = sideType;
+			}
+			existingPiece.SaveSpecificData (specific);
+		}
+	}
+
+	Vector2 GetNeighborIndex(Vector2 index, Direction dir) {
+		switch (dir) {
+		case Direction.Up:
+			return index + (Vector2.up * -1);
+		case Direction.Right:
+			return index + (Vector2.right);
+		case Direction.Down:
+			return index + (Vector2.down * -1);
+		case Direction.Left:
+			return index + (Vector2.left);
+		}
+		return Vector2.zero;
+	}
+
+	void UpdateNeighborBlocks(Vector2 index) {
+		// Sides
+		for (int i = 0; i < 4; i++) {
+			var tmpIndex = GetNeighborIndex (index, (Direction)i);
+			if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.BlockNonSticky) UpdateBlock (tmpIndex);
+		}
+
+		//Corners
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				var addIndex = new Vector2 (i - 1, j - 1);
+				if (addIndex.x == 0 || addIndex.y == 0) continue;
+				var tmpIndex = index + addIndex;
+				if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.BlockNonSticky) UpdateBlock (tmpIndex);
+			}
+		}
+	}
+
+	void UpdateBlock(Vector2 index) {
+		PieceLevelData piece = GetPieceWithPos (index);
+		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
+
+		// Sides
+		specific.sides [(int)Direction.Up] 	  	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Up))		== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
+		specific.sides [(int)Direction.Right] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Right)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
+		specific.sides [(int)Direction.Down] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Down)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
+		specific.sides [(int)Direction.Left] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Left)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
+
+
+		// Corners
+		for (int i = 0; i < 4; i++) {
+			specific.corners [i] = BlockPieceLevelData.SideType.None;
+			var tmpPiece1 = GetPieceWithPos (GetNeighborIndex (index, (Direction)i));
+			var tmpPiece2 = GetPieceWithPos (GetNeighborIndex (index, (Direction)((4+i-1)%4)));
+			if (tmpPiece1 != null && tmpPiece2 != null) {
+				if (tmpPiece1.type == PieceType.BlockNonSticky && tmpPiece1.GetSpecificData<BlockPieceLevelData> ().sides [(4+i-1)%4] != BlockPieceLevelData.SideType.None &&
+					tmpPiece2.type == PieceType.BlockNonSticky && tmpPiece2.GetSpecificData<BlockPieceLevelData> ().sides [i] != BlockPieceLevelData.SideType.None) {
+					specific.corners [i] = BlockPieceLevelData.SideType.Normal;
+				}
+			}
+		}
+		piece.SaveSpecificData (specific);
 	}
 
 	PieceGroupData selectedPieceGroup = null;
@@ -246,9 +354,11 @@ public class LevelInspector : Editor {
 				var rect = new Rect (x*cellSize, y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
 
+				PieceLevelData tmpPiece = null;
 				Texture2D tmpTexture = cellTexture;
 				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
 					if (x == piece.pos.x && y == piece.pos.y) {
+						tmpPiece = piece;
 						if (String.IsNullOrEmpty (piece.id)) {
 							//remove this at some point.
 							piece.id = Guid.NewGuid ().ToString ();
@@ -277,7 +387,6 @@ public class LevelInspector : Editor {
 						if (piece.type == PieceType.Ball) {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 						}
-
 						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
 							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b+0.5f,GUI.color.a);
 						}
@@ -288,7 +397,45 @@ public class LevelInspector : Editor {
 					GUI.color = Color.green;
 				}
 				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
+
+				if (tmpPiece != null && tmpPiece.type == PieceType.BlockNonSticky) {
+					var specific = tmpPiece.GetSpecificData<BlockPieceLevelData> ();
+					if (!String.IsNullOrEmpty (tmpPiece.specificDataJson)) {
+						GUI.color = Color.cyan;
+						int i = 0;
+						foreach (var side in specific.sides) {
+							if (side != BlockPieceLevelData.SideType.None) {
+								if (side == BlockPieceLevelData.SideType.Normal) {
+									GUI.color = new Color(0.1f,0.1f,0.1f,1);
+								}
+								if (side == BlockPieceLevelData.SideType.Sticky) {
+									GUI.color = Color.grey;
+								}
+								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
+								GUI.DrawTexture (rect, blockSideTexture, ScaleMode.ScaleToFit);
+								GUI.matrix = prevMatrix;
+							}
+							i++;
+						}
+						foreach (var corner in specific.corners) {
+							if (corner != BlockPieceLevelData.SideType.None) {
+								if (corner == BlockPieceLevelData.SideType.Normal) {
+									GUI.color = new Color(0.1f,0.1f,0.1f,1);
+								}
+								if (corner == BlockPieceLevelData.SideType.Sticky) {
+									GUI.color = Color.grey;
+								}
+								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
+								GUI.DrawTexture (rect, blockCornerTexture, ScaleMode.ScaleToFit);
+								GUI.matrix = prevMatrix;
+							}
+							i++;
+						}
+					}
+				}
 				GUI.matrix = prevMatrix;
+
+
 			}
 		}
 		if (selectedPieceGroup != null) {

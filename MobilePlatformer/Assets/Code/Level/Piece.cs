@@ -13,6 +13,8 @@ public abstract class Piece : MonoBehaviour {
 	[HideInInspector]
 	public bool IsPushable;
 
+	public abstract void Init (PieceLevelData pieceData);
+
 	public abstract void Hit (Piece hitPiece);
 
 	public void Destroy() {
@@ -39,7 +41,6 @@ public abstract class Piece : MonoBehaviour {
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
-		bool newDirHasBeenSet = false;
 		List<Piece> interruptingPieces = new List<Piece>();
 
 		int i = 0;
@@ -51,9 +52,9 @@ public abstract class Piece : MonoBehaviour {
 				return 0;
 			} else if (x.distance < y.distance){
 				return -1;
-			}else {
+			} else {
 				return 1;
-			};							
+			};
 		});
 		foreach(var hit in sortedHits) {
 			var piece = hit.collider.GetComponent<Piece> ();
@@ -69,7 +70,6 @@ public abstract class Piece : MonoBehaviour {
 
 			piece.Hit(this);
 			if (!piece.IsPassable && !piece.IsPushable) {
-				newDirHasBeenSet = true;
 				newDir = tmpDir;
 
 				interruptingPieces.Add (piece);

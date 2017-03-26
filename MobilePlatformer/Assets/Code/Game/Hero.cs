@@ -177,6 +177,9 @@ public class Hero : Piece {
 		touchConsumed = true;
 	}
 
+	public override void Init (PieceLevelData pieceLevelData) {
+	}
+
 	public override void Hit (Piece hitPiece) {
 	}
 }

@@ -11,6 +11,9 @@ public class Ball : Piece {
 		Move (new Vector3 (0, gravity, 0));
 	}
 
+	public override void Init (PieceLevelData pieceLevelData) {
+	}
+
 	public override void Hit (Piece hitPiece)
 	{
 	}

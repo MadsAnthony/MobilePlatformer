@@ -23,13 +23,25 @@ public class PieceLevelData {
 	public PieceType type;
 	public Vector2 pos;
 	public Direction dir;
-	//public SpecificPieceLevelData specific;
+	public string specificDataJson;
 
 	public PieceLevelData(PieceType type, Vector2 pos, Direction dir) {
 		id = Guid.NewGuid ().ToString ();
 		this.type = type;
 		this.pos  = pos;
 		this.dir  = dir;
+
+		if (type == PieceType.BlockNormal || type == PieceType.BlockNonSticky) {
+			SaveSpecificData (new BlockPieceLevelData ());
+		}
+	}
+
+	public T GetSpecificData<T>() {
+		return JsonUtility.FromJson<T> (specificDataJson);
+	}
+
+	public void SaveSpecificData(object obj) {
+		specificDataJson = JsonUtility.ToJson(obj);
 	}
 }
 
@@ -50,9 +62,14 @@ public class GroupMovement {
 	public float maxT = 1;
 }
 
-/*
 [Serializable]
-public class SpecificPieceLevelData {
-	public Vector2 moveDir;
+public abstract class SpecificPieceLevelData {
 }
-*/
+
+[Serializable]
+public class BlockPieceLevelData:SpecificPieceLevelData {
+	public SideType[] sides   = new SideType[4];
+	public SideType[] corners = new SideType[4];
+
+	public enum SideType {None, Normal, Sticky};
+}
