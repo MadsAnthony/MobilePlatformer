@@ -30,7 +30,7 @@ public class LevelInit : MonoBehaviour {
 			var tmpPiece = Instantiate(pieceData.prefab);
 			tmpPiece.name = "Piece"+i;
 
-			tmpPiece.Init(piece);
+			tmpPiece.Init(piece, gameLogic);
 
 			if (piece.type == PieceType.BlockColor) {
 				gameLogic.coloredBlocksGoal++;

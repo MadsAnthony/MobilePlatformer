@@ -237,12 +237,12 @@ MonoBehaviour:
     type: 2
     pos: {x: 6, y: 12}
     dir: 0
-    specificDataJson: '{"sides":[2,1,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[3,1,1,0],"corners":[0,0,0,0]}'
   - id: 189dcdc1-6b7c-424d-b94e-9eb757411617
     type: 2
     pos: {x: 5, y: 12}
     dir: 0
-    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
   - id: 376d9689-a59e-4852-8d5c-1207b0efda23
     type: 2
     pos: {x: 4, y: 12}

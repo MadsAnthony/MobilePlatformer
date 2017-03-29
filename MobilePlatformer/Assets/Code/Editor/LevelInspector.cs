@@ -24,6 +24,7 @@ public class LevelInspector : Editor {
 	int cellType = 1;
 	PieceType pieceType;
 	public Direction direction;
+	public BlockPieceLevelData.SideType blockSideType;
 	Vector2 scrollPos;
 	Vector2 mouseDownPos;
 
@@ -71,6 +72,10 @@ public class LevelInspector : Editor {
 		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
 		EditorGUILayout.EndHorizontal();
 
+		if (cellType == 2) {
+		blockSideType = (BlockPieceLevelData.SideType)EditorGUILayout.Popup("SideType", (int)blockSideType, Enum.GetNames (typeof(BlockPieceLevelData.SideType)));
+		}
+
 		if (Event.current.type == EventType.MouseDown) {
 			mouseDownPos = Event.current.mousePosition;
 		}
@@ -91,7 +96,7 @@ public class LevelInspector : Editor {
 						AddPiece (selectedIndex,pieceType);
 					}
 					if (cellType == 2) {
-						ModifyBlock (selectedIndex,BlockPieceLevelData.SideType.Sticky);
+						ModifyBlock (selectedIndex, blockSideType);
 					}
 				}
 				if (Event.current.button == 1) {
@@ -216,15 +221,20 @@ public class LevelInspector : Editor {
 		}
 	}
 
+	bool IsPieceOfPieceType(PieceLevelData piece, PieceType type) {
+		if (piece == null) return false;
+		return piece.type == type;
+	}
+
 	void UpdateBlock(Vector2 index) {
 		PieceLevelData piece = GetPieceWithPos (index);
 		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
 
 		// Sides
-		specific.sides [(int)Direction.Up] 	  	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Up))		== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
-		specific.sides [(int)Direction.Right] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Right)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
-		specific.sides [(int)Direction.Down] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Down)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
-		specific.sides [(int)Direction.Left] 	= (GetPieceWithPos (GetNeighborIndex(index, Direction.Left)) 	== null) ? BlockPieceLevelData.SideType.Normal : BlockPieceLevelData.SideType.None;
+		specific.sides [(int)Direction.Up] 	  	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Up)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
+		specific.sides [(int)Direction.Right] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Right)), PieceType.BlockNonSticky)	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
+		specific.sides [(int)Direction.Down] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Down)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
+		specific.sides [(int)Direction.Left] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Left)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
 
 
 		// Corners
@@ -411,6 +421,9 @@ public class LevelInspector : Editor {
 								if (side == BlockPieceLevelData.SideType.Sticky) {
 									GUI.color = Color.grey;
 								}
+								if (side == BlockPieceLevelData.SideType.Colorable) {
+									GUI.color = Color.white;
+								}
 								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
 								GUI.DrawTexture (rect, blockSideTexture, ScaleMode.ScaleToFit);
 								GUI.matrix = prevMatrix;
@@ -424,6 +437,9 @@ public class LevelInspector : Editor {
 								}
 								if (corner == BlockPieceLevelData.SideType.Sticky) {
 									GUI.color = Color.grey;
+								}
+								if (corner == BlockPieceLevelData.SideType.Colorable) {
+									GUI.color = Color.white;
 								}
 								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
 								GUI.DrawTexture (rect, blockCornerTexture, ScaleMode.ScaleToFit);

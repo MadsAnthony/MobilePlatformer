@@ -71,5 +71,5 @@ public class BlockPieceLevelData:SpecificPieceLevelData {
 	public SideType[] sides   = new SideType[4];
 	public SideType[] corners = new SideType[4];
 
-	public enum SideType {None, Normal, Sticky};
+	public enum SideType {None, Normal, Sticky, Colorable};
 }

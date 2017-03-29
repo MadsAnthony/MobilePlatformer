@@ -13,9 +13,9 @@ public abstract class Piece : MonoBehaviour {
 	[HideInInspector]
 	public bool IsPushable;
 
-	public abstract void Init (PieceLevelData pieceData);
+	public abstract void Init (PieceLevelData pieceData, GameLogic gameLogic);
 
-	public abstract void Hit (Piece hitPiece);
+	public abstract void Hit (Piece hitPiece, Vector3 direction);
 
 	public void Destroy() {
 		Director.GameEventManager.Emit(new GameEvent(GameEventType.PieceDestroyed, this));
@@ -68,7 +68,7 @@ public abstract class Piece : MonoBehaviour {
 			// Do not hit pieces that are farther away (but do hit pieces before).
 			if (i > 0 && interruptingPieces.Count>0 && tmpDir.magnitude > newDir.magnitude) continue;
 
-			piece.Hit(this);
+			piece.Hit(this,dir);
 			if (!piece.IsPassable && !piece.IsPushable) {
 				newDir = tmpDir;
 
@@ -110,7 +110,7 @@ public abstract class Piece : MonoBehaviour {
 
 		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
 			var piece = hit.collider.GetComponent<Piece> ();
-			if (PieceDatabase.IsSticky(piece.Type)) {
+			if (piece.Type==PieceType.BlockNonSticky && ((Block)piece).IsSticky(dir)) {
 				newDir = inputDir.normalized * (hit.distance - gap);
 
 				if (callbackInterrupted != null) {

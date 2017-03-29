@@ -36,12 +36,12 @@ public class Hero : Piece {
 			TouchInput ();
 			KeyboardInput ();
 		}
-
-		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => {return PieceDatabase.IsSticky (p.Type);})) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.BlockNonSticky && ((Block)p).IsSticky(dir*speed*movingDir);})) {ChangeGravity(1*-movingDir);}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
-		Move(gravityDir*Mathf.Clamp(gravity,-maxGravity,maxGravity),
+		Vector3 tmpMoveDir = gravityDir * Mathf.Clamp (gravity, -maxGravity, maxGravity);
+		Move(tmpMoveDir,
 			(Piece[] ps, bool b) => {
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
@@ -50,12 +50,12 @@ public class Hero : Piece {
 					if (gravity<=0) {
 						gravity = 0;
 						isOnGround = true;
-						if (AllPiece(ps, (Piece p) => {return !PieceDatabase.IsSticky (p.Type);}) && dirsIndex%4 != 0) {
+					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
 							movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
 							ChangeGravity(-dirsIndex);
 						}
 					} else {
-					if (ExistPiece(ps, (Piece p) => {return PieceDatabase.IsSticky (p.Type);})) {
+					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && ((Block)p).IsSticky(tmpMoveDir);})) {
 						isOnGround = true;
 						gravity = 0;
 						movingDir *= -1;
@@ -177,9 +177,9 @@ public class Hero : Piece {
 		touchConsumed = true;
 	}
 
-	public override void Init (PieceLevelData pieceLevelData) {
+	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 	}
 
-	public override void Hit (Piece hitPiece) {
+	public override void Hit (Piece hitPiece, Vector3 direction) {
 	}
 }

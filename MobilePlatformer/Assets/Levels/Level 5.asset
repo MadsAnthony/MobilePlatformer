@@ -13,522 +13,651 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSize: {x: 20, y: 30}
   pieces:
-  - id: fb4ecbbe-acf2-4256-9a93-ddb1bc9029e9
-    type: 0
-    pos: {x: 1, y: 9}
-    dir: 0
-  - id: 41a54e69-4a5d-47c2-abc0-3702836f4f69
-    type: 0
-    pos: {x: 1, y: 10}
-    dir: 0
-  - id: 4ebd6a52-4a07-4f74-b5f7-22565db7c8b5
-    type: 0
-    pos: {x: 1, y: 11}
-    dir: 0
-  - id: c9ae89f9-2fde-4e82-ac37-cf7886cc9c0b
-    type: 0
-    pos: {x: 1, y: 12}
-    dir: 0
-  - id: 42adf9a5-33dc-4651-b67e-7f572206a789
-    type: 0
-    pos: {x: 1, y: 13}
-    dir: 0
-  - id: 5b87664a-10c9-4429-bffc-8eb1781d236c
-    type: 0
-    pos: {x: 1, y: 14}
-    dir: 0
-  - id: 45b35923-837b-4bc8-bd2a-519fb2eab733
-    type: 0
-    pos: {x: 1, y: 15}
-    dir: 0
-  - id: 22f5aa73-dfdf-4765-ac9d-3d0c2ea35e80
-    type: 0
-    pos: {x: 1, y: 16}
-    dir: 0
-  - id: 41f3ddff-75cf-49e6-912b-71a90a7a6861
-    type: 0
-    pos: {x: 1, y: 17}
-    dir: 0
-  - id: b5197bad-256e-401b-aacb-d7cd429ff038
-    type: 0
-    pos: {x: 1, y: 18}
-    dir: 0
-  - id: 909729cc-6ea2-433d-97ab-ae4379ae2c9d
-    type: 0
-    pos: {x: 1, y: 20}
-    dir: 0
-  - id: ba4b011b-96fa-479b-bd4e-3fa0685d0789
-    type: 0
-    pos: {x: 1, y: 21}
-    dir: 0
-  - id: 2354a5a1-fc5b-4d98-8981-b2ec3f72a00e
-    type: 0
-    pos: {x: 1, y: 22}
-    dir: 0
-  - id: fa766bb0-0277-4d0b-8a4d-41e7ac4e446d
-    type: 0
-    pos: {x: 1, y: 23}
-    dir: 0
-  - id: dfdd7e91-0660-4284-a5d9-801e37c67e11
-    type: 0
-    pos: {x: 1, y: 24}
-    dir: 0
-  - id: 62d0f3ef-a4e1-43cc-a72b-3a146a8672ab
-    type: 0
-    pos: {x: 2, y: 24}
-    dir: 0
-  - id: f79180e9-420c-45bc-81db-27b0ab4dc27c
-    type: 0
-    pos: {x: 3, y: 24}
-    dir: 0
-  - id: dc80505d-54c6-4156-8c30-be976e3726fe
-    type: 0
-    pos: {x: 8, y: 24}
-    dir: 0
-  - id: 613de013-4ac1-487f-8de3-9a53508f98a2
-    type: 0
-    pos: {x: 9, y: 24}
-    dir: 0
-  - id: d25003da-fd13-4a0b-a84b-01677e38907f
-    type: 0
-    pos: {x: 10, y: 24}
-    dir: 0
-  - id: 5f3b11cb-ae19-4db3-9e85-32a766e390fd
-    type: 0
-    pos: {x: 11, y: 24}
-    dir: 0
-  - id: 1e450440-fe0f-455c-9db5-bdbb73594837
-    type: 0
-    pos: {x: 12, y: 24}
-    dir: 0
-  - id: 2857ae6d-eec2-4b7a-93f4-2ac813ee1f13
-    type: 0
-    pos: {x: 13, y: 24}
-    dir: 0
-  - id: de6d0b0f-6111-4cce-8516-c7be77dad04b
-    type: 0
-    pos: {x: 17, y: 24}
-    dir: 0
-  - id: d9f6fda2-ef90-460c-a6e2-1562f4646b52
-    type: 0
-    pos: {x: 18, y: 24}
-    dir: 0
-  - id: 08057eb4-b4be-4455-9c9a-660689657e2e
-    type: 0
-    pos: {x: 19, y: 24}
-    dir: 0
-  - id: e9438875-6be3-4359-972d-bd672b189e40
-    type: 0
-    pos: {x: 19, y: 23}
-    dir: 0
-  - id: e4604e43-a5d0-43e6-a9c7-b961dc8af978
-    type: 0
-    pos: {x: 19, y: 19}
-    dir: 0
-  - id: f5603dc9-88a0-4372-82fd-555bd68b498c
-    type: 0
-    pos: {x: 19, y: 18}
-    dir: 0
-  - id: 5b1c564e-4880-4f62-970f-f25c48f7f29c
-    type: 0
-    pos: {x: 19, y: 17}
-    dir: 0
-  - id: 80780d52-8516-42e3-812c-d69ff69fce0f
-    type: 0
-    pos: {x: 19, y: 16}
-    dir: 0
-  - id: 324810df-9483-4ee6-8ccb-d8dbaece17ea
-    type: 0
-    pos: {x: 19, y: 13}
-    dir: 0
-  - id: 93fd7a24-b8b2-4f6d-a6d6-71a3ded17ebe
-    type: 0
-    pos: {x: 19, y: 12}
-    dir: 0
-  - id: 91097d41-f74c-461f-a32b-6fc433b4eeac
-    type: 0
-    pos: {x: 19, y: 11}
-    dir: 0
-  - id: 0a490081-a9dc-4ab7-920a-028a1ebb4717
-    type: 0
-    pos: {x: 19, y: 10}
-    dir: 0
-  - id: bf1fbd42-6301-4de3-a263-1ac2256fa241
-    type: 0
-    pos: {x: 19, y: 9}
-    dir: 0
-  - id: 64c36e72-9ebc-471d-b986-2ac8cef17193
-    type: 0
-    pos: {x: 19, y: 8}
-    dir: 0
-  - id: 0f0a4a6a-818c-4c45-bd68-04c8a0ca1ce6
-    type: 0
-    pos: {x: 18, y: 8}
-    dir: 0
-  - id: c8f740ae-8db1-4ef1-aa8b-292f6425ff7b
-    type: 0
-    pos: {x: 1, y: 8}
-    dir: 0
-  - id: c1cc90cb-e1cf-4eb2-8563-dfb65ee32735
-    type: 0
-    pos: {x: 2, y: 8}
-    dir: 0
-  - id: ba4cc9a2-48a9-4bab-99b9-2293a785470f
-    type: 0
-    pos: {x: 3, y: 8}
-    dir: 0
-  - id: 4ef2a594-9cea-423e-a3cb-7f97d7f9bfb4
-    type: 0
-    pos: {x: 4, y: 8}
-    dir: 0
-  - id: 56dacb0e-baa5-478c-bf93-7e923d4d4ce3
-    type: 0
-    pos: {x: 5, y: 8}
-    dir: 0
-  - id: 00cda369-8697-460c-b905-5836feea3154
-    type: 0
-    pos: {x: 6, y: 8}
-    dir: 0
-  - id: c836f311-0c3d-4964-afb6-0407cdb08d4c
-    type: 0
-    pos: {x: 7, y: 8}
-    dir: 0
-  - id: ab7ccea7-e83a-4878-83ce-2e12f739fa8c
-    type: 0
-    pos: {x: 8, y: 8}
-    dir: 0
-  - id: 2815fc69-98f5-4168-b6ab-473f58de1787
-    type: 0
-    pos: {x: 9, y: 8}
-    dir: 0
-  - id: 1507b301-762b-4823-ad6f-cee7db83943f
-    type: 0
-    pos: {x: 10, y: 8}
-    dir: 0
-  - id: 8c4e555e-e8c0-4b94-9edc-e46f2c94dc8c
-    type: 0
-    pos: {x: 11, y: 8}
-    dir: 0
-  - id: 53ac1600-3dba-4323-a357-470b912a8977
-    type: 0
-    pos: {x: 12, y: 8}
-    dir: 0
-  - id: dddf4c62-4e16-4146-b047-b58b5d833501
-    type: 0
-    pos: {x: 13, y: 8}
-    dir: 0
-  - id: c25a4d1f-005b-432c-9bda-6570e98d26cc
-    type: 0
-    pos: {x: 14, y: 8}
-    dir: 0
-  - id: 10947222-bd15-4094-9f65-2f21228f7c64
-    type: 0
-    pos: {x: 10, y: 15}
-    dir: 0
-  - id: 9baf08da-bbaa-4368-aec0-ffb69e2b35b8
-    type: 0
-    pos: {x: 9, y: 15}
-    dir: 0
-  - id: 97d97a6c-1fb3-4b86-b585-884b0d49181b
-    type: 0
-    pos: {x: 8, y: 15}
-    dir: 0
-  - id: 854d0e82-5841-47e4-89d7-ec2d9ef9349b
-    type: 0
-    pos: {x: 7, y: 15}
-    dir: 0
-  - id: fe359e72-5ba1-45ba-b621-23363717b6d0
-    type: 0
-    pos: {x: 6, y: 15}
-    dir: 0
-  - id: 71aec902-6991-4eb1-b3be-fe7e3a64f570
-    type: 0
-    pos: {x: 5, y: 15}
-    dir: 0
-  - id: 06553513-66b7-4552-8ee3-319f77ad7ab5
-    type: 0
-    pos: {x: 5, y: 14}
-    dir: 0
-  - id: b6690c52-ae28-438c-8238-ea140ee01825
-    type: 0
-    pos: {x: 5, y: 13}
-    dir: 0
-  - id: a1ea5189-20ec-448d-9693-10a4867e229f
-    type: 0
-    pos: {x: 5, y: 12}
-    dir: 0
-  - id: 7ed7f423-cb2a-4d3f-a770-201deb5c5338
-    type: 0
-    pos: {x: 6, y: 12}
-    dir: 0
-  - id: a9302cfb-4a48-479e-be26-f7fd1471e498
-    type: 0
-    pos: {x: 7, y: 12}
-    dir: 0
-  - id: 16cea1cb-f058-432b-83b5-ffb7771009ef
-    type: 0
-    pos: {x: 8, y: 12}
-    dir: 0
-  - id: 32eb59f2-1d66-4f1c-be11-6874cc340148
-    type: 0
-    pos: {x: 9, y: 12}
-    dir: 0
-  - id: 0a710060-09f5-4a32-891a-796cb463c255
-    type: 0
-    pos: {x: 10, y: 12}
-    dir: 0
-  - id: b8bf1d57-870a-4442-ad5e-6fb60229ad5a
-    type: 0
-    pos: {x: 11, y: 12}
-    dir: 0
-  - id: a9c46690-c9f6-48e3-84a2-6e8e9344791b
-    type: 0
-    pos: {x: 12, y: 12}
-    dir: 0
-  - id: a54372de-491d-441b-880d-08683527a7e8
-    type: 0
-    pos: {x: 13, y: 12}
-    dir: 0
-  - id: d97a61a9-2a86-4161-9317-821387cff5cd
-    type: 0
-    pos: {x: 14, y: 12}
-    dir: 0
-  - id: cace1f56-92da-42eb-841a-8914d276d18f
-    type: 0
-    pos: {x: 15, y: 12}
-    dir: 0
-  - id: 775ae8e8-0dfe-4d9b-81d2-06d738eff0a4
-    type: 0
-    pos: {x: 15, y: 13}
-    dir: 0
-  - id: d18fab28-94d4-4d6f-840b-4adbebc38953
-    type: 0
-    pos: {x: 15, y: 14}
-    dir: 0
-  - id: c93a3a18-7947-45bd-a644-fab20abd6548
-    type: 0
-    pos: {x: 15, y: 15}
-    dir: 0
-  - id: 74ec213c-acd0-43ec-8e84-4902457e29e7
-    type: 0
-    pos: {x: 15, y: 16}
-    dir: 0
-  - id: 5db7127a-344b-4bcd-bbee-f2a819996a46
-    type: 0
-    pos: {x: 15, y: 17}
-    dir: 0
-  - id: f9a58cb6-9aac-44e9-b3dc-9452a50a402c
-    type: 0
-    pos: {x: 15, y: 18}
-    dir: 0
-  - id: aa305671-a521-47b8-af0d-8212332ed06c
-    type: 0
-    pos: {x: 15, y: 19}
-    dir: 0
-  - id: 01ecc702-6664-4034-b981-8e44502ab71f
-    type: 0
-    pos: {x: 14, y: 19}
-    dir: 0
-  - id: d2ba3c4a-77d6-4552-b4b5-3bd6435c700b
-    type: 0
-    pos: {x: 13, y: 19}
-    dir: 0
-  - id: 17df8fe0-7ca0-471b-9ae2-5f1dbe4d0c25
-    type: 0
-    pos: {x: 12, y: 19}
-    dir: 0
-  - id: c7634ea4-ee96-465a-9e69-5edebc2fbec2
-    type: 0
-    pos: {x: 11, y: 19}
-    dir: 0
-  - id: 8e9448b3-b8db-4d42-9b5f-d5fe73e79387
-    type: 0
-    pos: {x: 10, y: 19}
-    dir: 0
-  - id: 9ab818d2-4fd8-4b4e-b602-8d2201b92e5f
-    type: 0
-    pos: {x: 9, y: 19}
-    dir: 0
-  - id: 62f079da-245e-4639-9373-28d2a6238d49
-    type: 0
-    pos: {x: 8, y: 19}
-    dir: 0
-  - id: 56f10daa-cc17-4120-9e01-64737e641e3c
-    type: 0
-    pos: {x: 7, y: 19}
-    dir: 0
-  - id: 2f0a6181-f817-4d1c-9e0b-c7cee8d4c0ac
-    type: 0
-    pos: {x: 6, y: 19}
-    dir: 0
-  - id: 8537f5f6-675e-42db-aed5-fcc31cfe5afb
-    type: 0
-    pos: {x: 5, y: 19}
-    dir: 0
-  - id: fe398fba-157b-486e-9005-0bebde473bc7
-    type: 0
-    pos: {x: 4, y: 19}
-    dir: 0
-  - id: 0b98026e-0129-4b5e-9eac-99216d96e39c
-    type: 0
-    pos: {x: 3, y: 19}
-    dir: 0
-  - id: 67c72d79-5396-458f-aa2e-c9c9554c0e29
-    type: 0
-    pos: {x: 2, y: 19}
-    dir: 0
-  - id: cee2958c-b064-4922-8fd2-9b06aa762979
-    type: 0
-    pos: {x: 1, y: 19}
-    dir: 0
-  - id: 268d241b-3b02-4211-a07c-a20caf4fca2c
-    type: 0
-    pos: {x: 10, y: 13}
-    dir: 0
-  - id: 1bcdc4d4-1732-4353-9318-288aad87b733
-    type: 0
-    pos: {x: 10, y: 14}
-    dir: 0
-  - id: e63df22d-a226-4949-9814-5e6934a29826
-    type: 0
-    pos: {x: 9, y: 14}
-    dir: 0
-  - id: 7afb7e86-29f2-4061-a42a-776439f9a8ef
-    type: 0
-    pos: {x: 8, y: 14}
-    dir: 0
-  - id: 2e05ec98-aa51-4248-bdee-edc8020d74bc
-    type: 0
-    pos: {x: 7, y: 14}
-    dir: 0
-  - id: e21167e8-10ce-4088-85e2-4073b1e793f3
-    type: 0
-    pos: {x: 6, y: 14}
-    dir: 0
-  - id: c97db909-8f6b-4906-a582-77fd51cae949
-    type: 0
-    pos: {x: 6, y: 13}
-    dir: 0
-  - id: 802720e0-9a6c-4f45-8d11-71efdf4f69b9
-    type: 0
-    pos: {x: 7, y: 13}
-    dir: 0
-  - id: 0a096c57-5f4e-48e3-bd6f-426828dbff2b
-    type: 0
-    pos: {x: 8, y: 13}
-    dir: 0
-  - id: 3878aeb4-949a-43ba-84c5-810dd681b8bc
-    type: 0
-    pos: {x: 9, y: 13}
-    dir: 0
-  - id: 72cbec88-74ce-45f0-b6b9-5b8fbd089338
-    type: 1
-    pos: {x: 11, y: 13}
-    dir: 0
-  - id: 53e920c4-196f-48fa-b89c-cec7df2c98d6
-    type: 1
-    pos: {x: 12, y: 13}
-    dir: 0
-  - id: 6980d88b-705a-4c88-89e6-90835ebbbfc9
-    type: 1
-    pos: {x: 13, y: 13}
-    dir: 0
-  - id: efa4c848-58c0-42c2-b012-86348e758d57
-    type: 1
-    pos: {x: 14, y: 13}
-    dir: 0
-  - id: cbbd933f-e5bc-45e9-a47c-61d5afe8e7d7
-    type: 1
-    pos: {x: 4, y: 24}
-    dir: 0
-  - id: 8da85bf4-bd83-4349-bde3-31dcb97e3616
-    type: 1
-    pos: {x: 5, y: 24}
-    dir: 0
-  - id: 38d082b9-3bd3-45b2-bad9-4b22816584f3
-    type: 1
-    pos: {x: 6, y: 24}
-    dir: 0
-  - id: 39c191dd-fcda-4376-aed9-d6f1e40f9cd7
-    type: 1
-    pos: {x: 7, y: 24}
-    dir: 0
-  - id: 37c64859-9fd6-4f63-88c2-ab57d6a1d95c
-    type: 1
-    pos: {x: 14, y: 24}
-    dir: 0
-  - id: 86cb21b7-dec5-4274-915b-52a6e9d91855
-    type: 1
-    pos: {x: 15, y: 24}
-    dir: 0
-  - id: e4ec9335-83ec-4de0-b9a2-30d0e067aaab
-    type: 1
-    pos: {x: 16, y: 24}
-    dir: 0
-  - id: f05a9ac8-8076-4c40-87bd-50fff14b80c7
-    type: 1
-    pos: {x: 19, y: 22}
-    dir: 0
-  - id: 452fd7e4-325e-48ab-b259-b3f2add77193
-    type: 1
-    pos: {x: 19, y: 21}
-    dir: 0
-  - id: 46ad41d5-99a8-4f6e-a12e-4b974c2fe1cf
-    type: 1
-    pos: {x: 19, y: 20}
-    dir: 0
-  - id: 2f2e3b57-cd35-413f-b4ad-8c4cdc026137
-    type: 1
-    pos: {x: 19, y: 15}
-    dir: 0
-  - id: 336f58b2-4588-483a-88c7-9dffc5543caf
-    type: 1
-    pos: {x: 19, y: 14}
-    dir: 0
-  - id: 7b619f58-60e9-4dcd-82c7-4fc2bc2ac03b
-    type: 1
-    pos: {x: 15, y: 8}
-    dir: 0
-  - id: f6f7c09d-6a3c-43bd-ab47-4aed9345d666
-    type: 1
-    pos: {x: 16, y: 8}
-    dir: 0
-  - id: d5a31ce1-2dba-4c47-96ab-a1806b771609
-    type: 1
-    pos: {x: 17, y: 8}
-    dir: 0
   - id: 6f77616c-0426-42ac-83e0-12eb758ab6ca
     type: 3
     pos: {x: 12, y: 23}
     dir: 0
+    specificDataJson: 
   - id: 7f8d9469-9a90-4c2d-a114-01d596b32f84
     type: 3
     pos: {x: 10, y: 11}
     dir: 0
+    specificDataJson: 
   - id: a0511c18-3372-4293-9e1e-e8efc7a77349
     type: 3
     pos: {x: 12, y: 20}
     dir: 2
+    specificDataJson: 
   - id: 9ab0b37e-36fa-4d67-ad4b-31abb9ca9717
     type: 3
     pos: {x: 6, y: 9}
     dir: 2
+    specificDataJson: 
   - id: e6cc1466-5834-4083-acf2-c26e102e1deb
     type: 3
     pos: {x: 13, y: 9}
     dir: 2
+    specificDataJson: 
   - id: a032b1eb-2494-43b9-9b3e-a3a01332cd9d
     type: 3
     pos: {x: 18, y: 18}
     dir: 3
+    specificDataJson: 
   - id: f9a89af6-3957-4a46-a919-9797ab08b0cc
     type: 3
     pos: {x: 16, y: 13}
     dir: 1
+    specificDataJson: 
   - id: 06e9a1cb-516b-43c1-9c06-9311ff52349b
     type: 3
     pos: {x: 2, y: 14}
     dir: 1
+    specificDataJson: 
+  - id: bded368c-af1f-4dbc-a81f-29debf76a005
+    type: 2
+    pos: {x: 1, y: 9}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 5dcc1d03-c9bd-4d2d-8f77-4e431968aad0
+    type: 2
+    pos: {x: 1, y: 10}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 51ee6a3c-0390-4b76-8eef-c31ede86142e
+    type: 2
+    pos: {x: 1, y: 11}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: d97bd9be-f5ef-4ab4-8d0f-a0d689eb94bc
+    type: 2
+    pos: {x: 1, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 04074d34-4c73-4af8-bc75-3a35f6848862
+    type: 2
+    pos: {x: 1, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 338b5323-12a1-4c5c-9226-1817fb589555
+    type: 2
+    pos: {x: 1, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 4afd8374-b6ab-44cf-ae5d-cdd5f7125d27
+    type: 2
+    pos: {x: 1, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: d3f172d9-1f54-42b6-8cb8-1c43196efb86
+    type: 2
+    pos: {x: 1, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 9dda7bd7-571c-47ef-93ee-998cda53b354
+    type: 2
+    pos: {x: 1, y: 17}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: e66e8e74-e9e9-4a3d-ac4f-6198b15f0d06
+    type: 2
+    pos: {x: 1, y: 18}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: b67f7bb1-6282-4c3f-b933-89bd3ff64f79
+    type: 2
+    pos: {x: 1, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,1],"corners":[0,1,1,0]}'
+  - id: f8627730-805a-4bb9-8614-c1e73c25decd
+    type: 2
+    pos: {x: 2, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: ff8268cb-01dd-4031-a47d-6627e8dfc48f
+    type: 2
+    pos: {x: 3, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: 1425d48c-2cc1-4394-a6fc-1eb054ae12c6
+    type: 2
+    pos: {x: 4, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: cae5caa7-41de-414c-abe3-40b3057a0dd9
+    type: 2
+    pos: {x: 5, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: cef59716-3b1c-4aac-a9d3-dfbb0abb22e1
+    type: 2
+    pos: {x: 6, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: de0a7d73-bee6-4af4-94ad-64758ae53980
+    type: 2
+    pos: {x: 7, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: 0fc2dcfc-241c-426d-a1f3-a6ffce7921eb
+    type: 2
+    pos: {x: 8, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: 739e705c-cd60-45ad-b04a-c2f68d7a7062
+    type: 2
+    pos: {x: 9, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: a9c8b8d5-01e2-4de8-8baf-acfc408a797a
+    type: 2
+    pos: {x: 10, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: d3aca44f-2e98-4e39-ac3c-02521f9efeb3
+    type: 2
+    pos: {x: 11, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: 034d6c75-9dd1-4946-8d68-3c7c51ffabb4
+    type: 2
+    pos: {x: 12, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: 4acb64b4-1f2d-4893-827b-b402df5dcb1b
+    type: 2
+    pos: {x: 13, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: e0f20c51-9a26-4af4-9790-b734b3af3abc
+    type: 2
+    pos: {x: 14, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
+  - id: eaad1e19-a924-40b7-ae3e-2b602dc6766b
+    type: 2
+    pos: {x: 15, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,2,0],"corners":[1,0,0,0]}'
+  - id: 7cf9b36e-48c3-4625-bdaf-1576b1a64706
+    type: 2
+    pos: {x: 15, y: 18}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+  - id: 51e49911-661b-4b83-953a-3be1bb69f499
+    type: 2
+    pos: {x: 15, y: 17}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+  - id: 08d69c3b-3117-45fb-9bcd-e50a4931eb5c
+    type: 2
+    pos: {x: 15, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+  - id: cc72047d-c4dc-4c64-83db-7e680d4a132d
+    type: 2
+    pos: {x: 15, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+  - id: 61ca8e39-b52d-49dd-9163-a7fee1386b3c
+    type: 2
+    pos: {x: 15, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+  - id: 8ec6b6fa-8a2e-4e66-9864-742fc6bcc078
+    type: 2
+    pos: {x: 15, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,0],"corners":[0,0,0,1]}'
+  - id: e5e7fe12-92a2-4b11-9661-70f5144d6a7e
+    type: 2
+    pos: {x: 15, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,2,0,0],"corners":[0,0,0,0]}'
+  - id: f243b426-825e-4c8b-96e5-38d35c1d7962
+    type: 2
+    pos: {x: 14, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 7ad3cfce-c62c-4026-9a09-8e1ed888d023
+    type: 2
+    pos: {x: 13, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 97a1e8bc-c585-449a-ab19-c7e80ddf0f53
+    type: 2
+    pos: {x: 12, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 523c991d-5b44-470b-9cb1-e58dcb4ce09a
+    type: 2
+    pos: {x: 11, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 7e4f2a03-7133-40e3-aaea-03b0be94ec21
+    type: 2
+    pos: {x: 10, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 626e7e42-f9f8-4c66-b0e7-775e328800af
+    type: 2
+    pos: {x: 9, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 0210c4a7-77ac-4641-9a99-74aad3a91ea4
+    type: 2
+    pos: {x: 8, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: db4f5567-cb05-4df1-8463-32ebb6285a28
+    type: 2
+    pos: {x: 7, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 16dfe2d7-329d-4251-bf98-b151ac3f69fc
+    type: 2
+    pos: {x: 6, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,0],"corners":[0,0,0,0]}'
+  - id: 9df7e830-d21c-4bf7-b446-9fd90b010dba
+    type: 2
+    pos: {x: 5, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,0,2],"corners":[0,0,0,0]}'
+  - id: 7e9b74d6-0a70-40c9-a928-30d3b97174e0
+    type: 2
+    pos: {x: 5, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,2,2],"corners":[0,0,0,0]}'
+  - id: cf62fce8-1248-4dcf-9fe0-2084e6824676
+    type: 2
+    pos: {x: 6, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,2,0],"corners":[0,0,0,0]}'
+  - id: 7d5c9253-ad69-4a5c-a0b8-49f170a178cd
+    type: 2
+    pos: {x: 7, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,2,0],"corners":[0,0,0,0]}'
+  - id: 5096e58e-e07e-4410-9dac-e328638499d2
+    type: 2
+    pos: {x: 8, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,2,0],"corners":[0,0,0,0]}'
+  - id: 4f85be91-9cbf-4b48-a3a1-83e430372862
+    type: 2
+    pos: {x: 9, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,2,0],"corners":[0,0,0,0]}'
+  - id: 703caa0c-add7-406c-98d1-fc4a84f661c0
+    type: 2
+    pos: {x: 10, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,2,0],"corners":[0,0,0,0]}'
+  - id: bad2809a-ea5e-4144-aa21-676ab76ea582
+    type: 2
+    pos: {x: 10, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,0],"corners":[0,0,0,0]}'
+  - id: 4b703a5b-1c0d-468f-9c51-0eef551664c2
+    type: 2
+    pos: {x: 10, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,1,0]}'
+  - id: d1332b84-21fb-425b-b0ce-534b5784a2a5
+    type: 2
+    pos: {x: 9, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 37fa5fb3-59e3-40d9-82eb-ed0ec21a21b2
+    type: 2
+    pos: {x: 8, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 663c7f2f-fdf2-4b35-a859-8f21947e60ea
+    type: 2
+    pos: {x: 7, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 053e61fc-4452-4198-b329-48177fea7498
+    type: 2
+    pos: {x: 6, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 686788e1-4063-428d-809c-5b2996b89321
+    type: 2
+    pos: {x: 5, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,2],"corners":[0,0,0,0]}'
+  - id: 5fa8a0a6-6b10-4084-bbb7-584831c4a917
+    type: 2
+    pos: {x: 5, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,2],"corners":[0,0,0,0]}'
+  - id: 4f293f5a-46bb-4f9d-9671-f2ac8287f964
+    type: 2
+    pos: {x: 6, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: db6a5a1e-a20a-4df6-b646-d8cd8bc22ef6
+    type: 2
+    pos: {x: 7, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 5713d2b7-87a2-4408-9a19-a051acb59d5c
+    type: 2
+    pos: {x: 8, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: e532993f-fdc3-4408-8227-b9f0af2295ad
+    type: 2
+    pos: {x: 9, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 38d4a836-e897-4ede-ace7-c63d734ec5cf
+    type: 2
+    pos: {x: 1, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,1,0]}'
+  - id: 5a63d3d6-df28-4d7b-9251-fa596c250388
+    type: 2
+    pos: {x: 2, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: a64ae614-552b-4269-afd5-920348d94a5c
+    type: 2
+    pos: {x: 3, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: a8ab2620-104a-4cc1-b56e-028323b7163c
+    type: 2
+    pos: {x: 4, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 979f3a9a-d5f1-4d64-b7a9-9bd2e50b72f2
+    type: 2
+    pos: {x: 5, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 9d3c5a89-be08-4992-baa8-0d3186993a96
+    type: 2
+    pos: {x: 6, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: c3f88ba8-2cc9-4e2a-a142-06a2211ba69f
+    type: 2
+    pos: {x: 7, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 30700165-cbe8-4870-8c73-c2e1b197a3c0
+    type: 2
+    pos: {x: 8, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 2f012bdc-6eaf-4cca-9bdd-35da2d4a36ca
+    type: 2
+    pos: {x: 9, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 55836cfb-7737-4147-a134-09550d614ca7
+    type: 2
+    pos: {x: 10, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 6cb93e75-451e-497b-8f6c-3f3b5e1798cd
+    type: 2
+    pos: {x: 11, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 9fc0fd54-be4c-4b89-8027-4a565c430e4c
+    type: 2
+    pos: {x: 12, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 6adf054a-e297-4a6b-9c9b-fa4bd3a9c508
+    type: 2
+    pos: {x: 13, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 413923f1-7828-4a27-a83b-773d94b8ab76
+    type: 2
+    pos: {x: 14, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 19c44b7f-765b-441c-9f26-683bd33b5a25
+    type: 2
+    pos: {x: 15, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
+  - id: bfb00db9-7eff-4528-889f-35a6b8732f7d
+    type: 2
+    pos: {x: 16, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
+  - id: ec687bef-7b43-44d2-a2ef-c10e8a4bf147
+    type: 2
+    pos: {x: 17, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
+  - id: b2397f91-3227-45e5-83b5-3d67ed5eb3e7
+    type: 2
+    pos: {x: 18, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+  - id: 898ee3e2-6fb2-4836-b1da-18ae9fe43805
+    type: 2
+    pos: {x: 19, y: 8}
+    dir: 0
+    specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1]}'
+  - id: d6c53701-ab90-441a-8fb1-f8ad6eb627b6
+    type: 2
+    pos: {x: 19, y: 9}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: a6d0e003-70fb-446a-9f43-591f1636d41c
+    type: 2
+    pos: {x: 19, y: 10}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 8108a954-4d97-498a-86ee-79d9814151cd
+    type: 2
+    pos: {x: 19, y: 11}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 1179e742-5693-4f73-90ff-5cf65c587c6b
+    type: 2
+    pos: {x: 19, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 5f689948-2944-4c85-b2d2-5e466a29a909
+    type: 2
+    pos: {x: 19, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 048d08ee-7f9b-418d-9902-486a43e5b30d
+    type: 2
+    pos: {x: 19, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
+  - id: 8862f000-ec2b-48cd-a8b3-636540e1b088
+    type: 2
+    pos: {x: 19, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
+  - id: 0319a07a-faed-45cd-8741-335eb9aa389e
+    type: 2
+    pos: {x: 19, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 6b94b013-974f-428f-bb4d-37341c4fb6bb
+    type: 2
+    pos: {x: 19, y: 17}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 3e58c6a2-314d-4f61-b5fc-fa90caa4d396
+    type: 2
+    pos: {x: 19, y: 18}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 758cc122-52ce-454f-b878-69db3f95da0b
+    type: 2
+    pos: {x: 19, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 84bf9e8b-5722-4a40-baec-33a699017a66
+    type: 2
+    pos: {x: 19, y: 20}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 4b5bae4f-6146-4202-af0c-8fa042c21d1b
+    type: 2
+    pos: {x: 19, y: 21}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 61355cf5-b69b-4d76-91ed-4141fca0d3c3
+    type: 2
+    pos: {x: 19, y: 22}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: f05c3282-4718-4d79-abc3-11260c2986cb
+    type: 2
+    pos: {x: 19, y: 23}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
+  - id: 257ae290-ebc8-494e-8362-5a293e1afc46
+    type: 2
+    pos: {x: 19, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[0,1,1,0],"corners":[1,0,0,0]}'
+  - id: 20fcb9f4-d599-40ca-ae86-f81a61200deb
+    type: 2
+    pos: {x: 1, y: 20}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: de9f7bef-5484-4484-a662-2630b6c79787
+    type: 2
+    pos: {x: 1, y: 21}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: fa6d26b8-e19f-41d3-8f9f-57d7a399ba4a
+    type: 2
+    pos: {x: 1, y: 22}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 280bacb0-9595-4ca2-8888-ded5cf6f089d
+    type: 2
+    pos: {x: 1, y: 23}
+    dir: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 5e03a359-61b5-4ef7-b5c8-e6cf4a53ce5c
+    type: 2
+    pos: {x: 1, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,1,1],"corners":[0,1,0,0]}'
+  - id: 77d6ab7e-cb06-484b-87a9-c904a0a1534b
+    type: 2
+    pos: {x: 2, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: 37ca5011-011c-49bf-9f9c-fc8f394bbda5
+    type: 2
+    pos: {x: 3, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: 4b4973d0-22b3-4ac9-8eea-b45d2afbaea9
+    type: 2
+    pos: {x: 4, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: 638e4d05-9827-4c0f-ab43-246ac1f74f9e
+    type: 2
+    pos: {x: 5, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: f0be4769-c418-4f1e-aba3-1d2f83c0bcff
+    type: 2
+    pos: {x: 6, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: 3bc17473-6459-4bc3-907b-7ba0c1f80c8b
+    type: 2
+    pos: {x: 7, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: 0726a945-c90b-4312-9957-9a2c533a1d9d
+    type: 2
+    pos: {x: 8, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: baf9e8ee-d500-4880-b224-f1a0cbb971ef
+    type: 2
+    pos: {x: 9, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: 362d6f37-82e0-40c2-949e-2b3cfd47c31f
+    type: 2
+    pos: {x: 10, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: a6ae77e3-44cf-400c-9679-4c2ea36462ac
+    type: 2
+    pos: {x: 11, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: a7f57f68-b045-4e05-9f9e-73c7bd4eca97
+    type: 2
+    pos: {x: 12, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: fd73b8d4-bfb0-4450-8c6f-16a8313dc2c0
+    type: 2
+    pos: {x: 13, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: 153716aa-6351-4271-bba5-7df2dddf91d0
+    type: 2
+    pos: {x: 14, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: 22aecfae-5938-4859-8ece-ea8bad65b396
+    type: 2
+    pos: {x: 15, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: 02600149-5990-41f6-96b3-324a23b4b2cf
+    type: 2
+    pos: {x: 16, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
+  - id: b0ef3be2-2d18-472a-876f-80daeff9067e
+    type: 2
+    pos: {x: 17, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: 30a20b20-63d3-4cf4-92b1-7a57c44c2ddb
+    type: 2
+    pos: {x: 18, y: 24}
+    dir: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+  - id: edcd1401-4a32-4373-a2f9-649206a746cd
+    type: 2
+    pos: {x: 11, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,3,0],"corners":[0,0,0,0]}'
+  - id: f9d09455-23d7-4130-8fc6-f90bce8c3759
+    type: 2
+    pos: {x: 12, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,3,0],"corners":[0,0,0,0]}'
+  - id: 412c0344-18b1-476e-9b39-16851852e06c
+    type: 2
+    pos: {x: 13, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,3,0],"corners":[0,0,0,0]}'
+  - id: 30010602-b9eb-4152-96c1-6b52125dea1c
+    type: 2
+    pos: {x: 14, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,3,0],"corners":[0,0,0,0]}'
   heroPos: {x: 3, y: 23}
   pieceGroups: []
   levelName: 

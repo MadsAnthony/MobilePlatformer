@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spike : Piece {
 
-	public override void Init (PieceLevelData pieceLevelData) {
+	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 	}
 
-	public override void Hit (Piece hitPiece)
+	public override void Hit (Piece hitPiece, Vector3 direction)
 	{
 		if (hitPiece.Type == PieceType.Hero) {
 			hitPiece.Destroy();
