@@ -231,11 +231,15 @@ public class LevelInspector : Editor {
 		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
 
 		// Sides
-		specific.sides [(int)Direction.Up] 	  	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Up)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
-		specific.sides [(int)Direction.Right] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Right)), PieceType.BlockNonSticky)	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
-		specific.sides [(int)Direction.Down] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Down)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
-		specific.sides [(int)Direction.Left] 	= IsPieceOfPieceType(GetPieceWithPos (GetNeighborIndex(index, Direction.Left)), PieceType.BlockNonSticky) 	? BlockPieceLevelData.SideType.None : BlockPieceLevelData.SideType.Normal;
-
+		for (int i = 0; i < 4; i++) {
+			if (IsPieceOfPieceType (GetPieceWithPos (GetNeighborIndex (index, (Direction)i)), PieceType.BlockNonSticky)) {
+				specific.sides [i] = BlockPieceLevelData.SideType.None;
+			} else {
+				if (specific.sides [i] == BlockPieceLevelData.SideType.None) {
+					specific.sides [i] = BlockPieceLevelData.SideType.Normal;
+				}
+			}
+		}
 
 		// Corners
 		for (int i = 0; i < 4; i++) {
@@ -385,7 +389,7 @@ public class LevelInspector : Editor {
 							tmpTexture = spikeTexture;
 						}
 						if (piece.type == PieceType.BlockNonSticky) {
-							GUI.color = Color.black;
+							GUI.color = Color.grey;
 						}
 						if (piece.type == PieceType.Collectable) {
 							GUI.color = Color.yellow;
@@ -419,7 +423,7 @@ public class LevelInspector : Editor {
 									GUI.color = new Color(0.1f,0.1f,0.1f,1);
 								}
 								if (side == BlockPieceLevelData.SideType.Sticky) {
-									GUI.color = Color.grey;
+									GUI.color = new Color(0.4f,0.4f,0.4f,1);
 								}
 								if (side == BlockPieceLevelData.SideType.Colorable) {
 									GUI.color = Color.white;
@@ -436,7 +440,7 @@ public class LevelInspector : Editor {
 									GUI.color = new Color(0.1f,0.1f,0.1f,1);
 								}
 								if (corner == BlockPieceLevelData.SideType.Sticky) {
-									GUI.color = Color.grey;
+									GUI.color = new Color(0.4f,0.4f,0.4f,1);
 								}
 								if (corner == BlockPieceLevelData.SideType.Colorable) {
 									GUI.color = Color.white;
