@@ -47,6 +47,7 @@ public class PieceLevelData {
 
 [Serializable]
 public class PieceGroupData {
+	public string id = Guid.NewGuid ().ToString ();
 	public List<string> pieceIds = new List<string>();
 	public List<GroupMovement> moves = new List<GroupMovement>();
 }

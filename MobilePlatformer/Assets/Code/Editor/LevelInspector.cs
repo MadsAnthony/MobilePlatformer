@@ -113,6 +113,8 @@ public class LevelInspector : Editor {
 					if (existingPiece != null) {
 						if (!selectedPieceGroup.pieceIds.Contains (existingPiece.id)) {
 							selectedPieceGroup.pieceIds.Add (existingPiece.id);
+							UpdateBlock (selectedIndex);
+							UpdateNeighborBlocks(selectedIndex);
 						}
 					}
 					if (startPointId != "-1") {
@@ -126,6 +128,8 @@ public class LevelInspector : Editor {
 					PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
 					if (existingPiece != null) {
 						selectedPieceGroup.pieceIds.Remove (existingPiece.id);
+						UpdateBlock (selectedIndex);
+						UpdateNeighborBlocks(selectedIndex);
 					}
 				}
 			}
@@ -226,13 +230,22 @@ public class LevelInspector : Editor {
 		return piece.type == type;
 	}
 
+	string GetPieceGroupId(PieceLevelData piece) {
+		foreach(PieceGroupData pieceGroup in ((LevelAsset)target).pieceGroups) {
+			if (pieceGroup.pieceIds.Contains(piece.id)) return pieceGroup.id;
+		}
+		return "-1";
+	}
+
 	void UpdateBlock(Vector2 index) {
 		PieceLevelData piece = GetPieceWithPos (index);
+		string pieceGroupId = GetPieceGroupId (piece);
 		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
 
 		// Sides
 		for (int i = 0; i < 4; i++) {
-			if (IsPieceOfPieceType (GetPieceWithPos (GetNeighborIndex (index, (Direction)i)), PieceType.BlockNonSticky)) {
+			var tmpPiece = GetPieceWithPos (GetNeighborIndex (index, (Direction)i));
+			if (tmpPiece != null && tmpPiece.type == PieceType.BlockNonSticky && (GetPieceGroupId (tmpPiece) == pieceGroupId)) {
 				specific.sides [i] = BlockPieceLevelData.SideType.None;
 			} else {
 				if (specific.sides [i] == BlockPieceLevelData.SideType.None) {
@@ -402,7 +415,7 @@ public class LevelInspector : Editor {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 						}
 						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
-							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b+0.5f,GUI.color.a);
+							GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b+0.5f,GUI.color.a);
 						}
 					}
 				}
