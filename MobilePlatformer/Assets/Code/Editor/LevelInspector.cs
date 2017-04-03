@@ -334,9 +334,9 @@ public class LevelInspector : Editor {
 		return null;
 	}
 
-	bool IsPositionWithinGrid(Vector2 pos) {
-		return pos.x > levelGridRect.x && pos.x < levelGridRect.x + levelGridRect.width &&
-			   pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height;
+	bool IsPositionWithinGrid(Vector2 pos, float rightMargin = 20,  float downMargin = 20) {
+		return 	pos.x > levelGridRect.x && pos.x < levelGridRect.x + levelGridRect.width -rightMargin &&
+				pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height-downMargin;
 	}
 
 	Vector2 GetClosestCell(Vector2 mousePos) {
