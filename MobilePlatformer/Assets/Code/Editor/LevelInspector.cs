@@ -8,6 +8,8 @@ using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
+public enum LevelEditorTool {Hero, PlacePieces, ModifyBlock, Select};
+
 [CustomEditor(typeof(LevelAsset))]
 public class LevelInspector : Editor {
 
@@ -21,12 +23,15 @@ public class LevelInspector : Editor {
 
 	private Rect levelGridRect = new Rect(100, 200, 420, 620);
 	private float cellSize = 20;
-	int cellType = 1;
+	LevelEditorTool cellType = LevelEditorTool.PlacePieces;
 	PieceType pieceType;
 	public Direction direction;
 	public BlockPieceLevelData.SideType blockSideType;
 	Vector2 scrollPos;
 	Vector2 mouseDownPos;
+
+	Vector2 selectionAreaStartPoint;
+	Vector2 selectionAreaEndPoint;
 
 
 	public override void OnInspectorGUI()
@@ -52,19 +57,14 @@ public class LevelInspector : Editor {
 			myTarget.pieces.Clear();
 		}
 
-		string[] cellOptions = new string[]
-		{
-			"Hero", "Blocks", "Modify Block"
-		};
-
 		var levelSizeX = EditorGUILayout.IntSlider((int)myTarget.levelSize.x,0,50);
 		var levelSizeY = EditorGUILayout.IntSlider((int)myTarget.levelSize.y,0,50);
 
 		myTarget.levelSize = new Vector2 (levelSizeX, levelSizeY);
-		cellType = EditorGUILayout.Popup("Cell Type", (int)cellType, cellOptions);
+		cellType = (LevelEditorTool)EditorGUILayout.Popup("Cell Type", (int)cellType, Enum.GetNames (typeof(LevelEditorTool)));
 
 		EditorGUILayout.BeginHorizontal();
-		if (cellType == 1) {
+		if (cellType == LevelEditorTool.PlacePieces) {
 			string[] pieceOptions = Enum.GetNames (typeof(PieceType));
 			pieceType = (PieceType)EditorGUILayout.Popup ("Piece Type", (int)pieceType, pieceOptions);
 		}
@@ -72,38 +72,46 @@ public class LevelInspector : Editor {
 		direction = (Direction)EditorGUILayout.Popup("Direction", (int)direction, Enum.GetNames (typeof(Direction)));
 		EditorGUILayout.EndHorizontal();
 
-		if (cellType == 2) {
-		blockSideType = (BlockPieceLevelData.SideType)EditorGUILayout.Popup("SideType", (int)blockSideType, Enum.GetNames (typeof(BlockPieceLevelData.SideType)));
+		if (cellType == LevelEditorTool.ModifyBlock) {
+			blockSideType = (BlockPieceLevelData.SideType)EditorGUILayout.Popup("SideType", (int)blockSideType, Enum.GetNames (typeof(BlockPieceLevelData.SideType)));
 		}
 
 		if (Event.current.type == EventType.MouseDown) {
 			mouseDownPos = Event.current.mousePosition;
 		}
 
+
 		if (Event.current.type == EventType.MouseUp && mouseDownPos.x != 0 && mouseDownPos.y != 0) {
 			mouseDownPos = Vector2.zero;
 		}
 
 		if (IsPositionWithinGrid(mouseDownPos) && (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag)) {
-			GetClosestCell (Event.current.mousePosition);
+			selectedIndex = GetClosestCell (Event.current.mousePosition);
 
 			if (selectedPieceGroup == null) {
 				if (Event.current.button == 0) {
-					if (cellType == 0) {
+					if (cellType == LevelEditorTool.Hero) {
 						myTarget.heroPos = selectedIndex;
 					}
-					if (cellType == 1) {
+					if (cellType == LevelEditorTool.PlacePieces) {
 						AddPiece (selectedIndex,pieceType);
 					}
-					if (cellType == 2) {
+					if (cellType == LevelEditorTool.ModifyBlock) {
 						ModifyBlock (selectedIndex, blockSideType);
+					}
+					if (cellType == LevelEditorTool.Select && SelectionOfPieces.Count>0) {
+						if (Event.current.control) {
+							CopySelectedPieces(selectedIndex, Event.current.mousePosition);
+						}
+
+						MoveSelectedPieces(selectedIndex, Event.current.mousePosition);
 					}
 				}
 				if (Event.current.button == 1) {
-					if (cellType == 1) {
+					if (cellType == LevelEditorTool.PlacePieces) {
 						RemovePiece (selectedIndex);
 					}
-					if (cellType == 2) {
+					if (cellType == LevelEditorTool.ModifyBlock) {
 						ModifyBlock (selectedIndex,BlockPieceLevelData.SideType.Normal);
 					}
 				}
@@ -146,6 +154,33 @@ public class LevelInspector : Editor {
 		ReorderableListGUI.Title("Groups");
 		ReorderableListGUI.ListField<PieceGroupData>(myTarget.pieceGroups, PieceGroupDrawer);
 
+		if (cellType == LevelEditorTool.Select && !IsDraggingSelection) {
+			if (Event.current.type == EventType.MouseDown) {
+				selectionAreaStartPoint = Event.current.mousePosition;
+			}
+			if (Event.current.type == EventType.MouseDrag) {
+				selectionAreaEndPoint = Event.current.mousePosition - selectionAreaStartPoint;
+			}
+			if (Event.current.type == EventType.MouseUp) {
+				Rect selectionRect = new Rect (selectionAreaStartPoint, selectionAreaEndPoint);
+				AddSelectionOfPieces(selectionRect);
+				selectionAreaStartPoint = Vector2.zero;
+				selectionAreaEndPoint = Vector2.zero;
+				EditorUtility.SetDirty (myTarget);
+			}
+		}
+		if (cellType == LevelEditorTool.Select && IsDraggingSelection) {
+			if (Event.current.type == EventType.MouseUp) {
+				PlaceSelection();
+				IsCopySelection = false;
+				IsDraggingSelection = false;
+			}
+		}
+
+		GUI.color = new Color(0,0,0.8f,0.5f);
+		GUI.DrawTexture(new Rect (selectionAreaStartPoint.x, selectionAreaStartPoint.y, selectionAreaEndPoint.x, selectionAreaEndPoint.y),blockTexture,ScaleMode.StretchToFill);
+		GUI.color = Color.white;
+
 
 		if (GUI.changed) {
 			EditorUtility.SetDirty (myTarget);
@@ -153,11 +188,141 @@ public class LevelInspector : Editor {
 		serializedObject.ApplyModifiedProperties();
 	}
 
-	void AddPiece(Vector2 index, PieceType pieceType) {
+	List<PieceLevelData> SelectionOfPieces = new List<PieceLevelData>();
+	bool IsDraggingSelection = false;
+	bool IsCopySelection = false;
+	Vector2 DragPoint;
+
+	void AddSelectionOfPieces(Rect rect) {
+		Vector2 startIndex = GetClosestCell (new Vector2(Mathf.Min(rect.xMin,rect.xMax),Mathf.Min(rect.yMin,rect.yMax)));
+		Vector2 endIndex   = GetClosestCell (new Vector2(Mathf.Max(rect.xMin,rect.xMax),Mathf.Max(rect.yMin,rect.yMax)));
+
+		SelectionOfPieces.Clear();
+		foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+			if (piece.pos.x >= startIndex.x && piece.pos.x <= endIndex.x &&
+				piece.pos.y >= startIndex.y && piece.pos.y <= endIndex.y) {
+				SelectionOfPieces.Add (piece);
+			}
+		}
+	}
+
+	void CopySelectedPieces(Vector2 selectedIndex, Vector2 mousePos) {
+		if (IsCopySelection) return;
+		if (!IsDraggingSelection) {
+			foreach (var selectedPiece in SelectionOfPieces) {
+				if (selectedPiece.pos == selectedIndex) {
+					IsDraggingSelection = true;
+					DragPoint = selectedIndex;
+					break;
+				}
+			}
+		}
+
+		List<PieceLevelData> newSelection = new List<PieceLevelData>();
+		if (IsDraggingSelection) {
+			
+			string[] groupIds = GetPieceGroupIds (SelectionOfPieces.ToArray());
+
+			//Dictionary<string,string> groupToNewGroup = new Dictionary<string,string>();
+			List<PieceGroupData> newGroups = new List<PieceGroupData>();
+			Dictionary<string,string> pieceToNewPiece = new Dictionary<string,string>();
+
+			foreach (var groupId in groupIds) {
+				PieceGroupData group = GetPieceGroup (groupId);
+				var newGroup = CopyPieceGroup (group);
+				newGroups.Add (newGroup);
+			}
+
+			foreach (var selectedPiece in SelectionOfPieces) {
+				var newPiece = AddPiece (selectedPiece.pos, selectedPiece.type, false);
+				newSelection.Add (newPiece);
+				pieceToNewPiece.Add (selectedPiece.id, newPiece.id);
+			}
+
+			foreach (var newGroup in newGroups) {
+				List<string> newPieceIdList = new List<String> ();
+				foreach (var pieceId in newGroup.pieceIds) {
+					if (pieceToNewPiece.ContainsKey (pieceId)) {
+						newPieceIdList.Add (pieceToNewPiece [pieceId]);
+					}
+				}
+				newGroup.pieceIds.Clear ();
+				newGroup.pieceIds.AddRange (newPieceIdList.ToArray ());
+			}
+
+			IsCopySelection = true;
+		}
+		SelectionOfPieces = newSelection;
+	}
+
+	PieceGroupData CopyPieceGroup(PieceGroupData pieceGroup) {
+		var newPieceGroup = new PieceGroupData();
+		newPieceGroup.pieceIds.AddRange(pieceGroup.pieceIds.ToArray ());
+
+		foreach (var move in pieceGroup.moves) {
+			var newGroupMovement = new GroupMovement ();
+			newGroupMovement.startPoint 	= move.startPoint;
+			newGroupMovement.endPoint 		= move.endPoint;
+			newGroupMovement.delay 			= move.delay;
+			newGroupMovement.time 			= move.time;
+			newGroupMovement.animationCurve = move.animationCurve;
+			newGroupMovement.maxT 			= move.maxT;
+
+			newPieceGroup.moves.Add (newGroupMovement);
+		}
+
+		((LevelAsset)target).pieceGroups.Add (newPieceGroup);
+
+		return newPieceGroup;
+	}
+
+	void MoveSelectedPieces(Vector2 selectedIndex, Vector2 mousePos) {
+		if (!IsDraggingSelection) {
+			foreach (var selectedPiece in SelectionOfPieces) {
+				if (selectedPiece.pos == selectedIndex) {
+					IsDraggingSelection = true;
+					DragPoint = selectedIndex;
+					break;
+				}
+			}
+		}
+		string[] groupIds = GetPieceGroupIds (SelectionOfPieces.ToArray());
+
+		if (IsDraggingSelection) {
+			foreach (var groupId in groupIds) {
+				PieceGroupData group = GetPieceGroup (groupId);
+				if (group == null) continue;
+
+				foreach (var groupMove in group.moves) {
+					groupMove.startPoint += GetClosestCell (mousePos)-DragPoint;
+					groupMove.endPoint 	 += GetClosestCell (mousePos)-DragPoint;
+				}
+			}
+
+			foreach (var selectedPiece in SelectionOfPieces) {
+				selectedPiece.pos += GetClosestCell (mousePos)-DragPoint;
+			}
+			DragPoint = GetClosestCell (mousePos);
+		}
+	}
+
+	void PlaceSelection() {
+		serializedObject.ApplyModifiedProperties();
+		foreach (var selectedPiece in SelectionOfPieces) {
+			var newPos = selectedPiece.pos;
+			selectedPiece.pos = new Vector2 (-1, -1);
+			RemovePiece (newPos);
+			selectedPiece.pos = newPos;
+			UpdateBlock (newPos);
+			UpdateNeighborBlocks(newPos);
+		}
+	}
+
+	PieceLevelData AddPiece(Vector2 index, PieceType pieceType, bool removeExisting = true) {
 		LevelAsset myTarget = (LevelAsset)target;
 
 		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-		if (existingPiece != null) {
+		if (removeExisting && existingPiece != null) {
 			myTarget.pieces.Remove (existingPiece);
 		}
 		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction);
@@ -167,12 +332,14 @@ public class LevelInspector : Editor {
 			UpdateBlock (index);
 		}
 		UpdateNeighborBlocks(index);
+
+		return newPiece;
 	}
 
 	void RemovePiece(Vector2 index) {
 		LevelAsset myTarget = (LevelAsset)target;
 
-		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
+		PieceLevelData existingPiece = GetPieceWithPos (index);
 		if (existingPiece != null) {
 			myTarget.pieces.Remove (existingPiece);
 		}
@@ -230,6 +397,26 @@ public class LevelInspector : Editor {
 		return piece.type == type;
 	}
 
+	string[] GetPieceGroupIds(PieceLevelData[] pieces) {
+		List<String> groupdIds = new List<String> ();
+
+		foreach (PieceLevelData piece in pieces) {
+			var groupId = GetPieceGroupId(piece);
+			if (groupId != "-1" && !groupdIds.Contains(groupId)) {
+				groupdIds.Add (groupId);
+			}
+		}
+
+		return groupdIds.ToArray ();
+	}
+
+	PieceGroupData GetPieceGroup(string groupId) {
+		foreach(PieceGroupData pieceGroup in ((LevelAsset)target).pieceGroups) {
+			if (pieceGroup.id == groupId) return pieceGroup;
+		}
+		return null;
+	}
+
 	string GetPieceGroupId(PieceLevelData piece) {
 		foreach(PieceGroupData pieceGroup in ((LevelAsset)target).pieceGroups) {
 			if (pieceGroup.pieceIds.Contains(piece.id)) return pieceGroup.id;
@@ -239,6 +426,8 @@ public class LevelInspector : Editor {
 
 	void UpdateBlock(Vector2 index) {
 		PieceLevelData piece = GetPieceWithPos (index);
+		if (piece == null || piece.type != PieceType.BlockNonSticky) return;
+
 		string pieceGroupId = GetPieceGroupId (piece);
 		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
 
@@ -356,13 +545,13 @@ public class LevelInspector : Editor {
 				pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height-downMargin;
 	}
 
-	Vector2 GetClosestCell(Vector2 mousePos) {
-		if (IsPositionWithinGrid(mousePos)) {
-			mousePos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
-			selectedIndex = new Vector2(Mathf.FloorToInt(mousePos.x/cellSize),Mathf.FloorToInt(mousePos.y/cellSize));
+	Vector2 GetClosestCell(Vector2 pos) {
+		if (IsPositionWithinGrid(pos)) {
+			pos -= new Vector2(levelGridRect.x,levelGridRect.y)-scrollPos;
+			var selectedIndex = new Vector2(Mathf.FloorToInt(pos.x/cellSize),Mathf.FloorToInt(pos.y/cellSize));
 			return selectedIndex;
 		} else {
-			selectedIndex = new Vector2 (-1, -1);
+			var selectedIndex = new Vector2 (-1, -1);
 			return selectedIndex;
 		}
 	}
@@ -415,6 +604,9 @@ public class LevelInspector : Editor {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 						}
 						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
+							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b,GUI.color.a);
+						}
+						if (SelectionOfPieces.Exists(p => p.id == piece.id)) {
 							GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b+0.5f,GUI.color.a);
 						}
 					}
