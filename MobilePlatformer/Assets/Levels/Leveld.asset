@@ -182,7 +182,7 @@ MonoBehaviour:
     type: 2
     pos: {x: 1, y: 21}
     dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,1,1,0]}'
+    specificDataJson: '{"sides":[0,1,0,0],"corners":[0,1,1,0]}'
   - id: 3cb924bf-cedc-47ed-9df4-adc2a6319999
     type: 2
     pos: {x: 0, y: 22}
@@ -327,12 +327,12 @@ MonoBehaviour:
     type: 2
     pos: {x: 6, y: 21}
     dir: 0
-    specificDataJson: '{"sides":[0,0,1,0],"corners":[1,1,0,0]}'
+    specificDataJson: '{"sides":[0,0,1,1],"corners":[1,1,0,0]}'
   - id: a8ad59f0-c71b-46e4-9f84-cc1f303cdce9
     type: 2
     pos: {x: 5, y: 21}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[1,1,1,0],"corners":[0,0,0,0]}'
   - id: b7943a6b-b7fb-49ea-afd7-371797195108
     type: 2
     pos: {x: 4, y: 21}
@@ -347,7 +347,7 @@ MonoBehaviour:
     type: 2
     pos: {x: 2, y: 21}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[1,0,1,1],"corners":[0,0,0,0]}'
   - id: 3de5acfe-9bc5-44fd-bb74-ee7e62d1170f
     type: 2
     pos: {x: 18, y: 27}
@@ -462,7 +462,7 @@ MonoBehaviour:
     type: 2
     pos: {x: 14, y: 11}
     dir: 0
-    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[1,0,2,1],"corners":[0,0,0,0]}'
   - id: 682b5662-077b-4908-9b1d-171017a52cd9
     type: 2
     pos: {x: 6, y: 11}
@@ -472,12 +472,12 @@ MonoBehaviour:
     type: 2
     pos: {x: 7, y: 11}
     dir: 0
-    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[1,1,2,0],"corners":[0,0,0,0]}'
   - id: cad9f970-ee8a-41c6-b665-b95cd989ed4f
     type: 2
     pos: {x: 8, y: 11}
     dir: 0
-    specificDataJson: '{"sides":[0,0,2,0],"corners":[1,0,0,0]}'
+    specificDataJson: '{"sides":[0,0,2,1],"corners":[1,0,0,0]}'
   - id: 06b174b0-0e55-4455-bae5-fdad5f83df44
     type: 2
     pos: {x: 9, y: 11}
@@ -492,7 +492,7 @@ MonoBehaviour:
     type: 2
     pos: {x: 13, y: 11}
     dir: 0
-    specificDataJson: '{"sides":[0,0,2,0],"corners":[0,1,0,0]}'
+    specificDataJson: '{"sides":[0,1,2,0],"corners":[0,1,0,0]}'
   - id: 24403ccf-2d9e-4116-a46e-07502957147f
     type: 2
     pos: {x: 8, y: 3}
@@ -765,7 +765,8 @@ MonoBehaviour:
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   heroPos: {x: 9, y: 26}
   pieceGroups:
-  - pieceIds:
+  - id: 0e27dbc9-3615-43ac-8dd3-b37c14b20230
+    pieceIds:
     - cad9f970-ee8a-41c6-b665-b95cd989ed4f
     - d47641d7-a622-4b58-9dac-4b83395b7a53
     - 4ca18adb-6449-4b95-95bb-844b16e969ea
@@ -875,7 +876,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
-  - pieceIds:
+  - id: 44ca1517-d5a3-42cd-844c-be40932523b9
+    pieceIds:
     - 7676a73e-0194-4854-b479-1d23de60a9ca
     - 31950660-b682-4bed-be14-37d4408221d2
     - b7943a6b-b7fb-49ea-afd7-371797195108
