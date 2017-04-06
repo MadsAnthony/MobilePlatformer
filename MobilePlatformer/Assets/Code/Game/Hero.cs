@@ -49,14 +49,14 @@ public class Hero : Piece {
 					}
 					if (gravity<=0) {
 						gravity = 0;
-						isOnGround = true;
+						IsOnGround = true;
 					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
 							movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
 							ChangeGravity(-dirsIndex);
 						}
 					} else {
 					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && ((Block)p).IsSticky(tmpMoveDir);})) {
-						isOnGround = true;
+						IsOnGround = true;
 						gravity = 0;
 						movingDir *= -1;
 						ChangeGravity(2);
@@ -64,7 +64,7 @@ public class Hero : Piece {
 				}
 				},
 			() => {
-				isOnGround = false;
+				IsOnGround = false;
 				Check(dir*speed*-movingDir,
 						() => {
 								if (gravity<0f) {
@@ -74,6 +74,23 @@ public class Hero : Piece {
 				});
 	}
 
+	public bool IsOnGround { 
+		get { 
+			return isOnGround;
+		} 
+		set {
+			if (value == true) {
+				CancelInvoke("IsNotOnGround");
+				isOnGround = value;
+			} else {
+				Invoke("IsNotOnGround",0.1f);
+			}
+		}
+	}
+
+	void IsNotOnGround() {
+		isOnGround = false;
+	}
 
 	public bool ExistPiece(Piece[] pieces, Predicate<Piece> condition) {
 		foreach (Piece piece in pieces) {
@@ -90,7 +107,7 @@ public class Hero : Piece {
 	}
 
 	void KeyboardInput() {
-		if (Input.GetKeyDown (KeyCode.UpArrow) && isOnGround) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && IsOnGround && gravity<=0) {
 			Jump ();
 		}
 		if (Input.GetKeyDown (KeyCode.DownArrow)) {
@@ -135,7 +152,7 @@ public class Hero : Piece {
 				movingDir = newMovingDir;
 			}
 
-			if (verticalDotProduct < -threshold  && isOnGround && !touchConsumed && noGravityT>=1) {
+			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && noGravityT>=1 && gravity<=0) {
 				Jump ();
 			}
 			if (verticalDotProduct < -threshold && !touchConsumed) {
@@ -146,7 +163,7 @@ public class Hero : Piece {
 					touchConsumed = true;
 				}
 			}
-			if (verticalDotProduct > threshold && !isOnGround && !touchConsumed) {
+			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {
 				gravity = -maxGravity;
 				touchConsumed = true;
 			}
