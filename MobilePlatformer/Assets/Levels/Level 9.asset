@@ -1088,6 +1088,11 @@ MonoBehaviour:
     pos: {x: 1, y: 23}
     dir: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+  - id: 8ecdb12e-d21a-4569-97b6-494f6c513120
+    type: 4
+    pos: {x: 2, y: 6}
+    dir: 2
+    specificDataJson: 
   heroPos: {x: 2, y: 6}
   pieceGroups: []
   levelName: 

@@ -8,7 +8,7 @@ using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-public enum LevelEditorTool {Hero, PlacePieces, ModifyBlock, Select};
+public enum LevelEditorTool {PlacePieces, ModifyBlock, Select};
 
 [CustomEditor(typeof(LevelAsset))]
 public class LevelInspector : Editor {
@@ -23,7 +23,7 @@ public class LevelInspector : Editor {
 
 	private Rect levelGridRect = new Rect(100, 200, 420, 620);
 	private float cellSize = 20;
-	LevelEditorTool cellType = LevelEditorTool.PlacePieces;
+	LevelEditorTool cellType = LevelEditorTool.Select;
 	PieceType pieceType;
 	public Direction direction;
 	public BlockPieceLevelData.SideType blockSideType;
@@ -90,9 +90,6 @@ public class LevelInspector : Editor {
 
 			if (selectedPieceGroup == null) {
 				if (Event.current.button == 0) {
-					if (cellType == LevelEditorTool.Hero) {
-						myTarget.heroPos = selectedIndex;
-					}
 					if (cellType == LevelEditorTool.PlacePieces) {
 						AddPiece (selectedIndex,pieceType);
 					}
@@ -590,6 +587,9 @@ public class LevelInspector : Editor {
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
 						}
+						if (piece.type == PieceType.Hero) {
+							GUI.color = Color.green;
+						}
 						if (piece.type == PieceType.Block) {
 							GUI.color = Color.grey;
 						}
@@ -612,9 +612,6 @@ public class LevelInspector : Editor {
 					}
 				}
 
-				if (x ==  ((LevelAsset)target).heroPos.x && y == ((LevelAsset)target).heroPos.y) {
-					GUI.color = Color.green;
-				}
 				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 
 				if (tmpPiece != null && tmpPiece.type == PieceType.Block) {

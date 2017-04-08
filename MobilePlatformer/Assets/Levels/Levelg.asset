@@ -1123,6 +1123,11 @@ MonoBehaviour:
     pos: {x: 26, y: 5}
     dir: 0
     specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 0c57c336-2d6a-4def-aabc-edad351348a1
+    type: 4
+    pos: {x: 5, y: 20}
+    dir: 2
+    specificDataJson: 
   heroPos: {x: 5, y: 20}
   pieceGroups:
   - id: 30632782-e766-48ed-b18f-e9943d463ebc

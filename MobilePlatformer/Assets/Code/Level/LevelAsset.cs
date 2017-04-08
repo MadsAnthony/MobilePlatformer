@@ -7,7 +7,6 @@ using System.Collections.Generic;
 public class LevelAsset : ScriptableObject {
 	public Vector2 levelSize = new Vector2(20,30);
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
-	public Vector2 heroPos;
 	public List<PieceGroupData> pieceGroups = new List<PieceGroupData>();
 
 	public string levelName;

@@ -182,6 +182,21 @@ public class Hero : Piece {
 		movingDir = 0;
 	}
 
+	public void SetGravity(Direction dir) {
+		if (dir == Direction.Up) {
+			dirsIndex = 2;
+		}
+		if (dir == Direction.Left) {
+			dirsIndex = 3;
+		}
+		if (dir == Direction.Right) {
+			dirsIndex = 1;
+		}
+		if (dir == Direction.Down) {
+			dirsIndex = 0;
+		}
+	}
+
 	void ChangeGravity(int delta) {
 		dirsIndex += delta;
 		if (dirsIndex < 0) {

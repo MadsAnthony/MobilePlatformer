@@ -17,193 +17,246 @@ MonoBehaviour:
     type: 2
     pos: {x: 3, y: 15}
     dir: 0
+    specificDataJson: 
   - id: 229fc83d-8f86-42c4-952b-c41b7a94176f
     type: 2
     pos: {x: 3, y: 14}
     dir: 0
+    specificDataJson: 
   - id: 99cd523c-5bae-4fe6-add4-5bf172d689a0
     type: 2
     pos: {x: 3, y: 13}
     dir: 0
+    specificDataJson: 
   - id: 8b63414b-52a1-4a23-b6bc-28fb2b2bfef3
     type: 2
     pos: {x: 3, y: 12}
     dir: 0
+    specificDataJson: 
   - id: 5f4f6ccd-a384-4ea6-ae68-2ffac294026d
     type: 2
     pos: {x: 8, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 9d2cc38f-4c8a-4cbe-b0b8-a1c8b3b2aa0f
     type: 2
     pos: {x: 5, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 36b2c378-7b33-412d-a846-40a41167865d
     type: 2
     pos: {x: 4, y: 11}
     dir: 0
+    specificDataJson: 
   - id: ec1fce33-4dc4-40e0-beee-3c1fa51fd586
     type: 2
     pos: {x: 3, y: 11}
     dir: 0
+    specificDataJson: 
   - id: de1cecd0-002f-40cc-83b9-77159d93344d
     type: 2
     pos: {x: 7, y: 11}
     dir: 0
+    specificDataJson: 
   - id: bcb2e129-53f0-427a-a608-ac2f766a9686
     type: 2
     pos: {x: 6, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 6d78c7f6-779f-4109-a565-ef8b755cd629
     type: 2
     pos: {x: 3, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 023c1b4a-8dad-4df1-be6b-2ccfcc7b76d2
     type: 2
     pos: {x: 4, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 9acad90f-cdba-47e6-8d81-f7bc458c7789
     type: 2
     pos: {x: 5, y: 16}
     dir: 0
+    specificDataJson: 
   - id: d5255873-1888-44ef-84a5-24b001bc7516
     type: 2
     pos: {x: 6, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 8456b5ad-1eca-4a2c-a374-4ce44ce23603
     type: 2
     pos: {x: 7, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 24c1487c-ed30-4455-9d1e-60d8a61d863a
     type: 2
     pos: {x: 8, y: 16}
     dir: 0
+    specificDataJson: 
   - id: f2453564-909c-4a11-bba6-a7ddac6b2f4f
     type: 2
     pos: {x: 9, y: 16}
     dir: 0
+    specificDataJson: 
   - id: ea233447-d21a-4771-9c09-17463910d806
     type: 2
     pos: {x: 10, y: 16}
     dir: 0
+    specificDataJson: 
   - id: f9c84b8e-bd62-465a-8e2a-68d455989364
     type: 2
     pos: {x: 11, y: 16}
     dir: 0
+    specificDataJson: 
   - id: e9bc7ef8-b26d-4c20-8518-c495392d1f1a
     type: 2
     pos: {x: 12, y: 16}
     dir: 0
+    specificDataJson: 
   - id: b5bd9d9a-286d-4324-9bc7-c102581209bf
     type: 2
     pos: {x: 13, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 4c0f05fe-b569-4d7a-ada8-be48970ba762
     type: 2
     pos: {x: 14, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 157027a3-df38-4c36-a7dc-c7ec7bb74207
     type: 2
     pos: {x: 15, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 915d736c-cbea-4ae6-8d7c-6f13147ac19b
     type: 2
     pos: {x: 16, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 7dcc82fd-bdc6-4b0c-8f9f-468c64e0aea5
     type: 2
     pos: {x: 12, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 59876ebb-9a43-41f8-b46a-ae7dbd93cc99
     type: 2
     pos: {x: 13, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 6bc0c895-e3f4-4d59-b6be-c24c0e3f3b90
     type: 2
     pos: {x: 14, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 76624637-943a-4f8e-9b27-4b128aa89495
     type: 2
     pos: {x: 15, y: 11}
     dir: 0
+    specificDataJson: 
   - id: b3b164e7-3aba-4aef-a675-e69bcaedc92d
     type: 2
     pos: {x: 16, y: 11}
     dir: 0
+    specificDataJson: 
   - id: e9fb44ae-f46c-4f60-8df5-c445c574662e
     type: 2
     pos: {x: 17, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 5901ea2f-1cda-448d-ab69-91b3277de6ab
     type: 2
     pos: {x: 17, y: 12}
     dir: 0
+    specificDataJson: 
   - id: 3ce69d97-3a7e-4004-9e4d-b401fe543eac
     type: 2
     pos: {x: 17, y: 13}
     dir: 0
+    specificDataJson: 
   - id: ca40ce58-83fe-4633-a828-3bc37a7ae960
     type: 2
     pos: {x: 17, y: 14}
     dir: 0
+    specificDataJson: 
   - id: 80977bc9-9157-42bc-8c7e-e5dec7193333
     type: 2
     pos: {x: 17, y: 15}
     dir: 0
+    specificDataJson: 
   - id: bbb6e283-00b1-4eb6-96be-dad50e07f1b1
     type: 2
     pos: {x: 17, y: 16}
     dir: 0
+    specificDataJson: 
   - id: 328af7c0-c962-4160-95fc-dfd66009c51a
     type: 2
     pos: {x: 9, y: 8}
     dir: 0
+    specificDataJson: 
   - id: a23a7eff-8c96-4cec-b46a-a0a21b1a3598
     type: 2
     pos: {x: 9, y: 9}
     dir: 0
+    specificDataJson: 
   - id: bde4b55d-bc71-4bdc-8295-35b06bdba358
     type: 2
     pos: {x: 9, y: 10}
     dir: 0
+    specificDataJson: 
   - id: 84b1c3d3-b1f7-4eed-b722-2f10de8b6866
     type: 2
     pos: {x: 9, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 79bff402-3134-419a-8071-9d3900e4d970
     type: 2
     pos: {x: 10, y: 8}
     dir: 0
+    specificDataJson: 
   - id: bad4b997-2164-4c52-b59e-a5e41bf4d003
     type: 2
     pos: {x: 10, y: 9}
     dir: 0
+    specificDataJson: 
   - id: 0f0e6286-90dc-472c-8503-bec94a5794b9
     type: 2
     pos: {x: 10, y: 10}
     dir: 0
+    specificDataJson: 
   - id: 2a1b8790-3f04-465a-8cfc-eaea73039e9e
     type: 2
     pos: {x: 10, y: 11}
     dir: 0
+    specificDataJson: 
   - id: 7ece89fc-a789-47fe-98ec-4e42acbf3ad0
     type: 2
     pos: {x: 11, y: 8}
     dir: 0
+    specificDataJson: 
   - id: 01da86a7-3b59-439a-8c75-6af907bab429
     type: 2
     pos: {x: 11, y: 9}
     dir: 0
+    specificDataJson: 
   - id: be8d1524-2c0d-4ccf-85ce-3a65f24bf11c
     type: 2
     pos: {x: 11, y: 10}
     dir: 0
+    specificDataJson: 
   - id: ec065f11-dcbb-402c-9fca-f27c6354a623
     type: 2
     pos: {x: 11, y: 11}
     dir: 0
+    specificDataJson: 
+  - id: d3241af6-0d45-4a76-aaa1-4accfb94f99c
+    type: 4
+    pos: {x: 5, y: 15}
+    dir: 2
+    specificDataJson: 
   heroPos: {x: 5, y: 15}
   pieceGroups:
-  - pieceIds:
+  - id: f27f0153-fadf-45b5-8642-93048d59b9d4
+    pieceIds:
     - 328af7c0-c962-4160-95fc-dfd66009c51a
     - a23a7eff-8c96-4cec-b46a-a0a21b1a3598
     - bde4b55d-bc71-4bdc-8295-35b06bdba358
@@ -263,7 +316,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
-  - pieceIds:
+  - id: 0019afa0-39e4-4c53-a667-af7be44d1bfa
+    pieceIds:
     - 79bff402-3134-419a-8071-9d3900e4d970
     - bad4b997-2164-4c52-b59e-a5e41bf4d003
     - 0f0e6286-90dc-472c-8503-bec94a5794b9
@@ -323,7 +377,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
-  - pieceIds:
+  - id: f7631aa7-13f4-4026-ae6c-13b2cc79f5ae
+    pieceIds:
     - 7ece89fc-a789-47fe-98ec-4e42acbf3ad0
     - 01da86a7-3b59-439a-8c75-6af907bab429
     - be8d1524-2c0d-4ccf-85ce-3a65f24bf11c
