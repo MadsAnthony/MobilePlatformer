@@ -328,7 +328,7 @@ public class LevelInspector : Editor {
 		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction);
 		myTarget.pieces.Add (newPiece);
 
-		if (pieceType == PieceType.BlockNonSticky) {
+		if (pieceType == PieceType.Block) {
 			UpdateBlock (index);
 		}
 		UpdateNeighborBlocks(index);
@@ -378,7 +378,7 @@ public class LevelInspector : Editor {
 		// Sides
 		for (int i = 0; i < 4; i++) {
 			var tmpIndex = GetNeighborIndex (index, (Direction)i);
-			if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.BlockNonSticky) UpdateBlock (tmpIndex);
+			if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.Block) UpdateBlock (tmpIndex);
 		}
 
 		//Corners
@@ -387,7 +387,7 @@ public class LevelInspector : Editor {
 				var addIndex = new Vector2 (i - 1, j - 1);
 				if (addIndex.x == 0 || addIndex.y == 0) continue;
 				var tmpIndex = index + addIndex;
-				if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.BlockNonSticky) UpdateBlock (tmpIndex);
+				if (GetPieceWithPos (tmpIndex) != null && GetPieceWithPos (tmpIndex).type == PieceType.Block) UpdateBlock (tmpIndex);
 			}
 		}
 	}
@@ -426,7 +426,7 @@ public class LevelInspector : Editor {
 
 	void UpdateBlock(Vector2 index) {
 		PieceLevelData piece = GetPieceWithPos (index);
-		if (piece == null || piece.type != PieceType.BlockNonSticky) return;
+		if (piece == null || piece.type != PieceType.Block) return;
 
 		string pieceGroupId = GetPieceGroupId (piece);
 		var specific = piece.GetSpecificData<BlockPieceLevelData> ();
@@ -434,7 +434,7 @@ public class LevelInspector : Editor {
 		// Sides
 		for (int i = 0; i < 4; i++) {
 			var tmpPiece = GetPieceWithPos (GetNeighborIndex (index, (Direction)i));
-			if (tmpPiece != null && tmpPiece.type == PieceType.BlockNonSticky && (GetPieceGroupId (tmpPiece) == pieceGroupId)) {
+			if (tmpPiece != null && tmpPiece.type == PieceType.Block && (GetPieceGroupId (tmpPiece) == pieceGroupId)) {
 				specific.sides [i] = BlockPieceLevelData.SideType.None;
 			} else {
 				if (specific.sides [i] == BlockPieceLevelData.SideType.None) {
@@ -449,8 +449,8 @@ public class LevelInspector : Editor {
 			var tmpPiece1 = GetPieceWithPos (GetNeighborIndex (index, (Direction)i));
 			var tmpPiece2 = GetPieceWithPos (GetNeighborIndex (index, (Direction)((4+i-1)%4)));
 			if (tmpPiece1 != null && tmpPiece2 != null) {
-				if (tmpPiece1.type == PieceType.BlockNonSticky && tmpPiece1.GetSpecificData<BlockPieceLevelData> ().sides [(4+i-1)%4] != BlockPieceLevelData.SideType.None &&
-					tmpPiece2.type == PieceType.BlockNonSticky && tmpPiece2.GetSpecificData<BlockPieceLevelData> ().sides [i] != BlockPieceLevelData.SideType.None) {
+				if (tmpPiece1.type == PieceType.Block && tmpPiece1.GetSpecificData<BlockPieceLevelData> ().sides [(4+i-1)%4] != BlockPieceLevelData.SideType.None &&
+					tmpPiece2.type == PieceType.Block && tmpPiece2.GetSpecificData<BlockPieceLevelData> ().sides [i] != BlockPieceLevelData.SideType.None) {
 					specific.corners [i] = BlockPieceLevelData.SideType.Normal;
 				}
 			}
@@ -579,10 +579,10 @@ public class LevelInspector : Editor {
 							//remove this at some point.
 							piece.id = Guid.NewGuid ().ToString ();
 						}
-						if (piece.type == PieceType.BlockNormal) {
+						if (piece.type == PieceType.PieceType1) {
 							GUI.color = new Color(0.2f,0.2f,0.2f,1);
 						}
-						if (piece.type == PieceType.BlockColor) {
+						if (piece.type == PieceType.PieceType2) {
 							GUI.color = Color.grey;
 						}
 						if (piece.type == PieceType.Spike) {
@@ -590,7 +590,7 @@ public class LevelInspector : Editor {
 							GUI.color = Color.red;
 							tmpTexture = spikeTexture;
 						}
-						if (piece.type == PieceType.BlockNonSticky) {
+						if (piece.type == PieceType.Block) {
 							GUI.color = Color.grey;
 						}
 						if (piece.type == PieceType.Collectable) {
@@ -617,7 +617,7 @@ public class LevelInspector : Editor {
 				}
 				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 
-				if (tmpPiece != null && tmpPiece.type == PieceType.BlockNonSticky) {
+				if (tmpPiece != null && tmpPiece.type == PieceType.Block) {
 					var specific = tmpPiece.GetSpecificData<BlockPieceLevelData> ();
 					if (!String.IsNullOrEmpty (tmpPiece.specificDataJson)) {
 						GUI.color = Color.cyan;

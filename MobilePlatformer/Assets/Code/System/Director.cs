@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Director : MonoBehaviour  {
 	private static Director instance;
+	private static bool hasBeenDestroyed;
 
 	[SerializeField] private LevelDatabase levelDatabase;
 	[SerializeField] private SoundDatabase soundDatabase;
@@ -26,7 +27,7 @@ public class Director : MonoBehaviour  {
 	{
 		get
 		{
-			if (instance == null)
+			if (instance == null && !Director.hasBeenDestroyed)
 			{
 				var asset = (Director)Resources.Load ("Director", typeof(Director));
 				instance = (Director)GameObject.Instantiate (asset);
@@ -35,7 +36,11 @@ public class Director : MonoBehaviour  {
 			return instance;
 		}
 	}
-		
+
+	void OnDestroy() {
+		Director.hasBeenDestroyed = true;
+	}
+
 	void Load() {
 		gameEventManager  = new GameEventManager();
 		uiManager 		  = new UIManager();

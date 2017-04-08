@@ -31,7 +31,7 @@ public class PieceLevelData {
 		this.pos  = pos;
 		this.dir  = dir;
 
-		if (type == PieceType.BlockNormal || type == PieceType.BlockNonSticky) {
+		if (type == PieceType.Block) {
 			SaveSpecificData (new BlockPieceLevelData ());
 		}
 	}

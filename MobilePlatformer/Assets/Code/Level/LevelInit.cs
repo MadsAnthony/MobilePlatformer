@@ -32,10 +32,6 @@ public class LevelInit : MonoBehaviour {
 
 			tmpPiece.Init(piece, gameLogic);
 
-			if (piece.type == PieceType.BlockColor) {
-				gameLogic.coloredBlocksGoal++;
-			}
-
 			if (piece.type == PieceType.Collectable) {
 				gameLogic.collectablesGoal++;
 			}

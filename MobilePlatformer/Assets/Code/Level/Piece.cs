@@ -110,7 +110,7 @@ public abstract class Piece : MonoBehaviour {
 
 		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
 			var piece = hit.collider.GetComponent<Piece> ();
-			if (piece.Type==PieceType.BlockNonSticky && ((Block)piece).IsSticky(dir)) {
+			if (piece.Type==PieceType.Block && ((Block)piece).IsSticky(dir)) {
 				newDir = inputDir.normalized * (hit.distance - gap);
 
 				if (callbackInterrupted != null) {

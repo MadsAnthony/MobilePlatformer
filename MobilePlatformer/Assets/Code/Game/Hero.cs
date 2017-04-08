@@ -36,7 +36,7 @@ public class Hero : Piece {
 			TouchInput ();
 			KeyboardInput ();
 		}
-		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.BlockNonSticky && ((Block)p).IsSticky(dir*speed*movingDir);})) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*movingDir);})) {ChangeGravity(1*-movingDir);}});
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
@@ -50,12 +50,12 @@ public class Hero : Piece {
 					if (gravity<=0) {
 						gravity = 0;
 						IsOnGround = true;
-					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
+					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.Block && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
 							movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
 							ChangeGravity(-dirsIndex);
 						}
 					} else {
-					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.BlockNonSticky && ((Block)p).IsSticky(tmpMoveDir);})) {
+					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(tmpMoveDir);})) {
 						IsOnGround = true;
 						gravity = 0;
 						movingDir *= -1;
