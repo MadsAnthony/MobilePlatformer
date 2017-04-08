@@ -85,6 +85,12 @@ public class LevelInspector : Editor {
 			mouseDownPos = Vector2.zero;
 		}
 
+		if (SelectionOfPieces.Count > 0) {
+			if (Event.current.keyCode == KeyCode.Delete) {
+				DeleteSelectedPieces ();
+			}
+		}
+
 		if (IsPositionWithinGrid(mouseDownPos) && (Event.current.type == EventType.MouseDown || Event.current.type == EventType.MouseDrag)) {
 			selectedIndex = GetClosestCell (Event.current.mousePosition);
 
@@ -148,6 +154,10 @@ public class LevelInspector : Editor {
 		DrawGrid ();
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
+
+		ReorderableListGUI.Title("Selection");
+		ReorderableListGUI.ListField<PieceLevelData>(SelectionOfPieces, SelectionOfPieceDrawer);
+
 		ReorderableListGUI.Title("Groups");
 		ReorderableListGUI.ListField<PieceGroupData>(myTarget.pieceGroups, PieceGroupDrawer);
 
@@ -200,6 +210,12 @@ public class LevelInspector : Editor {
 				piece.pos.y >= startIndex.y && piece.pos.y <= endIndex.y) {
 				SelectionOfPieces.Add (piece);
 			}
+		}
+	}
+
+	void DeleteSelectedPieces() {
+		foreach (var selectedPiece in SelectionOfPieces) {
+			RemovePiece (selectedPiece.pos);
 		}
 	}
 
@@ -453,6 +469,27 @@ public class LevelInspector : Editor {
 			}
 		}
 		piece.SaveSpecificData (specific);
+	}
+
+	PieceLevelData SelectionOfPieceDrawer(Rect rect, PieceLevelData value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 30;
+			EditorGUI.LabelField (r, "pos:");
+			r.x += 30;
+			r.width = 30;
+			EditorGUI.IntField (r,(int)value.pos.x);
+			r.x += 35;
+			EditorGUI.IntField (r,(int)value.pos.y);
+			r.x += 40;
+			r.width = 70;
+			value.type = (PieceType)EditorGUI.EnumPopup (r, value.type);
+
+			r.x += 75;
+			r.width = 70;
+			value.dir = (Direction)EditorGUI.EnumPopup (r, value.dir);
+		}
+		return value;
 	}
 
 	PieceGroupData selectedPieceGroup = null;
