@@ -36,7 +36,7 @@ public abstract class Piece : MonoBehaviour {
 		}
 	}
 
-	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false) {
+	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
 		EnsureRigidBody();
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
@@ -76,7 +76,7 @@ public abstract class Piece : MonoBehaviour {
 			}
 			if (piece.IsPushable) {
 				bool shouldDestroy = false;
-				newDir = tmpDir+piece.Move ((inputDir-tmpDir),(Piece[] ps, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false);
+				newDir = tmpDir+piece.Move((inputDir-tmpDir),(Piece[] ps, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false, null, false, isJustACheck);
 				if (shouldDestroy && canDestroy) {
 					newDir = inputDir;
 					piece.Destroy();
@@ -92,7 +92,11 @@ public abstract class Piece : MonoBehaviour {
 				callbackInterrupted (interruptingPieces.ToArray (), false);
 			}
 		}
-		this.transform.position += newDir;
+
+		if (!isJustACheck) {
+			this.transform.position += newDir;
+		}
+
 		if (interruptingPieces.Count == 0) {
 			if (callbackFinished != null) {
 				callbackFinished ();
@@ -101,25 +105,21 @@ public abstract class Piece : MonoBehaviour {
 		return newDir;
 	}
 
-	protected void Check(Vector3 dir, Action callbackInterrupted = null, Action callbackFinished = null) {
-		EnsureRigidBody();
+	protected Vector3 Check(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
+		return Move (dir,callbackInterrupted,callbackFinished,useDeltaTime,excludePieces,canDestroy,true);
+	}
 
-		Vector3 inputDir = dir * Time.deltaTime;
-		Vector3 newDir = inputDir;
-		RaycastHit hit;
-
-		if (rb.SweepTest (inputDir, out hit, inputDir.magnitude)) {
-			var piece = hit.collider.GetComponent<Piece> ();
-			if (piece.Type==PieceType.Block && ((Block)piece).IsSticky(dir)) {
-				newDir = inputDir.normalized * (hit.distance - gap);
-
-				if (callbackInterrupted != null) {
-					callbackInterrupted ();
-				}
-			}
+	public bool ExistPiece(Piece[] pieces, Predicate<Piece> condition) {
+		foreach (Piece piece in pieces) {
+			if (condition(piece)) return true;
 		}
-		if (callbackFinished != null) {
-			callbackFinished ();
+		return false;
+	}
+
+	public bool AllPiece(Piece[] pieces, Predicate<Piece> condition) {
+		foreach (Piece piece in pieces) {
+			if (!condition(piece)) return false;
 		}
+		return true;
 	}
 }

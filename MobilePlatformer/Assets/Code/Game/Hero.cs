@@ -28,6 +28,9 @@ public class Hero : Piece {
 	float noGravityT = 1;
 	// Update is called once per frame
 	void Update () {
+		if (noGravityT < 1) {
+			noGravityT += 0.025f;
+		}
 		noGravityT = Mathf.Clamp (noGravityT, 0, 1);
 
 		gravity -= 1f*noGravityT;
@@ -41,20 +44,33 @@ public class Hero : Piece {
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
 		Vector3 tmpMoveDir = gravityDir * Mathf.Clamp (gravity, -maxGravity, maxGravity);
+
 		Move(tmpMoveDir,
 			(Piece[] ps, bool b) => {
+					if (gravity<=0) {
+					// When ground is hit
 					if (gravity<=-(maxGravity)) {
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
 					}
-					if (gravity<=0) {
-						gravity = 0;
-						IsOnGround = true;
+
+					gravity = 0;
+					IsOnGround = true;
+
+					// If all ground blocks are non sticky, then fall down.
 					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.Block && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
-							movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
-							ChangeGravity(-dirsIndex);
+						movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
+						ChangeGravity(-dirsIndex);
 						}
 					} else {
+					// When ceil is hit
+
+					// If ceiling is block then stop any jump.
+					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block;})) {
+						gravity = 1;
+						EndJump();
+					}
+					// If one ceil block are sticky, then stick to that.
 					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(tmpMoveDir);})) {
 						IsOnGround = true;
 						gravity = 0;
@@ -64,13 +80,15 @@ public class Hero : Piece {
 				}
 				},
 			() => {
+				// if falling, then check if it is possible to stick to nearby wall.
 				IsOnGround = false;
-				Check(dir*speed*-movingDir,
-						() => {
-								if (gravity<0f) {
-										ChangeGravity(movingDir);
-									}
-								});
+				Check(dir*speed*-movingDir, (Piece[] ps, bool b) => {
+					if (gravity<0f) {
+						if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*-movingDir);})) {
+							ChangeGravity(movingDir);
+							}
+						}
+					});
 				});
 	}
 
@@ -92,20 +110,6 @@ public class Hero : Piece {
 		isOnGround = false;
 	}
 
-	public bool ExistPiece(Piece[] pieces, Predicate<Piece> condition) {
-		foreach (Piece piece in pieces) {
-			if (condition(piece)) return true;
-		}
-		return false;
-	}
-
-	public bool AllPiece(Piece[] pieces, Predicate<Piece> condition) {
-		foreach (Piece piece in pieces) {
-			if (!condition(piece)) return false;
-		}
-		return true;
-	}
-
 	void KeyboardInput() {
 		if (Input.GetKeyDown (KeyCode.UpArrow) && IsOnGround && gravity<=0) {
 			Jump ();
@@ -113,11 +117,11 @@ public class Hero : Piece {
 		if (Input.GetKeyDown (KeyCode.DownArrow)) {
 			gravity = -maxGravity;
 		}
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			noGravityT += 0.025f;
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			Jump ();
 		}
 		if (Input.GetKeyUp (KeyCode.UpArrow)) {
-			noGravityT = 1;
+			EndJump ();
 		}
 
 		if (Input.GetKey (KeyCode.RightArrow)) {
@@ -137,7 +141,7 @@ public class Hero : Piece {
 			mouseClickPos = Input.mousePosition;
 		}
 		if (Input.GetMouseButtonUp (0)) {
-			noGravityT = 1;
+			EndJump ();
 			touchConsumed = true;
 		}
 		if (Input.GetMouseButton(0)) {
@@ -154,14 +158,7 @@ public class Hero : Piece {
 
 			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && noGravityT>=1 && gravity<=0) {
 				Jump ();
-			}
-			if (verticalDotProduct < -threshold && !touchConsumed) {
-				noGravityT += 0.025f;
-
-				if (noGravityT >= 1) {
-					noGravityT = 1;
-					touchConsumed = true;
-				}
+				touchConsumed = true;
 			}
 			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {
 				gravity = -maxGravity;
@@ -174,6 +171,14 @@ public class Hero : Piece {
 		Director.Sounds.jump.Play ();
 		gravity = jumpForce;
 		noGravityT = 0;
+	}
+
+	void EndJump() {
+		noGravityT = 1;
+	}
+
+	public void SmallJump(float jumpForce = 12) {
+		gravity = jumpForce;
 	}
 
 	bool stopMoving = false;
@@ -213,5 +218,8 @@ public class Hero : Piece {
 	}
 
 	public override void Hit (Piece hitPiece, Vector3 direction) {
+		if (hitPiece.Type == PieceType.Enemy1) {
+			Destroy ();
+		}
 	}
 }
