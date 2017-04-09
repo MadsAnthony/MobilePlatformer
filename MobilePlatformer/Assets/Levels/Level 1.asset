@@ -1023,6 +1023,5 @@ MonoBehaviour:
     pos: {x: 5, y: 10}
     dir: 2
     specificDataJson: 
-  heroPos: {x: 5, y: 10}
   pieceGroups: []
   levelName: 

@@ -33,6 +33,7 @@ public class GameEvent {
 
 public enum GameEventType {
 	BlockColored,
+	BlockUnColored,
 	CollectableCollected,
 	LevelCompleted,
 	PieceDestroyed

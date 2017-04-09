@@ -15,7 +15,7 @@ MonoBehaviour:
   pieces:
   - id: 0f151f2d-3785-47cc-a7e9-25ce0d20dd69
     type: 4
-    pos: {x: 5, y: 20}
+    pos: {x: 3, y: 13}
     dir: 2
     specificDataJson: 
   - id: 10871d06-8a2e-453d-9f48-1d562905467c
@@ -357,37 +357,37 @@ MonoBehaviour:
     type: 2
     pos: {x: 11, y: 17}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,0,1,1],"corners":[0,1,0,0]}'
   - id: f9423370-bc6c-4883-a046-0b8f9fd57e7e
     type: 2
     pos: {x: 3, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
   - id: 6f987e7b-786b-4f36-9a28-0d713900be58
     type: 2
     pos: {x: 4, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
   - id: 4d25172e-aad5-421a-a7a4-63342f43e2b3
     type: 2
     pos: {x: 5, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
   - id: c4663ec6-ee13-4a31-8403-3a11615c5f63
     type: 2
     pos: {x: 6, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
   - id: a6713906-438b-44ff-968b-746dd1df0208
     type: 2
     pos: {x: 7, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,0,2,0],"corners":[0,0,0,0]}'
   - id: d1039a91-88b7-4f4d-8661-1fff21a233a4
     type: 2
     pos: {x: 8, y: 14}
     dir: 0
-    specificDataJson: '{"sides":[1,1,1,0],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[2,2,2,0],"corners":[0,0,0,0]}'
   - id: c3fcb742-0d00-49bf-a4b3-8ce672506ada
     type: 2
     pos: {x: 10, y: 20}
@@ -420,8 +420,23 @@ MonoBehaviour:
     specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,0,0]}'
   - id: d4efc7af-8bce-4cd7-96b0-a2ab85529843
     type: 0
-    pos: {x: 4, y: 13}
+    pos: {x: 7, y: 13}
     dir: 1
+    specificDataJson: 
+  - id: b8a62c36-d5a4-4137-84d3-17c58185e39a
+    type: 2
+    pos: {x: 11, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[1,1,0,1],"corners":[0,0,0,0]}'
+  - id: e341e3f7-336b-4a8e-b533-6c6b95569d31
+    type: 0
+    pos: {x: 7, y: 19}
+    dir: 0
+    specificDataJson: 
+  - id: a0326757-de72-400d-bb5c-0e69765c5d80
+    type: 0
+    pos: {x: 14, y: 16}
+    dir: 0
     specificDataJson: 
   pieceGroups: []
   levelName: 

@@ -1,0 +1,162 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class DynamicBody : Piece {
+	protected float gravity;
+	protected float speed = 7;
+	public float maxGravity = 50;
+	protected Vector3 dir;
+
+	Vector3[] dirs = new Vector3[4]{new Vector3(-1,0,0),
+									 new Vector3(0,-1,0),
+									 new Vector3(1,0,0),
+									 new Vector3(0,1,0)
+									};
+	int dirsIndex;
+
+	protected int movingDir = -1;
+	bool isOnGround;
+
+	public float Gravity {get { return gravity;}}
+	// Use this for initialization
+	void Start () {
+		dir = dirs[dirsIndex];
+
+		OnStart ();
+	}
+
+	protected float noGravityT = 1;
+	// Update is called once per frame
+	void Update () {
+		if (noGravityT < 1) {
+			noGravityT += 0.025f;
+		}
+		noGravityT = Mathf.Clamp (noGravityT, 0, 1);
+
+		gravity -= 1f*noGravityT;
+
+		OnUpdate ();
+
+		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*movingDir);})) {ChangeGravity(1*-movingDir);}});
+
+		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
+
+		Vector3 tmpMoveDir = gravityDir * Mathf.Clamp (gravity, -maxGravity, maxGravity);
+
+		Move(tmpMoveDir,
+			(Piece[] ps, bool b) => {
+					if (gravity<=0) {
+					// When ground is hit
+					if (gravity<=-(maxGravity)) {
+						Director.Sounds.breakSound.Play ();
+						Director.CameraShake();
+					}
+
+					gravity = 0;
+					IsOnGround = true;
+
+					// If all ground blocks are non sticky, then fall down.
+					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.Block && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
+						movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
+						ChangeGravity(-dirsIndex);
+						}
+					} else {
+					// When ceil is hit
+
+					// If ceiling is block then stop any jump.
+					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block;})) {
+						gravity = 1;
+						EndJump();
+					}
+					// If one ceil block are sticky, then stick to that.
+					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(tmpMoveDir);})) {
+						IsOnGround = true;
+						gravity = 0;
+						movingDir *= -1;
+						ChangeGravity(2);
+					}
+				}
+				},
+			() => {
+				// if falling, then check if it is possible to stick to nearby wall.
+				IsOnGround = false;
+				Check(dir*speed*-movingDir, (Piece[] ps, bool b) => {
+					if (gravity<0f) {
+						if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*-movingDir);})) {
+							ChangeGravity(movingDir);
+							}
+						}
+					});
+				});
+	}
+
+	public bool IsOnGround { 
+		get { 
+			return isOnGround;
+		} 
+		set {
+			if (value == true) {
+				CancelInvoke("IsNotOnGround");
+				isOnGround = value;
+			} else {
+				Invoke("IsNotOnGround",0.1f);
+			}
+		}
+	}
+
+	void IsNotOnGround() {
+		isOnGround = false;
+	}
+
+	protected void Jump(float jumpForce = 12) {
+		Director.Sounds.jump.Play ();
+		gravity = jumpForce;
+		noGravityT = 0;
+	}
+
+	protected void EndJump() {
+		noGravityT = 1;
+	}
+
+	public void SmallJump(float jumpForce = 12) {
+		gravity = jumpForce;
+	}
+
+	protected bool stopMoving = false;
+	public void StopMoving() {
+		stopMoving = true;
+		movingDir = 0;
+	}
+
+	public void SetGravity(Direction dir) {
+		if (dir == Direction.Up) {
+			dirsIndex = 2;
+		}
+		if (dir == Direction.Left) {
+			dirsIndex = 3;
+		}
+		if (dir == Direction.Right) {
+			dirsIndex = 1;
+		}
+		if (dir == Direction.Down) {
+			dirsIndex = 0;
+		}
+	}
+
+	protected virtual void OnStart() {
+	}
+
+	protected virtual void OnUpdate() {
+	}
+
+	protected virtual void ChangeGravity(int delta) {
+		dirsIndex += delta;
+		if (dirsIndex < 0) {
+			dirsIndex = dirs.Length-1;
+		}
+		dir = dirs [dirsIndex%dirs.Length];
+		gravity = 0;
+	}
+}

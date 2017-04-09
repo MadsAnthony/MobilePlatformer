@@ -97,6 +97,7 @@ MonoBehaviour:
   Type: 0
   IsPassable: 1
   IsPushable: 1
+  maxGravity: 50
 --- !u!212 &212922994748774874
 SpriteRenderer:
   m_ObjectHideFlags: 1

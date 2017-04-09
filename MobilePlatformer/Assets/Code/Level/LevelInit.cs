@@ -37,7 +37,6 @@ public class LevelInit : MonoBehaviour {
 			}
 			if (piece.type == PieceType.Hero) {
 				gameLogic.hero = tmpPiece.GetComponent<Hero> ();
-				gameLogic.hero.SetGravity (piece.dir);
 			}
 
 			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);

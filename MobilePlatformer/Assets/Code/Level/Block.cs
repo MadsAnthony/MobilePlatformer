@@ -61,33 +61,43 @@ public class Block : Piece {
 	public bool IsSideSticky(BlockPieceLevelData.SideType sideType) {
 		return (sideType == BlockPieceLevelData.SideType.Sticky || sideType == BlockPieceLevelData.SideType.Colorable);
 	}
+
+	Direction GetDirectionFromVector(Vector3 direction) {
+		float tmpThreshold = 0.1f;
+
+		if (direction.x < -tmpThreshold) {
+			return Direction.Right;
+		}
+		if (direction.x > tmpThreshold) {
+			return Direction.Left;
+		}
+		if (direction.y > tmpThreshold) {
+			return Direction.Down;
+		}
+		if (direction.y < -tmpThreshold) {
+			return Direction.Up;
+		}
+
+		return Direction.Up;
+	}
+
 	public override void Hit (Piece hitPiece, Vector3 direction)
 	{
 		if (hitPiece.Type == PieceType.Hero) {
-			float tmpThreshold = 0.1f;
-			if (direction.x < -tmpThreshold) {
-				if (sides [(int)Direction.Right] == BlockPieceLevelData.SideType.Colorable && SideGameObjects[(int)Direction.Right].GetComponent<SpriteRenderer> ().color != Color.green) {
-					SideGameObjects[(int)Direction.Right].GetComponent<SpriteRenderer> ().color = Color.green;
-					Director.GameEventManager.Emit (GameEventType.BlockColored);
-				}
+			Direction tmpDir = GetDirectionFromVector (direction);
+
+			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color != Color.green) {
+				SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.green;
+				Director.GameEventManager.Emit (GameEventType.BlockColored);
 			}
-			if (direction.x > tmpThreshold) {
-				if (sides [(int)Direction.Left] == BlockPieceLevelData.SideType.Colorable && SideGameObjects[(int)Direction.Left].GetComponent<SpriteRenderer> ().color != Color.green) {
-					SideGameObjects[(int)Direction.Left].GetComponent<SpriteRenderer> ().color = Color.green;
-					Director.GameEventManager.Emit (GameEventType.BlockColored);
-				}
-			}
-			if (direction.y > tmpThreshold) {
-				if (sides [(int)Direction.Down] == BlockPieceLevelData.SideType.Colorable && SideGameObjects[(int)Direction.Down].GetComponent<SpriteRenderer> ().color != Color.green) {
-					SideGameObjects[(int)Direction.Down].GetComponent<SpriteRenderer> ().color = Color.green;
-					Director.GameEventManager.Emit (GameEventType.BlockColored);
-				}
-			}
-			if (direction.y < -tmpThreshold) {
-				if (sides[(int)Direction.Up] == BlockPieceLevelData.SideType.Colorable && SideGameObjects[(int)Direction.Up].GetComponent<SpriteRenderer> ().color != Color.green) {
-					SideGameObjects[(int)Direction.Up].GetComponent<SpriteRenderer> ().color = Color.green;
-					Director.GameEventManager.Emit (GameEventType.BlockColored);
-				}
+		}
+
+		if (hitPiece.Type == PieceType.Enemy1) {
+			Direction tmpDir = GetDirectionFromVector (direction);
+
+			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color == Color.green) {
+				SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.white;
+				Director.GameEventManager.Emit (GameEventType.BlockUnColored);
 			}
 		}
 	}

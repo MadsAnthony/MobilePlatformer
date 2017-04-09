@@ -31,6 +31,9 @@ public class GameLogic : MonoBehaviour {
 				Director.GameEventManager.Emit (GameEventType.LevelCompleted);
 			}
 			break;
+		case GameEventType.BlockUnColored:
+			currentColoredBlocks--;
+			break;
 		case GameEventType.CollectableCollected:
 			CollectablesCollected++;
 			break;
