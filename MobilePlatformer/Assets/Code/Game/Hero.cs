@@ -135,6 +135,7 @@ public class Hero : Piece {
 	Vector3 mouseClickPos;
 	float threshold = Mathf.Cos(Mathf.PI*0.25f);
 	bool touchConsumed = true;
+	bool upMovementConsumed = false;
 	void TouchInput() {
 		if (Input.GetMouseButtonDown(0) && touchConsumed) {
 			touchConsumed = false;
@@ -143,6 +144,7 @@ public class Hero : Piece {
 		if (Input.GetMouseButtonUp (0)) {
 			EndJump ();
 			touchConsumed = true;
+			upMovementConsumed = false;
 		}
 		if (Input.GetMouseButton(0)) {
 			Vector3 mouseDir = (mouseClickPos - Input.mousePosition);
@@ -156,9 +158,9 @@ public class Hero : Piece {
 				movingDir = newMovingDir;
 			}
 
-			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && noGravityT>=1 && gravity<=0) {
+			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && !upMovementConsumed && noGravityT>=1 && gravity<=0) {
 				Jump ();
-				touchConsumed = true;
+				upMovementConsumed = true;
 			}
 			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {
 				gravity = -maxGravity;
