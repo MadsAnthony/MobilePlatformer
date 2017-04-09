@@ -1128,7 +1128,6 @@ MonoBehaviour:
     pos: {x: 5, y: 20}
     dir: 2
     specificDataJson: 
-  heroPos: {x: 5, y: 20}
   pieceGroups:
   - id: 30632782-e766-48ed-b18f-e9943d463ebc
     pieceIds:

@@ -613,8 +613,8 @@ public class LevelInspector : Editor {
 							//remove this at some point.
 							piece.id = Guid.NewGuid ().ToString ();
 						}
-						if (piece.type == PieceType.PieceType1) {
-							GUI.color = new Color(0.2f,0.2f,0.2f,1);
+						if (piece.type == PieceType.Enemy1) {
+							GUI.color = Color.magenta;
 						}
 						if (piece.type == PieceType.PieceType2) {
 							GUI.color = Color.grey;

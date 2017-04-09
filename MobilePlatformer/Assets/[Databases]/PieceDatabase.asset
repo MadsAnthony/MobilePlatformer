@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieces:
   - type: 0
-    prefab: {fileID: 114257243380332994, guid: 863a5724184449a48bc60e0b057c5d43, type: 2}
+    prefab: {fileID: 114767614644905846, guid: 17ee69023fed20946b88774f23ec2b65, type: 2}
   - type: 1
     prefab: {fileID: 114257243380332994, guid: 863a5724184449a48bc60e0b057c5d43, type: 2}
   - type: 2

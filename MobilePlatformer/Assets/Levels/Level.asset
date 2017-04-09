@@ -123,16 +123,6 @@ MonoBehaviour:
     pos: {x: 11, y: 19}
     dir: 0
     specificDataJson: '{"sides":[0,1,0,0],"corners":[0,0,0,0]}'
-  - id: 3525974d-8dda-46d3-a046-36ef62c9084c
-    type: 2
-    pos: {x: 10, y: 19}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 7005eb24-1435-4450-b369-0bbc45757231
-    type: 2
-    pos: {x: 9, y: 19}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
   - id: e43e82c7-5dce-4818-9ac8-601c8e10461b
     type: 2
     pos: {x: 8, y: 19}
@@ -143,11 +133,6 @@ MonoBehaviour:
     pos: {x: 8, y: 18}
     dir: 0
     specificDataJson: '{"sides":[0,0,0,1],"corners":[0,0,0,0]}'
-  - id: b8c98878-0222-4d3c-b7a7-7d4c9fd077b1
-    type: 2
-    pos: {x: 9, y: 18}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
   - id: ff2f99df-072d-4bba-9944-fda5377fd74e
     type: 2
     pos: {x: 11, y: 18}
@@ -253,91 +238,6 @@ MonoBehaviour:
     pos: {x: 8, y: 10}
     dir: 0
     specificDataJson: '{"sides":[0,0,0,1],"corners":[0,0,0,0]}'
-  - id: 200f3aed-3acc-4b4d-a85b-f5e8dcea8701
-    type: 2
-    pos: {x: 9, y: 10}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 05df827d-36ba-48ff-ac52-5b9b30afae9f
-    type: 2
-    pos: {x: 10, y: 10}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 74ab8621-ddb4-4a11-83f9-0f9db382c7e2
-    type: 2
-    pos: {x: 10, y: 11}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 2a878ecd-2ae8-41e2-a994-a17350152893
-    type: 2
-    pos: {x: 10, y: 12}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: d337f375-3f0e-4c4a-8377-08d2d8dec373
-    type: 2
-    pos: {x: 10, y: 13}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 2f9401cb-3dab-4cca-89cb-6045369f2ea3
-    type: 2
-    pos: {x: 10, y: 14}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: afabcdfd-cdcb-4865-9e72-460895e8d725
-    type: 2
-    pos: {x: 9, y: 17}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 2597ab79-73cf-473e-8834-917208f3558a
-    type: 2
-    pos: {x: 9, y: 16}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: e1faea8c-a11e-4df6-9a52-8c05580989c7
-    type: 2
-    pos: {x: 9, y: 15}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 20ebef0e-7d56-4d57-bcf9-40b920f4c656
-    type: 2
-    pos: {x: 9, y: 11}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: c8ca35b7-d678-4452-8c49-15d93cf1fc94
-    type: 2
-    pos: {x: 9, y: 12}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 0bf95f32-bc1a-4376-a4f8-d877ff27d8ca
-    type: 2
-    pos: {x: 9, y: 13}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: e850d0e1-c5dd-4a0e-a06b-6531c8ad35ae
-    type: 2
-    pos: {x: 9, y: 14}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: cb62a613-8534-4536-9801-047c65de4ada
-    type: 2
-    pos: {x: 10, y: 15}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 1ee2db5f-e789-465c-947c-627af5016954
-    type: 2
-    pos: {x: 10, y: 16}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: bdb62fa4-a137-4e2e-8bcc-0d17a57f4443
-    type: 2
-    pos: {x: 10, y: 17}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
-  - id: 6f8c21b2-b298-4d74-a74c-ac652ced22d5
-    type: 2
-    pos: {x: 10, y: 18}
-    dir: 0
-    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
   - id: a0f8e673-39cf-48e0-b5d2-6b7c6b428232
     type: 2
     pos: {x: 9, y: 20}
@@ -533,5 +433,105 @@ MonoBehaviour:
     pos: {x: 4, y: 19}
     dir: 2
     specificDataJson: 
+  - id: 154d4583-b217-4ac9-a2db-d13454992923
+    type: 2
+    pos: {x: 9, y: 10}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 46e615b6-d78b-4986-a86f-b7f40baacf20
+    type: 2
+    pos: {x: 9, y: 11}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 1c8ab185-2dee-4e90-aab6-425c6983d60c
+    type: 2
+    pos: {x: 9, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 922fb44b-06fe-4c05-8c00-4b77e795cf21
+    type: 2
+    pos: {x: 9, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 47fc1330-18c1-42a0-afb9-e19d8c6adc19
+    type: 2
+    pos: {x: 9, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: b59bbb2e-e7df-4b2c-b0ba-fc8b0c3a66b7
+    type: 2
+    pos: {x: 9, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: e70b94ae-1b3f-4531-bdc2-469a50ff4cfa
+    type: 2
+    pos: {x: 9, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 7db67b2e-2a88-415a-8f14-f91a6d57606d
+    type: 2
+    pos: {x: 9, y: 17}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 8002ff06-4fc8-4612-80fb-f2b26891bc9b
+    type: 2
+    pos: {x: 9, y: 18}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 2e21c5fd-6ff5-4868-a5ca-daf2d14e92e8
+    type: 2
+    pos: {x: 9, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 4295c4e7-bfb6-4488-994a-58ea24e32515
+    type: 2
+    pos: {x: 10, y: 19}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 4c5ac6f6-db9e-4027-a4ff-23666f0a83ef
+    type: 2
+    pos: {x: 10, y: 18}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 4a35fcb1-d65e-490c-99fe-463e8b22698a
+    type: 2
+    pos: {x: 10, y: 17}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 3373f2c1-a757-419a-baa8-4b37f783836d
+    type: 2
+    pos: {x: 10, y: 16}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 9707d654-f5dc-4f8c-a249-b4a347a9b98c
+    type: 2
+    pos: {x: 10, y: 15}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 5a4cc3d2-a748-4b2e-8957-8ba9bf34887e
+    type: 2
+    pos: {x: 10, y: 14}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: bbf4b37f-8cd7-4ac2-9463-e553ab076142
+    type: 2
+    pos: {x: 10, y: 13}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 4d44f1ad-a2fe-4b8b-b328-ff8728c579e4
+    type: 2
+    pos: {x: 10, y: 12}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 31c0cbcf-873b-49b9-ac20-2e68c09de51e
+    type: 2
+    pos: {x: 10, y: 11}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
+  - id: 45a5db45-5505-4445-83b1-855f6333afd2
+    type: 2
+    pos: {x: 10, y: 10}
+    dir: 0
+    specificDataJson: '{"sides":[0,0,0,0],"corners":[0,0,0,0]}'
   pieceGroups: []
   levelName: 
