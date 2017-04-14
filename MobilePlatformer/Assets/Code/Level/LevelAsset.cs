@@ -11,6 +11,9 @@ public class LevelAsset : ScriptableObject {
 
 	public string levelName;
 
+	static public bool HasSpecificLevelData(PieceType pieceType) {
+		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece);
+	}
 }
 
 public enum BlockType {Normal, Color, Spike, NonSticky, Collectable};
@@ -22,6 +25,7 @@ public class PieceLevelData {
 	public PieceType type;
 	public Vector2 pos;
 	public Direction dir;
+	public bool flipX;
 	public string specificDataJson;
 
 	public PieceLevelData(PieceType type, Vector2 pos, Direction dir) {
@@ -32,6 +36,9 @@ public class PieceLevelData {
 
 		if (type == PieceType.Block) {
 			SaveSpecificData (new BlockPieceLevelData ());
+		}
+		if (type == PieceType.FunctionPiece) {
+			SaveSpecificData (new FunctionPieceLevelData ());
 		}
 	}
 
@@ -72,4 +79,13 @@ public class BlockPieceLevelData:SpecificPieceLevelData {
 	public SideType[] corners = new SideType[4];
 
 	public enum SideType {None, Normal, Sticky, Colorable};
+}
+
+[Serializable]
+public class FunctionPieceLevelData:SpecificPieceLevelData {
+	public float delay;
+	public float cooldown;
+	public FunctionType type;
+
+	public enum FunctionType {Turn, Jump};
 }

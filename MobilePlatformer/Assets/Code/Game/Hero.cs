@@ -78,6 +78,7 @@ public class Hero : DynamicBody {
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 		SetGravity (pieceLevelData.dir);
+		movingDir = pieceLevelData.flipX ? 1 : -1;;
 	}
 
 	public override void Hit (Piece hitPiece, Vector3 direction) {

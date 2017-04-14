@@ -130,6 +130,10 @@ public abstract class DynamicBody : Piece {
 		movingDir = 0;
 	}
 
+	public void TurnAround() {
+		movingDir *= -1;
+	}
+
 	public void SetGravity(Direction dir) {
 		if (dir == Direction.Up) {
 			dirsIndex = 2;

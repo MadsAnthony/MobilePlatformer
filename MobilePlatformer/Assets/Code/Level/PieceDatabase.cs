@@ -20,7 +20,7 @@ public class PieceDatabase : ScriptableObject {
 // ATTENTION: Always add new entries at the end and be careful when removing entries (as enums are serialized to integers).
 public enum PieceType {
 	Enemy1,
-	PieceType2,
+	FunctionPiece,
 	Block,
 	Spike,
 	Hero,

@@ -205,6 +205,7 @@ public class LevelInspector : Editor {
 		Vector2 endIndex   = GetClosestCell (new Vector2(Mathf.Max(rect.xMin,rect.xMax),Mathf.Max(rect.yMin,rect.yMax)));
 
 		SelectionOfPieces.Clear();
+		showSpecificDataIndex = -1;
 		foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
 			if (piece.pos.x >= startIndex.x && piece.pos.x <= endIndex.x &&
 				piece.pos.y >= startIndex.y && piece.pos.y <= endIndex.y) {
@@ -248,6 +249,9 @@ public class LevelInspector : Editor {
 
 			foreach (var selectedPiece in SelectionOfPieces) {
 				var newPiece = AddPiece (selectedPiece.pos, selectedPiece.type, false);
+				newPiece.dir = selectedPiece.dir;
+				newPiece.flipX = selectedPiece.flipX;
+				newPiece.specificDataJson = selectedPiece.specificDataJson;
 				newSelection.Add (newPiece);
 				pieceToNewPiece.Add (selectedPiece.id, newPiece.id);
 			}
@@ -471,6 +475,8 @@ public class LevelInspector : Editor {
 		piece.SaveSpecificData (specific);
 	}
 
+	bool showSpecificData = false;
+	int showSpecificDataIndex;
 	PieceLevelData SelectionOfPieceDrawer(Rect rect, PieceLevelData value) {
 		var r = new Rect (rect);
 		if (value != null) {
@@ -487,8 +493,76 @@ public class LevelInspector : Editor {
 
 			r.x += 75;
 			r.width = 70;
+
 			value.dir = (Direction)EditorGUI.EnumPopup (r, value.dir);
+			r.x += 75;
+
+			r.width = 40;
+			EditorGUI.LabelField (r, "flipX:");
+			r.x += 40;
+			value.flipX = EditorGUI.Toggle (r, value.flipX);
+			r.x += 70;
+
+			if (LevelAsset.HasSpecificLevelData(value.type)) {
+				bool isOn = EditorGUI.Toggle (r, showSpecificDataIndex == ReorderableListGUI.CurrentItemIndex);
+				if (isOn) {
+					showSpecificDataIndex = ReorderableListGUI.CurrentItemIndex;
+					if (value.type == PieceType.Block) {
+						var list = new BlockPieceLevelData[]{ value.GetSpecificData<BlockPieceLevelData> () };
+						ReorderableListGUI.ListField<BlockPieceLevelData> (list, BlockPieceLevelDataDrawer);
+						value.SaveSpecificData (list [0]);
+					}
+					if (value.type == PieceType.FunctionPiece) {
+						var list = new FunctionPieceLevelData[]{ value.GetSpecificData<FunctionPieceLevelData> () };
+						ReorderableListGUI.ListField<FunctionPieceLevelData> (list, FunctionPieceLevelDataDrawer);
+						value.SaveSpecificData (list [0]);
+					}
+				}
+			}
 		}
+		return value;
+	}
+
+	BlockPieceLevelData BlockPieceLevelDataDrawer(Rect rect, BlockPieceLevelData value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 50;
+			EditorGUI.LabelField (r, "Sides:");
+			r.x += 50;
+
+			r.width = 40;
+			for (int i = 0; i<4; i++) {
+				value.sides[i] = (BlockPieceLevelData.SideType)EditorGUI.EnumPopup (r, value.sides[i]);
+				r.x += 50;
+			}
+
+			r.width = 50;
+			EditorGUI.LabelField (r, "Corners:");
+			r.x += 50;
+			r.width = 40;
+			for (int i = 0; i<4; i++) {
+				value.corners[i] = (BlockPieceLevelData.SideType)EditorGUI.EnumPopup (r, value.corners[i]);
+				r.x += 50;
+			}
+		}
+
+		return value;
+	}
+
+	FunctionPieceLevelData FunctionPieceLevelDataDrawer(Rect rect, FunctionPieceLevelData value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 40;
+			value.delay = EditorGUI.FloatField (r, value.delay);
+			r.x += 50;
+			value.cooldown = EditorGUI.FloatField (r, value.cooldown);
+			r.x += 50;
+
+			r.width = 100;
+			value.type = (FunctionPieceLevelData.FunctionType)EditorGUI.EnumPopup (r, value.type);
+			r.x += 100;
+		}
+
 		return value;
 	}
 
@@ -616,8 +690,8 @@ public class LevelInspector : Editor {
 						if (piece.type == PieceType.Enemy1) {
 							GUI.color = Color.magenta;
 						}
-						if (piece.type == PieceType.PieceType2) {
-							GUI.color = Color.grey;
+						if (piece.type == PieceType.FunctionPiece) {
+							GUI.color = new Color(0.2f,0.2f,1,1);
 						}
 						if (piece.type == PieceType.Spike) {
 							GUIUtility.RotateAroundPivot((int)piece.dir*90, rect.center);

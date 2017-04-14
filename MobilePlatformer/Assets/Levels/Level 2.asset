@@ -17,311 +17,373 @@ MonoBehaviour:
     type: 3
     pos: {x: 12, y: 20}
     dir: 0
+    flipX: 0
     specificDataJson: 
   - id: 3c4d798a-dcea-4ca3-b520-93b332c64f2e
     type: 5
     pos: {x: 7, y: 20}
     dir: 2
+    flipX: 0
     specificDataJson: 
   - id: 710fe2df-9970-4167-be6b-21a3a870ca5f
     type: 3
     pos: {x: 7, y: 11}
     dir: 2
+    flipX: 0
     specificDataJson: 
   - id: 684e2a16-4a20-452e-ae59-4943d6ad1242
     type: 5
     pos: {x: 17, y: 15}
     dir: 0
+    flipX: 0
     specificDataJson: 
   - id: cc9781b1-b6f2-4834-ac3f-686648d1ff3a
     type: 5
     pos: {x: 12, y: 11}
     dir: 0
+    flipX: 0
     specificDataJson: 
   - id: 7f5cf91b-fab5-4736-8627-a6b4d52b626f
     type: 2
     pos: {x: 1, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,1,0]}'
   - id: 586b90d5-1785-4472-aac4-07c5630d0e5e
     type: 2
     pos: {x: 1, y: 11}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 59aab05c-115d-4481-9134-331f9bf76629
     type: 2
     pos: {x: 1, y: 12}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 02d478df-6ba8-40e4-ba99-0cebccffd010
     type: 2
     pos: {x: 1, y: 13}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 786b4f9a-7de1-465d-bcc8-988ea6df1bc0
     type: 2
     pos: {x: 1, y: 14}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 46973378-cf86-4989-ac9a-fa1b4b9ff71b
     type: 2
     pos: {x: 1, y: 15}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: fd491875-1bff-416a-b2c4-eaf9984924d0
     type: 2
     pos: {x: 1, y: 16}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 13b68b18-c401-4969-abe7-6dfe4d15976a
     type: 2
     pos: {x: 1, y: 17}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 33c41944-6ee1-4b9a-887e-2abe3fe3bb7c
     type: 2
     pos: {x: 1, y: 18}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 7b99af88-94f6-4dbe-a2a7-c4141d1c664c
     type: 2
     pos: {x: 1, y: 19}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 24103cb1-5347-41c2-b41b-fa2da115fd0c
     type: 2
     pos: {x: 1, y: 20}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
   - id: 4200247e-f954-4094-ab72-d19a64890eb5
     type: 2
     pos: {x: 1, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,0,1,1],"corners":[0,1,0,0]}'
   - id: e578e1f3-9ef0-4a0d-bbed-55127389fe7d
     type: 2
     pos: {x: 2, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 05f0870d-87c1-4d47-82de-d3feba2e614f
     type: 2
     pos: {x: 3, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: d6263ebe-6fdc-4ed0-9405-dd582b0d0349
     type: 2
     pos: {x: 4, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 31d3af4b-7348-43eb-9eb3-879ff101a0fb
     type: 2
     pos: {x: 2, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: adf98f3e-7158-4239-b570-553538aded60
     type: 2
     pos: {x: 5, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: f919d5b4-c89a-4a26-841b-eccdf6a747ac
     type: 2
     pos: {x: 6, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: 37780c49-1ada-44dd-bcd9-4d1460c06325
     type: 2
     pos: {x: 8, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: 09795b09-f82a-4e1c-b213-f96917f08279
     type: 2
     pos: {x: 9, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: f8a18cc4-5d3d-42d0-9349-f5172272c687
     type: 2
     pos: {x: 14, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 57e9c4f6-1bec-473a-965e-37d64d20a933
     type: 2
     pos: {x: 15, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: ffdab3bf-e499-47df-8da6-63a78c6b41f7
     type: 2
     pos: {x: 16, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: 81753638-b2b6-4620-aaa5-3975597c8295
     type: 2
     pos: {x: 17, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: 57a53bac-43e9-49ce-8a45-d35cf8a417a0
     type: 2
     pos: {x: 18, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1]}'
   - id: 443be308-b5af-44d6-a6c4-e37340ac25c5
     type: 2
     pos: {x: 18, y: 11}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: 49b2a096-de38-41c5-a1d7-da51e5541dbe
     type: 2
     pos: {x: 18, y: 12}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: b448d36e-a592-4eb3-8a0b-f36abafe0188
     type: 2
     pos: {x: 18, y: 13}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
   - id: c21fa720-5a46-45f0-bac1-dcda60c09208
     type: 2
     pos: {x: 18, y: 18}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: ccb5a601-1edc-4a34-8476-1fbfc5d87c3a
     type: 2
     pos: {x: 18, y: 19}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: 072062e0-6bea-4dfb-97a2-dc54a22f502b
     type: 2
     pos: {x: 18, y: 20}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: 8d52515c-a81a-4e08-af7d-86ac68a7e309
     type: 2
     pos: {x: 18, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,1,0],"corners":[1,0,0,0]}'
   - id: 58a8000e-f09b-43bb-9e6d-f66b53eb4ff7
     type: 2
     pos: {x: 17, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 9960814f-3ee3-4670-a9b6-2dd74021cb0e
     type: 2
     pos: {x: 16, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 65a704c0-02c3-4735-a542-d34546900174
     type: 2
     pos: {x: 15, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 1b59c0c9-46fb-47ee-9efe-9f95746afbae
     type: 2
     pos: {x: 14, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: f818a49e-f93f-4d0e-bab8-4eb7c057e558
     type: 2
     pos: {x: 13, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 029138a4-3228-4595-a767-25d3a0898fac
     type: 2
     pos: {x: 11, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 19c321bc-465f-477a-98cb-7e08af8f8d99
     type: 2
     pos: {x: 10, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: ed392d2e-6d97-435b-883c-6c8da6978e89
     type: 2
     pos: {x: 8, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
   - id: 19db1449-e0b7-41e2-909b-02ca064c4135
     type: 2
     pos: {x: 9, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
   - id: 861333e6-f2cf-494c-bf97-bb59947a9d81
     type: 2
     pos: {x: 18, y: 17}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,2],"corners":[0,0,0,0]}'
   - id: f8decd41-8f45-47ef-bda5-0b1f1a170592
     type: 2
     pos: {x: 18, y: 16}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
   - id: 3e5c0519-b371-4bc0-a5f1-dcf67f1f279c
     type: 2
     pos: {x: 18, y: 14}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
   - id: f6b3caa9-0064-4239-bd31-a4d8f21837d5
     type: 2
     pos: {x: 3, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 2fc7bece-fe3a-447b-9aab-b15c781e53bc
     type: 2
     pos: {x: 4, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 2c70c6d7-7645-4797-9ab7-00fa1e5ad565
     type: 2
     pos: {x: 10, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 6e5dbf57-913e-4721-8ea2-3c2068a54978
     type: 2
     pos: {x: 11, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 206bab16-ee71-4c82-a936-fafe323147ce
     type: 2
     pos: {x: 13, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 827ec17b-6fba-4ade-91f3-2dbd937ec850
     type: 2
     pos: {x: 5, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 6331c594-558d-45e8-9b02-f2924862ea4c
     type: 2
     pos: {x: 6, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
   - id: 8732b30c-54a2-4066-8b7b-253b62173a30
     type: 2
     pos: {x: 7, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[3,0,1,0],"corners":[0,0,0,0]}'
   - id: c7f1d8b8-bd11-4f97-9155-e9e8c7491867
     type: 2
     pos: {x: 18, y: 15}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[0,1,0,3],"corners":[0,0,0,0]}'
   - id: f115f844-07ca-4c7e-8e83-a041fb3580ba
     type: 2
     pos: {x: 7, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
   - id: 0b23aed7-54d9-4489-8bb5-2c8a3a38a48f
     type: 2
     pos: {x: 12, y: 10}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[1,0,3,0],"corners":[0,0,0,0]}'
   - id: 82aa0e36-2941-4e61-aa79-b0556bc01036
     type: 2
     pos: {x: 12, y: 21}
     dir: 0
+    flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
   - id: 912e86e1-44e8-4a61-8ae3-db47e10f3055
     type: 4
     pos: {x: 4, y: 20}
     dir: 2
+    flipX: 0
     specificDataJson: 
   pieceGroups: []
   levelName: 
