@@ -10,9 +10,8 @@ public class BlockDestructible : Piece {
 	public override void Hit (Piece hitPiece, Vector3 direction)
 	{
 		if (hitPiece.Type == PieceType.Hero && hitPiece.GetComponent<Hero>().Gravity<=-hitPiece.GetComponent<Hero>().maxGravity) {
-			IsPassable = true;
+			CollisionPropertyDefault = CollisionProperty.Passable;
 			Destroy (this.gameObject);
 		}
 	}
-
 }

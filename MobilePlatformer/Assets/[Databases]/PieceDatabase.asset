@@ -14,17 +14,27 @@ MonoBehaviour:
   pieces:
   - type: 0
     prefab: {fileID: 114767614644905846, guid: 17ee69023fed20946b88774f23ec2b65, type: 2}
+    CollisionPropertyList:
+    - pieceType: 0
+      collisionProperty: 1
   - type: 1
     prefab: {fileID: 114378938271523154, guid: 0110e16691b10b34dab72d0050ff0ed6, type: 2}
+    CollisionPropertyList: []
   - type: 2
     prefab: {fileID: 114257243380332994, guid: 863a5724184449a48bc60e0b057c5d43, type: 2}
+    CollisionPropertyList: []
   - type: 3
     prefab: {fileID: 114959775223496148, guid: d70ec4d66d72d184eb946d441ad165a6, type: 2}
+    CollisionPropertyList: []
   - type: 4
     prefab: {fileID: 114962753362083128, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
+    CollisionPropertyList: []
   - type: 5
     prefab: {fileID: 114862069895169678, guid: 2b0f06acec968d349a393d598a389cfd, type: 2}
+    CollisionPropertyList: []
   - type: 6
     prefab: {fileID: 114053626733230970, guid: ed70e5b1cb020b8458fc586598764f4e, type: 2}
+    CollisionPropertyList: []
   - type: 7
     prefab: {fileID: 114951410146868162, guid: 93ae8eda69c498b4298701bd7283daa8, type: 2}
+    CollisionPropertyList: []

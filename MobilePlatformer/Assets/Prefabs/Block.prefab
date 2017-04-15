@@ -215,8 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  IsPassable: 0
-  IsPushable: 0
+  CollisionPropertyDefault: 0
   SideGameObjects:
   - {fileID: 1135456869518216}
   - {fileID: 1008702734553648}

@@ -9,9 +9,25 @@ public abstract class Piece : MonoBehaviour {
 	[HideInInspector]
 	public PieceType Type;
 	[HideInInspector]
-	public bool IsPassable;
-	[HideInInspector]
-	public bool IsPushable;
+	public bool IsPassable(PieceType pieceType) {
+		var entry = Director.PieceDatabase.GetPieceData (Type).GetCollisionPropertyEntry (pieceType);
+		if (entry != null) {
+			return entry.collisionProperty == CollisionProperty.Passable;
+		} else {
+			return CollisionPropertyDefault == CollisionProperty.Passable;
+		}
+	}
+
+	public bool IsPushable(PieceType pieceType) {
+		var entry = Director.PieceDatabase.GetPieceData (Type).GetCollisionPropertyEntry (pieceType);
+		if (entry != null) {
+			return entry.collisionProperty == CollisionProperty.Pushable;
+		} else {
+			return CollisionPropertyDefault == CollisionProperty.Pushable;
+		}
+	}
+
+	public CollisionProperty CollisionPropertyDefault;
 
 	public abstract void Init (PieceLevelData pieceData, GameLogic gameLogic);
 
@@ -68,13 +84,15 @@ public abstract class Piece : MonoBehaviour {
 			// Do not hit pieces that are farther away (but do hit pieces before).
 			if (i > 0 && interruptingPieces.Count>0 && tmpDir.magnitude > newDir.magnitude) continue;
 
-			piece.Hit(this,dir);
-			if (!piece.IsPassable && !piece.IsPushable) {
+			if (!isJustACheck) {
+				piece.Hit (this, dir);
+			}
+			if (!piece.IsPassable(this.Type) && !piece.IsPushable(this.Type)) {
 				newDir = tmpDir;
 
 				interruptingPieces.Add (piece);
 			}
-			if (piece.IsPushable) {
+			if (piece.IsPushable(this.Type)) {
 				bool shouldDestroy = false;
 				newDir = tmpDir+piece.Move((inputDir-tmpDir),(Piece[] ps, bool wasPushing) => {if (!wasPushing) shouldDestroy = true;},null,false, null, false, isJustACheck);
 				if (shouldDestroy && canDestroy) {

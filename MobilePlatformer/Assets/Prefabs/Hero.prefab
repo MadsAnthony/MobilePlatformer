@@ -111,8 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 4
-  IsPassable: 1
-  IsPushable: 1
+  CollisionPropertyDefault: 2
   maxGravity: 50
 --- !u!212 &212922994748774874
 SpriteRenderer:

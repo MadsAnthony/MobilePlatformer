@@ -95,8 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 5
-  IsPassable: 1
-  IsPushable: 0
+  CollisionPropertyDefault: 1
 --- !u!212 &212515996307469768
 SpriteRenderer:
   m_ObjectHideFlags: 1

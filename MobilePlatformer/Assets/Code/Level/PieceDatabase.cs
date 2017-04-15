@@ -33,8 +33,25 @@ public enum PieceType {
 public class PieceData {
 	public PieceType type;
 	public Piece prefab;
+	public List<CollisionPropertyEntry> CollisionPropertyList = new List<CollisionPropertyEntry> ();
 
 	public PieceData(PieceType type) {
 		this.type = type;
+	}
+
+	public CollisionPropertyEntry GetCollisionPropertyEntry(PieceType b) {
+		return CollisionPropertyList.Find ((CollisionPropertyEntry c) => {return c.pieceType == b;});
+	}
+}
+
+public enum CollisionProperty {Solid, Passable, Pushable};
+
+[Serializable]
+public class CollisionPropertyEntry {
+	public PieceType pieceType;
+	public CollisionProperty collisionProperty;
+
+	public CollisionPropertyEntry(PieceType pieceType) {
+		this.pieceType = pieceType;
 	}
 }
