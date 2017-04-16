@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class GameView : UIView {
 	public GameLogic gameLogic;
 	public Text goalText;
 	public Text collectableText;
+	public Text timer;
 
 	public Camera camera;
 
@@ -36,6 +38,9 @@ public class GameView : UIView {
 	void Update () {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
 		collectableText.text = gameLogic.CollectablesCollected+"/"+gameLogic.collectablesGoal;
+
+		TimeSpan timeSpan = TimeSpan.FromSeconds(gameLogic.time);
+		timer.text = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 
 		if (gameLogic.hero != null) {
 			var distance = gameLogic.hero.transform.position - camera.transform.position;

@@ -12,6 +12,8 @@ public class GameLogic : MonoBehaviour {
 	int currentColoredBlocks = 0;
 	public int CollectablesCollected { get; set;}
 	public LevelAsset level;
+	public float time = 0;
+	bool stopTimer = false;
 
 	public Hero hero;
 	// Use this for initialization
@@ -38,6 +40,7 @@ public class GameLogic : MonoBehaviour {
 			CollectablesCollected++;
 			break;
 		case GameEventType.LevelCompleted:
+			stopTimer = true;
 			hero.StopMoving ();
 			break;
 		case GameEventType.PieceDestroyed:
@@ -57,6 +60,8 @@ public class GameLogic : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (!stopTimer) {
+			time += Time.deltaTime;
+		}
 	}
 }

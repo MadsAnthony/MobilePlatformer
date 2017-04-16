@@ -22,10 +22,14 @@ MonoBehaviour:
     CollisionPropertyList: []
   - type: 2
     prefab: {fileID: 114257243380332994, guid: 863a5724184449a48bc60e0b057c5d43, type: 2}
-    CollisionPropertyList: []
+    CollisionPropertyList:
+    - pieceType: 2
+      collisionProperty: 1
   - type: 3
     prefab: {fileID: 114959775223496148, guid: d70ec4d66d72d184eb946d441ad165a6, type: 2}
-    CollisionPropertyList: []
+    CollisionPropertyList:
+    - pieceType: 3
+      collisionProperty: 1
   - type: 4
     prefab: {fileID: 114962753362083128, guid: 5f02a8b02e1012c48880e34b4326921a, type: 2}
     CollisionPropertyList: []
