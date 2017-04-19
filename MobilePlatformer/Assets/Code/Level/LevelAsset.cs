@@ -8,6 +8,7 @@ public class LevelAsset : ScriptableObject {
 	public Vector2 levelSize = new Vector2(20,30);
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
 	public List<PieceGroupData> pieceGroups = new List<PieceGroupData>();
+	public List<LevelLayer> layers = new List<LevelLayer>();
 
 	public string levelName;
 
@@ -27,12 +28,14 @@ public class PieceLevelData {
 	public Direction dir;
 	public bool flipX;
 	public string specificDataJson;
+	public string layerId;
 
-	public PieceLevelData(PieceType type, Vector2 pos, Direction dir) {
+	public PieceLevelData(PieceType type, Vector2 pos, Direction dir, string layerId) {
 		id = Guid.NewGuid ().ToString ();
 		this.type = type;
 		this.pos  = pos;
 		this.dir  = dir;
+		this.layerId = layerId;
 
 		if (type == PieceType.Block) {
 			SaveSpecificData (new BlockPieceLevelData ());
@@ -48,6 +51,17 @@ public class PieceLevelData {
 
 	public void SaveSpecificData(object obj) {
 		specificDataJson = JsonUtility.ToJson(obj);
+	}
+}
+
+[Serializable]
+public class LevelLayer {
+	public string id = Guid.NewGuid ().ToString ();
+	public string name;
+
+	public LevelLayer(string name) {
+		id = Guid.NewGuid ().ToString ();
+		this.name = name;
 	}
 }
 

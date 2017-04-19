@@ -46,6 +46,13 @@ public class LevelInspector : Editor {
 
 		LevelAsset myTarget = (LevelAsset)target;
 
+		if (myTarget.layers.Count == 0) {
+			myTarget.layers.Add(new LevelLayer("Layer0"));
+		}
+		if (currentLayers.Count == 0) {
+			currentLayers.Add (myTarget.layers[0].id);
+		}
+
 		if (GUILayout.Button ("Play")) {
 			EditorApplication.isPlaying = false;
 			EditorSceneManager.OpenScene ("Assets/Scenes/LevelScene.unity");
@@ -154,6 +161,9 @@ public class LevelInspector : Editor {
 		DrawGrid ();
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
+
+		ReorderableListGUI.Title("Layers");
+		ReorderableListGUI.ListField<LevelLayer>(myTarget.layers,LayerDrawer);
 
 		ReorderableListGUI.Title("Selection");
 		ReorderableListGUI.ListField<PieceLevelData>(SelectionOfPieces, SelectionOfPieceDrawer);
@@ -342,7 +352,7 @@ public class LevelInspector : Editor {
 		if (removeExisting && existingPiece != null) {
 			myTarget.pieces.Remove (existingPiece);
 		}
-		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction);
+		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction, currentLayers[0]);
 		myTarget.pieces.Add (newPiece);
 
 		if (pieceType == PieceType.Block) {
@@ -475,6 +485,34 @@ public class LevelInspector : Editor {
 		piece.SaveSpecificData (specific);
 	}
 
+	List<string> currentLayers = new List<string>();
+	LevelLayer LayerDrawer (Rect rect, LevelLayer value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			if (String.IsNullOrEmpty(value.name)) {
+				value.name = "layer"+ReorderableListGUI.CurrentItemIndex;
+				value.id = Guid.NewGuid ().ToString ();
+			}
+
+			r.width = 200;
+			value.name = EditorGUI.TextField (r, value.name);
+			r.x += 200;
+
+			bool exists = currentLayers.Exists(x=> {return x == value.id;});
+			bool isOn = EditorGUI.Toggle (r, exists);
+			if (isOn) {
+				if (!exists) {
+					currentLayers.Add (value.id);
+				}
+			} else {
+				if (exists && currentLayers.Count>1) {
+					currentLayers.Remove (value.id);
+				}
+			}
+		}
+		return value;
+	}
+
 	bool showSpecificData = false;
 	int showSpecificDataIndex;
 	PieceLevelData SelectionOfPieceDrawer(Rect rect, PieceLevelData value) {
@@ -500,6 +538,11 @@ public class LevelInspector : Editor {
 			r.width = 40;
 			EditorGUI.LabelField (r, "flipX:");
 			r.x += 40;
+
+			var layers = ((LevelAsset)target).layers;
+			value.layerId = layers[EditorGUI.Popup (r, layers.FindIndex(x => {return x.id == value.layerId;}), GetLayerNames(layers))].id;
+			r.x += 40;
+
 			value.flipX = EditorGUI.Toggle (r, value.flipX);
 			r.x += 70;
 
@@ -521,6 +564,14 @@ public class LevelInspector : Editor {
 			}
 		}
 		return value;
+	}
+
+	string[] GetLayerNames(List<LevelLayer> layers) {
+		List<string> tmpList = new List<string>();
+		foreach(var layer in layers) {
+			tmpList.Add (layer.name);
+		}
+		return tmpList.ToArray ();;
 	}
 
 	BlockPieceLevelData BlockPieceLevelDataDrawer(Rect rect, BlockPieceLevelData value) {
@@ -681,6 +732,7 @@ public class LevelInspector : Editor {
 				PieceLevelData tmpPiece = null;
 				Texture2D tmpTexture = cellTexture;
 				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+					if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
 					if (x == piece.pos.x && y == piece.pos.y) {
 						tmpPiece = piece;
 						if (String.IsNullOrEmpty (piece.id)) {
