@@ -8,6 +8,7 @@ public class SoundDatabase : ScriptableObject {
 	public SoundDefinition jump;
 	public SoundDefinition breakSound;
 	public SoundDefinition splat;
+	public SoundDefinition waterSplash;
 }
 	
 public class GUIHeader : System.Attribute {

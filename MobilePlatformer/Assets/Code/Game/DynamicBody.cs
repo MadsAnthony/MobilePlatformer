@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class DynamicBody : Piece {
+	private const float NORMAL_SPEED = 7;
+	private const float GRAVITY_NORMAL_ACC = 1;
+
+	protected float gravityAcc = GRAVITY_NORMAL_ACC;
 	protected float gravity;
-	protected float speed = 7;
+	protected float speed = NORMAL_SPEED;
 	public float maxGravity = 50;
 	protected Vector3 dir;
 
@@ -18,6 +22,7 @@ public abstract class DynamicBody : Piece {
 
 	protected int movingDir = -1;
 	bool isOnGround;
+	bool isInWater;
 
 	public float Gravity {get { return gravity;}}
 	// Use this for initialization
@@ -35,11 +40,41 @@ public abstract class DynamicBody : Piece {
 		}
 		noGravityT = Mathf.Clamp (noGravityT, 0, 1);
 
-		gravity -= 1f*noGravityT;
+		gravity -= gravityAcc*noGravityT;
 
 		OnUpdate ();
 
-		Move(dir*speed*movingDir,(Piece[] ps, bool b) => { if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*movingDir);})) {ChangeGravity(1*-movingDir);}});
+		Move(dir*speed*movingDir,(Piece[] ps, bool b) => {
+			if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*movingDir);})) {
+				ChangeGravity(1*-movingDir);
+			}
+		});
+
+
+		if (Type == PieceType.Hero) {
+			isInWater = false;
+			var colliders = Physics.OverlapBox(transform.position+GetComponent<BoxCollider>().center, GetComponent<BoxCollider>().bounds.size*0.5f);
+			foreach (var col in colliders) {
+				if (col.GetComponent<Piece> ().Type == PieceType.Water) {
+					isInWater = true;
+				}
+			}
+
+			if (isInWater) {
+				if (speed > 3) {
+					Director.Sounds.waterSplash.Play ();
+					gravity *= 0.2f;
+					gravityAcc = 0.5f;
+					speed = 3;
+				}
+			} else {
+				if (speed<NORMAL_SPEED) {
+					Director.Sounds.waterSplash.Play ();
+					gravityAcc = GRAVITY_NORMAL_ACC;
+					speed = NORMAL_SPEED;
+				}
+			}
+		}
 
 		Vector3 gravityDir = new Vector3 (dir.y,-dir.x,0);
 
@@ -79,7 +114,7 @@ public abstract class DynamicBody : Piece {
 					}
 				}
 				},
-			() => {
+			(Piece[] ps2, bool b2) => {
 				// if falling, then check if it is possible to stick to nearby wall.
 				IsOnGround = false;
 				Check(dir*speed*-movingDir, (Piece[] ps, bool b) => {

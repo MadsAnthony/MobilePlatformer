@@ -26,7 +26,8 @@ public enum PieceType {
 	Hero,
 	Collectable,
 	BlockDestructible,
-	Ball
+	Ball,
+	Water
 };
 
 [Serializable]

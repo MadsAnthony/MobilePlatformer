@@ -349,7 +349,7 @@ public class LevelInspector : Editor {
 		LevelAsset myTarget = (LevelAsset)target;
 
 		PieceLevelData existingPiece = GetPieceWithPos (selectedIndex);
-		if (removeExisting && existingPiece != null) {
+		if (removeExisting && existingPiece != null && existingPiece.layerId == currentLayers[0]) {
 			myTarget.pieces.Remove (existingPiece);
 		}
 		PieceLevelData newPiece = new PieceLevelData (pieceType, index, direction, currentLayers[0]);
@@ -765,6 +765,9 @@ public class LevelInspector : Editor {
 						}
 						if (piece.type == PieceType.Ball) {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
+						}
+						if (piece.type == PieceType.Water) {
+							GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
 						}
 						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
 							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b,GUI.color.a);

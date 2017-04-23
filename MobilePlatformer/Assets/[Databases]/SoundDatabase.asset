@@ -48,3 +48,10 @@ MonoBehaviour:
       Volume: 1
       Probability: 1
       Loop: 0
+  waterSplash:
+    sound:
+      Clip: {fileID: 8300000, guid: 656e383c9804958449b520c8a6f7ee7b, type: 3}
+      Volume: 1
+      Probability: 1
+      Loop: 0
+    Additional: []

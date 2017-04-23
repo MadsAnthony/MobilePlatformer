@@ -52,12 +52,13 @@ public abstract class Piece : MonoBehaviour {
 		}
 	}
 
-	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
+	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action<Piece[],bool> callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
 		EnsureRigidBody();
 
 		Vector3 inputDir = dir * (useDeltaTime? Time.deltaTime : 1);
 		Vector3 newDir = inputDir;
 		List<Piece> interruptingPieces = new List<Piece>();
+		List<Piece> hitPieces = new List<Piece>();
 
 		int i = 0;
 		Vector3 tmpDir;
@@ -87,6 +88,8 @@ public abstract class Piece : MonoBehaviour {
 			if (!isJustACheck) {
 				piece.Hit (this, dir);
 			}
+			hitPieces.Add(piece);
+
 			if (!piece.IsPassable(this.Type) && !piece.IsPushable(this.Type)) {
 				newDir = tmpDir;
 
@@ -117,13 +120,13 @@ public abstract class Piece : MonoBehaviour {
 
 		if (interruptingPieces.Count == 0) {
 			if (callbackFinished != null) {
-				callbackFinished ();
+				callbackFinished (hitPieces.ToArray (), false);
 			}
 		}
 		return newDir;
 	}
 
-	protected Vector3 Check(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
+	protected Vector3 Check(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action<Piece[],bool> callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
 		return Move (dir,callbackInterrupted,callbackFinished,useDeltaTime,excludePieces,canDestroy,true);
 	}
 
