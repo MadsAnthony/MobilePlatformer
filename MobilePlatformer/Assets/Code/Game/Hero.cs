@@ -4,11 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero : DynamicBody {
+	public GameObject sprite;
+	private Vector3 spriteStartScale;
+
+	protected override void OnStart() {
+		spriteStartScale = sprite.transform.localScale;
+	}
+
 	protected override void OnUpdate() {
 		if (!stopMoving) {
 			TouchInput ();
 			KeyboardInput ();
 		}
+		if (movingDir < 0 || movingDir > 0) {
+			sprite.transform.localScale = new Vector3 (spriteStartScale.x * -movingDir, spriteStartScale.y, spriteStartScale.z);
+		}
+		sprite.transform.eulerAngles = new Vector3 (0,0,90*(dirsIndex));
 	}
 
 	void KeyboardInput() {
@@ -72,6 +83,7 @@ public class Hero : DynamicBody {
 
 	protected override void ChangeGravity(int delta) {
 		base.ChangeGravity(delta);
+
 		// consume all touch inputs - because controls have been changed/rotated.
 		touchConsumed = true;
 	}

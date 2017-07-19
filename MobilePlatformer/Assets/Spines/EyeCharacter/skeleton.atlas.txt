@@ -1,0 +1,125 @@
+
+skeleton.png
+size: 1024,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation01
+  rotate: true
+  xy: 443, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation02
+  rotate: true
+  xy: 487, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation03
+  rotate: true
+  xy: 531, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation04
+  rotate: true
+  xy: 575, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation05
+  rotate: true
+  xy: 619, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation06
+  rotate: true
+  xy: 663, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation07
+  rotate: true
+  xy: 707, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation08
+  rotate: true
+  xy: 751, 2
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation09
+  rotate: true
+  xy: 2, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation10
+  rotate: true
+  xy: 51, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation11
+  rotate: true
+  xy: 100, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation12
+  rotate: true
+  xy: 149, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation13
+  rotate: true
+  xy: 198, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation14
+  rotate: true
+  xy: 247, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation15
+  rotate: true
+  xy: 296, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation16
+  rotate: true
+  xy: 345, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+PlatformGame/EyeCharacter/Roll/EyeCharacterRollAnimation17
+  rotate: true
+  xy: 394, 2
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1

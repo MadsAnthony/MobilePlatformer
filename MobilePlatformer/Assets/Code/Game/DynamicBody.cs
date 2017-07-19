@@ -18,7 +18,7 @@ public abstract class DynamicBody : Piece {
 									 new Vector3(1,0,0),
 									 new Vector3(0,1,0)
 									};
-	int dirsIndex;
+	protected int dirsIndex;
 
 	protected int movingDir = -1;
 	bool isOnGround;
