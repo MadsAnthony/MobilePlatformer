@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Block : Piece {
 
+	public GameObject spriteTile;
 	public GameObject[] SideGameObjects;
 	PieceLevelData pieceLevelData;
 	BlockPieceLevelData.SideType[] sides = new BlockPieceLevelData.SideType[4];
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 		if (String.IsNullOrEmpty (pieceLevelData.specificDataJson)) return;
+		spriteTile.transform.eulerAngles = new Vector3 (0,0,UnityEngine.Random.Range(0,3)*90);
 		var specific = pieceLevelData.GetSpecificData<BlockPieceLevelData>();
 
 		this.pieceLevelData = pieceLevelData;
@@ -24,16 +26,16 @@ public class Block : Piece {
 		foreach (var sideGameObject in SideGameObjects) {
 			sideGameObject.SetActive (false);
 			if (specific.sides [i] == BlockPieceLevelData.SideType.Normal) {
-				sideGameObject.SetActive (true);
-				sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (0.2f, 0.2f, 0.2f, 1);
+				sideGameObject.SetActive (false);
+				//sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (0.2f, 0.2f, 0.2f, 1);
 			}
 			if (specific.sides [i] == BlockPieceLevelData.SideType.Sticky) {
 				sideGameObject.SetActive (true);
-				sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
+				//sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 			}
 			if (specific.sides [i] == BlockPieceLevelData.SideType.Colorable) {
 				sideGameObject.SetActive (true);
-				sideGameObject.GetComponent<SpriteRenderer> ().color = Color.white;
+				sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.7f, 1f, 1);
 				gameLogic.coloredBlocksGoal++;
 			}
 			i++;

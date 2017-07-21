@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class Hero : DynamicBody {
+	public SkeletonAnimation spine;
 	public GameObject sprite;
 	private Vector3 spriteStartScale;
 
@@ -20,6 +22,12 @@ public class Hero : DynamicBody {
 			sprite.transform.localScale = new Vector3 (spriteStartScale.x * -movingDir, spriteStartScale.y, spriteStartScale.z);
 		}
 		sprite.transform.eulerAngles = new Vector3 (0,0,90*(dirsIndex));
+
+
+		if (IsOnGround && gravity<=0) {
+			spine.loop = true;
+			spine.AnimationName = "animation";
+		}
 	}
 
 	void KeyboardInput() {
@@ -73,6 +81,9 @@ public class Hero : DynamicBody {
 			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && !upMovementConsumed && noGravityT>=1 && gravity<=0) {
 				Jump ();
 				upMovementConsumed = true;
+
+				spine.loop = false;
+				spine.AnimationName = "jump";
 			}
 			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {
 				gravity = -maxGravity;
