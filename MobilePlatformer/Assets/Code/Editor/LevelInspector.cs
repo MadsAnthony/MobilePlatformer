@@ -8,7 +8,7 @@ using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-public enum LevelEditorTool {PlacePieces, ModifyBlock, Select};
+public enum LevelEditorTool {PlacePieces, ModifyBlock, Select, DefineBackground};
 
 [CustomEditor(typeof(LevelAsset))]
 public class LevelInspector : Editor {
@@ -116,6 +116,9 @@ public class LevelInspector : Editor {
 
 						MoveSelectedPieces(selectedIndex, Event.current.mousePosition);
 					}
+					if (cellType == LevelEditorTool.DefineBackground) {
+						SetBackground (selectedIndex);
+					}
 				}
 				if (Event.current.button == 1) {
 					if (cellType == LevelEditorTool.PlacePieces) {
@@ -123,6 +126,9 @@ public class LevelInspector : Editor {
 					}
 					if (cellType == LevelEditorTool.ModifyBlock) {
 						ModifyBlock (selectedIndex,BlockPieceLevelData.SideType.Normal);
+					}
+					if (cellType == LevelEditorTool.DefineBackground) {
+						RemoveBackground (selectedIndex);
 					}
 				}
 			} else {
@@ -699,6 +705,15 @@ public class LevelInspector : Editor {
 		return null;
 	}
 
+	Vector2? GetBackgroundWithPos(Vector2 pos) {
+		foreach(Vector2 bgPos in ((LevelAsset)target).backgroundList) {
+			if (bgPos == pos) {
+				return bgPos;
+			}
+		}
+		return null;
+	}
+
 	bool IsPositionWithinGrid(Vector2 pos, float rightMargin = 20,  float downMargin = 20) {
 		return 	pos.x > levelGridRect.x && pos.x < levelGridRect.x + levelGridRect.width -rightMargin &&
 				pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height-downMargin;
@@ -715,6 +730,22 @@ public class LevelInspector : Editor {
 		}
 	}
 
+	void SetBackground(Vector2 pos) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		if (GetBackgroundWithPos (pos) == null) {
+			myTarget.backgroundList.Add (pos);
+		}
+	}
+
+	void RemoveBackground(Vector2 pos) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		if (GetBackgroundWithPos(pos) != null) {
+			myTarget.backgroundList.Remove (pos);
+		}
+	}
+
 	void DrawGrid() {
 		var levelSize = ((LevelAsset)target).levelSize;
 
@@ -728,9 +759,18 @@ public class LevelInspector : Editor {
 				var prevMatrix = GUI.matrix;
 				var rect = new Rect (x*cellSize, y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
+				Texture2D tmpTexture = cellTexture;
+
+				foreach(var backgroundTile in ((LevelAsset)target).backgroundList) {
+					if (x == backgroundTile.x && y == backgroundTile.y) {
+						GUI.color = Color.blue;
+						break;
+					}
+				}
+				GUI.DrawTexture (rect, tmpTexture, ScaleMode.ScaleToFit);
+				GUI.color = Color.white;
 
 				PieceLevelData tmpPiece = null;
-				Texture2D tmpTexture = cellTexture;
 				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
 					if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
 					if (x == piece.pos.x && y == piece.pos.y) {
@@ -775,10 +815,9 @@ public class LevelInspector : Editor {
 						if (SelectionOfPieces.Exists(p => p.id == piece.id)) {
 							GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b+0.5f,GUI.color.a);
 						}
+						GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 					}
 				}
-
-				GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 
 				if (tmpPiece != null && tmpPiece.type == PieceType.Block) {
 					var specific = tmpPiece.GetSpecificData<BlockPieceLevelData> ();

@@ -8,6 +8,7 @@ public class LevelAsset : ScriptableObject {
 	public Vector2 levelSize = new Vector2(20,30);
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
 	public List<PieceGroupData> pieceGroups = new List<PieceGroupData>();
+	public List<Vector2> backgroundList = new List<Vector2>();
 	public List<LevelLayer> layers = new List<LevelLayer>();
 
 	public string levelName;

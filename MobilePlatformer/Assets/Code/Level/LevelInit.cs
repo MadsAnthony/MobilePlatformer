@@ -57,6 +57,34 @@ public class LevelInit : MonoBehaviour {
 				goPieceGroup.pieces.Add(pieces [pieceId]);
 			}
 		}
+
+		var mesh = new Mesh ();
+
+		var verticesList  = new List<Vector3> ();
+		var trianglesList = new List<int> ();
+		int index = 0;
+		foreach (Vector2 bgPos in level.backgroundList) {
+			int id = index * 4;
+			var vertices = new Vector3[] { new Vector3 (-0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, 0.5f-bgPos.y, 0), new Vector3 (-0.5f+bgPos.x, 0.5f-bgPos.y, 0)  };
+			var triangles = new int[] { id, id+1, id+2, id+2, id+3, id };
+
+			verticesList.AddRange (vertices);
+			trianglesList.AddRange (triangles);
+			index++;
+		}
+		mesh.vertices = verticesList.ToArray();
+		mesh.triangles = trianglesList.ToArray();
+
+		var background = new GameObject ("background");
+		background.transform.position = levelStartPos;
+		background.transform.eulerAngles = new Vector3 (0,180,0);
+		background.transform.localScale  = new Vector3 (-1,1,0);
+		background.AddComponent<MeshRenderer> ();
+		background.AddComponent<MeshFilter> ();
+
+		background.GetComponent<MeshFilter>().mesh = mesh;
+		Material material = (Material)Resources.Load("BackgroundMaterial");
+		background.GetComponent<MeshRenderer> ().material = material;
 	}
 
 	// Update is called once per frame
