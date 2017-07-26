@@ -8,6 +8,7 @@ public class Block : Piece {
 	public GameObject spriteTile;
 	public GameObject[] SideGameObjects;
 	public GameObject[] SideGameObjectsBone;
+	public GameObject[] SideGameObjectsGoo;
 	PieceLevelData pieceLevelData;
 	BlockPieceLevelData.SideType[] sides = new BlockPieceLevelData.SideType[4];
 
@@ -47,6 +48,15 @@ public class Block : Piece {
 			if (specific.sides [i] == BlockPieceLevelData.SideType.Normal) {
 				sideGameObjectBone.SetActive (true);
 				sideGameObjectBone.GetComponent<SpriteRenderer> ().color = new Color (246f/255, 255f/255, 191f/255, 1);
+			}
+			i++;
+		}
+		i = 0;
+		foreach (var sideGameObjectGoo in SideGameObjectsGoo) {
+			sideGameObjectGoo.SetActive (false);
+			if (specific.sides [i] == BlockPieceLevelData.SideType.Colorable) {
+				sideGameObjectGoo.SetActive (true);
+				//sideGameObjectGoo.GetComponent<SpriteRenderer> ().color = new Color (0.8f, 0.8f, 0.8f, 1);
 			}
 			i++;
 		}
@@ -98,8 +108,9 @@ public class Block : Piece {
 		if (hitPiece.Type == PieceType.Hero) {
 			Direction tmpDir = GetDirectionFromVector (direction);
 
-			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color != Color.green) {
-				SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.green;
+			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && SideGameObjectsGoo [(int)tmpDir].activeSelf/*SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color != Color.green*/) {
+				//SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.green;
+				SideGameObjectsGoo [(int)tmpDir].SetActive (false);
 				Director.GameEventManager.Emit (GameEventType.BlockColored);
 			}
 		}
@@ -107,8 +118,9 @@ public class Block : Piece {
 		if (hitPiece.Type == PieceType.Enemy1) {
 			Direction tmpDir = GetDirectionFromVector (direction);
 
-			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color == Color.green) {
-				SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.white;
+			if (sides [(int)tmpDir] == BlockPieceLevelData.SideType.Colorable && !SideGameObjectsGoo [(int)tmpDir].activeSelf/*SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color == Color.green*/) {
+				//SideGameObjects [(int)tmpDir].GetComponent<SpriteRenderer> ().color = Color.white;
+				SideGameObjectsGoo [(int)tmpDir].SetActive (true);
 				Director.GameEventManager.Emit (GameEventType.BlockUnColored);
 			}
 		}
