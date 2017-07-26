@@ -7,6 +7,7 @@ public class Block : Piece {
 
 	public GameObject spriteTile;
 	public GameObject[] SideGameObjects;
+	public GameObject[] SideGameObjectsBone;
 	PieceLevelData pieceLevelData;
 	BlockPieceLevelData.SideType[] sides = new BlockPieceLevelData.SideType[4];
 
@@ -37,6 +38,15 @@ public class Block : Piece {
 				sideGameObject.SetActive (true);
 				sideGameObject.GetComponent<SpriteRenderer> ().color = new Color (1f, 0.7f, 1f, 1);
 				gameLogic.coloredBlocksGoal++;
+			}
+			i++;
+		}
+		i = 0;
+		foreach (var sideGameObjectBone in SideGameObjectsBone) {
+			sideGameObjectBone.SetActive (false);
+			if (specific.sides [i] == BlockPieceLevelData.SideType.Normal) {
+				sideGameObjectBone.SetActive (true);
+				sideGameObjectBone.GetComponent<SpriteRenderer> ().color = new Color (246f/255, 255f/255, 191f/255, 1);
 			}
 			i++;
 		}
