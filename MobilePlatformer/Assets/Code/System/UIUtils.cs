@@ -12,7 +12,7 @@ public class UIUtils : MonoBehaviour {
 		SceneManager.LoadScene ("WorldSelectScene");
 	}
 
-	public void GotoLevelScene(int i) {
+	public static void GotoLevelScene(int i) {
 		Director.Instance.levelIndex = i;
 		SceneManager.LoadScene ("LevelScene");
 	}
