@@ -62,21 +62,30 @@ public class LevelInit : MonoBehaviour {
 
 		var verticesList  = new List<Vector3> ();
 		var trianglesList = new List<int> ();
+		var uvsList = new List<Vector2> ();
 		int index = 0;
+		var bgUVSize = 8;
 		foreach (Vector2 bgPos in level.backgroundList) {
 			int id = index * 4;
 			var vertices = new Vector3[] { new Vector3 (-0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, 0.5f-bgPos.y, 0), new Vector3 (-0.5f+bgPos.x, 0.5f-bgPos.y, 0)  };
 			var triangles = new int[] { id, id+1, id+2, id+2, id+3, id };
 
+
+			float posXMod = bgPos.x % bgUVSize;
+			float posYMod = -bgPos.y % bgUVSize;
+			var uvs = new Vector2[] { new Vector2(posXMod/bgUVSize,posYMod/bgUVSize), new Vector2((posXMod+1)/bgUVSize,posYMod/bgUVSize), new Vector2((posXMod+1)/bgUVSize,(posYMod+1)/bgUVSize), new Vector2(posXMod/bgUVSize,(posYMod+1)/bgUVSize)};
+
 			verticesList.AddRange (vertices);
 			trianglesList.AddRange (triangles);
+			uvsList.AddRange (uvs);
 			index++;
 		}
 		mesh.vertices = verticesList.ToArray();
 		mesh.triangles = trianglesList.ToArray();
+		mesh.uv = uvsList.ToArray();
 
 		var background = new GameObject ("background");
-		background.transform.position = levelStartPos;
+		background.transform.position = new Vector3(levelStartPos.x,levelStartPos.y,10);
 		background.transform.eulerAngles = new Vector3 (0,180,0);
 		background.transform.localScale  = new Vector3 (-1,1,0);
 		background.AddComponent<MeshRenderer> ();
