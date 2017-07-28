@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class Boot : MonoBehaviour {
 	void Start () {
 		var initDirector = Director.Instance;
-		SceneManager.LoadScene ("IntroScene");
+		SceneManager.LoadScene ("LevelSelectScene");
 	}
 }

@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIUtils : MonoBehaviour {
-	public void GotoMenuScene() {
-		SceneManager.LoadScene ("IntroScene");
+	public void GotoLevelSelectScene() {
+		SceneManager.LoadScene ("LevelSelectScene");
+	}
+
+	public void GotoWorldSelectScene() {
+		SceneManager.LoadScene ("WorldSelectScene");
 	}
 
 	public void GotoLevelScene(int i) {

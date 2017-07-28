@@ -26,7 +26,7 @@ public class GameView : UIView {
 		case GameEventType.LevelCompleted:
 			Director.Instance.levelIndex += 1;
 			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
-				SceneManager.LoadScene ("IntroScene");
+				SceneManager.LoadScene ("LevelSelectScene");
 			} else {
 				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 			}
