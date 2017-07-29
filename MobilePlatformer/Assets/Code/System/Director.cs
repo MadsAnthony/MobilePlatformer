@@ -15,6 +15,7 @@ public class Director : MonoBehaviour  {
 	private GameEventManager		gameEventManager;
 	private UIManager 		 		uiManager;
 	private TransitionManager		transitionManager;
+	private SaveData				saveData;
 
 	public static GameEventManager 		GameEventManager 	{get {return Instance.gameEventManager;}}
 	public static LevelDatabase    		LevelDatabase 		{get {return Instance.levelDatabase;}}
@@ -22,6 +23,7 @@ public class Director : MonoBehaviour  {
 	public static UIManager    	   		UIManager			{get {return Instance.uiManager;}}
 	public static TransitionManager		TransitionManager 	{get {return Instance.transitionManager;}}
 	public static SoundDatabase			Sounds 				{get {return Instance.soundDatabase;}}
+	public static SaveData				SaveData 			{get {return Instance.saveData;}}
 
 	public static Director Instance
 	{
@@ -45,6 +47,7 @@ public class Director : MonoBehaviour  {
 		gameEventManager  = new GameEventManager();
 		uiManager 		  = new UIManager();
 		transitionManager = SetupTransitionManager();
+		saveData 		  = new SaveData ();
 	}
 
 	void Start () {

@@ -16,6 +16,11 @@ public class LevelSelectView : UIView {
 
 			int capturedIndex = i;
 			levelButtonGo.GetComponent<Button> ().onClick.AddListener(() => { UIUtils.GotoLevelScene(capturedIndex);});
+			if (Director.SaveData.GetLevelSaveDataEntry (i.ToString()) != null) {
+				levelButtonGo.GetComponent<Image> ().color = new Color (118f/255,234f/255,62f/255,1);
+			} else {
+				levelButtonGo.GetComponent<Image> ().color = new Color (255f/255,84f/255,84f/255,1);;
+			}
 			levelButtonGo.GetComponentInChildren<Text> ().text = (i+1).ToString();
 			i++;
 		}

@@ -16,4 +16,12 @@ public class UIUtils : MonoBehaviour {
 		Director.Instance.levelIndex = i;
 		SceneManager.LoadScene ("LevelScene");
 	}
+
+	public void DeleteAllSaveData() {
+		PlayerPrefs.DeleteAll ();
+	}
+
+	public void RestartLevel() {
+		SceneManager.LoadScene ("LevelScene");
+	}
 }

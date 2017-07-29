@@ -10,10 +10,21 @@ public class GameView : UIView {
 	public Text goalText;
 	public Text collectableText;
 	public Text timer;
+	public Text timerBest;
 
 	public Camera camera;
 
+	LevelSaveData prevLevelProgress;
+
 	protected override void OnStart () {
+		prevLevelProgress = Director.SaveData.GetLevelSaveDataEntry (Director.Instance.levelIndex.ToString ());
+		if (prevLevelProgress != null) {
+			TimeSpan timeSpan = TimeSpan.FromSeconds (prevLevelProgress.time);
+			timerBest.text = string.Format ("{0:D2}:{1:D2}:{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+		} else {
+			timerBest.text = String.Empty;
+		}
+
 		Director.GameEventManager.OnGameEvent += HandleGameEvent;
 	}
 
@@ -24,6 +35,16 @@ public class GameView : UIView {
 	void HandleGameEvent(GameEvent e) {
 		switch (e.type) {
 		case GameEventType.LevelCompleted:
+			var tempDict = Director.SaveData.LevelProgress;
+			float bestTime = 0;
+			if (prevLevelProgress != null) {
+				bestTime = Math.Min (prevLevelProgress.time, gameLogic.time);
+			} else {
+				bestTime = gameLogic.time;
+			}
+			tempDict[Director.Instance.levelIndex.ToString()] = new LevelSaveData(true,gameLogic.CollectablesCollected,bestTime);
+			Director.SaveData.LevelProgress = tempDict;
+
 			Director.Instance.levelIndex += 1;
 			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
 				SceneManager.LoadScene ("LevelSelectScene");
