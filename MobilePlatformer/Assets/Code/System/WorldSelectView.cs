@@ -29,12 +29,12 @@ public class WorldSelectView : UIView {
 	}
 
 	IEnumerator AnimateEyeCharacter() {
-		yield return new WaitForSeconds(0.3f);
-		float gravity = -30.5f;
+		yield return new WaitForSeconds(0.5f);
+		float gravity = -28f;
 		eyeCharacter.state.SetAnimation (0, "jump", false);
 		while (true) {
 			eyeCharacter.gameObject.transform.position += new Vector3 (-7, -gravity, 0) * Time.deltaTime;
-			gravity += 50 * Time.deltaTime;
+			gravity += 60 * Time.deltaTime;
 			if (eyeCharacter.gameObject.transform.localPosition.x<5) break;
 			yield return null;
 		}
