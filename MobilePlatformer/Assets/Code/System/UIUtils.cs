@@ -17,10 +17,6 @@ public class UIUtils : MonoBehaviour {
 		SceneManager.LoadScene ("LevelScene");
 	}
 
-	public void DeleteAllSaveData() {
-		PlayerPrefs.DeleteAll ();
-	}
-
 	public void RestartLevel() {
 		SceneManager.LoadScene ("LevelScene");
 	}

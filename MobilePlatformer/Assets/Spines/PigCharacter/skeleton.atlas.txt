@@ -1,25 +1,25 @@
 
 skeleton.png
-size: 256,256
+size: 1024,128
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 PlatformGame/PigCharacter/PigArm1
-  rotate: false
-  xy: 2, 126
+  rotate: true
+  xy: 126, 33
   size: 87, 126
   orig: 87, 126
   offset: 0, 0
   index: -1
 PlatformGame/PigCharacter/PigArm2
-  rotate: false
-  xy: 176, 133
+  rotate: true
+  xy: 382, 42
   size: 78, 119
   orig: 78, 119
   offset: 0, 0
   index: -1
 PlatformGame/PigCharacter/PigBody
-  rotate: true
+  rotate: false
   xy: 2, 2
   size: 122, 118
   orig: 122, 118
@@ -27,14 +27,35 @@ PlatformGame/PigCharacter/PigBody
   index: -1
 PlatformGame/PigCharacter/PigHead
   rotate: false
-  xy: 122, 29
+  xy: 839, 25
   size: 90, 95
   orig: 90, 95
   offset: 0, 0
   index: -1
+PlatformGame/PigCharacter/PigHeadOpen1
+  rotate: false
+  xy: 503, 20
+  size: 110, 100
+  orig: 110, 100
+  offset: 0, 0
+  index: -1
+PlatformGame/PigCharacter/PigHeadOpen2
+  rotate: false
+  xy: 615, 20
+  size: 110, 100
+  orig: 110, 100
+  offset: 0, 0
+  index: -1
+PlatformGame/PigCharacter/PigHeadOpen3
+  rotate: false
+  xy: 727, 20
+  size: 110, 100
+  orig: 110, 100
+  offset: 0, 0
+  index: -1
 PlatformGame/PigCharacter/PigLegs
-  rotate: true
-  xy: 91, 126
+  rotate: false
+  xy: 254, 37
   size: 126, 83
   orig: 126, 83
   offset: 0, 0

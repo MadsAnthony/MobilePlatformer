@@ -20,10 +20,10 @@ public class TransitionManager : MonoBehaviour {
 	IEnumerator PlayTransitionCr(Action callInBetween, float waitTime, IEnumerator transitionIn, IEnumerator transitionOut = null) {
 		camera.transform.gameObject.SetActive (true);
 		yield return transitionIn;
-		yield return new WaitForSeconds(waitTime);
 		if (callInBetween != null) {
 			callInBetween ();
 		}
+		yield return new WaitForSeconds(waitTime);
 		yield return transitionOut;
 		camera.transform.gameObject.SetActive(false);
 	}

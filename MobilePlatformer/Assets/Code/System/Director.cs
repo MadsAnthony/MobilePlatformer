@@ -53,6 +53,7 @@ public class Director : MonoBehaviour  {
 	void Start () {
 		DontDestroyOnLoad (transform.gameObject);
 		Application.targetFrameRate = 60;
+		new DeveloperCheats ();
 	}
 
 	TransitionManager SetupTransitionManager() {
