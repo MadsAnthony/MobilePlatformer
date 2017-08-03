@@ -33,16 +33,26 @@ public class LevelInspector : Editor {
 	Vector2 selectionAreaStartPoint;
 	Vector2 selectionAreaEndPoint;
 
+	Dictionary<Vector3,PieceLevelData> pieceDictionary;
+
+	void ConstructPieceDictionary() {
+		pieceDictionary = new Dictionary<Vector3, PieceLevelData> ();
+		foreach (PieceLevelData piece in ((LevelAsset)target).pieces) {
+			pieceDictionary[new Vector3 (piece.pos.x, piece.pos.y, 0)] = piece;
+		}
+	}
 
 	public override void OnInspectorGUI()
 	{
-		blockTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/block.png", typeof(Texture2D)) as Texture2D;
-		blockSideTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/blockSide.png", typeof(Texture2D)) as Texture2D;
-		blockCornerTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/blockCorner.png", typeof(Texture2D)) as Texture2D;
-		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
-		cellTexture  = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
-		spikeTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/spike.png", typeof(Texture2D)) as Texture2D;
-		blockDestructibleTexture = AssetDatabase.LoadAssetAtPath("Assets/Textures/squareDestructible.png", typeof(Texture2D)) as Texture2D;
+		if (blockTexture == null) {
+			blockTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/block.png", typeof(Texture2D)) as Texture2D;
+			blockSideTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/blockSide.png", typeof(Texture2D)) as Texture2D;
+			blockCornerTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/blockCorner.png", typeof(Texture2D)) as Texture2D;
+			cellTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
+			cellTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/squareWithBorder.png", typeof(Texture2D)) as Texture2D;
+			spikeTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/spike.png", typeof(Texture2D)) as Texture2D;
+			blockDestructibleTexture = AssetDatabase.LoadAssetAtPath ("Assets/Textures/squareDestructible.png", typeof(Texture2D)) as Texture2D;
+		}
 
 		LevelAsset myTarget = (LevelAsset)target;
 
@@ -164,6 +174,7 @@ public class LevelInspector : Editor {
 		GUILayout.BeginArea(levelGridRect);
 		var levelSize = ((LevelAsset)target).levelSize;
 		scrollPos = EditorGUILayout.BeginScrollView (scrollPos,GUILayout.Width(Mathf.Min(levelGridRect.width,levelSize.x*(cellSize+1))),GUILayout.Height(Mathf.Min(levelGridRect.height,levelSize.y*(cellSize+1))));
+		ConstructPieceDictionary ();
 		DrawGrid ();
 		EditorGUILayout.EndScrollView ();
 		GUILayout.EndArea();
@@ -790,7 +801,8 @@ public class LevelInspector : Editor {
 				GUI.color = Color.white;
 
 				PieceLevelData tmpPiece = null;
-				foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+				PieceLevelData piece;
+				if (pieceDictionary.TryGetValue(new Vector3(x,y,0), out piece)) {
 					if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
 					if (x == piece.pos.x && y == piece.pos.y) {
 						tmpPiece = piece;
