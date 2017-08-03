@@ -45,3 +45,6 @@ MonoBehaviour:
   - type: 8
     prefab: {fileID: 114384788871205368, guid: e904067600d9e794a891b28fa9f32b64, type: 2}
     CollisionPropertyList: []
+  - type: 9
+    prefab: {fileID: 114300857160254270, guid: 4caa493b94892fc49b176967445b0509, type: 2}
+    CollisionPropertyList: []

@@ -764,6 +764,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
+  backgroundList: []
   layers:
   - id: 1567d6a7-cfed-4b25-87be-66f4dcf0bfcd
     name: Layer0

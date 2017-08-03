@@ -14,7 +14,7 @@ public class LevelAsset : ScriptableObject {
 	public string levelName;
 
 	static public bool HasSpecificLevelData(PieceType pieceType) {
-		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece);
+		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece || pieceType == PieceType.LevelDoor);
 	}
 }
 
@@ -43,6 +43,9 @@ public class PieceLevelData {
 		}
 		if (type == PieceType.FunctionPiece) {
 			SaveSpecificData (new FunctionPieceLevelData ());
+		}
+		if (type == PieceType.LevelDoor) {
+			SaveSpecificData (new LevelDoorPieceLevelData ());
 		}
 	}
 
@@ -103,4 +106,9 @@ public class FunctionPieceLevelData:SpecificPieceLevelData {
 	public FunctionType type;
 
 	public enum FunctionType {Turn, Jump};
+}
+
+[Serializable]
+public class LevelDoorPieceLevelData:SpecificPieceLevelData {
+	public int levelIndex;
 }

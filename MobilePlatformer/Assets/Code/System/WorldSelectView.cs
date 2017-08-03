@@ -24,7 +24,7 @@ public class WorldSelectView : UIView {
 		StartCoroutine (AnimateEyeCharacter ());
 		yield return new WaitForSeconds(2);
 		isPlayingEatAnimation = false;
-		Director.Instance.levelIndex = 0;
+		Director.Instance.levelIndex = 17;
 		Director.TransitionManager.PlayTransition (() => {SceneManager.LoadSceneAsync ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut(0.2f));
 	}
 

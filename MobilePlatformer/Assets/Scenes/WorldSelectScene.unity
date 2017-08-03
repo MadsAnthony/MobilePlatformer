@@ -159,7 +159,7 @@ Prefab:
     - target: {fileID: 114586826258691878, guid: e0929ecc8da43e14a8ac4b87367090fa,
         type: 2}
       propertyPath: _animationName
-      value: animation
+      value: idle
       objectReference: {fileID: 0}
     - target: {fileID: 114586826258691878, guid: e0929ecc8da43e14a8ac4b87367090fa,
         type: 2}

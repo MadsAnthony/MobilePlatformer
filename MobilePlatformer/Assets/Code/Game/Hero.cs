@@ -11,6 +11,8 @@ public class Hero : DynamicBody {
 
 	protected override void OnStart() {
 		spriteStartScale = sprite.transform.localScale;
+
+		OnMovingDirChangeValue += (int movingDir) => { if (IsOnLevelDoor) IsOnLevelDoor = false;};
 	}
 
 	protected override void OnUpdate() {
@@ -18,17 +20,46 @@ public class Hero : DynamicBody {
 			TouchInput ();
 			KeyboardInput ();
 		}
-		if (movingDir < 0 || movingDir > 0) {
-			sprite.transform.localScale = new Vector3 (spriteStartScale.x * -movingDir, spriteStartScale.y, spriteStartScale.z);
+		if (MovingDir < 0 || MovingDir > 0) {
+			sprite.transform.localScale = new Vector3 (spriteStartScale.x * -MovingDir, spriteStartScale.y, spriteStartScale.z);
 		}
 		sprite.transform.eulerAngles = new Vector3 (0,0,90*(dirsIndex));
 
+		if (IsOnGround && MovingDir == 0 && spine.AnimationState.GetCurrent(0).ToString() != "idle" && (spine.AnimationState.GetCurrent(0).Loop || spine.AnimationState.GetCurrent (0).IsComplete)) {
+			spine.AnimationState.SetAnimation (0, "idle", true);
+		}
 
-		if (IsOnGround && gravity<=0) {
-			spine.loop = true;
-			spine.AnimationName = "animation";
+		if (IsOnGround && gravity<=0 && MovingDir!=0 && spine.AnimationState.GetCurrent(0).ToString() != "roll" && (spine.AnimationState.GetCurrent(0).Loop || spine.AnimationState.GetCurrent (0).IsComplete)) {
+			spine.AnimationState.SetAnimation (0, "roll", true);
 		}
 	}
+
+	protected override void OnSmash() {
+		spine.AnimationState.SetAnimation (0, "smash", false);
+		spine.AnimationState.AddAnimation (0, "idle", true,0.1f);
+	}
+
+	public void OnALevelDoor() {
+		MovingDir = 0;
+		IsOnLevelDoor = true;
+	}
+
+	private bool isOnLevelDoor;
+	public bool IsOnLevelDoor {
+		get 
+		{ 
+			return isOnLevelDoor;
+		}
+		set 
+		{ 
+			isOnLevelDoor = value;
+			if (OnIsOnLevelDoorChangeValue != null) {
+				OnIsOnLevelDoorChangeValue (isOnLevelDoor);
+			}
+		}
+	}
+	public Action<bool> OnIsOnLevelDoorChangeValue;
+
 
 	void KeyboardInput() {
 		if (Input.GetKeyDown (KeyCode.UpArrow) && IsOnGround && gravity<=0) {
@@ -45,10 +76,10 @@ public class Hero : DynamicBody {
 		}
 
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			movingDir = -1;
+			MovingDir = -1;
 		}
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			movingDir = 1;
+			MovingDir = 1;
 		}
 	}
 
@@ -74,17 +105,27 @@ public class Hero : DynamicBody {
 
 			if (Mathf.Abs (horizontalDotProduct) > threshold && !touchConsumed) {
 				int newMovingDir = -1 * (int)Mathf.Sign (horizontalDotProduct);
-				touchConsumed = newMovingDir != movingDir;
-				movingDir = newMovingDir;
+				touchConsumed = newMovingDir != MovingDir;
+				MovingDir = newMovingDir;
 			}
 
 			if (verticalDotProduct < -threshold  && IsOnGround && !touchConsumed && !upMovementConsumed && noGravityT>=1 && gravity<=0) {
 				Jump ();
 				upMovementConsumed = true;
 
-				spine.loop = false;
-				spine.AnimationName = "jump";
+				spine.AnimationState.SetAnimation (0, "jump", false);
+
+				if (IsOnLevelDoor) {
+					MovingDir = oldMovingDir;
+				}
 			}
+
+			// enter level
+			if (verticalDotProduct > threshold && IsOnGround && IsOnLevelDoor && !touchConsumed) {
+				IsOnLevelDoor = false;
+				Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
+			}
+
 			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {
 				gravity = -maxGravity;
 				touchConsumed = true;
@@ -101,7 +142,7 @@ public class Hero : DynamicBody {
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 		SetGravity (pieceLevelData.dir);
-		movingDir = pieceLevelData.flipX ? 1 : -1;;
+		MovingDir = pieceLevelData.flipX ? 1 : -1;;
 	}
 
 	public override void Hit (Piece hitPiece, Vector3 direction) {

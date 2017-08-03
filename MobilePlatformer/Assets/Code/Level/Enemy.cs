@@ -8,9 +8,9 @@ public class Enemy : DynamicBody {
 	}
 
 	protected override void OnUpdate() {
-		Check(dir*speed*movingDir, (Piece[] ps, bool b) => {
-			if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && !((Block)p).IsSticky(dir*speed*movingDir);})) {
-				movingDir *= -1;
+		Check(dir*speed*MovingDir, (Piece[] ps, bool b) => {
+			if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && !((Block)p).IsSticky(dir*speed*MovingDir);})) {
+				MovingDir *= -1;
 			}
 		}
 		);
@@ -18,7 +18,7 @@ public class Enemy : DynamicBody {
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
 		SetGravity (pieceLevelData.dir);
-		movingDir = pieceLevelData.flipX ? 1 : -1;
+		MovingDir = pieceLevelData.flipX ? 1 : -1;
 	}
 
 	public override void Hit (Piece hitPiece, Vector3 direction)

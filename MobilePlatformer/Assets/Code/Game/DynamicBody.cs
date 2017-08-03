@@ -20,11 +20,29 @@ public abstract class DynamicBody : Piece {
 									};
 	protected int dirsIndex;
 
-	protected int movingDir = -1;
 	bool isOnGround;
 	bool isInWater;
 
 	public float Gravity {get { return gravity;}}
+
+	protected int oldMovingDir;
+	private int movingDir = -1;
+	protected int MovingDir {
+		get 
+		{ 
+			return movingDir;
+		}
+		set 
+		{
+			if (movingDir != 0) oldMovingDir = movingDir;
+			movingDir = value;
+			if (OnMovingDirChangeValue != null) {
+				OnMovingDirChangeValue (movingDir);
+			}
+		}
+	}
+	public Action<int> OnMovingDirChangeValue;
+
 	// Use this for initialization
 	void Start () {
 		dir = dirs[dirsIndex];
@@ -44,9 +62,9 @@ public abstract class DynamicBody : Piece {
 
 		OnUpdate ();
 
-		Move(dir*speed*movingDir,(Piece[] ps, bool b) => {
-			if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*movingDir);})) {
-				ChangeGravity(1*-movingDir);
+		Move(dir*speed*MovingDir,(Piece[] ps, bool b) => {
+			if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*MovingDir);})) {
+				ChangeGravity(1*-MovingDir);
 			}
 		});
 
@@ -85,6 +103,7 @@ public abstract class DynamicBody : Piece {
 					if (gravity<=0) {
 					// When ground is hit
 					if (gravity<=-(maxGravity)) {
+						OnSmash();
 						Director.Sounds.breakSound.Play ();
 						Director.CameraShake();
 					}
@@ -94,7 +113,7 @@ public abstract class DynamicBody : Piece {
 
 					// If all ground blocks are non sticky, then fall down.
 					if (AllPiece(ps, (Piece p) => {return p.Type==PieceType.Block && !((Block)p).IsSticky(tmpMoveDir);}) && dirsIndex%4 != 0) {
-						movingDir = dirsIndex%4 != 2? 0 : movingDir*-1;
+						MovingDir = dirsIndex%4 != 2? 0 : MovingDir*-1;
 						ChangeGravity(-dirsIndex);
 						}
 					} else {
@@ -109,7 +128,7 @@ public abstract class DynamicBody : Piece {
 					if (ExistPiece(ps, (Piece p) => {return p.Type==PieceType.Block && ((Block)p).IsSticky(tmpMoveDir);})) {
 						IsOnGround = true;
 						gravity = 0;
-						movingDir *= -1;
+						MovingDir *= -1;
 						ChangeGravity(2);
 					}
 				}
@@ -117,10 +136,10 @@ public abstract class DynamicBody : Piece {
 			(Piece[] ps2, bool b2) => {
 				// if falling, then check if it is possible to stick to nearby wall.
 				IsOnGround = false;
-				Check(dir*speed*-movingDir, (Piece[] ps, bool b) => {
+				Check(dir*speed*-MovingDir, (Piece[] ps, bool b) => {
 					if (gravity<0f) {
-						if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*-movingDir);})) {
-							ChangeGravity(movingDir);
+						if (ExistPiece(ps, (Piece p) => { return p.Type==PieceType.Block && ((Block)p).IsSticky(dir*speed*-MovingDir);})) {
+							ChangeGravity(MovingDir);
 							}
 						}
 					});
@@ -162,11 +181,11 @@ public abstract class DynamicBody : Piece {
 	protected bool stopMoving = false;
 	public void StopMoving() {
 		stopMoving = true;
-		movingDir = 0;
+		MovingDir = 0;
 	}
 
 	public void TurnAround() {
-		movingDir *= -1;
+		MovingDir *= -1;
 	}
 
 	public void SetGravity(Direction dir) {
@@ -188,6 +207,9 @@ public abstract class DynamicBody : Piece {
 	}
 
 	protected virtual void OnUpdate() {
+	}
+
+	protected virtual void OnSmash() {
 	}
 
 	protected virtual void ChangeGravity(int delta) {

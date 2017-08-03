@@ -566,6 +566,11 @@ public class LevelInspector : Editor {
 						ReorderableListGUI.ListField<FunctionPieceLevelData> (list, FunctionPieceLevelDataDrawer);
 						value.SaveSpecificData (list [0]);
 					}
+					if (value.type == PieceType.LevelDoor) {
+						var list = new LevelDoorPieceLevelData[]{ value.GetSpecificData<LevelDoorPieceLevelData> () };
+						ReorderableListGUI.ListField<LevelDoorPieceLevelData> (list, LevelDoorPieceLevelDataDrawer);
+						value.SaveSpecificData (list [0]);
+					}
 				}
 			}
 		}
@@ -618,6 +623,20 @@ public class LevelInspector : Editor {
 			r.width = 100;
 			value.type = (FunctionPieceLevelData.FunctionType)EditorGUI.EnumPopup (r, value.type);
 			r.x += 100;
+		}
+
+		return value;
+	}
+
+	LevelDoorPieceLevelData LevelDoorPieceLevelDataDrawer(Rect rect, LevelDoorPieceLevelData value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 70;
+			EditorGUI.LabelField (r, "LevelIndex:");
+			r.x += 70;
+
+			r.width = 40;
+			value.levelIndex = EditorGUI.IntField (r, value.levelIndex);
 		}
 
 		return value;
@@ -807,6 +826,9 @@ public class LevelInspector : Editor {
 							GUI.color = new Color(0.2f,0.8f,0.8f,1);
 						}
 						if (piece.type == PieceType.Water) {
+							GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
+						}
+						if (piece.type == PieceType.LevelDoor) {
 							GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
 						}
 						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {

@@ -27,7 +27,8 @@ public enum PieceType {
 	Collectable,
 	BlockDestructible,
 	Ball,
-	Water
+	Water,
+	LevelDoor
 };
 
 [Serializable]
