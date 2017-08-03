@@ -18,7 +18,7 @@ public class LevelDoor : Piece {
 			var levelDoorText = Instantiate(Resources.Load("LevelDoorText")) as GameObject;
 			levelDoorText.transform.position = new Vector3(transform.position.x,transform.position.y+2,transform.position.z);
 			int levelIndex = pieceLevelData.GetSpecificData<LevelDoorPieceLevelData> ().levelIndex;
-			Director.Instance.levelIndex = levelIndex;
+			((Hero)hitPiece).levelDoorIndex = levelIndex;
 			levelDoorText.GetComponentInChildren<TextMesh> ().text = "- level "+ (levelIndex+1)+" -";
 
 			gameLogic.hero.OnIsOnLevelDoorChangeValue += (bool isOnALevelDoor)=>{if (!isOnALevelDoor) Destroy(levelDoorText);};

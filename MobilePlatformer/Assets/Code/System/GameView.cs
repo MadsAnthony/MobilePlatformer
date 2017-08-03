@@ -17,7 +17,7 @@ public class GameView : UIView {
 	LevelSaveData prevLevelProgress;
 
 	protected override void OnStart () {
-		prevLevelProgress = Director.SaveData.GetLevelSaveDataEntry (Director.Instance.levelIndex.ToString ());
+		prevLevelProgress = Director.SaveData.GetLevelSaveDataEntry (Director.Instance.LevelIndex.ToString ());
 		if (prevLevelProgress != null) {
 			TimeSpan timeSpan = TimeSpan.FromSeconds (prevLevelProgress.time);
 			timerBest.text = string.Format ("{0:D2}:{1:D2}:{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
@@ -42,11 +42,11 @@ public class GameView : UIView {
 			} else {
 				bestTime = gameLogic.time;
 			}
-			tempDict[Director.Instance.levelIndex.ToString()] = new LevelSaveData(true,gameLogic.CollectablesCollected,bestTime);
+			tempDict[Director.Instance.LevelIndex.ToString()] = new LevelSaveData(true,gameLogic.CollectablesCollected,bestTime);
 			Director.SaveData.LevelProgress = tempDict;
 
-			Director.Instance.levelIndex += 1;
-			if (Director.Instance.levelIndex >= Director.LevelDatabase.levels.Count) {
+			Director.Instance.LevelIndex += 1;
+			if (Director.Instance.LevelIndex >= Director.LevelDatabase.levels.Count) {
 				SceneManager.LoadScene ("LevelSelectScene");
 			} else {
 				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());

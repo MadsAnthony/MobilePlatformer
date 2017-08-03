@@ -10,7 +10,21 @@ public class Director : MonoBehaviour  {
 	[SerializeField] private SoundDatabase soundDatabase;
 	[SerializeField] private PieceDatabase pieceDatabase;
 
-	public int levelIndex = -1;
+	private int levelIndex = -1;
+	private int prevLevelIndex = -1;
+	public int LevelIndex 
+	{
+		get {return levelIndex;}
+		set 
+		{
+			prevLevelIndex = levelIndex;
+			levelIndex = value;
+		}
+	}
+	public int PrevLevelIndex {
+		get { return prevLevelIndex;}
+	}
+
 
 	private GameEventManager		gameEventManager;
 	private UIManager 		 		uiManager;

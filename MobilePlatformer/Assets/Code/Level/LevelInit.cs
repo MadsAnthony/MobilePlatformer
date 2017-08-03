@@ -11,11 +11,13 @@ public class LevelInit : MonoBehaviour {
 	private GameLogic gameLogic;
 
 	private Dictionary<string, Piece> pieces = new Dictionary<string, Piece>();
+
+	private Dictionary<int, Piece> levelDoors = new Dictionary<int,Piece>();
 	// Use this for initialization
 	void Start () {
 		gameLogic = GetComponent<GameLogic>();
-		if (Director.Instance.levelIndex >= 0) {
-			level = Director.LevelDatabase.levels[Director.Instance.levelIndex];
+		if (Director.Instance.LevelIndex >= 0) {
+			level = Director.LevelDatabase.levels[Director.Instance.LevelIndex];
 		}
 		gameLogic.level = level;
 
@@ -28,6 +30,9 @@ public class LevelInit : MonoBehaviour {
 		foreach (var piece in level.pieces) {
 			PieceData pieceData = Director.PieceDatabase.GetPieceData (piece.type);
 			var tmpPiece = Instantiate(pieceData.prefab);
+			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);
+			tmpPiece.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
+
 			tmpPiece.name = "Piece"+i;
 
 			tmpPiece.Init(piece, gameLogic);
@@ -38,14 +43,22 @@ public class LevelInit : MonoBehaviour {
 			if (piece.type == PieceType.Hero) {
 				gameLogic.hero = tmpPiece.GetComponent<Hero> ();
 			}
-
-			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);
-			tmpPiece.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
-			i++;
+			if (piece.type == PieceType.LevelDoor) {
+				int levelIndex = piece.GetSpecificData<LevelDoorPieceLevelData> ().levelIndex;
+				levelDoors.Add (levelIndex,tmpPiece);
+			}
 
 			// Remove this condition at some time.
 			if (!string.IsNullOrEmpty(piece.id)) {
 				pieces.Add (piece.id, tmpPiece);
+			}
+			i++;
+		}
+
+		if (Director.Instance.LevelIndex == 17 && Director.Instance.PrevLevelIndex != -1) {
+			Piece levelDoorPiece;
+			if (levelDoors.TryGetValue (Director.Instance.PrevLevelIndex, out levelDoorPiece)) {
+				gameLogic.hero.transform.position = levelDoors [Director.Instance.PrevLevelIndex].transform.position;
 			}
 		}
 

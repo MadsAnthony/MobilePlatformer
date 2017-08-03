@@ -10,6 +10,7 @@ public class WorldSelectView : UIView {
 	public SkeletonAnimation pigCharacter;
 	public SkeletonAnimation eyeCharacter;
 	protected override void OnStart () {
+		Director.Instance.LevelIndex = -1;
 		pigButton.GetComponent<Button> ().onClick.AddListener(() => { 
 			if (isPlayingEatAnimation) return;
 			StartCoroutine (PlayEatAnimation());
@@ -24,7 +25,7 @@ public class WorldSelectView : UIView {
 		StartCoroutine (AnimateEyeCharacter ());
 		yield return new WaitForSeconds(2);
 		isPlayingEatAnimation = false;
-		Director.Instance.levelIndex = 17;
+		Director.Instance.LevelIndex = 17;
 		Director.TransitionManager.PlayTransition (() => {SceneManager.LoadSceneAsync ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut(0.2f));
 	}
 

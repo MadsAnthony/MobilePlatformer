@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class UIUtils : MonoBehaviour {
 	public void GotoLevelSelectScene() {
-		SceneManager.LoadScene ("LevelSelectScene");
+		if (Director.Instance.LevelIndex == 17) {
+			SceneManager.LoadScene ("WorldSelectScene");
+		} else {
+			Director.Instance.LevelIndex = 17;
+			SceneManager.LoadScene ("LevelScene");
+		}
 	}
 
 	public void GotoWorldSelectScene() {
@@ -13,7 +18,7 @@ public class UIUtils : MonoBehaviour {
 	}
 
 	public static void GotoLevelScene(int i) {
-		Director.Instance.levelIndex = i;
+		Director.Instance.LevelIndex = i;
 		SceneManager.LoadScene ("LevelScene");
 	}
 

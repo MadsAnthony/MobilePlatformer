@@ -14,4 +14,9 @@ public class DeveloperCheats {
 	private static void DeleteAllSaveData() {
 		PlayerPrefs.DeleteAll ();
 	}
+
+	[CommandHandler]
+	private static void GotoLevelSelectScene() {
+		SceneManager.LoadScene ("LevelSelectScene");
+	}
 }

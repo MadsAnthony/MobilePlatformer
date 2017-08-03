@@ -8,6 +8,7 @@ public class Hero : DynamicBody {
 	public SkeletonAnimation spine;
 	public GameObject sprite;
 	private Vector3 spriteStartScale;
+	public int levelDoorIndex;
 
 	protected override void OnStart() {
 		spriteStartScale = sprite.transform.localScale;
@@ -123,6 +124,7 @@ public class Hero : DynamicBody {
 			// enter level
 			if (verticalDotProduct > threshold && IsOnGround && IsOnLevelDoor && !touchConsumed) {
 				IsOnLevelDoor = false;
+				Director.Instance.LevelIndex = levelDoorIndex;
 				Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 			}
 
