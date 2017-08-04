@@ -33,6 +33,11 @@ public class FunctionPiece : Piece {
 				StartCoroutine (FunctionCr (hitPiece));
 			}
 		}
+		if (hitPiece.Type == PieceType.Hero) {
+			if (pieceLevelData.GetSpecificData<FunctionPieceLevelData> ().type == FunctionPieceLevelData.FunctionType.LeaveWorld) {
+				Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("WorldSelectScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
+			}
+		}
 	}
 
 	bool isFunctionRunning;
@@ -48,7 +53,6 @@ public class FunctionPiece : Piece {
 		if (pieceLevelData.GetSpecificData<FunctionPieceLevelData>().type == FunctionPieceLevelData.FunctionType.Jump) {
 			hitPiece.GetComponent<Enemy> ().SmallJump ();
 		}
-
 		
 		yield return new WaitForSeconds (pieceLevelData.GetSpecificData<FunctionPieceLevelData> ().cooldown);
 		isFunctionRunning = false;

@@ -216,6 +216,7 @@ MonoBehaviour:
   maxGravity: 50
   spine: {fileID: 114878203891382274}
   sprite: {fileID: 1197920750840040}
+  levelDoorIndex: 0
 --- !u!198 &198458355937409866
 ParticleSystem:
   m_ObjectHideFlags: 1

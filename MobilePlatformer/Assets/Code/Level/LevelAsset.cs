@@ -105,7 +105,7 @@ public class FunctionPieceLevelData:SpecificPieceLevelData {
 	public float cooldown;
 	public FunctionType type;
 
-	public enum FunctionType {Turn, Jump};
+	public enum FunctionType {Turn, Jump, LeaveWorld};
 }
 
 [Serializable]

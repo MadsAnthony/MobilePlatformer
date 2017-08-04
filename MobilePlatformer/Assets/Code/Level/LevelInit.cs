@@ -61,6 +61,9 @@ public class LevelInit : MonoBehaviour {
 				gameLogic.hero.transform.position = levelDoors [Director.Instance.PrevLevelIndex].transform.position;
 			}
 		}
+		var camera = ((GameView)Director.UIManager.ActiveView).camera;
+		camera.transform.position = new Vector3(gameLogic.hero.transform.position.x,gameLogic.hero.transform.position.y,camera.transform.position.z);
+
 
 		foreach (PieceGroupData pieceGroup in level.pieceGroups) {
 			var go = new GameObject();

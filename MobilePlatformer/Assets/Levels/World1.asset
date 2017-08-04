@@ -470,7 +470,7 @@ MonoBehaviour:
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: 588c373f-238c-4332-bdb7-d537639f80bc
     type: 4
-    pos: {x: 3, y: 0}
+    pos: {x: 3, y: 1}
     dir: 2
     flipX: 0
     specificDataJson: 
@@ -957,6 +957,27 @@ MonoBehaviour:
     dir: 0
     flipX: 0
     specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 9fbfa906-8806-42d6-bfb8-e5e7335a0ee3
+    type: 1
+    pos: {x: 2, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: d383f95f-912e-4e9f-88fb-6b5a83535c23
+    type: 1
+    pos: {x: 3, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 80ed9338-98f6-4d92-84ea-21e0ae905644
+    type: 1
+    pos: {x: 4, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   pieceGroups: []
   backgroundList:
