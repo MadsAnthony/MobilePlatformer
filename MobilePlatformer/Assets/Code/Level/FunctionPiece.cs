@@ -33,7 +33,7 @@ public class FunctionPiece : Piece {
 				StartCoroutine (FunctionCr (hitPiece));
 			}
 		}
-		if (hitPiece.Type == PieceType.Hero) {
+		if (hitPiece.Type == PieceType.Hero && !Director.TransitionManager.isPlayingTransition) {
 			if (pieceLevelData.GetSpecificData<FunctionPieceLevelData> ().type == FunctionPieceLevelData.FunctionType.LeaveWorld) {
 				Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("WorldSelectScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 			}

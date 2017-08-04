@@ -16,6 +16,9 @@ public class GameView : UIView {
 
 	LevelSaveData prevLevelProgress;
 
+
+	float minX;
+
 	protected override void OnStart () {
 		prevLevelProgress = Director.SaveData.GetLevelSaveDataEntry (Director.Instance.LevelIndex.ToString ());
 		if (prevLevelProgress != null) {
@@ -55,6 +58,7 @@ public class GameView : UIView {
 		}
 	}
 
+	bool firstUpdate = true;
 	// Update is called once per frame
 	void Update () {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
@@ -63,11 +67,34 @@ public class GameView : UIView {
 		TimeSpan timeSpan = TimeSpan.FromSeconds(gameLogic.time);
 		timer.text = string.Format("{0:D2}:{1:D2}:{2:D2}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 
+		Vector3 distance = Vector3.zero;
 		if (gameLogic.hero != null) {
-			var distance = gameLogic.hero.transform.position - camera.transform.position;
+			distance = gameLogic.hero.transform.position - camera.transform.position;
 			camera.transform.position += Time.deltaTime * 3 * new Vector3 (distance.x, distance.y, 0);
 		}
 
-		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,0,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
+		var closestCameraBound = GetClosestCameraBound ();
+
+		if (firstUpdate) {
+			if (closestCameraBound != null) {
+				minX = closestCameraBound.pos;
+			}
+			firstUpdate = false;
+		}
+		if (closestCameraBound==null) {
+			minX = 0;
+		} else {
+			minX += Time.deltaTime * 3 *(closestCameraBound.pos-minX);
+		}
+		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,minX,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
+	}
+
+	CameraBound GetClosestCameraBound() {
+		foreach (CameraBound cameraBound in gameLogic.level.cameraBounds) {
+			if (cameraBound.pos+LevelInit.LevelStartPos.x < gameLogic.hero.transform.position.x) {
+				return cameraBound;
+			}
+		}
+		return null;
 	}
 }

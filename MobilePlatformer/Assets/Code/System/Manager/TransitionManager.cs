@@ -8,6 +8,7 @@ public class TransitionManager : MonoBehaviour {
 	[SerializeField] Image overlay;
 	[SerializeField] Camera camera;
 
+	public bool isPlayingTransition;
 	void Start () {
 		DontDestroyOnLoad (transform.gameObject);
 		camera.transform.gameObject.SetActive(false);
@@ -18,6 +19,7 @@ public class TransitionManager : MonoBehaviour {
 	}
 
 	IEnumerator PlayTransitionCr(Action callInBetween, float waitTime, IEnumerator transitionIn, IEnumerator transitionOut = null) {
+		isPlayingTransition = true;
 		camera.transform.gameObject.SetActive (true);
 		yield return transitionIn;
 		if (callInBetween != null) {
@@ -26,6 +28,7 @@ public class TransitionManager : MonoBehaviour {
 		yield return new WaitForSeconds(waitTime);
 		yield return transitionOut;
 		camera.transform.gameObject.SetActive(false);
+		isPlayingTransition = false;
 	}
 
 	public IEnumerator FadeToBlack() {

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelInit : MonoBehaviour {
 	public LevelAsset level;
 
-	private Vector3 levelStartPos = new Vector3(-9.5f,16,0);
+	public static Vector3 LevelStartPos = new Vector3(-9.5f,16,0);
 
 	private GameLogic gameLogic;
 
@@ -31,7 +31,7 @@ public class LevelInit : MonoBehaviour {
 			PieceData pieceData = Director.PieceDatabase.GetPieceData (piece.type);
 			var tmpPiece = Instantiate(pieceData.prefab);
 			tmpPiece.transform.eulerAngles = new Vector3(tmpPiece.transform.eulerAngles.x,tmpPiece.transform.eulerAngles.y,((int)piece.dir)*-90);
-			tmpPiece.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+levelStartPos;
+			tmpPiece.transform.position = new Vector3(piece.pos.x,-piece.pos.y,0)+LevelInit.LevelStartPos;
 
 			tmpPiece.name = "Piece"+i;
 
@@ -101,7 +101,7 @@ public class LevelInit : MonoBehaviour {
 		mesh.uv = uvsList.ToArray();
 
 		var background = new GameObject ("background");
-		background.transform.position = new Vector3(levelStartPos.x,levelStartPos.y,10);
+		background.transform.position = new Vector3(LevelInit.LevelStartPos.x,LevelInit.LevelStartPos.y,10);
 		background.transform.eulerAngles = new Vector3 (0,180,0);
 		background.transform.localScale  = new Vector3 (-1,1,0);
 		background.AddComponent<MeshRenderer> ();

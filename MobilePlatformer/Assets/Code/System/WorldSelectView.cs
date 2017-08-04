@@ -10,6 +10,7 @@ public class WorldSelectView : UIView {
 	public SkeletonAnimation pigCharacter;
 	public SkeletonAnimation eyeCharacter;
 	protected override void OnStart () {
+		Director.Instance.WorldIndex = -1;
 		Director.Instance.LevelIndex = -1;
 		if (Director.Instance.PrevLevelIndex == 17) {
 			eyeCharacter.gameObject.SetActive (false);
@@ -31,6 +32,7 @@ public class WorldSelectView : UIView {
 		yield return new WaitForSeconds(2);
 		isPlayingEatAnimation = false;
 		if (!animateEyeCharacterOut) {
+			Director.Instance.WorldIndex = 1;
 			Director.Instance.LevelIndex = 17;
 			Director.TransitionManager.PlayTransition (() => { SceneManager.LoadSceneAsync ("LevelScene"); }, 0.1f, Director.TransitionManager.FadeToBlack (), Director.TransitionManager.FadeOut (0.2f));
 		}

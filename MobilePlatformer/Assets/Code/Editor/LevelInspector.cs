@@ -8,7 +8,7 @@ using Rotorz.ReorderableList;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-public enum LevelEditorTool {PlacePieces, ModifyBlock, Select, DefineBackground};
+public enum LevelEditorTool {PlacePieces, ModifyBlock, Select, DefineBackground, SetCameraBounds};
 
 [CustomEditor(typeof(LevelAsset))]
 public class LevelInspector : Editor {
@@ -129,6 +129,9 @@ public class LevelInspector : Editor {
 					if (cellType == LevelEditorTool.DefineBackground) {
 						SetBackground (selectedIndex);
 					}
+					if (cellType == LevelEditorTool.SetCameraBounds) {
+						SetCameraBound (selectedIndex);
+					}
 				}
 				if (Event.current.button == 1) {
 					if (cellType == LevelEditorTool.PlacePieces) {
@@ -139,6 +142,9 @@ public class LevelInspector : Editor {
 					}
 					if (cellType == LevelEditorTool.DefineBackground) {
 						RemoveBackground (selectedIndex);
+					}
+					if (cellType == LevelEditorTool.SetCameraBounds) {
+						RemoveCameraBound (selectedIndex);
 					}
 				}
 			} else {
@@ -744,6 +750,15 @@ public class LevelInspector : Editor {
 		return null;
 	}
 
+	CameraBound GetCameraBoundWithPosAndDirection(int pos, Direction dir) {
+		foreach(CameraBound cameraBound in ((LevelAsset)target).cameraBounds) {
+			if (cameraBound.pos == pos && cameraBound.dir == dir) {
+				return cameraBound;
+			}
+		}
+		return null;
+	}
+
 	bool IsPositionWithinGrid(Vector2 pos, float rightMargin = 20,  float downMargin = 20) {
 		return 	pos.x > levelGridRect.x && pos.x < levelGridRect.x + levelGridRect.width -rightMargin &&
 				pos.y > levelGridRect.y && pos.y < levelGridRect.y + levelGridRect.height-downMargin;
@@ -773,6 +788,33 @@ public class LevelInspector : Editor {
 
 		if (GetBackgroundWithPos(pos) != null) {
 			myTarget.backgroundList.Remove (pos);
+		}
+	}
+
+	void SetCameraBound(Vector2 pos) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		int XYComponent = GetXOrYComponentBasedOnDir (pos, direction);
+		if (GetCameraBoundWithPosAndDirection(XYComponent,direction) == null) {
+			myTarget.cameraBounds.Add (new CameraBound(XYComponent,direction));
+		}
+	}
+
+	void RemoveCameraBound(Vector2 pos) {
+		LevelAsset myTarget = (LevelAsset)target;
+
+		int XYComponent = GetXOrYComponentBasedOnDir (pos, direction);
+		CameraBound existingCameraBound = GetCameraBoundWithPosAndDirection (XYComponent, direction);
+		if (existingCameraBound != null) {
+			myTarget.cameraBounds.Remove (existingCameraBound);
+		}
+	}
+
+	int GetXOrYComponentBasedOnDir(Vector2 pos, Direction direction) {
+		if (direction == Direction.Left || direction == Direction.Right) {
+			return (int) pos [0];
+		} else {
+			return (int) pos [1];
 		}
 	}
 
@@ -899,6 +941,17 @@ public class LevelInspector : Editor {
 
 			}
 		}
+
+		foreach (var cameraBound in ((LevelAsset)target).cameraBounds) {
+			Handles.color = Color.green;
+			if (cameraBound.dir == Direction.Left || cameraBound.dir == Direction.Right) {
+				Handles.DrawLine (new Vector3 (0 + cellSize * 0.5f + cellSize * cameraBound.pos, 0, 0), new Vector3 (0 + cellSize * 0.5f + cellSize * cameraBound.pos, cellSize*levelSize.x, 0));
+			} else {
+				Handles.DrawLine (new Vector3 (0, 0 + cellSize * 0.5f + cellSize * cameraBound.pos, 0), new Vector3 (cellSize*levelSize.x, 0 + cellSize * 0.5f + cellSize * cameraBound.pos, 0));
+			}
+			Handles.color = Color.white;
+		}
+
 		if (selectedPieceGroup != null) {
 			foreach(var move in selectedPieceGroup.moves) {
 				Handles.color = Color.red;

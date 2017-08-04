@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class UIUtils : MonoBehaviour {
 	public void GotoLevelSelectScene() {
 		if (Director.Instance.LevelIndex == 17) {
-			SceneManager.LoadScene ("WorldSelectScene");
+			Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("WorldSelectScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 		} else {
 			Director.Instance.LevelIndex = 17;
-			SceneManager.LoadScene ("LevelScene");
+			Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 		}
 	}
 

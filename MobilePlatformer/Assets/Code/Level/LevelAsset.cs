@@ -9,6 +9,7 @@ public class LevelAsset : ScriptableObject {
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
 	public List<PieceGroupData> pieceGroups = new List<PieceGroupData>();
 	public List<Vector2> backgroundList = new List<Vector2>();
+	public List<CameraBound> cameraBounds = new List<CameraBound>();
 	public List<LevelLayer> layers = new List<LevelLayer>();
 
 	public string levelName;
@@ -85,6 +86,17 @@ public class GroupMovement {
 	public float time = 1;
 	public AnimationCurve animationCurve = new AnimationCurve();
 	public float maxT = 1;
+}
+
+[Serializable]
+public class CameraBound {
+	public int pos;
+	public Direction dir;
+
+	public CameraBound(int pos, Direction dir) {
+		this.pos = pos;
+		this.dir = dir;
+	}
 }
 
 [Serializable]

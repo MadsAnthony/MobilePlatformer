@@ -132,7 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5556daf8440c54c8b08c749ae5549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelDatabaseDatabase: {fileID: 11400000, guid: 2d3a112650e92e64cb377d251ea28540,
+    type: 2}
   levelDatabase: {fileID: 11400000, guid: b63dcf8df05fea04bbf3fc5ca1f79fed, type: 2}
   soundDatabase: {fileID: 11400000, guid: 07f059483e4666543b09716375cf2471, type: 2}
   pieceDatabase: {fileID: 11400000, guid: 85b2feb410f3c024ba863a416370b03e, type: 2}
-  levelIndex: -1

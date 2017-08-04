@@ -6,6 +6,7 @@ public class Director : MonoBehaviour  {
 	private static Director instance;
 	private static bool hasBeenDestroyed;
 
+	[SerializeField] private LevelDatabaseDatabase LevelDatabaseDatabase;
 	[SerializeField] private LevelDatabase levelDatabase;
 	[SerializeField] private SoundDatabase soundDatabase;
 	[SerializeField] private PieceDatabase pieceDatabase;
@@ -24,6 +25,11 @@ public class Director : MonoBehaviour  {
 	public int PrevLevelIndex {
 		get { return prevLevelIndex;}
 	}
+	private int worldIndex = 1;
+	public int WorldIndex {
+		get {return worldIndex;}
+		set {worldIndex = value;}
+	}
 
 
 	private GameEventManager		gameEventManager;
@@ -32,7 +38,7 @@ public class Director : MonoBehaviour  {
 	private SaveData				saveData;
 
 	public static GameEventManager 		GameEventManager 	{get {return Instance.gameEventManager;}}
-	public static LevelDatabase    		LevelDatabase 		{get {return Instance.levelDatabase;}}
+	public static LevelDatabase    		LevelDatabase 		{get {return Instance.LevelDatabaseDatabase.levelDatabases [Instance.WorldIndex];}}
 	public static PieceDatabase    		PieceDatabase 		{get {return Instance.pieceDatabase;}}
 	public static UIManager    	   		UIManager			{get {return Instance.uiManager;}}
 	public static TransitionManager		TransitionManager 	{get {return Instance.transitionManager;}}
