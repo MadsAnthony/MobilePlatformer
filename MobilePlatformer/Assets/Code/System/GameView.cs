@@ -77,14 +77,14 @@ public class GameView : UIView {
 
 		if (firstUpdate) {
 			if (closestCameraBound != null) {
-				minX = closestCameraBound.pos;
+				minX = closestCameraBound.pos-2;
 			}
 			firstUpdate = false;
 		}
 		if (closestCameraBound==null) {
 			minX = 0;
 		} else {
-			minX += Time.deltaTime * 3 *(closestCameraBound.pos-minX);
+			minX += Time.deltaTime * 3 *(closestCameraBound.pos-2-minX);
 		}
 		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,minX,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
 	}

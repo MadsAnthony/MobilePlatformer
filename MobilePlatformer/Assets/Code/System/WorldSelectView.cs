@@ -43,7 +43,8 @@ public class WorldSelectView : UIView {
 		float gravity = -28f;
 		eyeCharacter.state.SetAnimation (0, "jump", false);
 		if (animateEyeCharacterOut) {
-			eyeCharacter.transform.localPosition = new Vector3 (5,25,eyeCharacter.transform.localPosition.z);
+			gravity = -22f;
+			eyeCharacter.transform.localPosition = new Vector3 (5,130,eyeCharacter.transform.localPosition.z);
 		}
 		eyeCharacter.gameObject.SetActive (true);
 		while (true) {
@@ -52,7 +53,7 @@ public class WorldSelectView : UIView {
 				eyeCharacter.gameObject.transform.position += new Vector3 (-7, -gravity, 0) * Time.deltaTime;
 				if (eyeCharacter.gameObject.transform.localPosition.x < 5) break;
 			} else {
-				eyeCharacter.gameObject.transform.position += new Vector3 (7, -gravity, 0) * Time.deltaTime;
+				eyeCharacter.gameObject.transform.position += new Vector3 (5, -gravity, 0) * Time.deltaTime;
 				if (eyeCharacter.gameObject.transform.localPosition.y < -70) {
 					eyeCharacter.state.SetAnimation (0, "idle", true);
 					break;
