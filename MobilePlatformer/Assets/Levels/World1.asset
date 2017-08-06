@@ -1681,6 +1681,8 @@ MonoBehaviour:
   cameraBounds:
   - pos: 13
     dir: 3
+  - pos: 13
+    dir: 1
   layers:
   - id: d65065cc-a9c0-4246-aa35-d5e765793b45
     name: Layer0
