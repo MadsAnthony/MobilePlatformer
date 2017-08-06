@@ -16,9 +16,6 @@ public class GameView : UIView {
 
 	LevelSaveData prevLevelProgress;
 
-
-	float minX;
-
 	protected override void OnStart () {
 		prevLevelProgress = Director.SaveData.GetLevelSaveDataEntry (Director.Instance.LevelIndex.ToString ());
 		if (prevLevelProgress != null) {
@@ -58,7 +55,6 @@ public class GameView : UIView {
 		}
 	}
 
-	bool firstUpdate = true;
 	// Update is called once per frame
 	void Update () {
 		goalText.text = gameLogic.CurrentColoredBlocks+"/"+gameLogic.coloredBlocksGoal;
@@ -73,28 +69,111 @@ public class GameView : UIView {
 			camera.transform.position += Time.deltaTime * 3 * new Vector3 (distance.x, distance.y, 0);
 		}
 
-		var closestCameraBound = GetClosestCameraBound ();
+		Vector4 bounds = GetAllCameraBounds ();
+		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,bounds[0],bounds[1]),-Mathf.Clamp(-camera.transform.position.y,bounds[2],bounds[3]),camera.transform.position.z);
+	}
+
+	bool firstUpdate = true;
+	float minX;
+	float maxX;
+	float minY;
+	float maxY;
+	Vector4 GetAllCameraBounds() {
+		float initialMinX = 0;
+		float initialMaxX = gameLogic.level.levelSize.x-20;
+		float initialMinY = 0;
+		float initialMaxY = gameLogic.level.levelSize.y-30;
+
+		var closestCameraBoundLeft 	= GetClosestCameraBound (Direction.Left);
+		var closestCameraBoundRight = GetClosestCameraBound (Direction.Right);
+		var closestCameraBoundUp 	= GetClosestCameraBound (Direction.Up);
+		var closestCameraBoundDown 	= GetClosestCameraBound (Direction.Down);
+
+
+		float newMinX = (closestCameraBoundLeft  != null)? 	closestCameraBoundLeft.pos - 2 		 	: 0;
+		float newMaxX = (closestCameraBoundRight != null)? 	closestCameraBoundRight.pos + 2 - 20 	: 0;
+		float newMinY = (closestCameraBoundUp 	 != null)? 	closestCameraBoundUp.pos - 2 			: 0;
+		float newMaxY = (closestCameraBoundDown	 != null)? 	closestCameraBoundDown.pos + 2 - 30		: 0;
 
 		if (firstUpdate) {
-			if (closestCameraBound != null) {
-				minX = closestCameraBound.pos-2;
+			if (closestCameraBoundLeft != null) {
+				minX = newMinX;
+			}
+			if (closestCameraBoundRight != null) {
+				maxX = newMaxX;
+			}
+			if (closestCameraBoundUp != null) {
+				minY = newMinY;
+			}
+			if (closestCameraBoundDown != null) {
+				maxY = newMaxY;
 			}
 			firstUpdate = false;
 		}
-		if (closestCameraBound==null) {
-			minX = 0;
+
+		if (closestCameraBoundLeft==null) {
+			minX = initialMinX;
 		} else {
-			minX += Time.deltaTime * 3 *(closestCameraBound.pos-2-minX);
+			minX += Time.deltaTime * 3 *(newMinX-minX);
 		}
-		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,minX,gameLogic.level.levelSize.x-20),Mathf.Clamp(camera.transform.position.y,Mathf.Min(-(gameLogic.level.levelSize.y-30),0),0),camera.transform.position.z);
+		if (closestCameraBoundRight==null) {
+			maxX = initialMaxX;
+		} else {
+			maxX += Time.deltaTime * 3 *(newMaxX-maxX);
+		}
+		if (closestCameraBoundUp==null) {
+			minY = initialMinY;
+		} else {
+			minY += Time.deltaTime * 3 *(newMinY-minY);
+		}
+		if (closestCameraBoundDown==null) {
+			maxY = initialMaxY;
+		} else {
+			maxY += Time.deltaTime * 3 *(newMaxY-maxY);
+		}
+
+		// Clamp min max values so min values are not higher than max or max is lower than min.
+		minX = Mathf.Min (minX, maxX);
+		maxX = Mathf.Max (maxX, minX);
+		minY = Mathf.Min (minY, maxY);
+		maxY = Mathf.Max (maxY, minY);
+
+		return new Vector4 (minX, maxX, minY, maxY);
 	}
 
-	CameraBound GetClosestCameraBound() {
+	CameraBound GetClosestCameraBound(Direction dir) {
+		CameraBound resultCameraBound = null;
 		foreach (CameraBound cameraBound in gameLogic.level.cameraBounds) {
-			if (cameraBound.pos+LevelInit.LevelStartPos.x < gameLogic.hero.transform.position.x) {
-				return cameraBound;
+			if (cameraBound.dir != dir) continue;
+			if (dir == Direction.Left) {
+				if (cameraBound.pos + LevelInit.LevelStartPos.x < gameLogic.hero.transform.position.x) {
+					if (resultCameraBound == null || cameraBound.pos > resultCameraBound.pos) {
+						resultCameraBound = cameraBound;
+					}
+				}
+			}
+			if (dir == Direction.Right) {
+				if (cameraBound.pos + LevelInit.LevelStartPos.x > gameLogic.hero.transform.position.x) {
+					if (resultCameraBound == null || cameraBound.pos < resultCameraBound.pos) {
+						resultCameraBound = cameraBound;
+					}
+				}
+			}
+			if (dir == Direction.Up) {
+				if (-cameraBound.pos + LevelInit.LevelStartPos.y > gameLogic.hero.transform.position.y) {
+					if (resultCameraBound == null || cameraBound.pos < resultCameraBound.pos) {
+						resultCameraBound = cameraBound;
+					}
+				}
+			}
+			if (dir == Direction.Down) {
+				if (-cameraBound.pos + LevelInit.LevelStartPos.y < gameLogic.hero.transform.position.y) {
+					if (resultCameraBound == null || cameraBound.pos > resultCameraBound.pos) {
+						resultCameraBound = cameraBound;
+					}
+				}
 			}
 		}
-		return null;
+		return resultCameraBound;
 	}
 }
