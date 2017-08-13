@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BlurMaterial
-  m_Shader: {fileID: 4800000, guid: b058c1a37832ff946af747ffcf0b1735, type: 3}
+  m_Shader: {fileID: 4800000, guid: bbd0e95f9b2e8e74ebf0ddd57bd299d8, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1

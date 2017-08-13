@@ -13,6 +13,7 @@ public class GameView : UIView {
 	public Text timerBest;
 
 	public Camera camera;
+	public GameObject cameraPivot;
 
 	LevelSaveData prevLevelProgress;
 
@@ -65,12 +66,12 @@ public class GameView : UIView {
 
 		Vector3 distance = Vector3.zero;
 		if (gameLogic.hero != null) {
-			distance = gameLogic.hero.transform.position - camera.transform.position;
-			camera.transform.position += Time.deltaTime * 3 * new Vector3 (distance.x, distance.y, 0);
+			distance = gameLogic.hero.transform.position - cameraPivot.transform.position;
+			cameraPivot.transform.position += Time.deltaTime * 3 * new Vector3 (distance.x, distance.y, 0);
 		}
 
 		Vector4 bounds = GetAllCameraBounds ();
-		camera.transform.position = new Vector3(Mathf.Clamp(camera.transform.position.x,bounds[0],bounds[1]),-Mathf.Clamp(-camera.transform.position.y,bounds[2],bounds[3]),camera.transform.position.z);
+		cameraPivot.transform.position = new Vector3(Mathf.Clamp(cameraPivot.transform.position.x,bounds[0],bounds[1]),-Mathf.Clamp(-cameraPivot.transform.position.y,bounds[2],bounds[3]),cameraPivot.transform.position.z);
 	}
 
 	bool firstUpdate = true;

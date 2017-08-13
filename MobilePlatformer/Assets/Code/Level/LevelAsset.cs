@@ -8,7 +8,7 @@ public class LevelAsset : ScriptableObject {
 	public Vector2 levelSize = new Vector2(20,30);
 	public List<PieceLevelData> pieces = new List<PieceLevelData>();
 	public List<PieceGroupData> pieceGroups = new List<PieceGroupData>();
-	public List<Vector2> backgroundList = new List<Vector2>();
+	public List<BackgroundLevelData> backgroundList = new List<BackgroundLevelData>();
 	public List<CameraBound> cameraBounds = new List<CameraBound>();
 	public List<LevelLayer> layers = new List<LevelLayer>();
 
@@ -17,10 +17,20 @@ public class LevelAsset : ScriptableObject {
 	static public bool HasSpecificLevelData(PieceType pieceType) {
 		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece || pieceType == PieceType.LevelDoor);
 	}
+
+	public LevelLayer GetLayer(string layerId) {
+		foreach(LevelLayer layer in layers) {
+			if (layer.id == layerId) {
+				return layer;
+			}
+		}
+		return null;
+	}
 }
 
 public enum BlockType {Normal, Color, Spike, NonSticky, Collectable};
 public enum Direction {Up, Right, Down, Left};
+public enum BackgroundType {Normal};
 
 [Serializable]
 public class PieceLevelData {
@@ -89,6 +99,19 @@ public class GroupMovement {
 }
 
 [Serializable]
+public class BackgroundLevelData {
+	public BackgroundType backgroundType;
+	public Vector2 pos;
+	public string layerId;
+
+	public BackgroundLevelData(BackgroundType backgroundType, Vector2 pos, string layerId) {
+		this.backgroundType = backgroundType;
+		this.pos = pos;
+		this.layerId = layerId;
+	}
+}
+
+[Serializable]
 public class CameraBound {
 	public int pos;
 	public Direction dir;
@@ -108,6 +131,8 @@ public class BlockPieceLevelData:SpecificPieceLevelData {
 	public SideType[] sides   = new SideType[4];
 	public SideType[] corners = new SideType[4];
 
+	public bool isPassable;
+
 	public enum SideType {None, Normal, Sticky, Colorable};
 }
 
@@ -117,7 +142,7 @@ public class FunctionPieceLevelData:SpecificPieceLevelData {
 	public float cooldown;
 	public FunctionType type;
 
-	public enum FunctionType {Turn, Jump, LeaveWorld};
+	public enum FunctionType {Turn, Jump, LeaveWorld, ChangeLayer, ChangeLayerBack};
 }
 
 [Serializable]

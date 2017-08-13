@@ -60,6 +60,10 @@ public class Block : Piece {
 			}
 			i++;
 		}
+
+		if (specific.isPassable) {
+			CollisionPropertyDefault = CollisionProperty.Passable;
+		}
 	}
 
 	public bool IsSticky(Vector3 incommingDir) {

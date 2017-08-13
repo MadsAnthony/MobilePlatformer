@@ -82,6 +82,6 @@ public class Director : MonoBehaviour  {
 	}
 
 	public static void CameraShake() {
-		GameObject.Find ("Main Camera").GetComponent<CameraManager>().CameraShake();
+		GameObject.Find ("BaseCamera").GetComponentInParent<CameraManager>().CameraShake();
 	}
 }

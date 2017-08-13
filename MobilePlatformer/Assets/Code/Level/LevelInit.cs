@@ -24,6 +24,14 @@ public class LevelInit : MonoBehaviour {
 		InitializeLevel();
 	}
 
+	public static void SetLayerRecursively(GameObject gameObj, int newLayer) {
+		gameObj.layer = newLayer;
+
+		foreach (Transform child in gameObj.transform) {
+			SetLayerRecursively (child.gameObject, newLayer);
+		}
+	}
+
 	void InitializeLevel() {
 		int i = 0;
 
@@ -35,6 +43,10 @@ public class LevelInit : MonoBehaviour {
 
 			tmpPiece.name = "Piece"+i;
 
+			var layer = level.GetLayer (piece.layerId);
+			if (layer != null && layer.name == "Layer1") {
+				SetLayerRecursively (tmpPiece.gameObject, LayerMask.NameToLayer ("LevelLayer1"));
+			}
 			tmpPiece.Init(piece, gameLogic);
 
 			if (piece.type == PieceType.Collectable) {
@@ -61,7 +73,7 @@ public class LevelInit : MonoBehaviour {
 				gameLogic.hero.transform.position = levelDoors [Director.Instance.PrevLevelIndex].transform.position;
 			}
 		}
-		var camera = ((GameView)Director.UIManager.ActiveView).camera;
+		var camera = ((GameView)Director.UIManager.ActiveView).cameraPivot;
 		camera.transform.position = new Vector3(gameLogic.hero.transform.position.x,gameLogic.hero.transform.position.y,camera.transform.position.z);
 
 
@@ -74,42 +86,60 @@ public class LevelInit : MonoBehaviour {
 			}
 		}
 
-		var mesh = new Mesh ();
-
-		var verticesList  = new List<Vector3> ();
-		var trianglesList = new List<int> ();
-		var uvsList = new List<Vector2> ();
-		int index = 0;
-		var bgUVSize = 8;
-		foreach (Vector2 bgPos in level.backgroundList) {
-			int id = index * 4;
-			var vertices = new Vector3[] { new Vector3 (-0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, -0.5f-bgPos.y, 0), new Vector3 (0.5f+bgPos.x, 0.5f-bgPos.y, 0), new Vector3 (-0.5f+bgPos.x, 0.5f-bgPos.y, 0)  };
-			var triangles = new int[] { id, id+1, id+2, id+2, id+3, id };
 
 
-			float posXMod = bgPos.x % bgUVSize;
-			float posYMod = -bgPos.y % bgUVSize;
-			var uvs = new Vector2[] { new Vector2(posXMod/bgUVSize,posYMod/bgUVSize), new Vector2((posXMod+1)/bgUVSize,posYMod/bgUVSize), new Vector2((posXMod+1)/bgUVSize,(posYMod+1)/bgUVSize), new Vector2(posXMod/bgUVSize,(posYMod+1)/bgUVSize)};
+		int bgUVSize = 8;
+		int layerI = 0;
+		foreach (var layer in level.layers) {
+			int index = 0;
+			var mesh = new Mesh ();
+			var verticesList = new List<Vector3> ();
+			var trianglesList = new List<int> ();
+			var uvsList = new List<Vector2> ();
 
-			verticesList.AddRange (vertices);
-			trianglesList.AddRange (triangles);
-			uvsList.AddRange (uvs);
-			index++;
+			foreach (BackgroundLevelData bgData in level.backgroundList) {
+				if (bgData.layerId != layer.id) continue;
+				int id = index * 4;
+				var vertices = new Vector3[] {
+					new Vector3 (-0.5f + bgData.pos.x, -0.5f - bgData.pos.y, 0),
+					new Vector3 (0.5f + bgData.pos.x, -0.5f - bgData.pos.y, 0),
+					new Vector3 (0.5f + bgData.pos.x, 0.5f - bgData.pos.y, 0),
+					new Vector3 (-0.5f + bgData.pos.x, 0.5f - bgData.pos.y, 0)
+				};
+				var triangles = new int[] { id, id + 1, id + 2, id + 2, id + 3, id };
+
+
+				float posXMod = bgData.pos.x % bgUVSize;
+				float posYMod = -bgData.pos.y % bgUVSize;
+				var uvs = new Vector2[] {
+					new Vector2 (posXMod / bgUVSize, posYMod / bgUVSize),
+					new Vector2 ((posXMod + 1) / bgUVSize, posYMod / bgUVSize),
+					new Vector2 ((posXMod + 1) / bgUVSize, (posYMod + 1) / bgUVSize),
+					new Vector2 (posXMod / bgUVSize, (posYMod + 1) / bgUVSize)
+				};
+
+				verticesList.AddRange (vertices);
+				trianglesList.AddRange (triangles);
+				uvsList.AddRange (uvs);
+				index++;
+			}
+			mesh.vertices = verticesList.ToArray ();
+			mesh.triangles = trianglesList.ToArray ();
+			mesh.uv = uvsList.ToArray ();
+
+			var background = new GameObject ("background");
+			background.transform.position = new Vector3 (LevelInit.LevelStartPos.x, LevelInit.LevelStartPos.y, 10);
+			background.transform.eulerAngles = new Vector3 (0, 180, 0);
+			background.transform.localScale = new Vector3 (-1, 1, 0);
+			background.AddComponent<MeshRenderer> ();
+			background.AddComponent<MeshFilter> ();
+
+			background.GetComponent<MeshFilter> ().mesh = mesh;
+			Material material = (Material)Resources.Load ("BackgroundMaterial");
+			background.GetComponent<MeshRenderer> ().material = material;
+			SetLayerRecursively (background.gameObject, LayerMask.NameToLayer ("LevelLayer"+layerI));
+			layerI ++;
 		}
-		mesh.vertices = verticesList.ToArray();
-		mesh.triangles = trianglesList.ToArray();
-		mesh.uv = uvsList.ToArray();
-
-		var background = new GameObject ("background");
-		background.transform.position = new Vector3(LevelInit.LevelStartPos.x,LevelInit.LevelStartPos.y,10);
-		background.transform.eulerAngles = new Vector3 (0,180,0);
-		background.transform.localScale  = new Vector3 (-1,1,0);
-		background.AddComponent<MeshRenderer> ();
-		background.AddComponent<MeshFilter> ();
-
-		background.GetComponent<MeshFilter>().mesh = mesh;
-		Material material = (Material)Resources.Load("BackgroundMaterial");
-		background.GetComponent<MeshRenderer> ().material = material;
 	}
 
 	// Update is called once per frame

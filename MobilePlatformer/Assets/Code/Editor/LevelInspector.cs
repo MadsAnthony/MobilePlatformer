@@ -33,12 +33,18 @@ public class LevelInspector : Editor {
 	Vector2 selectionAreaStartPoint;
 	Vector2 selectionAreaEndPoint;
 
-	Dictionary<Vector3,PieceLevelData> pieceDictionary;
+	Dictionary<string,PieceLevelData> pieceDictionary;
+	Dictionary<string,BackgroundLevelData> backgroundDictionary;
 
 	void ConstructPieceDictionary() {
-		pieceDictionary = new Dictionary<Vector3, PieceLevelData> ();
+		pieceDictionary = new Dictionary<string, PieceLevelData> ();
 		foreach (PieceLevelData piece in ((LevelAsset)target).pieces) {
-			pieceDictionary[new Vector3 (piece.pos.x, piece.pos.y, 0)] = piece;
+			pieceDictionary[piece.pos.x+"_"+piece.pos.y+"_"+piece.layerId] = piece;
+		}
+
+		backgroundDictionary = new Dictionary<string, BackgroundLevelData> ();
+		foreach (BackgroundLevelData background in ((LevelAsset)target).backgroundList) {
+			backgroundDictionary[background.pos.x+"_"+background.pos.y+"_"+background.layerId] = background;
 		}
 	}
 
@@ -605,6 +611,11 @@ public class LevelInspector : Editor {
 	BlockPieceLevelData BlockPieceLevelDataDrawer(Rect rect, BlockPieceLevelData value) {
 		var r = new Rect (rect);
 		if (value != null) {
+			r.width = 10;
+			value.isPassable = EditorGUI.Toggle (r, value.isPassable);
+			r.x += 10;
+
+
 			r.width = 50;
 			EditorGUI.LabelField (r, "Sides:");
 			r.x += 50;
@@ -725,6 +736,7 @@ public class LevelInspector : Editor {
 
 	PieceLevelData GetPieceWithPos(Vector2 pos) {
 		foreach(PieceLevelData piece in ((LevelAsset)target).pieces) {
+			if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
 			if (piece.pos == pos) {
 				return piece;
 			}
@@ -741,10 +753,11 @@ public class LevelInspector : Editor {
 		return null;
 	}
 
-	Vector2? GetBackgroundWithPos(Vector2 pos) {
-		foreach(Vector2 bgPos in ((LevelAsset)target).backgroundList) {
-			if (bgPos == pos) {
-				return bgPos;
+	BackgroundLevelData GetBackgroundWithPos(Vector2 pos) {
+		foreach(BackgroundLevelData backgroundLevelData in ((LevelAsset)target).backgroundList) {
+			if (!currentLayers.Exists(layer=>{return layer == backgroundLevelData.layerId;})) continue;
+			if (backgroundLevelData.pos == pos) {
+				return backgroundLevelData;
 			}
 		}
 		return null;
@@ -779,15 +792,16 @@ public class LevelInspector : Editor {
 		LevelAsset myTarget = (LevelAsset)target;
 
 		if (GetBackgroundWithPos (pos) == null) {
-			myTarget.backgroundList.Add (pos);
+			myTarget.backgroundList.Add (new BackgroundLevelData(BackgroundType.Normal,pos,currentLayers[0]));
 		}
 	}
 
 	void RemoveBackground(Vector2 pos) {
 		LevelAsset myTarget = (LevelAsset)target;
 
-		if (GetBackgroundWithPos(pos) != null) {
-			myTarget.backgroundList.Remove (pos);
+		var backgroundLevelData = GetBackgroundWithPos (pos);
+		if (backgroundLevelData != null) {
+			myTarget.backgroundList.Remove (backgroundLevelData);
 		}
 	}
 
@@ -833,112 +847,112 @@ public class LevelInspector : Editor {
 				GUI.color = Color.white;
 				Texture2D tmpTexture = cellTexture;
 
-				foreach(var backgroundTile in ((LevelAsset)target).backgroundList) {
-					if (x == backgroundTile.x && y == backgroundTile.y) {
-						GUI.color = Color.blue;
-						break;
-					}
-				}
 				GUI.DrawTexture (rect, tmpTexture, ScaleMode.ScaleToFit);
-				GUI.color = Color.white;
 
-				PieceLevelData tmpPiece = null;
-				PieceLevelData piece;
-				if (pieceDictionary.TryGetValue(new Vector3(x,y,0), out piece)) {
-					if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
-					if (x == piece.pos.x && y == piece.pos.y) {
-						tmpPiece = piece;
-						if (String.IsNullOrEmpty (piece.id)) {
-							//remove this at some point.
-							piece.id = Guid.NewGuid ().ToString ();
-						}
-						if (piece.type == PieceType.Enemy1) {
-							GUI.color = Color.magenta;
-						}
-						if (piece.type == PieceType.FunctionPiece) {
-							GUI.color = new Color(0.2f,0.2f,1,1);
-						}
-						if (piece.type == PieceType.Spike) {
-							GUIUtility.RotateAroundPivot((int)piece.dir*90, rect.center);
-							GUI.color = Color.red;
-							tmpTexture = spikeTexture;
-						}
-						if (piece.type == PieceType.Hero) {
-							GUI.color = Color.green;
-						}
-						if (piece.type == PieceType.Block) {
-							GUI.color = Color.grey;
-						}
-						if (piece.type == PieceType.Collectable) {
-							GUI.color = Color.yellow;
-						}
-						if (piece.type == PieceType.BlockDestructible) {
-							GUI.color = new Color(0.2f,0.2f,0.2f,1);
-							tmpTexture = blockDestructibleTexture;
-						}
-						if (piece.type == PieceType.Ball) {
-							GUI.color = new Color(0.2f,0.8f,0.8f,1);
-						}
-						if (piece.type == PieceType.Water) {
-							GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
-						}
-						if (piece.type == PieceType.LevelDoor) {
-							GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
-						}
-						if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
-							GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b,GUI.color.a);
-						}
-						if (SelectionOfPieces.Exists(p => p.id == piece.id)) {
-							GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b+0.5f,GUI.color.a);
-						}
-						GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
+				foreach (var currentLayer in currentLayers) {
+					BackgroundLevelData background;
+					if (backgroundDictionary.TryGetValue (x+"_"+y+"_"+currentLayer, out background)) {
+							GUI.color = Color.blue;
+							GUI.DrawTexture (rect, tmpTexture, ScaleMode.ScaleToFit);
 					}
-				}
+					GUI.color = Color.white;
 
-				if (tmpPiece != null && tmpPiece.type == PieceType.Block) {
-					var specific = tmpPiece.GetSpecificData<BlockPieceLevelData> ();
-					if (!String.IsNullOrEmpty (tmpPiece.specificDataJson)) {
-						GUI.color = Color.cyan;
-						int i = 0;
-						foreach (var side in specific.sides) {
-							if (side != BlockPieceLevelData.SideType.None) {
-								if (side == BlockPieceLevelData.SideType.Normal) {
-									GUI.color = new Color(0.1f,0.1f,0.1f,1);
-								}
-								if (side == BlockPieceLevelData.SideType.Sticky) {
-									GUI.color = new Color(0.4f,0.4f,0.4f,1);
-								}
-								if (side == BlockPieceLevelData.SideType.Colorable) {
-									GUI.color = Color.white;
-								}
-								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
-								GUI.DrawTexture (rect, blockSideTexture, ScaleMode.ScaleToFit);
-								GUI.matrix = prevMatrix;
+					PieceLevelData tmpPiece = null;
+					PieceLevelData piece;
+					if (pieceDictionary.TryGetValue(x+"_"+y+"_"+currentLayer, out piece)) {
+						//if (!currentLayers.Exists(layer=>{return layer == piece.layerId;})) continue;
+						if (x == piece.pos.x && y == piece.pos.y) {
+							tmpPiece = piece;
+							if (String.IsNullOrEmpty (piece.id)) {
+								//remove this at some point.
+								piece.id = Guid.NewGuid ().ToString ();
 							}
-							i++;
-						}
-						foreach (var corner in specific.corners) {
-							if (corner != BlockPieceLevelData.SideType.None) {
-								if (corner == BlockPieceLevelData.SideType.Normal) {
-									GUI.color = new Color(0.1f,0.1f,0.1f,1);
-								}
-								if (corner == BlockPieceLevelData.SideType.Sticky) {
-									GUI.color = new Color(0.4f,0.4f,0.4f,1);
-								}
-								if (corner == BlockPieceLevelData.SideType.Colorable) {
-									GUI.color = Color.white;
-								}
-								GUIUtility.RotateAroundPivot((int)i*90, rect.center);
-								GUI.DrawTexture (rect, blockCornerTexture, ScaleMode.ScaleToFit);
-								GUI.matrix = prevMatrix;
+							if (piece.type == PieceType.Enemy1) {
+								GUI.color = Color.magenta;
 							}
-							i++;
+							if (piece.type == PieceType.FunctionPiece) {
+								GUI.color = new Color(0.2f,0.2f,1,1);
+							}
+							if (piece.type == PieceType.Spike) {
+								GUIUtility.RotateAroundPivot((int)piece.dir*90, rect.center);
+								GUI.color = Color.red;
+								tmpTexture = spikeTexture;
+							}
+							if (piece.type == PieceType.Hero) {
+								GUI.color = Color.green;
+							}
+							if (piece.type == PieceType.Block) {
+								GUI.color = Color.grey;
+							}
+							if (piece.type == PieceType.Collectable) {
+								GUI.color = Color.yellow;
+							}
+							if (piece.type == PieceType.BlockDestructible) {
+								GUI.color = new Color(0.2f,0.2f,0.2f,1);
+								tmpTexture = blockDestructibleTexture;
+							}
+							if (piece.type == PieceType.Ball) {
+								GUI.color = new Color(0.2f,0.8f,0.8f,1);
+							}
+							if (piece.type == PieceType.Water) {
+								GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
+							}
+							if (piece.type == PieceType.LevelDoor) {
+								GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
+							}
+							if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
+								GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b,GUI.color.a);
+							}
+							if (SelectionOfPieces.Exists(p => p.id == piece.id)) {
+								GUI.color = new Color(GUI.color.r,GUI.color.g,GUI.color.b+0.5f,GUI.color.a);
+							}
+							GUI.DrawTexture(rect,tmpTexture,ScaleMode.ScaleToFit);
 						}
 					}
+
+					if (tmpPiece != null && tmpPiece.type == PieceType.Block) {
+						var specific = tmpPiece.GetSpecificData<BlockPieceLevelData> ();
+						if (!String.IsNullOrEmpty (tmpPiece.specificDataJson)) {
+							GUI.color = Color.cyan;
+							int i = 0;
+							foreach (var side in specific.sides) {
+								if (side != BlockPieceLevelData.SideType.None) {
+									if (side == BlockPieceLevelData.SideType.Normal) {
+										GUI.color = new Color(0.1f,0.1f,0.1f,1);
+									}
+									if (side == BlockPieceLevelData.SideType.Sticky) {
+										GUI.color = new Color(0.4f,0.4f,0.4f,1);
+									}
+									if (side == BlockPieceLevelData.SideType.Colorable) {
+										GUI.color = Color.white;
+									}
+									GUIUtility.RotateAroundPivot((int)i*90, rect.center);
+									GUI.DrawTexture (rect, blockSideTexture, ScaleMode.ScaleToFit);
+									GUI.matrix = prevMatrix;
+								}
+								i++;
+							}
+							foreach (var corner in specific.corners) {
+								if (corner != BlockPieceLevelData.SideType.None) {
+									if (corner == BlockPieceLevelData.SideType.Normal) {
+										GUI.color = new Color(0.1f,0.1f,0.1f,1);
+									}
+									if (corner == BlockPieceLevelData.SideType.Sticky) {
+										GUI.color = new Color(0.4f,0.4f,0.4f,1);
+									}
+									if (corner == BlockPieceLevelData.SideType.Colorable) {
+										GUI.color = Color.white;
+									}
+									GUIUtility.RotateAroundPivot((int)i*90, rect.center);
+									GUI.DrawTexture (rect, blockCornerTexture, ScaleMode.ScaleToFit);
+									GUI.matrix = prevMatrix;
+								}
+								i++;
+							}
+						}
+					}
+					GUI.matrix = prevMatrix;
 				}
-				GUI.matrix = prevMatrix;
-
-
 			}
 		}
 

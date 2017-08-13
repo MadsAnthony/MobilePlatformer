@@ -15,11 +15,11 @@ TagManager:
   - 
   - UITransition
   - ImageEffectLayer
-  - 
-  - 
-  - 
-  - 
-  - 
+  - LevelLayer0
+  - LevelLayer1
+  - LevelLayer2
+  - LevelLayer3
+  - LevelLayer4
   - 
   - 
   - 

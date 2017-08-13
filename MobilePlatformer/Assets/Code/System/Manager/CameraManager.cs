@@ -16,7 +16,7 @@ public class CameraManager : MonoBehaviour {
 	}
 
 	public void CameraShake() {
-		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
+		camera = GameObject.Find ("BaseCamera").GetComponent<Camera>();
 
 		StartCoroutine(Shake(camera));
 	}
@@ -25,12 +25,12 @@ public class CameraManager : MonoBehaviour {
 		float x = 0;
 		while (true) {
 			x += 0.4f;
-			camera.transform.eulerAngles = new Vector3 (0,0,4*Mathf.Sin(x));
+			transform.eulerAngles = new Vector3 (0,0,4*Mathf.Sin(x));
 			if (x > 4) {
 				break;
 			}
 			yield return null;
 		}
-		camera.transform.eulerAngles = new Vector3 (0,0,0);
+		transform.eulerAngles = new Vector3 (0,0,0);
 	}
 }
