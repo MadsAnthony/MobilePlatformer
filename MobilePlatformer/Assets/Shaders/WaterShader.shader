@@ -1,4 +1,6 @@
-﻿Shader "Custom/WaterShader"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/WaterShader"
 {
 	Properties
 	{
@@ -37,7 +39,7 @@
 		    vertOutput vert(vertInput input) {
 		    	float time = _Time[1];
 		        vertOutput o;
-		        o.pos = mul(UNITY_MATRIX_MVP, input.pos);
+		        o.pos = UnityObjectToClipPos(input.pos);
 		        o.uvgrab = ComputeGrabScreenPos(o.pos);
 		        if (o.pos.y>-0.4) {
 		        	o.pos.y -= sin(o.pos.x*10+time*5)*0.01+0.01;
@@ -84,7 +86,7 @@
 		    vertOutput vert(vertInput input) {
 		    	float time = _Time[1];
 		        vertOutput o;
-		        o.pos = mul(UNITY_MATRIX_MVP, input.pos);
+		        o.pos = UnityObjectToClipPos(input.pos);
 		        o.uvgrab = ComputeGrabScreenPos(o.pos);
 //		        if (o.pos.y>-0.4) {
 //		        	o.pos.y -= sin(o.pos.x*10+time*5)*0.01+0.01;

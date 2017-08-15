@@ -21,7 +21,7 @@ namespace Opencoding.Console.Editor
 		[PostProcessBuild(200)]
 		public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject)
 		{
-			if (target != BuildTarget.iPhone)
+			if (target != BuildTarget.iOS)
 				return;
 
 			var project = new XCProject(pathToBuiltProject);
@@ -44,7 +44,7 @@ namespace Opencoding.Console.Editor
 		                                            EditorApplication.currentScene);
 #else
                 throw new InvalidOperationException("More than one debug console in the scene " + 
-                    EditorSceneManager.GetActiveScene().name);
+                    UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().name);
 #endif
             }
 
@@ -90,7 +90,7 @@ namespace Opencoding.Console.Editor
             var manifestFilePath = "Assets/Plugins/Android/OpenCoding/AndroidManifest.xml";
             var text = File.ReadAllText(manifestFilePath);
 	        var regEx = new Regex("android:authorities=(\".*?\")");
-	        var newContent = regEx.Replace(text, "android:authorities=\"" + PlayerSettings.bundleIdentifier + ".fileprovider\"");
+	        var newContent = regEx.Replace(text, "android:authorities=\"" + PlayerSettings.applicationIdentifier + ".fileprovider\"");
             if(newContent != text)
                 File.WriteAllText(manifestFilePath, newContent);
 	    }
