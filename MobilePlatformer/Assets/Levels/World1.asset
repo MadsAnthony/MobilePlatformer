@@ -118,40 +118,19 @@ MonoBehaviour:
     flipX: 0
     specificDataJson: '{"sides":[0,2,2,0],"corners":[1,0,0,0]}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
-  - id: 22d99c95-028f-49d5-9cf5-b6aca6508b48
-    type: 2
-    pos: {x: 17, y: 4}
-    dir: 0
-    flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
-    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
-  - id: 0301c540-f1d2-4959-956f-ca0e0e97093d
-    type: 2
-    pos: {x: 17, y: 5}
-    dir: 0
-    flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
-    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
-  - id: 5ba12fa9-249c-4a69-9317-7ec8a743d060
-    type: 2
-    pos: {x: 17, y: 6}
-    dir: 0
-    flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
-    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: e24cf96f-e667-409d-b6ff-7ace1783dda8
     type: 2
     pos: {x: 17, y: 7}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: 561d5373-024d-47ad-b996-addb35034c49
     type: 2
     pos: {x: 17, y: 8}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: b87dad54-2875-4a8c-8785-347fc331d211
     type: 2
@@ -200,14 +179,14 @@ MonoBehaviour:
     pos: {x: 17, y: 2}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: 527727a8-f982-4654-881a-12ce99cf24d9
     type: 2
     pos: {x: 17, y: 3}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   - id: af1f635d-a9f0-4af3-bb05-1756de9e9847
     type: 2
@@ -1426,6 +1405,27 @@ MonoBehaviour:
     dir: 0
     flipX: 0
     specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0],"isPassable":true}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: db43a9d2-9f41-49df-99b9-bd54f4850d64
+    type: 2
+    pos: {x: 17, y: 4}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: ce02eb0d-7133-4c8a-960a-e47ad7e8a35e
+    type: 2
+    pos: {x: 17, y: 5}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 7da6bbd0-535f-4924-9b9b-035b9c334ab4
+    type: 2
+    pos: {x: 17, y: 6}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   pieceGroups: []
   backgroundList:

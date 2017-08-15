@@ -6,8 +6,13 @@ public class CameraManager : MonoBehaviour {
 
 	Camera camera;
 
+	public Material cameraMaterial;
+
+	public AnimationCurve showLayerCurve;
+	public AnimationCurve hideLayerCurve;
 	// Use this for initialization
 	void Start () {
+		cameraMaterial.SetFloat ("_Transparency", 0);
 	}
 	
 	// Update is called once per frame
@@ -16,12 +21,34 @@ public class CameraManager : MonoBehaviour {
 	}
 
 	public void CameraShake() {
-		camera = GameObject.Find ("BaseCamera").GetComponent<Camera>();
-
-		StartCoroutine(Shake(camera));
+		StartCoroutine(Shake());
 	}
 
-	IEnumerator Shake(Camera camera) {
+	public bool IsLayerVisible() {
+		return cameraMaterial.GetFloat("_Transparency")>0.1f;
+	}
+	public void ShowLayer() {
+		StartCoroutine(ShowLayerCr(showLayerCurve));
+	}
+
+	public void HideLayer() {
+		StartCoroutine(ShowLayerCr(hideLayerCurve));
+	}
+
+	IEnumerator ShowLayerCr(AnimationCurve animationCurve, float duration = 0.3f) {
+		float t = 0;
+		while (t<1) {
+			t += (1 / ((duration))) * Time.deltaTime;
+
+			float evalT = animationCurve.Evaluate (t);
+
+			cameraMaterial.SetFloat ("_Transparency", evalT);
+
+			yield return null;
+		}
+	}
+
+	IEnumerator Shake() {
 		float x = 0;
 		while (true) {
 			x += 0.4f;

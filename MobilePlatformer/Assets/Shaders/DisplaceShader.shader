@@ -1,4 +1,6 @@
-﻿Shader "Custom/DisplaceShader"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/DisplaceShader"
 {
 	Properties
 	{
@@ -37,7 +39,7 @@
 
 		    vertOutput vert(vertInput input) {
 		        vertOutput o;
-		        o.pos = mul(UNITY_MATRIX_MVP, input.pos);
+		        o.pos = UnityObjectToClipPos(input.pos);
 		        o.uv = input.uv;
 		        return o;
 		    }
