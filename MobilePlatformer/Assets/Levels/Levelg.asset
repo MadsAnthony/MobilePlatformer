@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
   m_Name: Levelg
   m_EditorClassIdentifier: 
-  levelSize: {x: 32, y: 30}
+  levelSize: {x: 34, y: 30}
   pieces:
   - id: cb9e5eca-d2c7-4118-a545-6ef064f626b8
     type: 2
@@ -2079,6 +2079,707 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
+  backgroundList:
+  - backgroundType: 0
+    pos: {x: 3, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 3, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: -1, y: -1}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 19, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 17, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 18, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 16, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 14, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 15, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 13, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 12, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 11, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 10, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 5, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 4, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 7, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 6, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 8, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 9, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 20}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 31, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 13}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 30, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 20, y: 19}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 29, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 28, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 18}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 17}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 25, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 27, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 26, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 22, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 23, y: 14}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 24, y: 15}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  - backgroundType: 0
+    pos: {x: 21, y: 16}
+    layerId: a087baa8-5413-47f0-ab28-14e67c3d9a9f
+  cameraBounds: []
   layers:
   - id: a087baa8-5413-47f0-ab28-14e67c3d9a9f
     name: Layer0
