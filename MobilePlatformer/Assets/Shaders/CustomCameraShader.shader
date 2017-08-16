@@ -46,9 +46,6 @@ Shader "Custom/CustomCameraShader"
 		        return o;
 		    }
 
-		    float4 box(sampler2D tex, float2 uv, float4 size) {
-		    }
-
 		    half4 frag(vertOutput output) : COLOR {
 		    	float4 col = tex2D(_CameraOne, output.uv);
 		    	float4 col2 = tex2D(_CameraTwo, output.uv);

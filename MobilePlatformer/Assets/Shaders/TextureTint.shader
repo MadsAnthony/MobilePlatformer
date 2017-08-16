@@ -47,9 +47,6 @@ Shader "Custom/TextureTint"
 		        return o;
 		    }
 
-		    float4 box(sampler2D tex, float2 uv, float4 size) {
-		    }
-
 		    half4 frag(vertOutput output) : COLOR {
 		    	float4 col = tex2D(_MainTex, output.uv);
 		    	return 2*col*_Color;
