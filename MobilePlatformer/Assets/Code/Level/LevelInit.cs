@@ -54,6 +54,7 @@ public class LevelInit : MonoBehaviour {
 			}
 			if (piece.type == PieceType.Hero) {
 				gameLogic.hero = tmpPiece.GetComponent<Hero> ();
+				LevelInit.SetLayerRecursively (tmpPiece.gameObject, LayerMask.NameToLayer ("AllLevelLayers"));
 			}
 			if (piece.type == PieceType.LevelDoor) {
 				int levelIndex = piece.GetSpecificData<LevelDoorPieceLevelData> ().levelIndex;
