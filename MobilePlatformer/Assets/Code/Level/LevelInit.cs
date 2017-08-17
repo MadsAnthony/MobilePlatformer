@@ -68,7 +68,7 @@ public class LevelInit : MonoBehaviour {
 			i++;
 		}
 
-		if (Director.Instance.LevelIndex == 17 && Director.Instance.PrevLevelIndex != -1) {
+		if (Director.Instance.LevelIndex == 0 && Director.Instance.PrevLevelIndex != -1) {
 			Piece levelDoorPiece;
 			if (levelDoors.TryGetValue (Director.Instance.PrevLevelIndex, out levelDoorPiece)) {
 				gameLogic.hero.transform.position = levelDoors [Director.Instance.PrevLevelIndex].transform.position;

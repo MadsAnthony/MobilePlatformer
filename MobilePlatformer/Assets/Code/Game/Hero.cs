@@ -123,9 +123,11 @@ public class Hero : DynamicBody {
 
 			// enter level
 			if (verticalDotProduct > threshold && IsOnGround && IsOnLevelDoor && !touchConsumed) {
-				IsOnLevelDoor = false;
-				Director.Instance.LevelIndex = levelDoorIndex;
-				Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
+				if (levelDoorIndex == 1 || (levelDoorIndex > 1 && Director.SaveData.GetLevelSaveDataEntry ((levelDoorIndex - 1).ToString ()) != null)) {
+					IsOnLevelDoor = false;
+					Director.Instance.LevelIndex = levelDoorIndex;
+					Director.TransitionManager.PlayTransition (() => {UnityEngine.SceneManagement.SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
+				}
 			}
 
 			if (verticalDotProduct > threshold && !IsOnGround && !touchConsumed) {

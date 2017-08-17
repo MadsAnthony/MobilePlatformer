@@ -12,7 +12,7 @@ public class WorldSelectView : UIView {
 	protected override void OnStart () {
 		Director.Instance.WorldIndex = -1;
 		Director.Instance.LevelIndex = -1;
-		if (Director.Instance.PrevLevelIndex == 17) {
+		if (Director.Instance.PrevLevelIndex == 0) {
 			eyeCharacter.gameObject.SetActive (false);
 			StartCoroutine (PlayEatAnimation (true));
 		}
@@ -33,7 +33,11 @@ public class WorldSelectView : UIView {
 		isPlayingEatAnimation = false;
 		if (!animateEyeCharacterOut) {
 			Director.Instance.WorldIndex = 1;
-			Director.Instance.LevelIndex = 17;
+			if (Director.SaveData.GetLevelSaveDataEntry ("1") != null) {
+				Director.Instance.LevelIndex = 0;
+			} else {
+				Director.Instance.LevelIndex = 1;
+			}
 			Director.TransitionManager.PlayTransition (() => { SceneManager.LoadSceneAsync ("LevelScene"); }, 0.1f, Director.TransitionManager.FadeToBlack (), Director.TransitionManager.FadeOut (0.2f));
 		}
 	}

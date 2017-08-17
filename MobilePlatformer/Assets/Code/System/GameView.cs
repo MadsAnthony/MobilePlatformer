@@ -46,10 +46,11 @@ public class GameView : UIView {
 			tempDict[Director.Instance.LevelIndex.ToString()] = new LevelSaveData(true,gameLogic.CollectablesCollected,bestTime);
 			Director.SaveData.LevelProgress = tempDict;
 
-			Director.Instance.LevelIndex += 1;
-			if (Director.Instance.LevelIndex >= Director.LevelDatabase.levels.Count) {
-				SceneManager.LoadScene ("LevelSelectScene");
+			if (Director.Instance.LevelIndex == 5 || Director.Instance.LevelIndex >= Director.LevelDatabase.levels.Count-1) {
+				Director.Instance.LevelIndex = 0;
+				SceneManager.LoadScene ("LevelScene");
 			} else {
+				Director.Instance.LevelIndex += 1;
 				Director.TransitionManager.PlayTransition (() => {SceneManager.LoadScene ("LevelScene");},0.1f,Director.TransitionManager.FadeToBlack(),Director.TransitionManager.FadeOut());
 			}
 			break;
