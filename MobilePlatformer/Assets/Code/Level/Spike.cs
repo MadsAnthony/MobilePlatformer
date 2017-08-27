@@ -9,6 +9,9 @@ public class Spike : Piece {
 
 	public override void Hit (Piece hitPiece, Vector3 direction)
 	{
+		if (hitPiece.Type == PieceType.Boss1) {
+			((Boss1)hitPiece).WasHit();
+		}
 		if (hitPiece.Type == PieceType.Hero) {
 			hitPiece.Destroy();
 		}

@@ -10,6 +10,8 @@ public class LevelInit : MonoBehaviour {
 
 	private GameLogic gameLogic;
 
+	public Dictionary<PieceType,List<Piece>> PiecesByType = new Dictionary<PieceType,List<Piece>>();
+
 	private Dictionary<string, Piece> pieces = new Dictionary<string, Piece>();
 
 	private Dictionary<int, Piece> levelDoors = new Dictionary<int,Piece>();
@@ -60,6 +62,15 @@ public class LevelInit : MonoBehaviour {
 				int levelIndex = piece.GetSpecificData<LevelDoorPieceLevelData> ().levelIndex;
 				levelDoors.Add (levelIndex,tmpPiece);
 			}
+
+			List<Piece> listOfPiecesByType;
+			if (PiecesByType.TryGetValue (piece.type, out listOfPiecesByType)) {
+				listOfPiecesByType.Add (tmpPiece);
+			} else {
+				listOfPiecesByType = new List<Piece> ();
+				listOfPiecesByType.Add (tmpPiece);
+			}
+			PiecesByType[piece.type] = listOfPiecesByType;
 
 			// Remove this condition at some time.
 			if (!string.IsNullOrEmpty(piece.id)) {

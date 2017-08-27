@@ -594,6 +594,11 @@ public class LevelInspector : Editor {
 						ReorderableListGUI.ListField<LevelDoorPieceLevelData> (list, LevelDoorPieceLevelDataDrawer);
 						value.SaveSpecificData (list [0]);
 					}
+					if (value.type == PieceType.BlockDestructible) {
+						var list = new BlockDestructiblePieceLevelData[]{ value.GetSpecificData<BlockDestructiblePieceLevelData> () };
+						ReorderableListGUI.ListField<BlockDestructiblePieceLevelData> (list, BlockDestructiblePieceLevelDataDrawer);
+						value.SaveSpecificData (list [0]);
+					}
 				}
 			}
 		}
@@ -665,6 +670,20 @@ public class LevelInspector : Editor {
 
 			r.width = 40;
 			value.levelIndex = EditorGUI.IntField (r, value.levelIndex);
+		}
+
+		return value;
+	}
+
+	BlockDestructiblePieceLevelData BlockDestructiblePieceLevelDataDrawer(Rect rect, BlockDestructiblePieceLevelData value) {
+		var r = new Rect (rect);
+		if (value != null) {
+			r.width = 70;
+			EditorGUI.LabelField (r, "Hits:");
+			r.x += 70;
+
+			r.width = 40;
+			value.hits = EditorGUI.IntField (r, value.hits);
 		}
 
 		return value;
@@ -840,14 +859,23 @@ public class LevelInspector : Editor {
 		GUILayout.Space (levelSize.x*cellSize);
 		EditorGUILayout.EndHorizontal();
 
+		for (int x = 0; x < levelSize.x; x++) {
+			for (int y = 0; y < levelSize.y; y++) {
+				var prevMatrix = GUI.matrix;
+				var rect = new Rect (x * cellSize, y * cellSize, cellSize, cellSize);
+				GUI.color = Color.white;
+				Texture2D tmpTexture = cellTexture;
+
+				GUI.DrawTexture (rect, tmpTexture, ScaleMode.ScaleToFit);
+			}
+		}
+
 		for (int x = 0; x<levelSize.x;x++) {
 			for (int y = 0; y<levelSize.y;y++) {
 				var prevMatrix = GUI.matrix;
 				var rect = new Rect (x*cellSize, y*cellSize, cellSize, cellSize);
 				GUI.color = Color.white;
 				Texture2D tmpTexture = cellTexture;
-
-				GUI.DrawTexture (rect, tmpTexture, ScaleMode.ScaleToFit);
 
 				foreach (var currentLayer in currentLayers) {
 					BackgroundLevelData background;
@@ -899,6 +927,10 @@ public class LevelInspector : Editor {
 							}
 							if (piece.type == PieceType.LevelDoor) {
 								GUI.color = new Color(0.2f,0.8f,0.8f,0.5f);
+							}
+							if (piece.type == PieceType.Boss1) {
+								rect = new Rect (x*cellSize, y*cellSize, cellSize*6, cellSize*6);
+								GUI.color = Color.cyan;
 							}
 							if (selectedPieceGroup != null && selectedPieceGroup.pieceIds.Contains(piece.id)) {
 								GUI.color = new Color(GUI.color.r+0.5f,GUI.color.g+0.5f,GUI.color.b,GUI.color.a);

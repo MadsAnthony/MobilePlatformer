@@ -13,90 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSize: {x: 20, y: 30}
   pieces:
-  - id: 
-    type: 0
-    pos: {x: 5, y: -3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 6
-    pos: {x: 3, y: -2}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 37d4d214-2cd1-4c2e-8e39-b6e27e6234bd
-    type: 6
-    pos: {x: 8, y: 16}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: cdd39c0f-4086-4fb1-91e3-7dc398155a9c
-    type: 6
-    pos: {x: 9, y: 16}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: 
-    type: 2
-    pos: {x: 8, y: -5}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: d7d5ca5c-d76b-44f9-a1ec-56882d271902
-    type: 6
-    pos: {x: 8, y: 17}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: 1431dbca-67ae-4f24-8c1f-7b7be1d97231
-    type: 6
-    pos: {x: 9, y: 17}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: 
-    type: 0
-    pos: {x: 8, y: -6}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 0d83e24d-74fe-43fc-91a6-358e661a38d0
-    type: 6
-    pos: {x: 8, y: 18}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: c2d1e009-435c-4507-8324-332d648ccf6e
-    type: 6
-    pos: {x: 8, y: 19}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: 2f1489d4-c3c4-4263-8b0e-f6876ad657f4
-    type: 6
-    pos: {x: 9, y: 19}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
-  - id: b159c724-88f6-48b8-a607-f2f97993aebc
-    type: 6
-    pos: {x: 9, y: 18}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 891a2b08-4ff9-451d-8c28-ae39dc508887
     type: 3
     pos: {x: 10, y: 20}
@@ -190,76 +106,6 @@ MonoBehaviour:
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 
     type: 0
-    pos: {x: -3, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -2, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -1, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -4, y: 4}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -3, y: 4}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -2, y: 4}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -4, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -5, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -8, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: -7, y: 3}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
     pos: {x: 25, y: 11}
     dir: 0
     flipX: 0
@@ -282,13 +128,6 @@ MonoBehaviour:
   - id: 
     type: 0
     pos: {x: 25, y: 12}
-    dir: 0
-    flipX: 0
-    specificDataJson: 
-    layerId: 
-  - id: 
-    type: 0
-    pos: {x: 10, y: -8}
     dir: 0
     flipX: 0
     specificDataJson: 
@@ -816,56 +655,56 @@ MonoBehaviour:
     pos: {x: 7, y: 19}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,2,0],"corners":[1,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,2,0],"corners":[1,0,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: b0b311fb-39b6-44b1-9147-90285ead8fca
     type: 2
     pos: {x: 7, y: 18}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 901447b7-f5e2-42a3-95ac-963caf4ada14
     type: 2
     pos: {x: 7, y: 17}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 1f54fad2-3d9f-4d75-8b84-4c228130cc75
     type: 2
     pos: {x: 7, y: 16}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1]}'
+    specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 5ec8b3b2-2206-4ddc-ac5d-84cee811751f
     type: 2
     pos: {x: 10, y: 16}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,1,0]}'
+    specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,1,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: be5b5f2a-2306-4679-8bdc-ae4e6fbc92ad
     type: 2
     pos: {x: 10, y: 17}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 5c12d053-6eac-4455-8bb3-a5d5c7ce3421
     type: 2
     pos: {x: 10, y: 18}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: 37bdf009-f78d-4dcd-9f47-ca883a84260a
     type: 2
     pos: {x: 10, y: 19}
     dir: 0
     flipX: 0
-    specificDataJson: '{"sides":[0,0,2,1],"corners":[0,1,0,0]}'
+    specificDataJson: '{"sides":[0,0,2,1],"corners":[0,1,0,0],"isPassable":false}'
     layerId: 644c96e1-4f37-45db-99bf-b3bf8b46d2e3
   - id: ad97eac7-1f12-498a-87ed-07e08160ab4a
     type: 2

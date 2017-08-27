@@ -15,7 +15,7 @@ public class LevelAsset : ScriptableObject {
 	public string levelName;
 
 	static public bool HasSpecificLevelData(PieceType pieceType) {
-		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece || pieceType == PieceType.LevelDoor);
+		return (pieceType == PieceType.Block || pieceType == PieceType.FunctionPiece || pieceType == PieceType.LevelDoor || pieceType == PieceType.BlockDestructible);
 	}
 
 	public LevelLayer GetLayer(string layerId) {
@@ -57,6 +57,9 @@ public class PieceLevelData {
 		}
 		if (type == PieceType.LevelDoor) {
 			SaveSpecificData (new LevelDoorPieceLevelData ());
+		}
+		if (type == PieceType.BlockDestructible) {
+			SaveSpecificData (new BlockDestructiblePieceLevelData ());
 		}
 	}
 
@@ -148,4 +151,9 @@ public class FunctionPieceLevelData:SpecificPieceLevelData {
 [Serializable]
 public class LevelDoorPieceLevelData:SpecificPieceLevelData {
 	public int levelIndex;
+}
+
+[Serializable]
+public class BlockDestructiblePieceLevelData:SpecificPieceLevelData {
+	public int hits = 1;
 }

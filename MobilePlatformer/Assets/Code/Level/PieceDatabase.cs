@@ -28,7 +28,8 @@ public enum PieceType {
 	BlockDestructible,
 	Ball,
 	Water,
-	LevelDoor
+	LevelDoor,
+	Boss1
 };
 
 [Serializable]

@@ -8,6 +8,7 @@ public class LevelSelectView : UIView {
 	protected override void OnStart () {
 		var rowLength = 5;
 		int i = 0;
+		Director.Instance.WorldIndex = 3;
 		foreach(var level in Director.LevelDatabase.levels) {
 			var levelButtonGo = Instantiate (levelButton);
 			levelButtonGo.transform.parent = transform;

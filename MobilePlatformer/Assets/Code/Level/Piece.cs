@@ -52,6 +52,10 @@ public abstract class Piece : MonoBehaviour {
 		}
 	}
 
+	bool FloatApproximatelyEqual(float a, float b, float epsilon = 0.0001f) {
+		return (Math.Abs (a - b) < epsilon);
+	}
+
 	public Vector3 Move(Vector3 dir, Action<Piece[],bool> callbackInterrupted = null, Action<Piece[],bool> callbackFinished = null, bool useDeltaTime = true, Piece[] excludePieces = null, bool canDestroy = false, bool isJustACheck = false) {
 		EnsureRigidBody();
 
@@ -65,7 +69,7 @@ public abstract class Piece : MonoBehaviour {
 		var hits = rb.SweepTestAll (inputDir, inputDir.magnitude);
 		List<RaycastHit> sortedHits = hits.ToList ();
 		sortedHits.Sort ((x, y) => { 
-			if(x.distance == y.distance) {
+			if(x.distance.Equals(y.distance)) {
 				return 0;
 			} else if (x.distance < y.distance){
 				return -1;
@@ -81,9 +85,8 @@ public abstract class Piece : MonoBehaviour {
 
 
 			tmpDir = inputDir.normalized * (hit.distance - gap);
-
 			// Do not hit pieces that are farther away (but do hit pieces before).
-			if (i > 0 && interruptingPieces.Count>0 && tmpDir.magnitude > newDir.magnitude) continue;
+			if (i > 0 && interruptingPieces.Count>0 && !FloatApproximatelyEqual(newDir.magnitude,tmpDir.magnitude) && tmpDir.magnitude > newDir.magnitude) continue;
 
 			if (!isJustACheck) {
 				piece.Hit (this, dir);

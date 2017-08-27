@@ -483,6 +483,8 @@ MonoBehaviour:
     specificDataJson: 
     layerId: 0da59d17-450a-4da5-bcce-b6ebfd343296
   pieceGroups: []
+  backgroundList: []
+  cameraBounds: []
   layers:
   - id: 0da59d17-450a-4da5-bcce-b6ebfd343296
     name: Layer0

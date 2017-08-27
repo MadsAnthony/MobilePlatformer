@@ -533,6 +533,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxT: 1
+  backgroundList: []
+  cameraBounds: []
   layers:
   - id: 0a3ee202-b777-42ce-8d32-b9f1aef26ac3
     name: Layer0
