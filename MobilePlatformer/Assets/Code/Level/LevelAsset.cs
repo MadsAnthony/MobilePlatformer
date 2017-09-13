@@ -11,6 +11,7 @@ public class LevelAsset : ScriptableObject {
 	public List<BackgroundLevelData> backgroundList = new List<BackgroundLevelData>();
 	public List<CameraBound> cameraBounds = new List<CameraBound>();
 	public List<LevelLayer> layers = new List<LevelLayer>();
+	public GraphicsType graphicsType = GraphicsType.World1;
 
 	public string levelName;
 
@@ -31,6 +32,7 @@ public class LevelAsset : ScriptableObject {
 public enum BlockType {Normal, Color, Spike, NonSticky, Collectable};
 public enum Direction {Up, Right, Down, Left};
 public enum BackgroundType {Normal};
+public enum GraphicsType {World1,World2};
 
 [Serializable]
 public class PieceLevelData {

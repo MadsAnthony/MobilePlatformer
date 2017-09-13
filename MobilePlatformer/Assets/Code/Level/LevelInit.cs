@@ -147,7 +147,7 @@ public class LevelInit : MonoBehaviour {
 			background.AddComponent<MeshFilter> ();
 
 			background.GetComponent<MeshFilter> ().mesh = mesh;
-			Material material = (Material)Resources.Load ("BackgroundMaterial");
+			Material material = level.graphicsType == GraphicsType.World1? (Material)Resources.Load ("BackgroundMaterialRed") :  (Material)Resources.Load ("BackgroundMaterialBlue");
 			background.GetComponent<MeshRenderer> ().material = material;
 			SetLayerRecursively (background.gameObject, LayerMask.NameToLayer ("LevelLayer"+layerI));
 			layerI ++;

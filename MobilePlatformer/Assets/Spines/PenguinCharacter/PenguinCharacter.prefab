@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1751314454971952}
+  m_RootGameObject: {fileID: 1956185543270160}
   m_IsPrefabParent: 1
---- !u!1 &1751314454971952
+--- !u!1 &1956185543270160
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4782421922863796}
-  - component: {fileID: 33897174001278046}
-  - component: {fileID: 23375297155494870}
-  - component: {fileID: 114950823960836050}
+  - component: {fileID: 4964596399252728}
+  - component: {fileID: 33496203862164376}
+  - component: {fileID: 23925611153811204}
+  - component: {fileID: 114814078974082362}
   m_Layer: 0
-  m_Name: PigCharacter
+  m_Name: PenguinCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4782421922863796
+--- !u!4 &4964596399252728
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751314454971952}
+  m_GameObject: {fileID: 1956185543270160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: -2.25, z: 0}
-  m_LocalScale: {x: 2.5832884, y: 2.5832891, z: 2.5832891}
+  m_LocalPosition: {x: 13.98, y: -4.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23375297155494870
+--- !u!23 &23925611153811204
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751314454971952}
+  m_GameObject: {fileID: 1956185543270160}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -55,7 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 63e326e310b6eca4285a12d9d356f720, type: 2}
+  - {fileID: 2100000, guid: 2fc46a7e6648d3f4a92c5d64788af27e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,25 +74,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33897174001278046
+--- !u!33 &33496203862164376
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751314454971952}
+  m_GameObject: {fileID: 1956185543270160}
   m_Mesh: {fileID: 0}
---- !u!114 &114950823960836050
+--- !u!114 &114814078974082362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1751314454971952}
+  m_GameObject: {fileID: 1956185543270160}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: d2137a975d3b93249a2845590d4027d4, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: b8a3eee280734f34b9dc9be901aa918f, type: 2}
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
@@ -108,6 +108,6 @@ MonoBehaviour:
   calculateTangents: 0
   logErrors: 0
   disableRenderingOnOverride: 1
-  _animationName: animation
+  _animationName: idle
   loop: 1
   timeScale: 1

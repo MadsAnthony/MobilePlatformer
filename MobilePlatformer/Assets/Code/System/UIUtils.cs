@@ -25,4 +25,9 @@ public class UIUtils : MonoBehaviour {
 	public void RestartLevel() {
 		SceneManager.LoadScene ("LevelScene");
 	}
+
+	public void MovePivot(float xDirection) {
+		var pivot = GameObject.Find ("CharacterPivot");
+		pivot.transform.position += new Vector3 (-xDirection,0,0);
+	}
 }

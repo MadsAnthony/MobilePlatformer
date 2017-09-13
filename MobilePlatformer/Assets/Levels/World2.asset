@@ -1,0 +1,1405 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
+  m_Name: World2
+  m_EditorClassIdentifier: 
+  levelSize: {x: 44, y: 30}
+  pieces:
+  - id: 55a2c74e-5d90-41ec-bc17-a1e38f05607a
+    type: 2
+    pos: {x: 13, y: 4}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a40a5a53-784f-4cbb-8cc9-9918da32a9df
+    type: 2
+    pos: {x: 13, y: 5}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 457dc287-b21c-43b6-8193-904f16dc8191
+    type: 2
+    pos: {x: 13, y: 6}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a1872fc3-1da9-4c55-aee8-7a583d4ab2e9
+    type: 2
+    pos: {x: 13, y: 7}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 1a4144e8-efce-40a7-a144-f3669d834f54
+    type: 2
+    pos: {x: 13, y: 8}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f327032d-61bb-4a06-8a7f-231c966e6163
+    type: 2
+    pos: {x: 13, y: 9}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 06720581-35ce-4460-add5-6a7a05e702ff
+    type: 2
+    pos: {x: 13, y: 10}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 4f507ebd-7821-4b68-9c62-2ebf8db8a450
+    type: 2
+    pos: {x: 13, y: 11}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 50689f93-a77c-4423-a9ca-fee789ec26b7
+    type: 2
+    pos: {x: 13, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,0],"corners":[1,0,0,1]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 344680c5-564a-4caf-b387-2dae3f624b45
+    type: 2
+    pos: {x: 13, y: 13}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: db0ece93-c7ef-4d7e-a783-1d2a69b2a366
+    type: 2
+    pos: {x: 13, y: 14}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 4ad4afb9-12eb-492a-a506-d0ae46392169
+    type: 2
+    pos: {x: 13, y: 15}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: fcb58c14-2917-4482-89b0-60d3e8d0c4c6
+    type: 2
+    pos: {x: 13, y: 16}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 26fed232-1b36-4983-88a8-98bc719c8e3a
+    type: 2
+    pos: {x: 13, y: 17}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,2],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: dbc579c5-7767-4c7b-bfe9-eb8954633d3f
+    type: 2
+    pos: {x: 13, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,2,2],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: e24cf96f-e667-409d-b6ff-7ace1783dda8
+    type: 2
+    pos: {x: 17, y: 7}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: b87dad54-2875-4a8c-8785-347fc331d211
+    type: 2
+    pos: {x: 13, y: 3}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: ea4613a1-b2a0-4720-9ca6-00e96c14cefe
+    type: 2
+    pos: {x: 13, y: 2}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2d9525ba-853f-4d6e-9a5c-2dddac7a7145
+    type: 2
+    pos: {x: 13, y: 1}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: eacaa76a-8f40-48e6-ac97-3959fae057a7
+    type: 2
+    pos: {x: 13, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,2,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 64f72db1-f719-41be-8fbe-9f444277ac1c
+    type: 2
+    pos: {x: 17, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 59838714-4e8a-4fdf-aba1-adc695d52e89
+    type: 2
+    pos: {x: 17, y: 1}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2a89f191-6e68-4700-999d-eb61b3ad56c7
+    type: 2
+    pos: {x: 17, y: 2}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 527727a8-f982-4654-881a-12ce99cf24d9
+    type: 2
+    pos: {x: 17, y: 3}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: bbaea7a1-aa5d-47b1-bfcf-735d3df27846
+    type: 2
+    pos: {x: 13, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 4e55534a-7fd9-49de-8649-8d9762af8fad
+    type: 2
+    pos: {x: 15, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: b7a93b73-cb72-4885-b929-beaced86d803
+    type: 2
+    pos: {x: 16, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 588c373f-238c-4332-bdb7-d537639f80bc
+    type: 4
+    pos: {x: 15, y: 1}
+    dir: 2
+    flipX: 0
+    specificDataJson: 
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: d8f6127b-efa8-4c56-bdd6-61e9fe8c02ac
+    type: 2
+    pos: {x: 14, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 9fbfa906-8806-42d6-bfb8-e5e7335a0ee3
+    type: 1
+    pos: {x: 14, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: d383f95f-912e-4e9f-88fb-6b5a83535c23
+    type: 1
+    pos: {x: 15, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 80ed9338-98f6-4d92-84ea-21e0ae905644
+    type: 1
+    pos: {x: 16, y: 0}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"delay":0.0,"cooldown":0.0,"type":2}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 9d889721-2ac7-4bc6-8c77-f2fd0c65b8cb
+    type: 2
+    pos: {x: 10, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f538c250-8bdd-4051-9d28-06b1c74ba478
+    type: 2
+    pos: {x: 7, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 8640efd0-5185-4242-9e4d-9630e3270e83
+    type: 2
+    pos: {x: 5, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2c4f481f-4b7a-406c-ae5a-1e0321760b84
+    type: 2
+    pos: {x: 6, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 1a8bc115-7aa6-4aa9-a80d-a2ee9f2fbcd8
+    type: 2
+    pos: {x: 8, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 62420601-bbd0-4a5f-aca2-ec0fcadbaf59
+    type: 2
+    pos: {x: 9, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2e4e0d36-8d07-4392-8498-ede847c6fd1d
+    type: 2
+    pos: {x: 11, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f4366cdf-d0a6-433e-a337-e9d849283096
+    type: 2
+    pos: {x: 12, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: b8822fa7-4f91-4224-ac97-a1a80760ba60
+    type: 2
+    pos: {x: 4, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 28994cc6-2270-47b7-8102-f5feb2d25704
+    type: 2
+    pos: {x: 3, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,2,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: fdca1a3d-95f4-41c8-ace7-aa357bc87e6e
+    type: 2
+    pos: {x: 2, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,0,1],"corners":[0,0,1,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: c9ca538b-b79a-4d36-87ad-39910dead6bf
+    type: 2
+    pos: {x: 2, y: 13}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: fd258654-1137-4bb9-83ff-6a77acd8f911
+    type: 2
+    pos: {x: 2, y: 14}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: c6b35b5f-64ce-4c62-b8a6-256f79fade43
+    type: 2
+    pos: {x: 2, y: 15}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2f1b16e5-e77e-43c2-9907-ff1324f7d1c2
+    type: 2
+    pos: {x: 2, y: 16}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 74e30bc8-ee0c-413e-90bb-41178cec4bdc
+    type: 2
+    pos: {x: 2, y: 17}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 83188a2f-a2cf-47c4-aba0-1cc1629b0174
+    type: 2
+    pos: {x: 2, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: cfffda43-c548-4364-a6c7-658eecc5eee7
+    type: 2
+    pos: {x: 2, y: 19}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 4162a2d7-7b7e-4af5-af9f-17d17aa84fd6
+    type: 2
+    pos: {x: 2, y: 20}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: cd6eef41-98ef-4bff-a93c-1d82660ad149
+    type: 2
+    pos: {x: 2, y: 21}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 091725f3-8ac5-4c57-b98c-974e336ae19d
+    type: 2
+    pos: {x: 2, y: 22}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: ce411a20-2701-4c42-bdff-d1eabdbd4962
+    type: 2
+    pos: {x: 2, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,0,1,1],"corners":[0,1,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 2a98a8b1-b5eb-4f2e-8214-29c0212ff8d8
+    type: 2
+    pos: {x: 3, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0]}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 917bbc0b-8f2e-420f-9da7-f7ec90d61632
+    type: 2
+    pos: {x: 4, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 8eb344ac-94a4-4be9-8db1-0ec500d3f3d9
+    type: 2
+    pos: {x: 5, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 0c750a6d-5bc3-430f-9923-f3c55ac30aa1
+    type: 2
+    pos: {x: 6, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 5c97442b-c36f-49e0-b577-900aacefda76
+    type: 2
+    pos: {x: 7, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 9860d9fa-5713-4c39-aca6-5ab8d31730f4
+    type: 2
+    pos: {x: 8, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a028987f-4bed-4114-8870-0e0982124297
+    type: 2
+    pos: {x: 9, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: bef91f61-3580-4046-85fd-fae873f84d4b
+    type: 2
+    pos: {x: 10, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a1de8e83-3f0a-4f77-ab0b-54156ff9e717
+    type: 2
+    pos: {x: 11, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 810c616a-0997-4f29-989f-0f12d85e9b8d
+    type: 2
+    pos: {x: 12, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[2,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: db43a9d2-9f41-49df-99b9-bd54f4850d64
+    type: 2
+    pos: {x: 17, y: 4}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: ce02eb0d-7133-4c8a-960a-e47ad7e8a35e
+    type: 2
+    pos: {x: 17, y: 5}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 7da6bbd0-535f-4924-9b9b-035b9c334ab4
+    type: 2
+    pos: {x: 17, y: 6}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: ba34a160-545f-4eec-bcfa-1a114764d3e2
+    type: 2
+    pos: {x: 17, y: 8}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 62c4ec8f-fcd6-412e-a0f7-22acc92bf6af
+    type: 2
+    pos: {x: 17, y: 9}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 699eca02-32e4-40f7-94f7-f68df48566dc
+    type: 2
+    pos: {x: 17, y: 10}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 32500c67-eda4-429c-ac77-e039829d8ff5
+    type: 2
+    pos: {x: 17, y: 11}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: c3c42094-10fa-4b06-882e-0ecbed22f8b4
+    type: 2
+    pos: {x: 17, y: 12}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: feabddd7-bd22-46eb-802e-31b426a293a8
+    type: 2
+    pos: {x: 17, y: 13}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: e7b7414a-e6e3-456f-b5fa-92f682f6bedf
+    type: 2
+    pos: {x: 17, y: 14}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 367723b8-1777-4af5-98d0-ca1ca5a28d48
+    type: 2
+    pos: {x: 17, y: 15}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: aba059b7-dbf5-408c-9ef7-3305522a5913
+    type: 2
+    pos: {x: 17, y: 16}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 49fdb9fd-3ebe-4a42-8a58-00dd37cecf1d
+    type: 2
+    pos: {x: 17, y: 17}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 07c08ae0-6aa0-4bbf-86f5-5149e2ec1ebd
+    type: 2
+    pos: {x: 17, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,0,1,1],"corners":[0,1,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 05db78f7-f542-4fac-9073-a4e6082fb1d8
+    type: 2
+    pos: {x: 18, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 60d83f87-fa40-40a7-869f-4b522fd6bcf0
+    type: 2
+    pos: {x: 19, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f110e192-c0b9-4377-9b00-0424bc6241e8
+    type: 2
+    pos: {x: 20, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: aaf6a0c3-fa54-40ab-a544-d0c2a7a7231d
+    type: 2
+    pos: {x: 21, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 411ade70-6d9a-4bcf-88e0-491f8833f901
+    type: 2
+    pos: {x: 22, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 8d88f728-8360-4590-9bda-81ea512a997d
+    type: 2
+    pos: {x: 23, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 6fd73108-3131-4a58-b8dd-bbe190818ec8
+    type: 2
+    pos: {x: 24, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: e4cf1d0d-ce53-4333-b4de-8b4ea853365b
+    type: 2
+    pos: {x: 25, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: d92de5b9-4cf7-4f6f-a622-57789421d392
+    type: 2
+    pos: {x: -1, y: -1}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,1,1,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: cc946bb3-948b-49e5-a711-bea0b149e805
+    type: 2
+    pos: {x: 17, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 76026608-766e-42c1-b5a8-72b2c01435ba
+    type: 2
+    pos: {x: 18, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 92bcdfcb-00a6-4a95-95ae-37be8d1b1a1a
+    type: 2
+    pos: {x: 19, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 220aacdf-3069-4405-8372-d2a9a9adda60
+    type: 2
+    pos: {x: 20, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 5b614880-5396-4ed3-8c9b-1eb629f43da8
+    type: 2
+    pos: {x: 21, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 045670a2-c3ff-4a26-9a16-ef1e364e1902
+    type: 2
+    pos: {x: 22, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: b79ef835-14cf-436b-aafe-f8714041823f
+    type: 2
+    pos: {x: 23, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f882a505-987b-4521-9b70-a345118c24fb
+    type: 2
+    pos: {x: 24, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 88c11a2d-320e-4a07-add7-ee2ccb6fbfb0
+    type: 2
+    pos: {x: 25, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,0,1,0],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a9b177ef-1490-4d52-bce1-d44025825f04
+    type: 2
+    pos: {x: 26, y: 23}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,1,0],"corners":[1,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: f71a5b1f-a2e8-4e2d-83b8-ac695c0af277
+    type: 2
+    pos: {x: 26, y: 22}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 77aec1e6-e1e4-4496-ab3b-58d8e6356c84
+    type: 2
+    pos: {x: 26, y: 21}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 3eb00034-d1f6-45da-8ae8-1d6d8cf92f46
+    type: 2
+    pos: {x: 26, y: 20}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 360de7cd-6bd1-491e-970e-2c05b60a25bb
+    type: 2
+    pos: {x: 26, y: 19}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[0,1,0,1],"corners":[0,0,0,0],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: 5acaa594-9c03-4f9f-b384-ec38a6f409b9
+    type: 2
+    pos: {x: 26, y: 18}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1],"isPassable":false}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  pieceGroups: []
+  backgroundList:
+  - backgroundType: 0
+    pos: {x: 5, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 17, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 17, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 17, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 17, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 12}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 11}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 10}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 9}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 7}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 6}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 6}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 6}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 7}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 9}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 12}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 11}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 9}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 8}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 7}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 8}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 11}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 12}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 10}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 10}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 6, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 5, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 4, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 3, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 8}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 5}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 4}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 2}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 1}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 0}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 14, y: 3}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 5}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 5}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 4}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 3}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 1}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 0}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 0}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 3}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 4}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 2}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 15, y: 1}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 16, y: 2}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 24, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 24, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 23, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 22, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 21, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 20, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 19, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 18, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 18, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 18, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 18, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 19, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 20, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 21, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 22, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 23, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 24, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 24, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 24, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 23, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 22, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 21, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 20, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 20, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 19, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 19, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 21, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 22, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 23, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 25, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 25, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 25, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 25, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 25, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 26, y: 22}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 26, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 26, y: 19}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 26, y: 20}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 26, y: 21}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 7, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 8, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 9, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 10, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 11, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 12, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 18}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 17}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 16}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 15}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 14}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - backgroundType: 0
+    pos: {x: 13, y: 13}
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  cameraBounds: []
+  layers:
+  - id: d65065cc-a9c0-4246-aa35-d5e765793b45
+    name: Layer0
+  - id: fb6e1f14-9a63-4233-9324-dfe844d41537
+    name: Layer1
+  graphicsType: 1
+  levelName: 

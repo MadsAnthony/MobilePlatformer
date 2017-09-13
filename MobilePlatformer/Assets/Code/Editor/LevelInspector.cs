@@ -84,6 +84,7 @@ public class LevelInspector : Editor {
 		var levelSizeY = EditorGUILayout.IntSlider((int)myTarget.levelSize.y,0,50);
 
 		myTarget.levelSize = new Vector2 (levelSizeX, levelSizeY);
+		myTarget.graphicsType = (GraphicsType)EditorGUILayout.Popup("Graphics Type", (int)myTarget.graphicsType, Enum.GetNames (typeof(GraphicsType)));
 		cellType = (LevelEditorTool)EditorGUILayout.Popup("Cell Type", (int)cellType, Enum.GetNames (typeof(LevelEditorTool)));
 
 		EditorGUILayout.BeginHorizontal();

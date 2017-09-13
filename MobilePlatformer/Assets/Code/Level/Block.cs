@@ -11,8 +11,11 @@ public class Block : Piece {
 	public GameObject[] SideGameObjectsGoo;
 	PieceLevelData pieceLevelData;
 	BlockPieceLevelData.SideType[] sides = new BlockPieceLevelData.SideType[4];
+	public Sprite[] innerBlockSprites;
+	public Sprite[] sideSprites;
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
+		spriteTile.GetComponent<SpriteRenderer>().sprite = (gameLogic.level.graphicsType == GraphicsType.World1)? innerBlockSprites[0] : innerBlockSprites[1];
 		if (String.IsNullOrEmpty (pieceLevelData.specificDataJson)) return;
 		spriteTile.transform.eulerAngles = new Vector3 (0,0,UnityEngine.Random.Range(0,3)*90);
 		var specific = pieceLevelData.GetSpecificData<BlockPieceLevelData>();
@@ -26,6 +29,7 @@ public class Block : Piece {
 
 		i = 0;
 		foreach (var sideGameObject in SideGameObjects) {
+			sideGameObject.GetComponent<SpriteRenderer>().sprite = (gameLogic.level.graphicsType == GraphicsType.World1)? sideSprites[0] : sideSprites[1];
 			sideGameObject.SetActive (false);
 			if (specific.sides [i] == BlockPieceLevelData.SideType.Normal) {
 				sideGameObject.SetActive (false);

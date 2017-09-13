@@ -1,0 +1,41 @@
+
+skeleton.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Images/PenguinArm1
+  rotate: true
+  xy: 2, 19
+  size: 65, 126
+  orig: 65, 126
+  offset: 0, 0
+  index: -1
+Images/PenguinArm2
+  rotate: true
+  xy: 130, 35
+  size: 49, 123
+  orig: 49, 123
+  offset: 0, 0
+  index: -1
+Images/PenguinBody
+  rotate: false
+  xy: 2, 86
+  size: 138, 160
+  orig: 138, 160
+  offset: 0, 0
+  index: -1
+Images/PenguinFeet
+  rotate: false
+  xy: 2, 2
+  size: 178, 15
+  orig: 178, 15
+  offset: 0, 0
+  index: -1
+Images/PenguinHead
+  rotate: false
+  xy: 142, 112
+  size: 110, 134
+  orig: 110, 134
+  offset: 0, 0
+  index: -1
