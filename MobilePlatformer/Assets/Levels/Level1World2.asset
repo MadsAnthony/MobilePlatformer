@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b603af8a80183874cabdec094fa85f2a, type: 3}
-  m_Name: Level 3
+  m_Name: Level1World2
   m_EditorClassIdentifier: 
   levelSize: {x: 20, y: 30}
   pieces:
@@ -1459,4 +1459,5 @@ MonoBehaviour:
   layers:
   - id: 36f1cbbf-113e-47e5-9dc3-697766f9e19c
     name: Layer0
+  graphicsType: 1
   levelName: 

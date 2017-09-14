@@ -727,6 +727,13 @@ MonoBehaviour:
     flipX: 0
     specificDataJson: '{"sides":[1,1,0,0],"corners":[0,0,0,1],"isPassable":false}'
     layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
+  - id: a8c3a5d2-7996-4afe-9b7d-237252fa94ed
+    type: 9
+    pos: {x: 9, y: 22}
+    dir: 0
+    flipX: 0
+    specificDataJson: '{"levelIndex":1}'
+    layerId: d65065cc-a9c0-4246-aa35-d5e765793b45
   pieceGroups: []
   backgroundList:
   - backgroundType: 0
