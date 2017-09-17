@@ -11,26 +11,34 @@ public class WorldSelectView : UIView {
 	public CustomButton world1Button;
 	public CustomButton world2Button;
 	public SkeletonAnimation pigCharacter;
+	public SkeletonAnimation penguinCharacter;
 	public SkeletonAnimation eyeCharacter;
 	public GameObject characterPivot;
 	public AnimationCurve switchingCharactersCurve;
 
 	protected override void OnStart () {
-		Director.Instance.WorldIndex = -1;
 		Director.Instance.LevelIndex = -1;
 		if (Director.Instance.PrevLevelIndex == 0) {
 			eyeCharacter.gameObject.SetActive (false);
-			StartCoroutine (PlayEatAnimation (true));
+			if (Director.Instance.WorldIndex == 1) {
+				StartCoroutine (PlayEatAnimation (pigCharacter, true));
+			}
+			if (Director.Instance.WorldIndex == 2) {
+				characterPivot.transform.position -= new Vector3 (-20, 0, 0);
+				StartCoroutine (PlayEatAnimation (penguinCharacter, true));
+			}
 		}
+		Director.Instance.WorldIndex = -1;
+
 		world1Button.OnClick += (() => { 
 			Director.Instance.WorldIndex = 1;
 			if (isPlayingEatAnimation) return;
-			StartCoroutine (PlayEatAnimation());
+			StartCoroutine (PlayEatAnimation(pigCharacter));
 		});
 		world2Button.OnClick += (() => { 
 			Director.Instance.WorldIndex = 2;
 			if (isPlayingEatAnimation) return;
-			StartCoroutine (PlayEatAnimation());
+			StartCoroutine (PlayEatAnimation(penguinCharacter));
 		});
 		leftButton.OnClick += (() => {
 			if (isPlayingSwitchCharacterAnimation || isPlayingEatAnimation) return;
@@ -59,11 +67,11 @@ public class WorldSelectView : UIView {
 	}
 
 	bool isPlayingEatAnimation;
-	IEnumerator PlayEatAnimation(bool animateEyeCharacterOut = false) {
+	IEnumerator PlayEatAnimation(SkeletonAnimation character, bool animateEyeCharacterOut = false) {
 		
 		isPlayingEatAnimation = true;
-		pigCharacter.state.SetAnimation (0, "eat", false);
-		pigCharacter.state.AddAnimation (0, "idle", true, 1.3f);
+		character.state.SetAnimation (0, "eat", false);
+		character.state.AddAnimation (0, "idle", true, 1.3f);
 		StartCoroutine (AnimateEyeCharacter (animateEyeCharacterOut));
 		yield return new WaitForSeconds(2);
 		isPlayingEatAnimation = false;
