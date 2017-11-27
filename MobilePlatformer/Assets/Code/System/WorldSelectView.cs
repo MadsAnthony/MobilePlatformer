@@ -13,6 +13,8 @@ public class WorldSelectView : UIView {
 	public SkeletonAnimation pigCharacter;
 	public SkeletonAnimation penguinCharacter;
 	public SkeletonAnimation eyeCharacter;
+	public CustomButton labButton;
+	public SkeletonAnimation labBall;
 	public GameObject characterPivot;
 	public AnimationCurve switchingCharactersCurve;
 
@@ -48,7 +50,13 @@ public class WorldSelectView : UIView {
 			if (isPlayingSwitchCharacterAnimation || isPlayingEatAnimation) return;
 			StartCoroutine (SwitchCharacter(characterPivot.transform, new Vector3(-20,0,0),0.5f));
 		});
+
+		labButton.OnClick += (() => { 
+			labBallOpened = !labBallOpened;
+			labBall.state.SetAnimation (0, labBallOpened? "Open" : "Animation", false);
+		});
 	}
+	bool labBallOpened = true;
 
 	bool isPlayingSwitchCharacterAnimation;
 	IEnumerator SwitchCharacter(Transform transform, Vector3 movingVector, float duration) {

@@ -100,7 +100,7 @@ public class LevelInit : MonoBehaviour {
 
 
 
-		int bgUVSize = 8;
+		int bgUVSize = 12;
 		int layerI = 0;
 		foreach (var layer in level.layers) {
 			int index = 0;
