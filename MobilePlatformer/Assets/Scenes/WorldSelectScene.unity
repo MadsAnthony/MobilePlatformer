@@ -1133,6 +1133,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  shrinkCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.3675598
+      value: 0.6383681
+      inSlope: 1.6345502
+      outSlope: 1.6345502
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &1303036362 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114241005599486566, guid: 91bc8753b9602f443aad4adffe84cf7f,
