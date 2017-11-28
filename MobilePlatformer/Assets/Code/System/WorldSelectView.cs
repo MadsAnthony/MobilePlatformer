@@ -15,8 +15,11 @@ public class WorldSelectView : UIView {
 	public SkeletonAnimation eyeCharacter;
 	public CustomButton labButton;
 	public SkeletonAnimation labBall;
+	public GameObject labBallPivot;
+	public CustomButton labButtonShrink;
 	public GameObject characterPivot;
 	public AnimationCurve switchingCharactersCurve;
+	public AnimationCurve shrinkCurve;
 
 	protected override void OnStart () {
 		Director.Instance.LevelIndex = -1;
@@ -55,8 +58,45 @@ public class WorldSelectView : UIView {
 			labBallOpened = !labBallOpened;
 			labBall.state.SetAnimation (0, labBallOpened? "Open" : "Animation", false);
 		});
+		labButtonShrink.OnClick += (() => {
+			if (isShrinking) return;
+			StartCoroutine (ShrinkBall(3));
+		});
+
 	}
 	bool labBallOpened = true;
+
+	bool isShrinking = false;
+	IEnumerator ShrinkBall(float duration) {
+		isShrinking = true;
+		float t = 0;
+		var startScale = labBallPivot.transform.localScale;
+		var endScale = Vector3.one*0.15f;
+		bool sucess = false;
+		while (true) {
+			if (Input.GetMouseButton (0)) {
+				t += (1 / duration) * Time.deltaTime;
+			} else {
+				t -= 2*(1 / duration) * Time.deltaTime;
+			}
+			if (t < 0) {
+				break;
+			}
+			var evalT = shrinkCurve.Evaluate (Mathf.Clamp01 (t));
+			labBallPivot.transform.localScale = startScale*(1-evalT) + endScale*evalT;
+			if (t>=1) {
+				sucess = true;
+				break;
+			}
+
+			yield return null;
+		}
+		if (sucess) {
+			labBallPivot.SetActive (false);
+			eyeCharacter.transform.position = labBallPivot.transform.position;
+		}
+		isShrinking = false;
+	}
 
 	bool isPlayingSwitchCharacterAnimation;
 	IEnumerator SwitchCharacter(Transform transform, Vector3 movingVector, float duration) {
