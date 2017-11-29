@@ -17,6 +17,10 @@ public class UIUtils : MonoBehaviour {
 		SceneManager.LoadScene ("WorldSelectScene");
 	}
 
+	public void GotoLabScene() {
+		SceneManager.LoadScene ("LabScene");
+	}
+
 	public static void GotoLevelScene(int i) {
 		Director.Instance.LevelIndex = i;
 		SceneManager.LoadScene ("LevelScene");

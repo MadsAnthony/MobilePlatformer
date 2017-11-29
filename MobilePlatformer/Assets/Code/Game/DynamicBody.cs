@@ -73,7 +73,7 @@ public abstract class DynamicBody : Piece {
 			isInWater = false;
 			var colliders = Physics.OverlapBox(transform.position+GetComponent<BoxCollider>().center, GetComponent<BoxCollider>().bounds.size*0.5f);
 			foreach (var col in colliders) {
-				if (col.GetComponent<Piece> ().Type == PieceType.Water) {
+				if (col.GetComponent<Piece> () != null && col.GetComponent<Piece> ().Type == PieceType.Water) {
 					isInWater = true;
 				}
 			}
@@ -182,6 +182,10 @@ public abstract class DynamicBody : Piece {
 	public void StopMoving() {
 		stopMoving = true;
 		MovingDir = 0;
+	}
+	public void StartMoving(int moveDir = 0) {
+		stopMoving = false;
+		MovingDir = moveDir;
 	}
 
 	public void TurnAround() {

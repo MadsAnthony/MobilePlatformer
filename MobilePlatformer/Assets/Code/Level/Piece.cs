@@ -79,6 +79,7 @@ public abstract class Piece : MonoBehaviour {
 		});
 		foreach(var hit in sortedHits) {
 			var piece = hit.collider.GetComponent<Piece> ();
+			if (piece == null) continue;
 
 			// ignore pieces that are part of excludePieces.
 			if (excludePieces != null && excludePieces.Contains(piece)) continue;

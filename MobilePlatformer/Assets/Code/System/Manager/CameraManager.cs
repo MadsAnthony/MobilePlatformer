@@ -6,18 +6,19 @@ public class CameraManager : MonoBehaviour {
 
 	Camera camera;
 
+	[SerializeField] bool IgnoreCameraMaterial;
 	public Material cameraMaterial;
 
 	public AnimationCurve showLayerCurve;
 	public AnimationCurve hideLayerCurve;
 	// Use this for initialization
 	void Start () {
+		if (IgnoreCameraMaterial) return;
 		cameraMaterial.SetFloat ("_Transparency", 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void CameraShake() {
