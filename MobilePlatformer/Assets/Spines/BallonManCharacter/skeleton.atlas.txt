@@ -1,0 +1,41 @@
+
+skeleton.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Images/BalloonManArm1
+  rotate: true
+  xy: 81, 15
+  size: 35, 81
+  orig: 35, 81
+  offset: 0, 0
+  index: -1
+Images/BalloonManArm2
+  rotate: true
+  xy: 164, 17
+  size: 33, 79
+  orig: 33, 79
+  offset: 0, 0
+  index: -1
+Images/BalloonManBody
+  rotate: true
+  xy: 138, 52
+  size: 73, 88
+  orig: 73, 88
+  offset: 0, 0
+  index: -1
+Images/BalloonManFeet
+  rotate: false
+  xy: 2, 2
+  size: 77, 54
+  orig: 77, 54
+  offset: 0, 0
+  index: -1
+Images/BalloonManHead
+  rotate: true
+  xy: 2, 58
+  size: 67, 134
+  orig: 67, 134
+  offset: 0, 0
+  index: -1
