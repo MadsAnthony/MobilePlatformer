@@ -1,41 +1,132 @@
 
 skeleton.png
-size: 256,128
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Images/BalloonManArm1
   rotate: true
-  xy: 81, 15
+  xy: 2, 14
   size: 35, 81
   orig: 35, 81
   offset: 0, 0
   index: -1
 Images/BalloonManArm2
   rotate: true
-  xy: 164, 17
+  xy: 233, 23
   size: 33, 79
   orig: 33, 79
   offset: 0, 0
   index: -1
 Images/BalloonManBody
   rotate: true
-  xy: 138, 52
+  xy: 908, 181
   size: 73, 88
   orig: 73, 88
   offset: 0, 0
   index: -1
 Images/BalloonManFeet
   rotate: false
-  xy: 2, 2
+  xy: 154, 2
   size: 77, 54
   orig: 77, 54
   offset: 0, 0
   index: -1
 Images/BalloonManHead
   rotate: true
-  xy: 2, 58
+  xy: 755, 121
   size: 67, 134
   orig: 67, 134
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk01
+  rotate: false
+  xy: 156, 58
+  size: 144, 63
+  orig: 144, 63
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk02
+  rotate: false
+  xy: 611, 126
+  size: 142, 62
+  orig: 142, 62
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk03
+  rotate: false
+  xy: 456, 124
+  size: 143, 63
+  orig: 143, 63
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk04
+  rotate: false
+  xy: 310, 124
+  size: 144, 63
+  orig: 144, 63
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk05
+  rotate: false
+  xy: 157, 123
+  size: 145, 63
+  orig: 145, 63
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk06
+  rotate: false
+  xy: 760, 190
+  size: 146, 64
+  orig: 146, 64
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk07
+  rotate: false
+  xy: 611, 190
+  size: 147, 64
+  orig: 147, 64
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk08
+  rotate: false
+  xy: 461, 189
+  size: 148, 65
+  orig: 148, 65
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk09
+  rotate: false
+  xy: 310, 189
+  size: 149, 65
+  orig: 149, 65
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk10
+  rotate: false
+  xy: 2, 51
+  size: 150, 66
+  orig: 150, 66
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk11
+  rotate: false
+  xy: 157, 188
+  size: 151, 66
+  orig: 151, 66
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk12
+  rotate: false
+  xy: 2, 119
+  size: 152, 66
+  orig: 152, 66
+  offset: 0, 0
+  index: -1
+Images/BalloonManWalk13
+  rotate: false
+  xy: 2, 187
+  size: 153, 67
+  orig: 153, 67
   offset: 0, 0
   index: -1

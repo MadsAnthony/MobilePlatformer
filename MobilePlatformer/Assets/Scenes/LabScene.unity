@@ -108,6 +108,66 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16951512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 16951513}
+  - component: {fileID: 16951515}
+  - component: {fileID: 16951514}
+  m_Layer: 0
+  m_Name: BallonManCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16951513
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16951512}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.45, y: -5.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 919773708}
+  m_Father: {fileID: 1985046393}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &16951514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16951512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2688928, y: 2.7107515, z: 1}
+  m_Center: {x: 0.14098787, y: 0.64903927, z: 0}
+--- !u!114 &16951515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16951512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bcee38dff642b4eb37af15f9ed38d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  CollisionPropertyDefault: 0
+  maxGravity: 50
+  spine: {fileID: 405330723}
+  sprite: {fileID: 405330722}
+  levelDoorIndex: 0
 --- !u!1 &23492838
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,10 +397,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftBorder: -10
   RightBorder: 5
-  FollowObjectOffset: {x: 4, y: 0, z: 0}
-  FollowObject: {fileID: 111122696}
+  FollowObjectOffset: {x: 0, y: 0, z: 0}
+  FollowObject: {fileID: 16951512}
   CameraPivot: {fileID: 1236969074}
   hero: {fileID: 334877842}
+  BallonMan: {fileID: 16951515}
   labButton: {fileID: 93796930}
   labBall: {fileID: 1853427206}
   labBallPivot: {fileID: 111122696}
@@ -456,6 +517,17 @@ Transform:
   m_PrefabParentObject: {fileID: 4542823688211592, guid: 91bc8753b9602f443aad4adffe84cf7f,
     type: 2}
   m_PrefabInternal: {fileID: 897875628}
+--- !u!1 &405330722 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1338064631668262, guid: 9995eacb1bf2c2f40971a2686c88c6e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1776422876}
+--- !u!114 &405330723 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114333833736658938, guid: 9995eacb1bf2c2f40971a2686c88c6e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1776422876}
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
 --- !u!1001 &577328209
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4857002760713216, guid: 93ae8eda69c498b4298701bd7283daa8, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1811242072951080, guid: 93ae8eda69c498b4298701bd7283daa8, type: 2}
       propertyPath: m_Name
@@ -763,7 +835,7 @@ Transform:
   m_LocalScale: {x: 2.1996088, y: 10.609924, z: 5.175573}
   m_Children: []
   m_Father: {fileID: 1985046393}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1111921076
 SpriteRenderer:
@@ -978,7 +1050,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4857002760713216, guid: 93ae8eda69c498b4298701bd7283daa8, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1811242072951080, guid: 93ae8eda69c498b4298701bd7283daa8, type: 2}
       propertyPath: m_Name
@@ -1136,19 +1208,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1985046393}
+    m_TransformParent: {fileID: 16951513}
     m_Modifications:
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 0.049999952
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.16
+      value: -0.6700001
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1168,7 +1240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 33622657249521668, guid: 9995eacb1bf2c2f40971a2686c88c6e5,
         type: 2}
@@ -1187,7 +1259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalScale.x
-      value: -3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4650869504187052, guid: 9995eacb1bf2c2f40971a2686c88c6e5, type: 2}
       propertyPath: m_LocalScale.y
@@ -1227,7 +1299,7 @@ Transform:
   m_LocalScale: {x: 2.19961, y: 10.60993, z: 5.17557}
   m_Children: []
   m_Father: {fileID: 1985046393}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1814376010
 SpriteRenderer:
@@ -1510,14 +1582,14 @@ Transform:
   m_Children:
   - {fileID: 111122697}
   - {fileID: 2054555006}
-  - {fileID: 919773708}
+  - {fileID: 16951513}
   - {fileID: 1852917350}
   - {fileID: 934944264}
   - {fileID: 620434304}
   - {fileID: 67092958}
-  - {fileID: 1425940673}
   - {fileID: 1111921075}
   - {fileID: 1814376009}
+  - {fileID: 1425940673}
   - {fileID: 2085594853}
   m_Father: {fileID: 0}
   m_RootOrder: 1

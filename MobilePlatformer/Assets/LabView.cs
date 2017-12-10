@@ -13,6 +13,8 @@ public class LabView : UIView {
 	[SerializeField] private GameObject CameraPivot;
 
 	[SerializeField] private Hero hero;
+	[SerializeField] private Hero BallonMan;
+
 
 	[SerializeField] private CustomButton labButton;
 	[SerializeField] private SkeletonAnimation labBall;
@@ -24,6 +26,9 @@ public class LabView : UIView {
 		labButton.OnClick += (() => { 
 			labBallOpened = !labBallOpened;
 			labBall.state.SetAnimation (0, labBallOpened? "Open" : "Animation", false);
+			FollowObjectOffset = new Vector3(4,0,0);
+			FollowObject = labBall.gameObject;
+			BallonMan.StopMoving();
 		});
 		labButtonShrink.OnClick += (() => {
 			if (isShrinking) return;
