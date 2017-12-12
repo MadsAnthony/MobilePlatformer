@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MirrorMaterial
-  m_Shader: {fileID: 4800000, guid: fdb573558ef67944f9311b2943d574b9, type: 3}
+  m_Name: UnlitMaterial
+  m_Shader: {fileID: 4800000, guid: 63db3be507ae4ea4a9955532b0547a85, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5bed4aceb4ba00746a6b0be164644b66, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -66,14 +66,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ReflectionX: 35.6
-    - _ReflectionY: 0.556
-    - _ReflectionZ: -39
+    - _ReflectionY: 0.585
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.3806228, g: 0.5430438, b: 0.8088235, a: 1}
+    - _Color: {r: 0.5068235, g: 0.43809476, b: 0.53676474, a: 0.503}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

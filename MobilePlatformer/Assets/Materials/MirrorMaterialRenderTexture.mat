@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MirrorMaterial
-  m_Shader: {fileID: 4800000, guid: fdb573558ef67944f9311b2943d574b9, type: 3}
+  m_Name: MirrorMaterialRenderTexture
+  m_Shader: {fileID: 4800000, guid: db4ddca5eab9b794d8128f3575b09ac7, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
