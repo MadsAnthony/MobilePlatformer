@@ -1,0 +1,48 @@
+
+skeleton.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Images/GiraffeArm1
+  rotate: true
+  xy: 227, 2
+  size: 94, 171
+  orig: 94, 171
+  offset: 0, 0
+  index: -1
+Images/GiraffeArm2
+  rotate: false
+  xy: 864, 39
+  size: 92, 171
+  orig: 92, 171
+  offset: 0, 0
+  index: -1
+Images/GiraffeBody
+  rotate: true
+  xy: 506, 93
+  size: 117, 179
+  orig: 117, 179
+  offset: 0, 0
+  index: -1
+Images/GiraffeHead
+  rotate: false
+  xy: 2, 19
+  size: 223, 191
+  orig: 223, 191
+  offset: 0, 0
+  index: -1
+Images/GiraffeLegs
+  rotate: false
+  xy: 687, 86
+  size: 175, 124
+  orig: 175, 124
+  offset: 0, 0
+  index: -1
+Images/GiraffeNeck
+  rotate: true
+  xy: 227, 98
+  size: 112, 277
+  orig: 112, 277
+  offset: 0, 0
+  index: -1

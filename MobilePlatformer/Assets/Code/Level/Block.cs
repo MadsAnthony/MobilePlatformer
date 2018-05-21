@@ -15,9 +15,8 @@ public class Block : Piece {
 	public Sprite[] sideSprites;
 
 	public override void Init (PieceLevelData pieceLevelData, GameLogic gameLogic) {
-		spriteTile.GetComponent<SpriteRenderer>().sprite = (gameLogic.level.graphicsType == GraphicsType.World1)? innerBlockSprites[0] : innerBlockSprites[1];
+		spriteTile.GetComponent<SpriteRenderer>().sprite = innerBlockSprites[(int)gameLogic.level.graphicsType];
 		if (String.IsNullOrEmpty (pieceLevelData.specificDataJson)) return;
-		//spriteTile.transform.eulerAngles = new Vector3 (0,0,UnityEngine.Random.Range(0,3)*90);
 		var specific = pieceLevelData.GetSpecificData<BlockPieceLevelData>();
 
 		this.pieceLevelData = pieceLevelData;

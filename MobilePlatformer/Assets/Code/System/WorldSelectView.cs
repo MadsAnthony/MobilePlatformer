@@ -10,6 +10,7 @@ public class WorldSelectView : UIView {
 	public CustomButton rightButton;
 	public CustomButton world1Button;
 	public CustomButton world2Button;
+	public CustomButton world3Button;
 	public SkeletonAnimation pigCharacter;
 	public SkeletonAnimation penguinCharacter;
 	public SkeletonAnimation eyeCharacter;
@@ -39,6 +40,11 @@ public class WorldSelectView : UIView {
 		});
 		world2Button.OnClick += (() => { 
 			Director.Instance.WorldIndex = 2;
+			if (isPlayingEatAnimation) return;
+			StartCoroutine (PlayEatAnimation(penguinCharacter));
+		});
+		world3Button.OnClick += (() => { 
+			Director.Instance.WorldIndex = 3;
 			if (isPlayingEatAnimation) return;
 			StartCoroutine (PlayEatAnimation(penguinCharacter));
 		});

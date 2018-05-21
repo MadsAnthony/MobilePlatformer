@@ -32,7 +32,7 @@ public class LevelAsset : ScriptableObject {
 public enum BlockType {Normal, Color, Spike, NonSticky, Collectable};
 public enum Direction {Up, Right, Down, Left};
 public enum BackgroundType {Normal};
-public enum GraphicsType {World1,World2};
+public enum GraphicsType {World1,World2,World3};
 
 [Serializable]
 public class PieceLevelData {
