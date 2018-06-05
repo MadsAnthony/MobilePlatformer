@@ -4,30 +4,65 @@ size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+Images/BalloonHead
+  rotate: true
+  xy: 802, 140
+  size: 104, 208
+  orig: 104, 208
+  offset: 0, 0
+  index: -1
+Images/BalloonSitArm1
+  rotate: true
+  xy: 438, 45
+  size: 36, 137
+  orig: 36, 137
+  offset: 0, 0
+  index: -1
+Images/BalloonSitArm2
+  rotate: true
+  xy: 438, 12
+  size: 31, 113
+  orig: 31, 113
+  offset: 0, 0
+  index: -1
+Images/BalloonSitBody
+  rotate: true
+  xy: 802, 30
+  size: 108, 134
+  orig: 108, 134
+  offset: 0, 0
+  index: -1
+Images/BalloonSitLegs
+  rotate: false
+  xy: 298, 2
+  size: 138, 79
+  orig: 138, 79
+  offset: 0, 0
+  index: -1
 Images/Chair
   rotate: true
-  xy: 586, 84
+  xy: 586, 103
   size: 141, 214
   orig: 141, 214
   offset: 0, 0
   index: -1
 Images/TopBall
   rotate: false
-  xy: 2, 2
+  xy: 2, 21
   size: 294, 223
   orig: 294, 223
   offset: 0, 0
   index: -1
 Images/UnderBallBottomLayer
   rotate: false
-  xy: 298, 64
+  xy: 298, 83
   size: 282, 48
   orig: 282, 48
   offset: 0, 0
   index: -1
 Images/UnderBallTopLayer
   rotate: false
-  xy: 298, 114
+  xy: 298, 133
   size: 286, 111
   orig: 286, 111
   offset: 0, 0

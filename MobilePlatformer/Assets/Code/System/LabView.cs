@@ -29,6 +29,7 @@ public class LabView : UIView {
 			FollowObjectOffset = new Vector3(4,0,0);
 			FollowObject = labBall.gameObject;
 			BallonMan.StopMoving();
+			BallonMan.gameObject.SetActive (false);
 		});
 		labButtonShrink.OnClick += (() => {
 			if (isShrinking) return;
